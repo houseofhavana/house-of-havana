@@ -72,7 +72,7 @@ export const BARBERS: Barber[] = [
   },
   {
     image: {
-      src: "/barbers/emily.jpeg",
+      src: "/barbers/emily.png",
       alt: "Emily - Barber & Grooming Specialist in Saskatoon",
     },
     name: "Emily",
