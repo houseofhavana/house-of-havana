@@ -1,3 +1,4 @@
+import { LocalBusinessJsonLd } from "@/components/LocalBusinessJsonLd";
 import HeroInner from "@/components/sections/HeroInner";
 import ServicesSection from "@/components/sections/ServicesSection";
 import FAQSection, { FAQItem } from "@/components/sections/FAQSection";
@@ -49,6 +50,8 @@ const FAQS: FAQItem[] = [
 
 const TreatmentsPage = () => (
   <>
+    <LocalBusinessJsonLd />
+
     <HeroInner
       subheading="Our"
       title="SERVICES"
