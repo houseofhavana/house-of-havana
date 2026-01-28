@@ -69,18 +69,16 @@ export default function Home() {
     <div className="min-h-screen">
       {/* Hero Section */}
       <Hero
-        backgroundImages={{
-          mobile: "/hero-mobile.png",
-          tablet: "/hero-tablet.png",
-          desktop: "/hero-desktop.png",
-          ultrawide: "/hero-ultrawide.png",
-        }}
-        subheading="The"
-        heading=heading="PREMIUM <br /> BARBERSHOP"
-        supportingText=At House of Havana Barbershop in Saskatoon, grooming is more than maintenance — it’s a moment of focus, intention, and precision. We blend classic barbering tradition with modern design to create an experience tailored for discerning professionals. From custom cabinetry and rich leather seating to precision cuts, well-groomed beards, and premium aftercare, every detail is considered. This isn’t just another barbershop in Saskatoon — it’s where grooming becomes personal and confidence is elevated.
-        //  heading="Gentleman's <br /> Club"
-        //  supportingText="Crafted for those who value the exceptional, House of Havana Barbershop combines custom barber chairs, elegantly designed cabinetry and a warm and inviting interior with lively music where you can enjoy the finest whiskey and rum as you unwind in a setting designed for relaxation and sophistication. At House of Havana, grooming is more than a service – it's a remarkable experience."
-      />
+  backgroundImages={{
+    mobile: "/hero-mobile.png",
+    tablet: "/hero-tablet.png",
+    desktop: "/hero-desktop.png",
+    ultrawide: "/hero-ultrawide.png",
+  }}
+  subheading="The"
+  heading="House of Havana Barbershop in <br /> Saskatoon"
+  supportingText="At House of Havana Barbershop in Saskatoon, grooming is more than maintenance — it’s a moment of focus, intention, and precision. We blend classic barbering tradition with modern design to create an experience tailored for discerning professionals. From custom cabinetry and rich leather seating to precision cuts, well-groomed beards, and premium aftercare, every detail is considered. This isn’t just another barbershop in Saskatoon — it’s where grooming becomes personal and confidence is elevated."
+/>
       <Ritual /> {/* bg-surface */}
       {/* Why Choose Section - Luxury Editorial Design */}
       <section className="py-26 bg-background">
