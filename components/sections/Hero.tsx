@@ -27,12 +27,16 @@ const Hero: React.FC<HeroData> = ({
         <div className='flex flex-col justify-end pb-5 md:pb-0 items-start h-full'>
           <div className='pb-4 mb-5 w-full grid grid-cols-1 md:grid-cols-2 items-end border-b border-foreground/10'>
             <div className='relative pt-6'>
-              <h2 className='heading-4-italic md:heading-3-italic mb-2'>
-                {subheading}
-              </h2>
-              <h2 className={`md:!text-6xl leading-[0.9] ${className}`}>
-                {parse(heading)}
-              </h2>
+              <p className='heading-4-italic md:heading-3-italic mb-2'>
+  {subheading}
+</p>
+              <h1
+  aria-label="House of Havana Barbershop in Saskatoon"
+  className={`md:!text-6xl leading-[0.9] ${className}`}
+>
+  {parse(heading)}
+</h1>
+
             </div>
             <p className='text-foreground/50 !text-sm'>
               {supportingText}
