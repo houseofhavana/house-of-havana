@@ -130,7 +130,7 @@ export default function RootLayout({
         </Script>
       </head>
 
-      <body
+           <body
         className={`${BigCaslon.variable} ${BigCaslonItalic.variable} ${Satoshi.variable} antialiased font-sans text-foreground bg-background`}
       >
         {/* GTM noscript */}
@@ -154,6 +154,36 @@ export default function RootLayout({
           />
         </noscript>
 
+        {/* ✅ Local SEO: BarberShop schema (CORRECT PLACE) */}
+        <Script
+          id="barbershop-schema"
+          type="application/ld+json"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BarberShop",
+              name: "House Of Havana Barbershop",
+              url: "https://www.houseofhavana.ca",
+              telephone: "+1-306-952-2255",
+              priceRange: "$$",
+              areaServed: { "@type": "City", name: "Saskatoon" },
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: "3501 8 St E, Bay 110",
+                addressLocality: "Saskatoon",
+                addressRegion: "SK",
+                postalCode: "S7H 0W5",
+                addressCountry: "CA",
+              },
+              sameAs: [
+                "https://www.instagram.com/houseofhavanabarbershop_yxe/",
+                "https://www.google.com/search?q=House+Of+Havana+Barbershop",
+              ],
+            }),
+          }}
+        />
+
         <Navbar />
         {children}
         <ConditionalCTA />
@@ -173,6 +203,4 @@ export default function RootLayout({
           `}
         </Script>
       </body>
-    </html>
-  );
-}
+
