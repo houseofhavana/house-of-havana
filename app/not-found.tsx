@@ -2,6 +2,7 @@ import Button from '@/components/ui/button';
 import { ChevronRight } from 'lucide-react';
 import Link from 'next/link';
 
+
 export default function NotFound() {
   return (
     <div className="py-35 mt-20 flex flex-col items-center justify-center bg-background px-4 text-center">

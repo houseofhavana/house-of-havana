@@ -1,9 +1,8 @@
 'use client'
 
-import React from 'react'
-import { Button } from '../../components/ui/button'
-import ArrowRight from '../../components/icons/ArrowRight'
-import ParallaxImage from '../../components/ui/ParallaxImage'
+import ArrowRight from './icons/ArrowRight'
+import { Button } from './ui/button'
+import ParallaxImage from './ui/ParallaxImage'
 
 const Components = () => {
   return (
@@ -19,7 +18,7 @@ const Components = () => {
           priority
           intensity={0.3}
         />
-        
+
         {/* Content */}
         <div className="relative z-10 text-center text-white pt-16 md:pt-0" >
           <h1 className="heading-2 mb-6">Design System</h1>
@@ -33,7 +32,7 @@ const Components = () => {
       <section className="py-20 bg-surface">
         <div className='container mx-auto p-8'>
           <div className="space-y-20">
-          
+
             <div>
               <h2 className="mb-8 border-b pb-4 border-stroke/20 heading-2 text-center">Typography</h2>
               <div className="space-y-6">
@@ -128,7 +127,7 @@ const Components = () => {
                   <h3 className="text-lg mb-4 text-foreground/50">Font Debugging</h3>
                   <div className="space-y-4">
                     <p className="text-sm text-foreground/50">Testing different approaches:</p>
-                    <p style={{fontFamily: 'var(--font-big-caslon-italic)'}} className="text-xl">Inline style with var(--font-big-caslon-italic)</p>
+                    <p style={{ fontFamily: 'var(--font-big-caslon-italic)' }} className="text-xl">Inline style with var(--font-big-caslon-italic)</p>
                     <p className="font-heading-italic text-xl">CSS class font-heading-italic</p>
                     <p className="heading-2-italic">heading-2-italic class</p>
                     <p className="text-sm text-foreground/50 mt-4">If the above text looks different from regular Big Caslon, the italic font is working!</p>
@@ -139,36 +138,36 @@ const Components = () => {
 
 
             {/* Buttons Section */}
-              <div>
-                <h2 className="mb-8 border-b pb-4 border-stroke/20 heading-2 text-center">Interactive Elements</h2>
-                <div className="grid grid-cols-2 md:grid-cols-4 bg-background border border-stroke/20 p-4 gap-4 rounded-lg">
-                  <div className='flex justify-start items-center p-4 bg-surface rounded-lg'>
-                      <Button>Contact Us</Button>
-                  </div>
-                  <div className='flex justify-start items-center p-4 bg-surface rounded-lg'>
-                      <Button variant="secondary">Contact Us</Button>
-                  </div>
-                  <div className='flex justify-start items-center p-4 bg-surface rounded-lg'>
-                      <Button variant="tertiary">Contact Us</Button>
-                  </div>
-                  <div className='flex justify-start items-center p-4 bg-surface rounded-lg'>
-                      <Button variant="ghost">Contact Us</Button>
-                  </div>
-                  <div className='flex justify-start items-center p-4 bg-surface rounded-lg'>
-                      <Button size="icon">Contact Us <ArrowRight /></Button>
-                  </div>
-                  <div className='flex justify-start items-center p-4 bg-surface rounded-lg'>
-                      <Button variant="secondary" size="icon">Contact Us <ArrowRight /></Button>
-                  </div>
-                  <div className='flex justify-start items-center p-4 bg-surface rounded-lg'>
-                      <Button variant="tertiary" size="icon">Contact Us <ArrowRight className='stroke-stroke/20'/></Button>
-                  </div>
-                  <div className='flex justify-start items-center p-4 bg-surface rounded-lg'>
-                      <Button variant="ghost" size="icon">Contact Us <ArrowRight className='stroke-stroke/20'/></Button>
-                  </div>
+            <div>
+              <h2 className="mb-8 border-b pb-4 border-stroke/20 heading-2 text-center">Interactive Elements</h2>
+              <div className="grid grid-cols-2 md:grid-cols-4 bg-background border border-stroke/20 p-4 gap-4 rounded-lg">
+                <div className='flex justify-start items-center p-4 bg-surface rounded-lg'>
+                  <Button>Contact Us</Button>
+                </div>
+                <div className='flex justify-start items-center p-4 bg-surface rounded-lg'>
+                  <Button variant="secondary">Contact Us</Button>
+                </div>
+                <div className='flex justify-start items-center p-4 bg-surface rounded-lg'>
+                  <Button variant="tertiary">Contact Us</Button>
+                </div>
+                <div className='flex justify-start items-center p-4 bg-surface rounded-lg'>
+                  <Button variant="ghost">Contact Us</Button>
+                </div>
+                <div className='flex justify-start items-center p-4 bg-surface rounded-lg'>
+                  <Button size="icon">Contact Us <ArrowRight /></Button>
+                </div>
+                <div className='flex justify-start items-center p-4 bg-surface rounded-lg'>
+                  <Button variant="secondary" size="icon">Contact Us <ArrowRight /></Button>
+                </div>
+                <div className='flex justify-start items-center p-4 bg-surface rounded-lg'>
+                  <Button variant="tertiary" size="icon">Contact Us <ArrowRight className='stroke-stroke/20' /></Button>
+                </div>
+                <div className='flex justify-start items-center p-4 bg-surface rounded-lg'>
+                  <Button variant="ghost" size="icon">Contact Us <ArrowRight className='stroke-stroke/20' /></Button>
                 </div>
               </div>
-            
+            </div>
+
           </div>
         </div>
       </section>

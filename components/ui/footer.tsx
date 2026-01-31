@@ -1,6 +1,6 @@
+import { Facebook, Instagram } from "lucide-react";
 import Link from "next/link";
 import Logo from "./logo";
-import { Instagram, Facebook } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -192,7 +192,7 @@ const Footer = () => {
       </div>
       {/* Bottom row */}
       <div className="container flex flex-col md:flex-row justify-between items-center mt-6 text-xs text-foreground/50 gap-2">
-        <div>Copyright &copy; 2025 | House of Havana</div>
+        <div>Copyright &copy; {new Date().getFullYear()} | House of Havana</div>
         <div className="space-x-4">
           <Link href="/terms-of-use" className="hover:underline">
             Terms of Use

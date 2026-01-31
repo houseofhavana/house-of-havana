@@ -1,10 +1,10 @@
+import ConditionalCTA from "@/components/sections/ConditionalCTA";
+import Footer from "@/components/ui/footer";
+import Navbar from "@/components/ui/navbar";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import Navbar from "@/components/ui/navbar";
-import "./globals.css";
-import Footer from "@/components/ui/footer";
-import ConditionalCTA from "@/components/sections/ConditionalCTA";
 import Script from "next/script";
+import "./globals.css";
 
 const BigCaslon = localFont({
   src: "../fonts/Big_Caslon_CC.otf",
@@ -22,8 +22,11 @@ const Satoshi = localFont({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.houseofhavana.ca"),
-  title: "House Of Havana | Premium Barber Shop In Saskatoon",
+  metadataBase: new URL("https://houseofhavana.ca"),
+  title: {
+    default: `House Of Havana | Premium Barber Shop In Saskatoon`,
+    template: `%s | House Of Havana`,
+  },
   description:
     "Experience premium grooming at House of Havana, Saskatoon top barber shop for precision cuts, fades, and luxury style crafted by expert barbers.",
   verification: {
@@ -31,6 +34,19 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "/",
+  },
+  openGraph: {
+    title: "House Of Havana | Premium Barber Shop In Saskatoon",
+    description: "Experience premium grooming at House of Havana, Saskatoon top barber shop for precision cuts, fades, and luxury style crafted by expert barbers.",
+    url: "https://houseofhavana.ca",
+    siteName: "House Of Havana",
+    locale: "en_CA",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "House Of Havana | Premium Barber Shop In Saskatoon",
+    description: "Experience premium grooming at House of Havana, Saskatoon top barber shop for precision cuts, fades, and luxury style crafted by expert barbers.",
   },
 };
 
@@ -67,7 +83,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "WebSite",
               name: "House Of Havana",
-              url: "https://www.houseofhavana.ca/",
+              url: "https://houseofhavana.ca/",
               potentialAction: {
                 "@type": "SearchAction",
                 target: "{search_term_string}",
@@ -129,9 +145,9 @@ export default function RootLayout({
           `}
         </Script>
       </head>
-
-           <body
+      <body
         className={`${BigCaslon.variable} ${BigCaslonItalic.variable} ${Satoshi.variable} antialiased font-sans text-foreground bg-background`}
+        suppressContentEditableWarning
       >
         {/* GTM noscript */}
         <noscript>
@@ -164,7 +180,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "BarberShop",
               name: "House Of Havana Barbershop",
-              url: "https://www.houseofhavana.ca",
+              url: "https://houseofhavana.ca",
               telephone: "+1-306-952-2255",
               priceRange: "$$",
               areaServed: { "@type": "City", name: "Saskatoon" },
@@ -194,7 +210,7 @@ export default function RootLayout({
           src="https://www.googletagmanager.com/gtag/js?id=G-GRNJV6FRBS"
           strategy="afterInteractive"
         />
-                <Script id="google-analytics" strategy="afterInteractive">
+        <Script id="google-analytics" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}

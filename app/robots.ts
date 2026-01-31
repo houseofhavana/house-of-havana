@@ -8,8 +8,7 @@ export default function robots(): MetadataRoute.Robots {
       disallow: "/private/",
     },
     sitemap: [
-      "https://www.houseofhavana.ca/sitemap_index.xml",
-      "https://www.houseofhavana.ca/sitemap.xml",
+      "https://houseofhavana.ca/sitemap.xml",
     ],
   };
 }

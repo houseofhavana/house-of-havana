@@ -1,10 +1,18 @@
 import Link from "next/link";
+import { mergeSEO } from "@/lib/seo";
 
-export const metadata = {
-  title: "Beard Grooming in Saskatoon | House Of Havana Barbershop",
+export const metadata = mergeSEO({
+  title: "Beard Grooming in Saskatoon | House Of Havana",
   description:
-    "Need professional beard grooming in Saskatoon? House Of Havana Barbershop offers detailed trims, shaping, line-ups, and clean finishes tailored to your face.",
-};
+    "Need professional beard grooming in Saskatoon? House Of Havana offers detailed trims, shaping, line-ups, and clean finishes tailored to your face.",
+  keywords: [
+    "beard grooming saskatoon",
+    "beard trim",
+    "beard shaping",
+    "beard lineup",
+  ],
+  canonical: "/services/beard-grooming-saskatoon",
+});
 
 export default function BeardGroomingPage() {
   return (

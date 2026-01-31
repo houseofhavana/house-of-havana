@@ -1,10 +1,19 @@
+import { mergeSEO } from "@/lib/seo";
 import Link from "next/link";
 
-export const metadata = {
-  title: "Fade Haircuts in Saskatoon | House Of Havana Barbershop",
+export const metadata = mergeSEO({
+  title: "Fade Haircuts in Saskatoon",
   description:
-    "Looking for a clean fade haircut in Saskatoon? House Of Havana Barbershop delivers precision fades, sharp blends, and tailored finishes for modern gentlemen.",
-};
+    "Looking for a clean fade haircut in Saskatoon? House Of Havana delivers precision fades, sharp blends, and tailored finishes for modern gentlemen.",
+  keywords: [
+    "fade haircut saskatoon",
+    "skin fade",
+    "low fade",
+    "high fade",
+    "taper fade",
+  ],
+  canonical: "/services/fade-haircut-saskatoon",
+});
 
 export default function FadeHaircutPage() {
   return (

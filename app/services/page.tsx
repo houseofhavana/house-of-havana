@@ -1,10 +1,28 @@
+import { mergeSEO } from "@/lib/seo";
 import Link from "next/link";
 
-export const metadata = {
-  title: "Barbershop Services in Saskatoon | House Of Havana Barbershop",
+export const metadata = mergeSEO({
+  title: "Barbershop Services",
   description:
-    "Explore premium barbershop services in Saskatoon at House Of Havana: men’s haircuts, fade haircuts, and beard grooming—crafted with precision and Havana-inspired style.",
-};
+    "Explore premium barbershop services in Saskatoon at House Of Havana: men's haircuts, fade haircuts, and beard grooming—crafted with precision and Havana-inspired style.",
+  keywords: [
+    "barbershop services saskatoon",
+    "mens haircuts saskatoon",
+    "fade haircuts",
+    "beard grooming",
+  ],
+  canonical: "/services",
+  openGraph: {
+    images: [
+      {
+        url: "https://houseofhavana.ca/og-services.jpg",
+        width: 1200,
+        height: 630,
+        alt: "House Of Havana - Barbershop Services",
+      },
+    ],
+  },
+});
 
 const SERVICES = [
   {

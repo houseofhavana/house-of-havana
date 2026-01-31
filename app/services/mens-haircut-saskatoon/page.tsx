@@ -1,10 +1,18 @@
+import { mergeSEO } from "@/lib/seo";
 import Link from "next/link";
 
-export const metadata = {
-  title: "Men’s Haircuts in Saskatoon | House Of Havana Barbershop",
+export const metadata = mergeSEO({
+  title: "Men's Haircuts in Saskatoon",
   description:
-    "Looking for professional men’s haircuts in Saskatoon? House Of Havana Barbershop delivers precision cuts, clean finishes, and tailored styles for modern gentlemen.",
-};
+    "Looking for professional men's haircuts in Saskatoon? House Of Havana delivers precision cuts, clean finishes, and tailored styles for modern gentlemen.",
+  keywords: [
+    "mens haircuts saskatoon",
+    "barber saskatoon",
+    "professional haircut",
+    "mens hairstyles",
+  ],
+  canonical: "/services/mens-haircut-saskatoon",
+});
 
 export default function MensHaircutPage() {
   return (

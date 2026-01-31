@@ -573,7 +573,10 @@ export default function BlogsPage() {
                   </div>
                   <div className="flex flex-col justify-between flex-1 gap-4">
                     <div>
-                      <h3 className="text-2xl font-semibold text-white transition-colors group-hover:text-secondary">
+                      <h3 
+                        className="text-2xl font-semibold text-white transition-colors group-hover:text-secondary cursor-pointer"
+                        onClick={() => router.push(`blogs/${blog._id}`)}
+                      >
                         {blog.title}
                       </h3>
                       <p className="text-gray-400 text-sm mt-1">
