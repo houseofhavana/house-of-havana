@@ -56,7 +56,7 @@ const Ritual = () => {
             <div className="aspect-square overflow-hidden">
               <div className="relative w-full h-[130%]">
                 <Image
-                  src="/gallery/IMG_1225.jpeg"
+                  src="/gallery/webp/IMG_1225.webp"
                   // src="/ritual.png"
                   alt="House of Havana Ritual"
                   fill

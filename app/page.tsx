@@ -72,10 +72,10 @@ export default function Home() {
       {/* Hero Section */}
       <Hero
         backgroundImages={{
-          mobile: "/hero-mobile.png",
-          tablet: "/hero-tablet.png",
-          desktop: "/hero-desktop.png",
-          ultrawide: "/hero-ultrawide.png",
+          mobile: "/webp/hero-mobile.webp",
+          tablet: "/webp/hero-tablet.webp",
+          desktop: "/webp/hero-desktop.webp",
+          ultrawide: "/webp/hero-ultrawide.webp",
         }}
         subheading="The"
         heading="House of Havana Barbershop in <br /> Saskatoon"
@@ -88,7 +88,7 @@ export default function Home() {
           {/* Header */}
           <div className="mb-24">
             <h2 className="heading-5-italic mb-2 text-center">Why Choose</h2>
-            <h2 className="heading-1 text-center mb-6">HOUSE OF HAVANA</h2>
+            <h1 className="heading-1 text-center mb-6">HOUSE OF HAVANA</h1>
             <div className="w-20 h-px bg-foreground/20 mx-auto mb-12"></div>
             <p className="text-foreground/40 leading-relaxed text-center max-w-2xl mx-auto">
               We're not your average barbershop. At House of Havana, every

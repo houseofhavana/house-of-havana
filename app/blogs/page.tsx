@@ -110,7 +110,7 @@ function Toolbar({ editor }: { editor: any }) {
 
             if (headings.includes(value as HeadingTagType)) {
               $setBlocksType(selection, () =>
-                $createHeadingNode(value as HeadingTagType)
+                $createHeadingNode(value as HeadingTagType),
               );
             } else if (value === "paragraph") {
               $setBlocksType(selection, () => $createParagraphNode());
@@ -538,12 +538,12 @@ export default function BlogsPage() {
         )}
 
         <h3 className="heading-5-italic">Our</h3>
-        <h2 className="heading-2">Blogs</h2>
+        <h1 className="heading-2">Blogs</h1>
       </div>
 
       <div className="bg-surface py-20">
         <div className="container">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {blogs.length > 0 &&
               blogs.map((blog) => (
                 <div
@@ -571,11 +571,10 @@ export default function BlogsPage() {
                   </div>
                   <div className="flex flex-col justify-between flex-1 gap-4">
                     <div>
-                      <h3
-                        className="text-2xl font-semibold text-white transition-colors group-hover:text-secondary cursor-pointer"
-                        onClick={() => router.push(`blogs/${blog._id}`)}
-                      >
-                        {blog.title}
+                      <h3 className="text-3xl! font-semibold text-white transition-colors group-hover:text-secondary">
+                        {blog.title.split(" ").length > 5
+                          ? blog.title.split(" ").slice(0, 5).join(" ") + "..."
+                          : blog.title}
                       </h3>
                       <p className="text-gray-400 text-sm mt-1">
                         Created on:{" "}
@@ -585,7 +584,7 @@ export default function BlogsPage() {
                             year: "numeric",
                             month: "long",
                             day: "numeric",
-                          }
+                          },
                         )}
                       </p>
                     </div>
@@ -616,11 +615,11 @@ export default function BlogsPage() {
                                 const parser = new DOMParser();
                                 const doc = parser.parseFromString(
                                   blog.content,
-                                  "text/html"
+                                  "text/html",
                                 );
                                 const nodes = $generateNodesFromDOM(
                                   editorInstance,
-                                  doc
+                                  doc,
                                 );
                                 nodes.forEach((n) => root.append(n));
                               });
