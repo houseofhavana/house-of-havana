@@ -1,7 +1,6 @@
-import { Metadata } from "next";
-import { notFound } from "next/navigation";
-import { mergeSEO } from "@/lib/seo";
 import { getServiceBySlug } from "@/data/services";
+import { mergeSEO } from "@/lib/seo";
+import { Metadata } from "next";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -17,7 +16,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   return mergeSEO({
-    title: service.page.meta.title,
+    title: `${service.page.meta.title} | Services | House Of Havana`,
     description: service.page.meta.description,
     keywords: service.page.meta.keywords,
     canonical: `/services/${service.page.slug}`,

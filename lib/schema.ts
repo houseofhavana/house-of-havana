@@ -1,8 +1,10 @@
 import { BARBERS } from "@/data/barbers";
 import { servicesList } from "@/data/services";
 import type {
+  Article,
   BreadcrumbList,
   ContactPage,
+  FAQPage,
   ImageGallery,
   ItemList,
   LocalBusiness,
@@ -503,3 +505,81 @@ export const contactPageSchema: WithContext<ContactPage> = {
     ],
   },
 };
+
+// FAQ Schema Generator
+export interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+export function generateFAQSchema(
+  faqs: FAQItem[],
+  pageUrl?: string
+): WithContext<FAQPage> {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    ...(pageUrl && { "@id": `${BASE_URL}${pageUrl}/#faq` }),
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question" as const,
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer" as const,
+        text: faq.answer,
+      },
+    })),
+  };
+}
+
+// Article Schema Generator
+export interface ArticleData {
+  id: string;
+  title: string;
+  excerpt?: string;
+  content?: string;
+  author?: string;
+  createdAt?: string;
+  updatedAt?: string;
+  featuredMedia?: {
+    url: string;
+    type: "image" | "video";
+  };
+}
+
+export function generateArticleSchema(article: ArticleData): WithContext<Article> {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "@id": `${BASE_URL}/blogs/${article.id}/#article`,
+    headline: article.title,
+    description: article.excerpt,
+    ...(article.featuredMedia?.type === "image" && {
+      image: {
+        "@type": "ImageObject",
+        url: article.featuredMedia.url,
+      },
+    }),
+    datePublished: article.createdAt,
+    ...(article.updatedAt && { dateModified: article.updatedAt }),
+    author: {
+      "@type": "Person",
+      name: article.author || "House Of Havana",
+    },
+    publisher: {
+      "@type": "Organization",
+      "@id": `${BASE_URL}/#organization`,
+      name: "House Of Havana Barbershop",
+      logo: {
+        "@type": "ImageObject",
+        url: `${BASE_URL}/logo.png`,
+      },
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `${BASE_URL}/blogs/${article.id}`,
+    },
+    isPartOf: {
+      "@id": `${BASE_URL}/#website`,
+    },
+  };
+}

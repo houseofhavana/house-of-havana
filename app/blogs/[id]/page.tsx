@@ -1,9 +1,29 @@
 import { baseUrl } from "@/lib/api";
+import { generateArticleSchema, jsonLd } from "@/lib/schema";
 import { Metadata } from "next";
+import Script from "next/script";
 import { Suspense } from "react";
 import Blog from "./Blog";
 
-async function getBlog(id: string) {
+interface Media {
+  url: string;
+  publicId: string;
+  type: "image" | "video";
+}
+
+interface BlogResponse {
+  _id: string;
+  title: string;
+  excerpt?: string;
+  content?: string;
+  author?: string;
+  createdAt?: string;
+  updatedAt?: string;
+  featuredMedia?: Media;
+  video?: Media | null;
+}
+
+async function getBlog(id: string): Promise<BlogResponse | null> {
   const res = await fetch(`${baseUrl}/api/blogs/${id}`, { cache: "no-store" });
   if (!res.ok) return null;
   return res.json();
@@ -25,7 +45,7 @@ export async function generateMetadata({
 
 
   return {
-    title: `${blog.title} | Blog`,
+    title: `${blog.title} | Blog | House Of Havana`,
     description: blog.excerpt || `Read ${blog.title} on the House Of Havana blog.`,
     alternates: {
       canonical: `/blogs/${id}`,
@@ -50,10 +70,30 @@ const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
     throw new Error("Blog not found");
   }
 
+  const articleSchema = generateArticleSchema({
+    id,
+    title: data.title,
+    excerpt: data.excerpt,
+    content: data.content,
+    author: data.author,
+    createdAt: data.createdAt,
+    updatedAt: data.updatedAt,
+    featuredMedia: data.featuredMedia,
+  });
+
   return (
-    <Suspense fallback={<div className="text-center py-10">Loading...</div>}>
-      <Blog blogData={data} />
-    </Suspense>
+    <>
+      {/* Article Schema */}
+      <Script
+        id="article-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: jsonLd(articleSchema) }}
+      />
+
+      <Suspense fallback={<div className="text-center py-10">Loading...</div>}>
+        <Blog blogData={data} />
+      </Suspense>
+    </>
   );
 };
 
