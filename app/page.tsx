@@ -69,16 +69,16 @@ export default function Home() {
     <div className="min-h-screen">
       {/* Hero Section */}
       <Hero
-  backgroundImages={{
-    mobile: "/hero-mobile.png",
-    tablet: "/hero-tablet.png",
-    desktop: "/hero-desktop.png",
-    ultrawide: "/hero-ultrawide.png",
-  }}
-  subheading="The"
-  heading="House of Havana Barbershop in <br /> Saskatoon"
-  supportingText="At House of Havana Barbershop in Saskatoon, grooming is more than maintenance — it’s a moment of focus, intention, and precision. We blend classic barbering tradition with modern design to create an experience tailored for discerning professionals. From custom cabinetry and rich leather seating to precision cuts, well-groomed beards, and premium aftercare, every detail is considered. This isn’t just another barbershop in Saskatoon — it’s where grooming becomes personal and confidence is elevated."
-/>
+        backgroundImages={{
+          mobile: "/webp/hero-mobile.webp",
+          tablet: "/webp/hero-tablet.webp",
+          desktop: "/webp/hero-desktop.webp",
+          ultrawide: "/webp/hero-ultrawide.webp",
+        }}
+        subheading="The"
+        heading="House of Havana Barbershop in <br /> Saskatoon"
+        supportingText="At House of Havana Barbershop in Saskatoon, grooming is more than maintenance — it’s a moment of focus, intention, and precision. We blend classic barbering tradition with modern design to create an experience tailored for discerning professionals. From custom cabinetry and rich leather seating to precision cuts, well-groomed beards, and premium aftercare, every detail is considered. This isn’t just another barbershop in Saskatoon — it’s where grooming becomes personal and confidence is elevated."
+      />
       <Ritual /> {/* bg-surface */}
       {/* Why Choose Section - Luxury Editorial Design */}
       <section className="py-26 bg-background">
@@ -86,7 +86,7 @@ export default function Home() {
           {/* Header */}
           <div className="mb-24">
             <h2 className="heading-5-italic mb-2 text-center">Why Choose</h2>
-            <h2 className="heading-1 text-center mb-6">HOUSE OF HAVANA</h2>
+            <h1 className="heading-1 text-center mb-6">HOUSE OF HAVANA</h1>
             <div className="w-20 h-px bg-foreground/20 mx-auto mb-12"></div>
             <p className="text-foreground/40 leading-relaxed text-center max-w-2xl mx-auto">
               We're not your average barbershop. At House of Havana, every

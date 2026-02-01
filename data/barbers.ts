@@ -12,7 +12,7 @@ export type Barber = {
 export const BARBERS: Barber[] = [
   {
     image: {
-      src: "/barbers/cristian.png",
+      src: "/barbers/webp/cristian.webp",
       alt: "Cristian Perdomo - Master Barber",
     },
     name: "Cristian Perdomo",
@@ -22,7 +22,7 @@ export const BARBERS: Barber[] = [
   },
   {
     image: {
-      src: "/barbers/cj.png",
+      src: "/barbers/webp/cj.webp",
       alt: "CJ Galaura - Professional Barber",
     },
     name: "CJ Galaura",
@@ -32,7 +32,7 @@ export const BARBERS: Barber[] = [
   },
   {
     image: {
-      src: "/barbers/kurt.png",
+      src: "/barbers/webp/kurt.webp",
       alt: "Kurt - Professional Barber",
     },
     name: "Kurt",
@@ -42,7 +42,7 @@ export const BARBERS: Barber[] = [
   },
   {
     image: {
-      src: "/barbers/janna.png",
+      src: "/barbers/webp/janna.webp",
       alt: "Janna - Professional Barber & Stylist",
     },
     name: "Janna",
@@ -52,7 +52,7 @@ export const BARBERS: Barber[] = [
   },
   {
     image: {
-      src: "/barbers/sarah.png",
+      src: "/barbers/webp/sarah.webp",
       alt: "Sarah Alphonse - Journeyman Barber",
     },
     name: "Sarah Alphonse",
@@ -62,7 +62,7 @@ export const BARBERS: Barber[] = [
   },
   {
     image: {
-      src: "/barbers/kyle.png",
+      src: "/barbers/webp/kyle.webp",
       alt: "Kyle - Barber & Former Touring Musician",
     },
     name: "Kyle",
@@ -72,7 +72,7 @@ export const BARBERS: Barber[] = [
   },
   {
     image: {
-      src: "/barbers/emily.png",
+      src: "/barbers/webp/emily.webp",
       alt: "Emily - Barber & Grooming Specialist in Saskatoon",
     },
     name: "Emily",
