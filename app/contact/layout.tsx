@@ -1,4 +1,6 @@
+import { jsonLd, placeSchema, contactPageSchema } from "@/lib/schema";
 import { mergeSEO } from "@/lib/seo";
+import Script from "next/script";
 
 export const metadata = mergeSEO({
   title: "Contact Us",
@@ -17,5 +19,23 @@ export default function ContactLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return children;
+  return (
+    <>
+      {children}
+
+      {/* Place Schema */}
+      <Script
+        id="place-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: jsonLd(placeSchema) }}
+      />
+
+      {/* ContactPage Schema */}
+      <Script
+        id="contact-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: jsonLd(contactPageSchema) }}
+      />
+    </>
+  );
 }

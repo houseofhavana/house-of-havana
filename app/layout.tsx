@@ -1,6 +1,14 @@
 import ConditionalCTA from "@/components/sections/ConditionalCTA";
 import Footer from "@/components/ui/footer";
 import Navbar from "@/components/ui/navbar";
+import {
+  jsonLd,
+  websiteSchema,
+  organizationSchema,
+  breadcrumbSchema,
+  barbershopSchema,
+  professionalServiceSchema,
+} from "@/lib/schema";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import Script from "next/script";
@@ -70,26 +78,6 @@ export default function RootLayout({
               'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
               })(window,document,'script','dataLayer','GTM-K9NH2QXS');
             `,
-          }}
-        />
-
-        {/* Website Schema */}
-        <Script
-          id="website-schema"
-          type="application/ld+json"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "WebSite",
-              name: "House Of Havana",
-              url: "https://houseofhavana.ca/",
-              potentialAction: {
-                "@type": "SearchAction",
-                target: "{search_term_string}",
-                "query-input": "required name=search_term_string",
-              },
-            }),
           }}
         />
 
@@ -170,34 +158,39 @@ export default function RootLayout({
           />
         </noscript>
 
-        {/* ✅ Local SEO: BarberShop schema (CORRECT PLACE) */}
+        {/* Website Schema */}
+        <Script
+          id="website-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: jsonLd(websiteSchema) }}
+        />
+
+        {/* Organization Schema */}
+        <Script
+          id="organization-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: jsonLd(organizationSchema) }}
+        />
+
+        {/* BreadcrumbList Schema */}
+        <Script
+          id="breadcrumb-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: jsonLd(breadcrumbSchema) }}
+        />
+
+        {/* Local SEO: BarberShop schema */}
         <Script
           id="barbershop-schema"
           type="application/ld+json"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "BarberShop",
-              name: "House Of Havana Barbershop",
-              url: "https://houseofhavana.ca",
-              telephone: "+1-306-952-2255",
-              priceRange: "$$",
-              areaServed: { "@type": "City", name: "Saskatoon" },
-              address: {
-                "@type": "PostalAddress",
-                streetAddress: "3501 8 St E, Bay 110",
-                addressLocality: "Saskatoon",
-                addressRegion: "SK",
-                postalCode: "S7H 0W5",
-                addressCountry: "CA",
-              },
-              sameAs: [
-                "https://www.instagram.com/houseofhavanabarbershop_yxe/",
-                "https://www.google.com/search?q=House+Of+Havana+Barbershop",
-              ],
-            }),
-          }}
+          dangerouslySetInnerHTML={{ __html: jsonLd(barbershopSchema) }}
+        />
+
+        {/* ProfessionalService Schema */}
+        <Script
+          id="professional-service-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: jsonLd(professionalServiceSchema) }}
         />
 
         <Navbar />

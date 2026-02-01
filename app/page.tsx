@@ -8,7 +8,9 @@ import { ChevronRight } from "lucide-react";
 import TeamShowcase from "@/components/sections/TeamShowcase";
 import { BARBERS } from "@/data/barbers";
 import { groomingServices, type ServiceCategory } from "@/data/services";
+import { jsonLd, servicesSchema, imageGallerySchema } from "@/lib/schema";
 import Link from "next/link";
+import Script from "next/script";
 
 const WHY_CHOOSE_VALUES = [
   {
@@ -198,6 +200,20 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Services Schema */}
+      <Script
+        id="services-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: jsonLd(servicesSchema) }}
+      />
+
+      {/* ImageGallery Schema */}
+      <Script
+        id="image-gallery-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: jsonLd(imageGallerySchema) }}
+      />
     </div>
   );
 }

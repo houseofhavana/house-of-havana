@@ -1,7 +1,9 @@
 import HeroInner from '@/components/sections/HeroInner'
 import TeamCard from '@/components/ui/team-card'
 import { BARBERS, type Barber } from '@/data/barbers'
+import { jsonLd, teamSchema } from '@/lib/schema'
 import { mergeSEO } from '@/lib/seo'
+import Script from 'next/script'
 
 export const metadata = mergeSEO({
   title: "Meet Our Barbers",
@@ -52,6 +54,13 @@ const BarbersPage = () => (
         </div>
       </div>
     </section>
+
+    {/* Team/Barbers Schema */}
+    <Script
+      id="team-schema"
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: jsonLd(teamSchema) }}
+    />
   </>
 )
 
