@@ -1,9 +1,9 @@
 'use client'
 
-import { motion } from "framer-motion";
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import { ServiceItem } from "@/components/sections/ServicesSection";
+import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 interface RelatedServicesProps {
   services: ServiceItem[];
@@ -30,7 +30,7 @@ export default function RelatedServices({ services }: RelatedServicesProps) {
                 href={`/services/${related.page!.slug}`}
                 className="block group"
               >
-                <div className="border border-foreground/10 rounded-lg p-6 h-full hover:border-foreground/30 transition-all duration-300 hover:shadow-lg bg-surface/50">
+                <div className="border border-foreground/10  p-6 h-full hover:border-foreground/30 transition-all duration-300 hover:shadow-lg bg-surface/50">
                   <div className="flex items-center justify-between">
                     <h3 className="heading-5 text-foreground">
                       {related.page!.h1}

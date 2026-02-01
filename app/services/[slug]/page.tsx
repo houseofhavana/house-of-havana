@@ -48,15 +48,15 @@ export default async function ServicePage({ params }: Props) {
           <div className="max-w-3xl mx-auto">
             <h2 className="heading-4-italic mb-2 text-center">Available Services</h2>
             <h2 className="heading-3 mb-12 text-center">{service.title}</h2>
-            
+
             <div className="space-y-4">
               {service.items.map((item, index) => (
                 <div
                   key={index}
-                  className="flex items-center justify-between p-6 bg-surface rounded-lg border border-foreground/10 hover:border-foreground/20 transition-colors"
+                  className="flex items-center justify-between p-6 bg-surface  border border-foreground/10 hover:border-foreground/20 transition-colors"
                 >
                   <div className="flex-1">
-                    <h3 className="text-lg font-semibold text-foreground mb-1">
+                    <h3 className="heading-3-italic text-foreground mb-1">
                       {item.name}
                     </h3>
                     {item.duration && (

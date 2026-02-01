@@ -24,6 +24,7 @@ const Hero: React.FC<HeroData> = ({
           priority
           intensity={0.3}
         />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20 lg:from-black/60 lg:via-black/20 lg:to-transparent -z-10" />
         <div className='flex flex-col justify-end pb-5 md:pb-0 items-start h-full'>
           <div className='pb-4 mb-5 w-full grid grid-cols-1 md:grid-cols-2 items-end border-b border-foreground/10'>
             <div className='relative pt-6'>

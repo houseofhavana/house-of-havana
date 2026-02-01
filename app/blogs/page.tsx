@@ -1,31 +1,29 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
-import { useSession, signOut } from "next-auth/react";
+import Button from "@/components/ui/button";
+import { $generateHtmlFromNodes, $generateNodesFromDOM } from "@lexical/html";
+import { LinkNode, TOGGLE_LINK_COMMAND } from "@lexical/link";
+import { ListItemNode, ListNode } from "@lexical/list";
 import { AutoFocusPlugin } from "@lexical/react/LexicalAutoFocusPlugin";
 import { LexicalComposer } from "@lexical/react/LexicalComposer";
-import { RichTextPlugin } from "@lexical/react/LexicalRichTextPlugin";
-import { ContentEditable } from "@lexical/react/LexicalContentEditable";
-import { HistoryPlugin } from "@lexical/react/LexicalHistoryPlugin";
-import { LexicalErrorBoundary } from "@lexical/react/LexicalErrorBoundary";
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
+import { ContentEditable } from "@lexical/react/LexicalContentEditable";
+import { LexicalErrorBoundary } from "@lexical/react/LexicalErrorBoundary";
+import { HistoryPlugin } from "@lexical/react/LexicalHistoryPlugin";
+import { LinkPlugin } from "@lexical/react/LexicalLinkPlugin";
+import { RichTextPlugin } from "@lexical/react/LexicalRichTextPlugin";
+import { $createHeadingNode, $createQuoteNode, HeadingNode, QuoteNode } from "@lexical/rich-text";
+import { $setBlocksType } from "@lexical/selection";
 import {
+  $createParagraphNode,
+  $getRoot,
   $getSelection,
   $isRangeSelection,
   FORMAT_TEXT_COMMAND,
-  $createParagraphNode,
-  $getRoot,
 } from "lexical";
-import { $generateHtmlFromNodes, $generateNodesFromDOM } from "@lexical/html";
-import { LinkPlugin } from "@lexical/react/LexicalLinkPlugin";
-import { $createHeadingNode, $createQuoteNode } from "@lexical/rich-text";
-import { $setBlocksType } from "@lexical/selection";
-import { HeadingNode, QuoteNode } from "@lexical/rich-text";
-import { ListNode, ListItemNode } from "@lexical/list";
-import { LinkNode } from "@lexical/link";
-import { TOGGLE_LINK_COMMAND } from "@lexical/link";
-import Button from "@/components/ui/button";
+import { signOut, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
 
 interface Blog {
   _id: string;
@@ -345,7 +343,7 @@ export default function BlogsPage() {
       <div className="container mb-20">
         {session?.user?.role === "superadmin" && (
           <form
-            className="flex flex-col gap-4 mb-8 p-8 bg-surface border border-foreground/5 rounded-lg"
+            className="flex flex-col gap-4 mb-8 p-8 bg-surface border border-foreground/5 "
             onSubmit={(e) => {
               e.preventDefault();
               handleAddOrUpdateBlog();
@@ -573,7 +571,7 @@ export default function BlogsPage() {
                   </div>
                   <div className="flex flex-col justify-between flex-1 gap-4">
                     <div>
-                      <h3 
+                      <h3
                         className="text-2xl font-semibold text-white transition-colors group-hover:text-secondary cursor-pointer"
                         onClick={() => router.push(`blogs/${blog._id}`)}
                       >

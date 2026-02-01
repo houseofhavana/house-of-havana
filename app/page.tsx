@@ -102,11 +102,11 @@ export default function Home() {
             {WHY_CHOOSE_VALUES.map((value, index) => (
               <div
                 key={index}
-                className="border-t border-foreground/10 py-12 grid grid-cols-12 gap-8 items-start group hover:border-foreground/20 transition-colors"
+                className="border-t border-foreground/10 py-12 grid grid-cols-12 gap-4 lg:gap-8 items-start group hover:border-foreground/20 transition-colors"
               >
                 {/* Number */}
                 <div className="col-span-2 md:col-span-1">
-                  <span className="text-6xl font-heading text-foreground/10 group-hover:text-foreground/20 transition-colors leading-none">
+                  <span className="text-4xl lg:text-6xl font-heading text-foreground/10 group-hover:text-foreground/20 transition-colors leading-none">
                     {value.number}
                   </span>
                 </div>

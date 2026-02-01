@@ -22,7 +22,7 @@ const Footer = () => {
               href="https://instagram.com/houseofhavanabarbershop_yxe/"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-9 h-9 rounded-full bg-foreground/5 flex items-center justify-center hover:bg-foreground/10 transition-colors"
+              className="w-9 h-9  bg-foreground/5 flex items-center justify-center hover:bg-foreground/10 transition-colors"
               aria-label="Instagram"
             >
               <Instagram className="w-4 h-4" />
@@ -31,7 +31,7 @@ const Footer = () => {
               href="https://facebook.com/HouseOfHavanaBarbershop/"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-9 h-9 rounded-full bg-foreground/5 flex items-center justify-center hover:bg-foreground/10 transition-colors"
+              className="w-9 h-9  bg-foreground/5 flex items-center justify-center hover:bg-foreground/10 transition-colors"
               aria-label="Facebook"
             >
               <Facebook className="w-4 h-4" />
@@ -40,7 +40,7 @@ const Footer = () => {
               href="https://www.tiktok.com/@houseofhavana.yxe"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-9 h-9 rounded-full bg-foreground/5 flex items-center justify-center hover:bg-foreground/10 transition-colors"
+              className="w-9 h-9  bg-foreground/5 flex items-center justify-center hover:bg-foreground/10 transition-colors"
               aria-label="TikTok"
             >
               <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">

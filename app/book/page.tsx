@@ -33,7 +33,7 @@ const BookPage = () => (
           experience.
         </p>
       </div>
-      <div className="max-w-2xl mx-auto bg-surface p-12 rounded-lg">
+      <div className="max-w-2xl mx-auto bg-surface p-12 ">
         <div className="text-center space-y-6">
           <div>
             <h3 className="heading-4 mb-2">Online Booking</h3>

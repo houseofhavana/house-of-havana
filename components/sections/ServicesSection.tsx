@@ -1,11 +1,11 @@
 'use client'
 
-import React from 'react';
 import { motion } from 'framer-motion';
 import parse from 'html-react-parser';
-import Button from '../ui/button';
-import { ChevronRight, ArrowRight } from 'lucide-react';
+import { ArrowRight, ChevronRight } from 'lucide-react';
 import Link from 'next/link';
+import React from 'react';
+import Button from '../ui/button';
 
 export interface ServiceItem {
   title: string;
@@ -34,11 +34,11 @@ export default function ServicesSection({ services, subheading = 'Our', heading 
         {subheading && <h2 className="heading-4-italic">{parse(subheading)}</h2>}
         {heading && <h2 className="heading-2 mb-4">{parse(heading)}</h2>}
         {supportingText && <p className="max-w-2xl text-foreground/50">{supportingText}</p>}
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-16">
           {services.map((service, idx) => {
             const serviceSlug = service.slug || service.page?.slug;
-            
+
             return (
               <motion.div
                 key={service.title}
@@ -47,26 +47,26 @@ export default function ServicesSection({ services, subheading = 'Our', heading 
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
               >
-                <Link 
+                <Link
                   href={serviceSlug ? `/services/${serviceSlug}` : '#'}
                   className="block h-full group"
                 >
-                  <div className="border border-foreground/10 rounded-lg p-8 h-full hover:border-foreground/30 transition-all duration-300 hover:shadow-lg bg-surface/50">
+                  <div className="border border-foreground/10  p-8 h-full hover:border-foreground/30 transition-all duration-300 hover:shadow-lg bg-surface/50">
                     <div className="flex items-start justify-between mb-4">
                       <div className="text-sm text-foreground/40">
                         {(idx + 1).toString().padStart(2, '0')}.
                       </div>
                       <ArrowRight className="text-foreground/40 group-hover:text-foreground group-hover:translate-x-1 transition-all duration-300" size={20} />
                     </div>
-                    
+
                     <h3 className="heading-4-italic mb-3">{parse(service.title)}</h3>
-                    
+
                     {service.description && (
                       <p className="text-foreground/60 text-base mb-4">
                         {service.description}
                       </p>
                     )}
-                    
+
                     {service.items && service.items.length > 0 && (
                       <ul className="space-y-3 mt-6">
                         {service.items.map((item, i) => (
@@ -92,7 +92,7 @@ export default function ServicesSection({ services, subheading = 'Our', heading 
             );
           })}
         </div>
-        
+
         {/* Optional CTA */}
         {showCTA && (
           <div className="text-center mt-20">
