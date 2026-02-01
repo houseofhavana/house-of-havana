@@ -1,7 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
-// import { format } from "date-fns";
+import ArrowRight from "@/components/icons/ArrowRight";
+import Image from "next/image";
+import Link from "next/link";
 
 interface Media {
   url: string;
@@ -19,57 +20,152 @@ interface BlogData {
 }
 
 const Blog = ({ blogData }: { blogData: BlogData }) => {
-  const [blog, setBlog] = useState<BlogData | null>(null);
+  if (!blogData) return null;
 
-  useEffect(() => {
-    setBlog(blogData);
-  }, [blogData]);
-
-  if (!blog) return null;
+  const formattedDate = blogData.createdAt
+    ? new Date(blogData.createdAt).toLocaleDateString(undefined, {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    })
+    : null;
 
   return (
-    <section className="relative w-full">
-      {blog.featuredMedia?.type === "image" && (
-        <div className="relative w-full h-[60vh] md:h-[80vh] overflow-hidden rounded-b-3xl shadow-lg">
-          <img
-            src={blog.featuredMedia.url}
-            alt={blog.title}
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-          <div className="absolute bottom-10 left-6 md:left-16 text-white">
-            <h1 className="text-4xl md:text-6xl font-bold drop-shadow-lg">
-              {blog.title}
-            </h1>
-            {blog.createdAt && (
-              <p className="mt-2 text-sm md:text-base text-gray-200 drop-shadow">
-                {new Date(blog.createdAt).toLocaleString()}
-              </p>
+    <article className="min-h-screen">
+      {/* Hero Section */}
+      <section className="pt-32 pb-16 bg-background">
+        <div className="container">
+
+          {/* Header */}
+          <div className="max-w-4xl">
+            {formattedDate && (
+              <span className="heading-6-italic text-foreground/50 block mb-4">
+                {formattedDate}
+              </span>
             )}
-            {blog.author && (
-              <p className="mt-1 text-gray-300 text-sm">by {blog.author}</p>
+
+            <h1 className="heading-1 !capitalize mb-6">{blogData.title}</h1>
+
+            <div className="w-20 h-px bg-foreground/20 mb-6"></div>
+
+            {blogData.author && (
+              <p className="text-foreground/50 text-sm uppercase tracking-wider">
+                Written by{" "}
+                <span className="text-foreground">{blogData.author}</span>
+              </p>
             )}
           </div>
         </div>
+      </section>
+
+      {/* Featured Image */}
+      {blogData.featuredMedia?.type === "image" && (
+        <section className="bg-surface">
+          <div className="container py-12">
+            <div className="relative aspect-[21/9] overflow-hidden">
+              <Image
+                src={blogData.featuredMedia.url}
+                alt={blogData.title || "Blog featured image"}
+                fill
+                className="object-cover"
+                sizes="100vw"
+                priority
+              />
+            </div>
+          </div>
+        </section>
       )}
 
-      <div className="max-w-4xl mx-auto py-16 px-6 md:px-0 prose prose-lg md:prose-xl prose-invert prose-gray">
-        <div dangerouslySetInnerHTML={{ __html: blog.content as string }} />
-      </div>
+      {/* Featured Video (if video is the featured media) */}
+      {blogData.featuredMedia?.type === "video" && (
+        <section className="bg-surface">
+          <div className="container py-12">
+            <div className="relative aspect-video overflow-hidden">
+              <video
+                src={blogData.featuredMedia.url}
+                autoPlay
+                muted
+                loop
+                playsInline
+                controls
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </section>
+      )}
 
-      {blog.video?.type === "video" && (
-        <div className="max-w-4xl mx-auto px-6 md:px-0 py-12">
-          <video
-            src={blog.video.url}
-            autoPlay
-            muted
-            loop
-            controls
-            className="w-full rounded-xl shadow-lg"
-          />
+      {/* Content */}
+      <section className="py-20 bg-background">
+        <div className="container">
+          <div className="max-w-3xl mx-auto">
+            <div
+              className="blog-content prose prose-lg prose-invert
+                prose-headings:font-heading prose-headings:text-foreground prose-headings:font-normal
+                prose-h1:text-4xl prose-h1:mb-8 prose-h1:mt-12
+                prose-h2:text-3xl prose-h2:mb-6 prose-h2:mt-10
+                prose-h3:text-2xl prose-h3:mb-4 prose-h3:mt-8
+                prose-h4:text-xl prose-h4:mb-4 prose-h4:mt-6
+                prose-p:text-foreground/70 prose-p:leading-relaxed prose-p:mb-6
+                prose-a:text-secondary prose-a:no-underline hover:prose-a:underline
+                prose-strong:text-foreground prose-strong:font-medium
+                prose-blockquote:border-l-2 prose-blockquote:border-secondary prose-blockquote:pl-6 prose-blockquote:italic prose-blockquote:text-foreground/60
+                prose-ul:text-foreground/70 prose-ol:text-foreground/70
+                prose-li:mb-2
+                prose-img:my-8
+                max-w-none"
+              dangerouslySetInnerHTML={{ __html: blogData.content as string }}
+            />
+          </div>
         </div>
+      </section>
+
+      {/* Additional Video */}
+      {blogData.video?.type === "video" && (
+        <section className="py-16 bg-surface">
+          <div className="container">
+            <div className="max-w-4xl mx-auto">
+              <h3 className="heading-5-italic text-foreground/50 mb-4">
+                Watch
+              </h3>
+              <h2 className="heading-3 mb-8">VIDEO</h2>
+              <div className="relative aspect-video overflow-hidden">
+                <video
+                  src={blogData.video.url}
+                  autoPlay
+                  muted
+                  loop
+                  controls
+                  playsInline
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
       )}
-    </section>
+
+      {/* Footer CTA */}
+      <section className="py-20 bg-surface border-t border-foreground/10">
+        <div className="container">
+          <div className="max-w-3xl mx-auto text-center">
+            <h3 className="heading-5-italic text-foreground/50 mb-2">
+              Explore More
+            </h3>
+            <h2 className="heading-2 mb-8">ARTICLES</h2>
+            <Link
+              href="/blogs"
+              className="inline-flex items-center gap-3 text-foreground hover:text-secondary transition-colors group"
+            >
+              <span className="text-sm uppercase tracking-wider">
+                View All Articles
+              </span>
+              <ArrowRight className="w-4 h-4 stroke-foreground group-hover:stroke-secondary group-hover:translate-x-1 transition-all" />
+            </Link>
+          </div>
+        </div>
+      </section>
+    </article>
   );
 };
 

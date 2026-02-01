@@ -1,5 +1,6 @@
 "use client";
 
+import BlogCard from "@/components/ui/blog-card";
 import Button from "@/components/ui/button";
 import { $generateHtmlFromNodes, $generateNodesFromDOM } from "@lexical/html";
 import { LinkNode, TOGGLE_LINK_COMMAND } from "@lexical/link";
@@ -22,7 +23,6 @@ import {
   FORMAT_TEXT_COMMAND,
 } from "lexical";
 import { signOut, useSession } from "next-auth/react";
-import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
 interface Blog {
@@ -244,8 +244,6 @@ export default function BlogsPage() {
   const [videoFile, setVideoFile] = useState<File | null>(null);
   const featuredImageInputRef = useRef<HTMLInputElement | null>(null);
   const featuredVideInputRef = useRef<HTMLInputElement | null>(null);
-
-  const router = useRouter();
 
   const initialConfig = {
     namespace: "MyEditor",
@@ -537,110 +535,79 @@ export default function BlogsPage() {
           </form>
         )}
 
-        <h3 className="heading-5-italic">Our</h3>
-        <h1 className="heading-2">Blogs</h1>
+        {/* Header */}
+        <div className="mb-16">
+          <h2 className="heading-5-italic mb-2">Latest</h2>
+          <h1 className="heading-1">ARTICLES</h1>
+          <div className="w-20 h-px bg-foreground/20 mt-6 mb-8"></div>
+          <p className="text-foreground/50 leading-relaxed max-w-2xl">
+            Stay sharp with grooming tips, style advice, and updates from House
+            of Havana. Your guide to looking and feeling your best.
+          </p>
+        </div>
       </div>
 
       <div className="bg-surface py-20">
         <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {blogs.length > 0 &&
               blogs.map((blog) => (
-                <div
-                  key={blog._id}
-                  className="  bg-dark rounded-2xl shadow-md hover:shadow-xl transition p-6 cursor-pointer flex flex-col md:flex-row gap-6 group"
-                >
-                  <div className="shrink-0 w-full md:w-48 h-48 rounded-xl overflow-hidden ">
-                    {blog.featuredMedia?.type === "image" && (
-                      <img
-                        src={blog.featuredMedia.url}
-                        alt={blog.title}
-                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                      />
-                    )}
-                    {blog.featuredMedia?.type === "video" && (
-                      <video
-                        src={blog.featuredMedia.url}
-                        className="w-full h-full object-cover rounded-xl"
-                        muted
-                        loop
-                        autoPlay
-                        controls
-                      />
-                    )}
-                  </div>
-                  <div className="flex flex-col justify-between flex-1 gap-4">
-                    <div>
-                      <h3
-                        className="text-2xl font-semibold text-white transition-colors group-hover:text-secondary cursor-pointer"
-                        onClick={() => router.push(`blogs/${blog._id}`)}
-                      >
-                        {blog.title}
-                      </h3>
-                      <p className="text-gray-400 text-sm mt-1">
-                        Created on:{" "}
-                        {new Date(blog.createdAt).toLocaleDateString(
-                          undefined,
-                          {
-                            year: "numeric",
-                            month: "long",
-                            day: "numeric",
-                          },
-                        )}
-                      </p>
-                    </div>
+                <div key={blog._id} className="relative">
+                  <BlogCard
+                    id={blog._id}
+                    title={blog.title}
+                    createdAt={blog.createdAt}
+                    featuredMedia={blog.featuredMedia}
+                    bgSurface={false}
+                  />
 
-                    <div className="flex items-center justify-between mt-4">
-                      <span
-                        className="text-secondary font-medium hover:underline"
-                        onClick={() => router.push(`blogs/${blog._id}`)}
+                  {/* Admin Controls */}
+                  {session?.user?.role === "superadmin" && (
+                    <div className="absolute top-4 right-4 flex gap-2 z-10">
+                      <button
+                        className="bg-background/90 backdrop-blur-sm text-foreground px-3 py-1.5 text-xs uppercase tracking-wider hover:bg-foreground hover:text-background transition-colors"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          setTitle(blog.title);
+                          editorInstance?.update(() => {
+                            const root = $getRoot();
+                            root.clear();
+                            const parser = new DOMParser();
+                            const doc = parser.parseFromString(
+                              blog.content,
+                              "text/html",
+                            );
+                            const nodes = $generateNodesFromDOM(
+                              editorInstance,
+                              doc,
+                            );
+                            nodes.forEach((n) => root.append(n));
+                          });
+                          window.scrollTo({ top: 0, behavior: "smooth" });
+                        }}
                       >
-                        Read More...
-                      </span>
-
-                      {session?.user?.role === "superadmin" && (
-                        <div className="flex gap-3">
-                          <button
-                            className="text-blue-500 font-medium hover:underline"
-                            onClick={() => {
-                              setTitle(blog.title);
-                              // if (blog?.featuredMedia?.url) {
-                              //   setFeaturedImage(blog?.featuredMedia?.url);
-                              // }
-                              // if (blog?.video?.url) {
-                              //   setVideoFile(blog?.video?.url);
-                              // }
-                              editorInstance?.update(() => {
-                                const root = $getRoot();
-                                root.clear();
-                                const parser = new DOMParser();
-                                const doc = parser.parseFromString(
-                                  blog.content,
-                                  "text/html",
-                                );
-                                const nodes = $generateNodesFromDOM(
-                                  editorInstance,
-                                  doc,
-                                );
-                                nodes.forEach((n) => root.append(n));
-                              });
-                            }}
-                          >
-                            Edit
-                          </button>
-                          <button
-                            className="text-red-500 font-medium hover:underline"
-                            onClick={() => handleDelete(blog._id)}
-                          >
-                            Delete
-                          </button>
-                        </div>
-                      )}
+                        Edit
+                      </button>
+                      <button
+                        className="bg-red-600/90 backdrop-blur-sm text-white px-3 py-1.5 text-xs uppercase tracking-wider hover:bg-red-700 transition-colors"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          handleDelete(blog._id);
+                        }}
+                      >
+                        Delete
+                      </button>
                     </div>
-                  </div>
+                  )}
                 </div>
               ))}
           </div>
+
+          {blogs.length === 0 && (
+            <div className="text-center py-20">
+              <p className="text-foreground/50">No blog posts yet.</p>
+            </div>
+          )}
         </div>
       </div>
     </section>

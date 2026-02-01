@@ -57,59 +57,64 @@ const ParallaxImage: React.FC<ParallaxImageProps> = ({
       >
         {/* Mobile image */}
         {responsiveImages.mobile && (
-          <Image 
-            {...props} 
+          <Image
+            {...props}
             src={responsiveImages.mobile}
-            className="object-cover object-center md:hidden" 
+            className="object-cover object-center md:hidden"
             quality={100}
+            sizes="100vw"
             placeholder="blur"
             blurDataURL={STATIC_BLUR}
           />
         )}
-        
+
         {/* Tablet image */}
         {responsiveImages.tablet && (
-          <Image 
-            {...props} 
+          <Image
+            {...props}
             src={responsiveImages.tablet}
-            className="object-cover object-center hidden md:block lg:hidden" 
+            className="object-cover object-center hidden md:block lg:hidden"
             quality={100}
+            sizes="100vw"
             placeholder="blur"
             blurDataURL={STATIC_BLUR}
           />
         )}
-        
+
         {/* Desktop image */}
         {responsiveImages.desktop && (
-          <Image 
-            {...props} 
+          <Image
+            {...props}
             src={responsiveImages.desktop}
-            className="object-cover object-center hidden lg:block xl:hidden" 
+            className="object-cover object-center hidden lg:block xl:hidden"
             quality={100}
+            sizes="100vw"
             placeholder="blur"
             blurDataURL={STATIC_BLUR}
           />
         )}
-        
+
         {/* Ultrawide image */}
         {responsiveImages.ultrawide && (
-          <Image 
-            {...props} 
+          <Image
+            {...props}
             src={responsiveImages.ultrawide}
-            className="object-cover object-center hidden xl:block" 
+            className="object-cover object-center hidden xl:block"
             quality={100}
+            sizes="100vw"
             placeholder="blur"
             blurDataURL={STATIC_BLUR}
           />
         )}
-        
+
         {/* Fallback if no specific images provided */}
         {!responsiveImages.mobile && !responsiveImages.tablet && !responsiveImages.desktop && !responsiveImages.ultrawide && (
-          <Image 
-            {...props} 
+          <Image
+            {...props}
             src={src || ""}
-            className="object-cover object-center" 
+            className="object-cover object-center"
             quality={100}
+            sizes="100vw"
             placeholder="blur"
             blurDataURL={STATIC_BLUR}
           />
@@ -124,11 +129,12 @@ const ParallaxImage: React.FC<ParallaxImageProps> = ({
       ref={containerRef}
       className="will-change-transform"
     >
-      <Image 
-        {...props} 
+      <Image
+        {...props}
         src={src || ""}
         className={className}
         quality={100}
+        sizes="100vw"
         placeholder="blur"
         blurDataURL={STATIC_BLUR}
       />

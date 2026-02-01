@@ -4,10 +4,11 @@ const nextConfig: NextConfig = {
   /* config options here */
   reactStrictMode: false,
   images: {
+    qualities: [100, 75],
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "images.unsplash.com",
+        hostname: "res.cloudinary.com",
       },
     ],
   },

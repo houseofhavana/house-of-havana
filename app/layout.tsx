@@ -2,12 +2,12 @@ import ConditionalCTA from "@/components/sections/ConditionalCTA";
 import Footer from "@/components/ui/footer";
 import Navbar from "@/components/ui/navbar";
 import {
-  jsonLd,
-  websiteSchema,
-  organizationSchema,
-  breadcrumbSchema,
   barbershopSchema,
+  breadcrumbSchema,
+  jsonLd,
+  organizationSchema,
   professionalServiceSchema,
+  websiteSchema,
 } from "@/lib/schema";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
@@ -65,7 +65,72 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="dark">
-      <head>
+      <body
+        className={`${BigCaslon.variable} ${BigCaslonItalic.variable} ${Satoshi.variable} antialiased font-sans text-foreground bg-background`}
+        suppressContentEditableWarning
+      >
+
+
+        {/* Website Schema */}
+        <Script
+          id="website-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: jsonLd(websiteSchema) }}
+        />
+
+        {/* Organization Schema */}
+        <Script
+          id="organization-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: jsonLd(organizationSchema) }}
+        />
+
+        {/* BreadcrumbList Schema */}
+        <Script
+          id="breadcrumb-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: jsonLd(breadcrumbSchema) }}
+        />
+
+        {/* Local SEO: BarberShop schema */}
+        <Script
+          id="barbershop-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: jsonLd(barbershopSchema) }}
+        />
+
+        {/* ProfessionalService Schema */}
+        <Script
+          id="professional-service-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: jsonLd(professionalServiceSchema) }}
+        />
+
+        <Navbar />
+        {children}
+        <ConditionalCTA />
+        <Footer />
+
+        {/* GTM noscript */}
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-K9NH2QXS"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          />
+        </noscript>
+
+        {/* Meta Pixel noscript */}
+        <noscript>
+          <img
+            height="1"
+            width="1"
+            style={{ display: "none" }}
+            src="https://www.facebook.com/tr?id=767720532971494&ev=PageView&noscript=1"
+            alt="Meta Pixel"
+          />
+        </noscript>
         {/* Google Tag Manager */}
         <Script
           id="gtm-script"
@@ -132,72 +197,6 @@ export default function RootLayout({
 
           `}
         </Script>
-      </head>
-      <body
-        className={`${BigCaslon.variable} ${BigCaslonItalic.variable} ${Satoshi.variable} antialiased font-sans text-foreground bg-background`}
-        suppressContentEditableWarning
-      >
-        {/* GTM noscript */}
-        <noscript>
-          <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-K9NH2QXS"
-            height="0"
-            width="0"
-            style={{ display: "none", visibility: "hidden" }}
-          />
-        </noscript>
-
-        {/* Meta Pixel noscript */}
-        <noscript>
-          <img
-            height="1"
-            width="1"
-            style={{ display: "none" }}
-            src="https://www.facebook.com/tr?id=767720532971494&ev=PageView&noscript=1"
-            alt="Meta Pixel"
-          />
-        </noscript>
-
-        {/* Website Schema */}
-        <Script
-          id="website-schema"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: jsonLd(websiteSchema) }}
-        />
-
-        {/* Organization Schema */}
-        <Script
-          id="organization-schema"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: jsonLd(organizationSchema) }}
-        />
-
-        {/* BreadcrumbList Schema */}
-        <Script
-          id="breadcrumb-schema"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: jsonLd(breadcrumbSchema) }}
-        />
-
-        {/* Local SEO: BarberShop schema */}
-        <Script
-          id="barbershop-schema"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: jsonLd(barbershopSchema) }}
-        />
-
-        {/* ProfessionalService Schema */}
-        <Script
-          id="professional-service-schema"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: jsonLd(professionalServiceSchema) }}
-        />
-
-        <Navbar />
-        {children}
-        <ConditionalCTA />
-        <Footer />
-
         {/* GA4 */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-GRNJV6FRBS"

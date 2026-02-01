@@ -60,6 +60,7 @@ const Ritual = () => {
                   // src="/ritual.png"
                   alt="House of Havana Ritual"
                   fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="absolute -top-28! left-0 w-full h-full object-cover"
                   priority
                 />
