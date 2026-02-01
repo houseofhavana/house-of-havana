@@ -20,7 +20,7 @@ export default function ServiceContent({
       <div className="md:col-span-6">
         <h2 className="heading-4-italic mb-2">What's Included</h2>
         <h2 className="heading-3 mb-8">{sectionTitle}</h2>
-        
+
         <ul className="space-y-4">
           {sectionItems.map((item, index) => (
             <motion.li
@@ -31,7 +31,7 @@ export default function ServiceContent({
               transition={{ duration: 0.4, delay: index * 0.1 }}
               className="flex items-start gap-3 text-foreground/70"
             >
-              <span className="text-foreground/40 mt-1.5">•</span>
+              <span className="text-foreground/40">•</span>
               <span dangerouslySetInnerHTML={{ __html: item }} />
             </motion.li>
           ))}
