@@ -1,8 +1,21 @@
 import HeroInner from '@/components/sections/HeroInner'
-import { Star, Quote, ChevronRight } from 'lucide-react'
-import React from 'react'
 import Button from '@/components/ui/button'
+import { mergeSEO } from '@/lib/seo'
+import { ChevronRight, Quote, Star } from 'lucide-react'
 import Link from 'next/link'
+
+export const metadata = mergeSEO({
+  title: "Client Reviews",
+  description:
+    "See why clients love House Of Havana. Read reviews from gentlemen who have experienced Saskatoon's premier barbershop.",
+  keywords: [
+    "barber reviews saskatoon",
+    "house of havana reviews",
+    "best barber saskatoon",
+  ],
+  canonical: "/reviews",
+});
+
 
 interface Review {
   name: string
@@ -83,12 +96,12 @@ const ADDITIONAL_REVIEWS: Review[] = [
 
 const ReviewsPage = () => (
   <>
-    <HeroInner 
-      subheading="What Our" 
-      title="CLIENTS SAY" 
-      supportingText="Real testimonials from gentlemen who have experienced the House of Havana difference. Every review represents our commitment to excellence, craft, and authentic client relationships." 
+    <HeroInner
+      subheading="What Our"
+      title="CLIENTS SAY"
+      supportingText="Real testimonials from gentlemen who have experienced the House of Havana difference. Every review represents our commitment to excellence, craft, and authentic client relationships."
     />
-    
+
     {/* Rating Summary */}
     <section className="py-20 bg-surface">
       <div className="container">
@@ -116,7 +129,7 @@ const ReviewsPage = () => (
           <h2 className="heading-5-italic mb-2">Featured</h2>
           <h2 className="heading-2">TESTIMONIALS</h2>
         </div>
-        
+
         <div className="max-w-4xl mx-auto space-y-16">
           {FEATURED_REVIEWS.map((review, index) => (
             <div key={index} className="border-t border-foreground/10 pt-12">
@@ -126,7 +139,7 @@ const ReviewsPage = () => (
                   {review.quote}
                 </p>
               </div>
-              
+
               <div className="flex items-center justify-between flex-wrap gap-4">
                 <div>
                   <p className="text-sm uppercase tracking-[0.2em] text-foreground mb-1">{review.name}</p>
@@ -151,7 +164,7 @@ const ReviewsPage = () => (
           <h2 className="heading-5-italic mb-2">More</h2>
           <h2 className="heading-2">CLIENT VOICES</h2>
         </div>
-        
+
         <div className="max-w-5xl mx-auto">
           {ADDITIONAL_REVIEWS.map((review, index) => (
             <div key={index} className="border-t border-foreground/10 py-8 grid grid-cols-12 gap-6 items-start">
@@ -170,7 +183,7 @@ const ReviewsPage = () => (
             </div>
           ))}
         </div>
-        
+
         {/* CTA after Client Voices */}
         <div className="text-center mt-20">
           <Link href="https://getsquire.com/booking/brands/house-of-havana-barbershop" target="_blank">
@@ -193,9 +206,9 @@ const ReviewsPage = () => (
           <p className="text-foreground/50 leading-relaxed mb-10 max-w-xl mx-auto">
             Had a great experience? We'd love to hear about it. Your feedback helps us continue to deliver excellence and helps other gentlemen discover our services.
           </p>
-          <a 
-            href="https://share.google/sffdie67FCLj8pfgB" 
-            target="_blank" 
+          <a
+            href="https://share.google/sffdie67FCLj8pfgB"
+            target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-10 py-4 bg-surface border border-foreground/20 hover:border-foreground transition-colors text-xs uppercase tracking-[0.15em]"
           >

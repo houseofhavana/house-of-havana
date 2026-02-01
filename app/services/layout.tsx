@@ -1,13 +1,37 @@
-import type { Metadata } from "next";
-export const metadata: Metadata = {
-  title: "Top Rated Barber Shop In Saskatoon Canada - House Of Havana",
-  description: `House of Havana is Saskatoon’s top-rated barber shop, offering precision cuts, expert grooming, and a premium experience tailored to your style.`,
-};
+import { servicesPageData } from "@/data/services";
+import { barbershopSchema, jsonLd, servicesSchema } from "@/lib/schema";
+import { mergeSEO } from "@/lib/seo";
+import Script from "next/script";
+
+export const metadata = mergeSEO({
+  title: servicesPageData.meta.title,
+  description: servicesPageData.meta.description,
+  keywords: servicesPageData.meta.keywords,
+  canonical: "/services",
+});
 
 export default function ServicesLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  return <>{children}</>;
+  return (
+    <>
+      {children}
+
+      {/* Services Schema */}
+      <Script
+        id="services-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: jsonLd(servicesSchema) }}
+      />
+
+      {/* Barbershop Schema */}
+      <Script
+        id="barbershop-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: jsonLd(barbershopSchema) }}
+      />
+    </>
+  );
 }

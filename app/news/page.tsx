@@ -1,6 +1,17 @@
-import HeroInner from '@/components/sections/HeroInner'
-import InsightsSlider, { Insight } from '@/components/sections/InsightsSlider'
-import React from 'react'
+import HeroInner from '@/components/sections/HeroInner';
+import InsightsSlider, { Insight } from '@/components/sections/InsightsSlider';
+import { mergeSEO } from '@/lib/seo';
+
+export const metadata = mergeSEO({
+  title: "News",
+  description:
+    "Stay updated with the latest news from House Of Havana, including new services, team updates, and grooming tips.",
+  keywords: [
+    "barber news saskatoon",
+    "house of havana updates",
+  ],
+  canonical: "/news",
+});
 
 const NEWS: Insight[] = [
   // Example news data; replace with real data as needed

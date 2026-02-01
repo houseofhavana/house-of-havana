@@ -1,8 +1,20 @@
 import HeroInner from "@/components/sections/HeroInner";
 import Button from "@/components/ui/button";
+import { mergeSEO } from "@/lib/seo";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
-import React from "react";
+
+export const metadata = mergeSEO({
+  title: "Book Your Appointment",
+  description:
+    "Book your next haircut or grooming appointment at House Of Havana in Saskatoon. Choose your barber, service, and time slot online.",
+  keywords: [
+    "book barber saskatoon",
+    "haircut appointment saskatoon",
+    "house of havana booking",
+  ],
+  canonical: "/book",
+});
 
 const BookPage = () => (
   <>
@@ -21,7 +33,7 @@ const BookPage = () => (
           experience.
         </p>
       </div>
-      <div className="max-w-2xl mx-auto bg-surface p-12 rounded-lg">
+      <div className="max-w-2xl mx-auto bg-surface p-12 ">
         <div className="text-center space-y-6">
           <div>
             <h3 className="heading-4 mb-2">Online Booking</h3>

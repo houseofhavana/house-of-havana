@@ -53,7 +53,7 @@ const Blog = ({ blogData }: { blogData: BlogData }) => {
         </div>
       )}
 
-      <div className="max-w-4xl mx-auto py-16 px-6 md:px-0 prose prose-lg md:prose-xl">
+      <div className="max-w-4xl mx-auto py-16 px-6 md:px-0 prose prose-lg md:prose-xl prose-invert prose-gray">
         <div dangerouslySetInnerHTML={{ __html: blog.content as string }} />
       </div>
 

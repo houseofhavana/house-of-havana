@@ -1,17 +1,21 @@
 'use client'
 
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import Header from '../ui/header';
+import { motion } from 'framer-motion';
 import parse from 'html-react-parser';
-import Button from '../ui/button';
-import { ChevronRight } from 'lucide-react';
+import { ArrowRight, ChevronRight } from 'lucide-react';
 import Link from 'next/link';
+import React from 'react';
+import Button from '../ui/button';
 
 export interface ServiceItem {
   title: string;
   description?: string | React.ReactNode;
   items?: (string | { name: string; duration?: string; price?: string })[];
+  slug?: string;
+  page?: {
+    slug: string;
+    [key: string]: any;
+  };
 }
 
 interface ServicesSectionProps {
@@ -24,87 +28,71 @@ interface ServicesSectionProps {
 }
 
 export default function ServicesSection({ services, subheading = 'Our', heading = 'Key Components of Our Business Plans', bgSurface = false, supportingText = '', showCTA = false }: ServicesSectionProps) {
-  const [openIdx, setOpenIdx] = useState<number | null>(null);
-
   return (
     <section className={`${bgSurface ? 'bg-surface' : 'bg-background'} py-20`}>
       <div className="container pt-5">
         {subheading && <h2 className="heading-4-italic">{parse(subheading)}</h2>}
         {heading && <h2 className="heading-2 mb-4">{parse(heading)}</h2>}
         {supportingText && <p className="max-w-2xl text-foreground/50">{supportingText}</p>}
-        <div className="space-y-4 grid grid-cols-1 md:grid-cols-4 mt-16">
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-16">
           {services.map((service, idx) => {
-            const isOpen = openIdx === idx;
+            const serviceSlug = service.slug || service.page?.slug;
+
             return (
-              <div key={service.title} className="border-b border-foreground/10 last:border-b-0 md:col-span-3 md:col-start-2 flex items-start gap-10">
-                <div className='text-sm py-[20px] '>
-                  {(idx + 1).toString().padStart(2, '0')}.
-                </div>
-                <div className='flex-1'>
-                  <button
-                    className={`cursor-pointer w-full text-left py-4 flex items-center justify-between border-none outline-none `}
-                    onClick={() => setOpenIdx(isOpen ? null : idx)}
-                    aria-expanded={isOpen}
-                    style={{ borderRadius: 0 }}
-                  >
-                    <span className="heading-5-italic select-none">{parse(service.title)}</span>
-                    <motion.span
-                      initial={false}
-                      animate={{ rotate: isOpen ? 180 : 0 }}
-                      transition={{ type: 'spring', stiffness: 400, damping: 30 }}
-                    >
-                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" className="stroke-foreground">
-                        <path d="M6 8L10 12L14 8" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
-                    </motion.span>
-                  </button>
-                  <AnimatePresence initial={false}>
-                    {isOpen && (service.description || service.items) && (
-                      <motion.div
-                        key="content"
-                        initial="collapsed"
-                        animate="open"
-                        exit="collapsed"
-                        variants={{
-                          open: { height: 'auto', opacity: 1 },
-                          collapsed: { height: 0, opacity: 0 },
-                        }}
-                        transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
-                        className="overflow-hidden"
-                      >
-                        {service.description && (
-                          <div className="pb-2 text-foreground/50 text-base">
-                            {service.description}
-                          </div>
-                        )}
-                        {service.items && service.items.length > 0 && (
-                          <ul className="pl-5 pb-4 list-disc text-foreground/80 text-base space-y-2">
-                            {service.items.map((item, i) => (
-                              <li key={i} className="flex justify-between items-center">
-                                {typeof item === 'string' ? (
-                                  <span>{item}</span>
-                                ) : (
-                                  <>
-                                    <span className="flex-1">{item.name}</span>
-                                    <span className="flex items-center gap-4 text-sm text-foreground/60">
-                                      {item.duration && <span>{item.duration}</span>}
-                                      {item.price && <span className="font-medium text-foreground">{item.price}</span>}
-                                    </span>
-                                  </>
-                                )}
-                              </li>
-                            ))}
-                          </ul>
-                        )}
-                      </motion.div>
+              <motion.div
+                key={service.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+              >
+                <Link
+                  href={serviceSlug ? `/services/${serviceSlug}` : '#'}
+                  className="block h-full group"
+                >
+                  <div className="border border-foreground/10  p-8 h-full hover:border-foreground/30 transition-all duration-300 hover:shadow-lg bg-surface/50">
+                    <div className="flex items-start justify-between mb-4">
+                      <div className="text-sm text-foreground/40">
+                        {(idx + 1).toString().padStart(2, '0')}.
+                      </div>
+                      <ArrowRight className="text-foreground/40 group-hover:text-foreground group-hover:translate-x-1 transition-all duration-300" size={20} />
+                    </div>
+
+                    <h3 className="heading-4-italic mb-3">{parse(service.title)}</h3>
+
+                    {service.description && (
+                      <p className="text-foreground/60 text-base mb-4">
+                        {service.description}
+                      </p>
                     )}
-                  </AnimatePresence>
-                </div>
-              </div>
+
+                    {service.items && service.items.length > 0 && (
+                      <ul className="space-y-3 mt-6">
+                        {service.items.map((item, i) => (
+                          <li key={i} className="flex justify-between items-center text-sm border-t border-foreground/10 pt-3">
+                            {typeof item === 'string' ? (
+                              <span className="text-foreground/70">{item}</span>
+                            ) : (
+                              <>
+                                <span className="text-foreground/70">{item.name}</span>
+                                <span className="flex items-center gap-3 text-xs">
+                                  {item.duration && <span className="text-foreground/50">{item.duration}</span>}
+                                  {item.price && <span className="font-medium text-foreground">{item.price}</span>}
+                                </span>
+                              </>
+                            )}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+                </Link>
+              </motion.div>
             );
           })}
         </div>
-        
+
         {/* Optional CTA */}
         {showCTA && (
           <div className="text-center mt-20">

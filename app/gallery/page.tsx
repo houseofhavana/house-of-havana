@@ -1,6 +1,19 @@
 import PhotoGalleryMasonry, {
   GalleryImage,
 } from "@/components/sections/PhotoGalleryMasonry";
+import { mergeSEO } from "@/lib/seo";
+
+export const metadata = mergeSEO({
+  title: "Gallery",
+  description:
+    "Browse our gallery of haircuts, fades, and beard grooming at House Of Havana barbershop in Saskatoon.",
+  keywords: [
+    "barber gallery saskatoon",
+    "haircut photos",
+    "fade haircut gallery",
+  ],
+  canonical: "/gallery",
+});
 
 const images: GalleryImage[] = [
   {

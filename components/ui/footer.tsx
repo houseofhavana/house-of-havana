@@ -1,6 +1,6 @@
+import { Facebook, Instagram } from "lucide-react";
 import Link from "next/link";
 import Logo from "./logo";
-import { Instagram, Facebook } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -22,7 +22,7 @@ const Footer = () => {
               href="https://instagram.com/houseofhavanabarbershop_yxe/"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-9 h-9 rounded-full bg-foreground/5 flex items-center justify-center hover:bg-foreground/10 transition-colors"
+              className="w-9 h-9  bg-foreground/5 flex items-center justify-center hover:bg-foreground/10 transition-colors"
               aria-label="Instagram"
             >
               <Instagram className="w-4 h-4" />
@@ -31,7 +31,7 @@ const Footer = () => {
               href="https://facebook.com/HouseOfHavanaBarbershop/"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-9 h-9 rounded-full bg-foreground/5 flex items-center justify-center hover:bg-foreground/10 transition-colors"
+              className="w-9 h-9  bg-foreground/5 flex items-center justify-center hover:bg-foreground/10 transition-colors"
               aria-label="Facebook"
             >
               <Facebook className="w-4 h-4" />
@@ -40,7 +40,7 @@ const Footer = () => {
               href="https://www.tiktok.com/@houseofhavana.yxe"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-9 h-9 rounded-full bg-foreground/5 flex items-center justify-center hover:bg-foreground/10 transition-colors"
+              className="w-9 h-9  bg-foreground/5 flex items-center justify-center hover:bg-foreground/10 transition-colors"
               aria-label="TikTok"
             >
               <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -192,7 +192,7 @@ const Footer = () => {
       </div>
       {/* Bottom row */}
       <div className="container flex flex-col md:flex-row justify-between items-center mt-6 text-xs text-foreground/50 gap-2">
-        <div>Copyright &copy; 2025 | House of Havana</div>
+        <div>Copyright &copy; {new Date().getFullYear()} | House of Havana</div>
         <div className="space-x-4">
           <Link href="/terms-of-use" className="hover:underline">
             Terms of Use

@@ -1,14 +1,16 @@
 import Hero from "@/components/sections/Hero";
-import Ritual from "@/components/sections/Ritual";
 import OurValuesSlider, { Value } from "@/components/sections/OurValuesSlider";
+import Ritual from "@/components/sections/Ritual";
 import ServicesSection from "@/components/sections/ServicesSection";
-import TeamCard from "@/components/ui/team-card";
-import Button from "@/components/ui/button";
-import { ChevronRight } from "lucide-react";
 import TeamShowcase from "@/components/sections/TeamShowcase";
+import Button from "@/components/ui/button";
+import TeamCard from "@/components/ui/team-card";
 import { BARBERS } from "@/data/barbers";
-import { groomingServices, type ServiceCategory } from "@/data/services";
+import { servicesList } from "@/data/services";
+import { imageGallerySchema, jsonLd, servicesSchema } from "@/lib/schema";
+import { ChevronRight } from "lucide-react";
 import Link from "next/link";
+import Script from "next/script";
 
 const WHY_CHOOSE_VALUES = [
   {
@@ -70,10 +72,10 @@ export default function Home() {
       {/* Hero Section */}
       <Hero
         backgroundImages={{
-          mobile: "/webp/hero-mobile.webp",
-          tablet: "/webp/hero-tablet.webp",
-          desktop: "/webp/hero-desktop.webp",
-          ultrawide: "/webp/hero-ultrawide.webp",
+          mobile: "/hero-mobile.png",
+          tablet: "/hero-tablet.png",
+          desktop: "/hero-desktop.png",
+          ultrawide: "/hero-ultrawide.png",
         }}
         subheading="The"
         heading="House of Havana Barbershop in <br /> Saskatoon"
@@ -100,11 +102,11 @@ export default function Home() {
             {WHY_CHOOSE_VALUES.map((value, index) => (
               <div
                 key={index}
-                className="border-t border-foreground/10 py-12 grid grid-cols-12 gap-8 items-start group hover:border-foreground/20 transition-colors"
+                className="border-t border-foreground/10 py-12 grid grid-cols-12 gap-4 lg:gap-8 items-start group hover:border-foreground/20 transition-colors"
               >
                 {/* Number */}
                 <div className="col-span-2 md:col-span-1">
-                  <span className="text-6xl font-heading text-foreground/10 group-hover:text-foreground/20 transition-colors leading-none">
+                  <span className="text-4xl lg:text-6xl font-heading text-foreground/10 group-hover:text-foreground/20 transition-colors leading-none">
                     {value.number}
                   </span>
                 </div>
@@ -141,7 +143,7 @@ export default function Home() {
         </div>
       </section>
       <ServicesSection
-        services={groomingServices}
+        services={servicesList}
         bgSurface={true}
         subheading="Our Rituals"
         heading="Grooming<br />Services"
@@ -198,6 +200,20 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Services Schema */}
+      <Script
+        id="services-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: jsonLd(servicesSchema) }}
+      />
+
+      {/* ImageGallery Schema */}
+      <Script
+        id="image-gallery-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: jsonLd(imageGallerySchema) }}
+      />
     </div>
   );
 }
