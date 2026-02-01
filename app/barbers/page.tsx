@@ -16,16 +16,6 @@ export const metadata = mergeSEO({
     "professional barbers",
   ],
   canonical: "/barbers",
-  openGraph: {
-    images: [
-      {
-        url: "https://houseofhavana.ca/og-barbers.jpg",
-        width: 1200,
-        height: 630,
-        alt: "House Of Havana - Our Barbers",
-      },
-    ],
-  },
 })
 
 const BarbersPage = () => (

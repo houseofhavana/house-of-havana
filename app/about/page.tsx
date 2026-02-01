@@ -19,16 +19,6 @@ export const metadata = mergeSEO({
     'luxury grooming',
   ],
   canonical: '/about',
-  openGraph: {
-    images: [
-      {
-        url: 'https://houseofhavana.ca/og-about.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'House Of Havana - About Us',
-      },
-    ],
-  },
 });
 
 
