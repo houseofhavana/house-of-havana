@@ -34,12 +34,17 @@ export type ServiceCategory = {
   page?: ServicePageData;
 };
 
-export const groomingServices: ServiceCategory[] = [
+export const servicesList: ServiceCategory[] = [
   {
     title: "Men's Haircuts",
     description: "Clean, tailored cuts built around your face shape, hair type, and lifestyle.",
     items: [
-      { name: "Haircut", duration: "40 min", price: "$46" },
+      { name: "Classic Haircut", duration: "40 min", price: "$45" },
+      { name: "Haircut & Beard", duration: "1 hour", price: "$65" },
+      { name: "Modern Haircut", duration: "40 min", price: "$45" },
+      { name: "Textured Crop", duration: "40 min", price: "$45" },
+      { name: "Pompadour Cut", duration: "40 min", price: "$45" },
+      { name: "Business Professional Cut", duration: "40 min", price: "$45" },
     ],
     page: {
       slug: "mens-haircut-saskatoon",
@@ -95,7 +100,13 @@ export const groomingServices: ServiceCategory[] = [
     title: "Fade Haircuts",
     description: "Low, mid, high, skin, and taper fades with smooth transitions and crisp finishing.",
     items: [
-      { name: "Fade Haircut", duration: "40 min", price: "$46" },
+      { name: "Low Fade", duration: "40 min", price: "$45" },
+      { name: "Mid Fade", duration: "40 min", price: "$45" },
+      { name: "High Fade", duration: "40 min", price: "$45" },
+      { name: "Skin Fade", duration: "40 min", price: "$45" },
+      { name: "Taper Fade", duration: "40 min", price: "$45" },
+      { name: "Drop Fade", duration: "40 min", price: "$45" },
+      { name: "Burst Fade", duration: "40 min", price: "$45" },
     ],
     page: {
       slug: "fade-haircut-saskatoon",
@@ -153,8 +164,11 @@ export const groomingServices: ServiceCategory[] = [
     title: "Beard Grooming",
     description: "Detailed trims, shaping, and line-ups with balanced symmetry.",
     items: [
-      { name: "Haircut and Beard", duration: "1 hour", price: "$68" },
-      { name: "Hot Shave", duration: "30 min", price: "$42" },
+      { name: "Beard Trim", duration: "25 min", price: "$30" },
+      { name: "Beard Shape & Lineup", duration: "30 min", price: "$35" },
+      { name: "Hot Towel Shave", duration: "30 min", price: "$42" },
+      { name: "Full Beard Sculpt", duration: "35 min", price: "$40" },
+      { name: "Beard Conditioning Treatment", duration: "20 min", price: "$25" },
     ],
     page: {
       slug: "beard-grooming-saskatoon",
@@ -213,6 +227,10 @@ export const groomingServices: ServiceCategory[] = [
     items: [
       { name: "Partial Perm with Haircut", duration: "2 hours", price: "$160" },
       { name: "Full Perm with Haircut", duration: "2.5 hours", price: "$190" },
+      { name: "Color Treatment", duration: "1.5 hours", price: "$120" },
+      { name: "Gray Blending", duration: "1 hour", price: "$85" },
+      { name: "Scalp Treatment", duration: "45 min", price: "$65" },
+      { name: "Hair Texture Service", duration: "2 hours", price: "$150" },
     ],
     page: {
       slug: "premium-treatments-saskatoon",
@@ -307,13 +325,13 @@ export const servicesPageData = {
 };
 
 export function getServiceBySlug(slug: string): ServiceCategory | undefined {
-  return groomingServices.find((s) => s.page?.slug === slug);
+  return servicesList.find((s) => s.page?.slug === slug);
 }
 
 export function getServicesWithPages(): ServiceCategory[] {
-  return groomingServices.filter((s) => s.page !== undefined);
+  return servicesList.filter((s) => s.page !== undefined);
 }
 
 export function getRelatedServices(currentSlug: string): ServiceCategory[] {
-  return groomingServices.filter((s) => s.page && s.page.slug !== currentSlug);
+  return servicesList.filter((s) => s.page && s.page.slug !== currentSlug);
 }

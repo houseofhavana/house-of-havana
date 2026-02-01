@@ -1,17 +1,17 @@
-import type {
-  WithContext,
-  WebSite,
-  Organization,
-  BreadcrumbList,
-  LocalBusiness,
-  ProfessionalService,
-  ItemList,
-  ImageGallery,
-  Place,
-  ContactPage,
-} from "schema-dts";
 import { BARBERS } from "@/data/barbers";
-import { groomingServices } from "@/data/services";
+import { servicesList } from "@/data/services";
+import type {
+  BreadcrumbList,
+  ContactPage,
+  ImageGallery,
+  ItemList,
+  LocalBusiness,
+  Organization,
+  Place,
+  ProfessionalService,
+  WebSite,
+  WithContext,
+} from "schema-dts";
 
 // Base URL for the site
 const BASE_URL = "https://houseofhavana.ca";
@@ -40,11 +40,11 @@ const employees = BARBERS.map((barber) => ({
   image: `${BASE_URL}${barber.image.src}`,
 }));
 
-// Generate offer catalog from groomingServices data
+// Generate offer catalog from servicesList data
 const offerCatalog = {
   "@type": "OfferCatalog" as const,
   name: "Grooming Services",
-  itemListElement: groomingServices.map((category) => ({
+  itemListElement: servicesList.map((category) => ({
     "@type": "OfferCatalog" as const,
     name: category.title,
     description: category.description,
@@ -315,7 +315,7 @@ export const barbershopSchema: WithContext<LocalBusiness> = {
 };
 
 // Get all service names for knowsAbout
-const allServiceNames = groomingServices.flatMap((cat) => cat.items.map((item) => item.name));
+const allServiceNames = servicesList.flatMap((cat) => cat.items.map((item) => item.name));
 
 // ProfessionalService Schema
 export const professionalServiceSchema: WithContext<ProfessionalService> = {
@@ -353,7 +353,7 @@ export const professionalServiceSchema: WithContext<ProfessionalService> = {
 };
 
 // Flatten all services for the ItemList
-const allServices = groomingServices.flatMap((cat) => cat.items);
+const allServices = servicesList.flatMap((cat) => cat.items);
 
 // Services ItemList Schema
 export const servicesSchema: WithContext<ItemList> = {

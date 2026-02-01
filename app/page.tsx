@@ -1,14 +1,14 @@
 import Hero from "@/components/sections/Hero";
-import Ritual from "@/components/sections/Ritual";
 import OurValuesSlider, { Value } from "@/components/sections/OurValuesSlider";
+import Ritual from "@/components/sections/Ritual";
 import ServicesSection from "@/components/sections/ServicesSection";
-import TeamCard from "@/components/ui/team-card";
-import Button from "@/components/ui/button";
-import { ChevronRight } from "lucide-react";
 import TeamShowcase from "@/components/sections/TeamShowcase";
+import Button from "@/components/ui/button";
+import TeamCard from "@/components/ui/team-card";
 import { BARBERS } from "@/data/barbers";
-import { groomingServices, type ServiceCategory } from "@/data/services";
-import { jsonLd, servicesSchema, imageGallerySchema } from "@/lib/schema";
+import { servicesList } from "@/data/services";
+import { imageGallerySchema, jsonLd, servicesSchema } from "@/lib/schema";
+import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 import Script from "next/script";
 
@@ -71,16 +71,16 @@ export default function Home() {
     <div className="min-h-screen">
       {/* Hero Section */}
       <Hero
-  backgroundImages={{
-    mobile: "/hero-mobile.png",
-    tablet: "/hero-tablet.png",
-    desktop: "/hero-desktop.png",
-    ultrawide: "/hero-ultrawide.png",
-  }}
-  subheading="The"
-  heading="House of Havana Barbershop in <br /> Saskatoon"
-  supportingText="At House of Havana Barbershop in Saskatoon, grooming is more than maintenance — it’s a moment of focus, intention, and precision. We blend classic barbering tradition with modern design to create an experience tailored for discerning professionals. From custom cabinetry and rich leather seating to precision cuts, well-groomed beards, and premium aftercare, every detail is considered. This isn’t just another barbershop in Saskatoon — it’s where grooming becomes personal and confidence is elevated."
-/>
+        backgroundImages={{
+          mobile: "/hero-mobile.png",
+          tablet: "/hero-tablet.png",
+          desktop: "/hero-desktop.png",
+          ultrawide: "/hero-ultrawide.png",
+        }}
+        subheading="The"
+        heading="House of Havana Barbershop in <br /> Saskatoon"
+        supportingText="At House of Havana Barbershop in Saskatoon, grooming is more than maintenance — it’s a moment of focus, intention, and precision. We blend classic barbering tradition with modern design to create an experience tailored for discerning professionals. From custom cabinetry and rich leather seating to precision cuts, well-groomed beards, and premium aftercare, every detail is considered. This isn’t just another barbershop in Saskatoon — it’s where grooming becomes personal and confidence is elevated."
+      />
       <Ritual /> {/* bg-surface */}
       {/* Why Choose Section - Luxury Editorial Design */}
       <section className="py-26 bg-background">
@@ -143,7 +143,7 @@ export default function Home() {
         </div>
       </section>
       <ServicesSection
-        services={groomingServices}
+        services={servicesList}
         bgSurface={true}
         subheading="Our Rituals"
         heading="Grooming<br />Services"

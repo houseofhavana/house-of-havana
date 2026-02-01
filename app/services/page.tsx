@@ -1,7 +1,7 @@
 import FAQSection from "@/components/sections/FAQSection";
 import HeroInner from "@/components/sections/HeroInner";
 import ServicesSection from "@/components/sections/ServicesSection";
-import { groomingServices, servicesPageData } from "@/data/services";
+import { servicesList, servicesPageData } from "@/data/services";
 
 const ServicesPage = () => (
   <>
@@ -11,7 +11,7 @@ const ServicesPage = () => (
       supportingText={servicesPageData.intro}
     />
     <ServicesSection
-      services={groomingServices}
+      services={servicesList}
       bgSurface={true}
       subheading="Our Rituals"
       heading="Grooming<br />Services"
