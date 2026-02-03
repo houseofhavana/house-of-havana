@@ -18,6 +18,12 @@ interface Post {
       current: string;
     };
   };
+  categories?: Array<{
+    title: string;
+    slug: {
+      current: string;
+    };
+  }>;
 }
 
 const POSTS_PER_PAGE = 9;
@@ -36,6 +42,10 @@ async function getPosts(page: number = 1): Promise<{ posts: Post[]; total: numbe
         publishedAt,
         author->{
           name,
+          slug
+        },
+        categories[]->{
+          title,
           slug
         }
       }`,
@@ -65,6 +75,8 @@ export async function generateMetadata({
   const pageNum = page ? parseInt(page) : 1;
   const pageSuffix = pageNum > 1 ? ` - Page ${pageNum}` : "";
 
+  const canonical = pageNum > 1 ? `/blogs?page=${pageNum}` : "/blogs";
+
   return mergeSEO({
     title: `Blog${pageSuffix}`,
     description: `Read grooming tips, style advice, and updates from House Of Havana barbershop in Saskatoon.${pageSuffix}`,
@@ -73,7 +85,12 @@ export async function generateMetadata({
       "mens grooming tips",
       "haircut advice",
     ],
-    canonical: pageNum > 1 ? `/blogs?page=${pageNum}` : "/blogs",
+    canonical,
+    twitter: {
+      card: "summary_large_image",
+      title: `Blog${pageSuffix}`,
+      description: `Read grooming tips, style advice, and updates from House Of Havana barbershop in Saskatoon.${pageSuffix}`,
+    },
   });
 }
 
@@ -107,6 +124,7 @@ export default async function BlogsPage({
                   publishedAt={post.publishedAt}
                   mainImage={post.mainImage}
                   author={post.author}
+                  categories={post.categories}
                   bgSurface={false}
                 />
               ))}
@@ -143,8 +161,8 @@ export default async function BlogsPage({
                           key={pageNum}
                           href={`/blogs${pageNum > 1 ? `?page=${pageNum}` : ""}`}
                           className={`px-4 py-2 border transition-colors ${pageNum === currentPage
-                              ? "border-foreground text-foreground bg-surface"
-                              : "border-foreground/20 text-foreground/70 hover:border-foreground/40 hover:text-foreground"
+                            ? "border-foreground text-foreground bg-surface"
+                            : "border-foreground/20 text-foreground/70 hover:border-foreground/40 hover:text-foreground"
                             }`}
                         >
                           {pageNum}

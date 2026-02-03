@@ -113,17 +113,29 @@ export async function generateMetadata({
 
   const pageNum = page ? parseInt(page) : 1;
   const pageSuffix = pageNum > 1 ? ` - Page ${pageNum}` : "";
+  const canonical = pageNum > 1
+    ? `/blogs/categories/${slug}?page=${pageNum}`
+    : `/blogs/categories/${slug}`;
+  const title = `${category.title}${pageSuffix} - Category`;
+  const description = category.description
+    ? `${category.description}${pageSuffix}`
+    : `Explore articles in ${category.title} category at House of Havana${pageSuffix}`;
 
   return {
-    title: `${category.title}${pageSuffix} - Category`,
-    description: category.description
-      ? `${category.description}${pageSuffix}`
-      : `Explore articles in ${category.title} category at House of Havana${pageSuffix}`,
+    title,
+    description,
+    alternates: {
+      canonical,
+    },
     openGraph: {
-      title: `${category.title}${pageSuffix} - Category`,
-      description: category.description
-        ? `${category.description}${pageSuffix}`
-        : `Explore articles in ${category.title} category at House of Havana${pageSuffix}`,
+      title,
+      description,
+      url: `https://houseofhavana.ca${canonical}`,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
     },
   };
 }
@@ -214,8 +226,8 @@ export default async function CategoryPage({
                           key={pageNum}
                           href={`/blogs/categories/${slug}${pageNum > 1 ? `?page=${pageNum}` : ""}`}
                           className={`px-4 py-2 border transition-colors ${pageNum === currentPage
-                              ? "border-foreground text-foreground bg-surface"
-                              : "border-foreground/20 text-foreground/70 hover:border-foreground/40 hover:text-foreground"
+                            ? "border-foreground text-foreground bg-surface"
+                            : "border-foreground/20 text-foreground/70 hover:border-foreground/40 hover:text-foreground"
                             }`}
                         >
                           {pageNum}

@@ -84,6 +84,10 @@ export async function generateMetadata({
 
   const categoryTitles = post.categories?.map((cat) => cat.title).join(", ") || "";
   const description = `Read ${post.title} by ${post.author?.name || "House of Havana"}${categoryTitles ? ` in ${categoryTitles}` : ""}`;
+  const canonical = `/blogs/${slug}`;
+  const mainImageUrl = post.mainImage
+    ? urlFor(post.mainImage).width(1200).height(630).url()
+    : undefined;
 
   return {
     title: post.title,
@@ -91,12 +95,20 @@ export async function generateMetadata({
     keywords: categoryTitles
       ? post.categories?.map((cat) => cat.title)
       : undefined,
+    alternates: {
+      canonical,
+    },
     openGraph: {
       title: post.title,
       description,
-      images: post.mainImage
-        ? [urlFor(post.mainImage).width(1200).height(630).url()]
-        : [],
+      url: `https://houseofhavana.ca${canonical}`,
+      images: mainImageUrl ? [mainImageUrl] : [],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description,
+      images: mainImageUrl ? [mainImageUrl] : undefined,
     },
   };
 }
@@ -167,20 +179,39 @@ export default async function BlogPostPage({
         <div className="container">
           {/* Header */}
           <div className="max-w-4xl">
-            {formattedDate && (
-              <span className="heading-6-italic text-foreground/50 block mb-4">
-                {formattedDate}
-              </span>
-            )}
+            {/* Meta: Category, Date, Author */}
+            <div className="flex flex-col lg:flex-row lg:items-center gap-3 lg:gap-4 mb-6">
+              {post.categories && post.categories.length > 0 && (
+                <div className="flex flex-wrap gap-2">
+                  {post.categories.map((category) => (
+                    <Link
+                      key={category.slug.current}
+                      href={`/blogs/categories/${category.slug.current}`}
+                      className="text-xs uppercase tracking-wider text-secondary border border-secondary/30 px-3 py-1 hover:bg-secondary/10 transition-colors"
+                    >
+                      {category.title}
+                    </Link>
+                  ))}
+                </div>
+              )}
 
-            <h1 className="heading-1 !capitalize mb-6">{post.title}</h1>
+              {((post.categories?.length ?? 0) > 0 && (formattedDate || post.author)) && (
+                <span className="hidden lg:block text-foreground/30">|</span>
+              )}
 
-            <div className="w-20 h-px bg-foreground/20 mb-6"></div>
+              {formattedDate && (
+                <span className="heading-6-italic text-foreground/50">
+                  {formattedDate}
+                </span>
+              )}
 
-            <div className="flex flex-col gap-2">
+              {(formattedDate && post.author) && (
+                <span className="hidden lg:block text-foreground/30">|</span>
+              )}
+
               {post.author && (
                 <p className="text-foreground/50 text-sm">
-                  Written by{" "}
+                  by{" "}
                   <Link
                     href={`/blogs/authors/${post.author.slug.current}`}
                     className="text-foreground hover:text-secondary transition-colors"
@@ -189,23 +220,9 @@ export default async function BlogPostPage({
                   </Link>
                 </p>
               )}
-              {post.categories && post.categories.length > 0 && (
-                <p className="text-foreground/50 text-sm">
-                  Categories:{" "}
-                  {post.categories.map((category, index) => (
-                    <span key={category.slug.current}>
-                      <Link
-                        href={`/blogs/categories/${category.slug.current}`}
-                        className="text-foreground hover:text-secondary transition-colors"
-                      >
-                        {category.title}
-                      </Link>
-                      {index < post.categories!.length - 1 && ", "}
-                    </span>
-                  ))}
-                </p>
-              )}
             </div>
+
+            <h1 className="heading-1 !capitalize mb-6">{post.title}</h1>
           </div>
         </div>
       </section>

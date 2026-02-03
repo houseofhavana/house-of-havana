@@ -116,16 +116,32 @@ export async function generateMetadata({
 
   const pageNum = page ? parseInt(page) : 1;
   const pageSuffix = pageNum > 1 ? ` - Page ${pageNum}` : "";
+  const canonical = pageNum > 1
+    ? `/blogs/authors/${slug}?page=${pageNum}`
+    : `/blogs/authors/${slug}`;
+  const title = `${author.name}${pageSuffix} - Author`;
+  const description = `Read articles by ${author.name} at House of Havana${pageSuffix}`;
+  const authorImageUrl = author.image
+    ? urlFor(author.image).width(1200).height(630).url()
+    : undefined;
 
   return {
-    title: `${author.name}${pageSuffix} - Author`,
-    description: `Read articles by ${author.name} at House of Havana${pageSuffix}`,
+    title,
+    description,
+    alternates: {
+      canonical,
+    },
     openGraph: {
-      title: `${author.name}${pageSuffix} - Author`,
-      description: `Read articles by ${author.name} at House of Havana${pageSuffix}`,
-      images: author.image
-        ? [urlFor(author.image).width(1200).height(630).url()]
-        : [],
+      title,
+      description,
+      url: `https://houseofhavana.ca${canonical}`,
+      images: authorImageUrl ? [authorImageUrl] : [],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: authorImageUrl ? [authorImageUrl] : undefined,
     },
   };
 }
@@ -213,8 +229,8 @@ export default async function AuthorPage({
                           key={pageNum}
                           href={`/blogs/authors/${slug}${pageNum > 1 ? `?page=${pageNum}` : ""}`}
                           className={`px-4 py-2 border transition-colors ${pageNum === currentPage
-                              ? "border-foreground text-foreground bg-surface"
-                              : "border-foreground/20 text-foreground/70 hover:border-foreground/40 hover:text-foreground"
+                            ? "border-foreground text-foreground bg-surface"
+                            : "border-foreground/20 text-foreground/70 hover:border-foreground/40 hover:text-foreground"
                             }`}
                         >
                           {pageNum}

@@ -1,6 +1,5 @@
 "use client";
 
-import ArrowRight from "@/components/icons/ArrowRight";
 import { urlFor } from "@/sanity/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
@@ -17,6 +16,12 @@ interface BlogCardProps {
       current: string;
     };
   };
+  categories?: Array<{
+    title: string;
+    slug: {
+      current: string;
+    };
+  }>;
   bgSurface?: boolean;
 }
 
@@ -26,6 +31,7 @@ const BlogCard: React.FC<BlogCardProps> = ({
   publishedAt,
   mainImage,
   author,
+  categories,
   bgSurface = true,
 }) => {
   const router = useRouter();
@@ -76,13 +82,33 @@ const BlogCard: React.FC<BlogCardProps> = ({
             {title}
           </h3>
 
+          {/* Category */}
+          {categories && categories.length > 0 && (
+            <div className="flex flex-wrap gap-2 mb-3">
+              {categories.map((category) => (
+                <span
+                  key={category.slug.current}
+                  className="text-xs uppercase tracking-wider text-secondary border border-secondary/30 px-2 py-1"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    router.push(`/blogs/categories/${category.slug.current}`);
+                  }}
+                >
+                  {category.title}
+                </span>
+              ))}
+            </div>
+          )}
+
           {/* Author */}
           {author && (
-            <p className="text-sm text-foreground/50 mb-2">
+            <p className="text-sm text-foreground/50">
               by{" "}
               <span
                 className="text-foreground hover:text-secondary transition-colors cursor-pointer"
                 onClick={(e) => {
+                  e.preventDefault();
                   e.stopPropagation();
                   router.push(`/blogs/authors/${author.slug.current}`);
                 }}
@@ -91,17 +117,6 @@ const BlogCard: React.FC<BlogCardProps> = ({
               </span>
             </p>
           )}
-
-          {/* Spacer */}
-          <div className="flex-1" />
-
-          {/* Read More Link */}
-          <div className="flex items-center justify-between border-t border-foreground/10 pt-4 mt-4">
-            <span className="text-sm uppercase tracking-wider text-foreground/70 group-hover:text-foreground transition-colors">
-              Read Article
-            </span>
-            <ArrowRight className="w-4 h-4 stroke-foreground/70 group-hover:stroke-foreground group-hover:translate-x-1 transition-all" />
-          </div>
         </div>
       </article>
     </Link>
