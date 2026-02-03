@@ -1,5 +1,6 @@
 "use client";
 
+import HeroInner from "@/components/sections/HeroInner";
 import BlogCard from "@/components/ui/blog-card";
 import Button from "@/components/ui/button";
 import { $generateHtmlFromNodes, $generateNodesFromDOM } from "@lexical/html";
@@ -337,144 +338,63 @@ export default function BlogsPage() {
   };
 
   return (
-    <section className="pt-40">
-      <div className="container mb-20">
-        {session?.user?.role === "superadmin" && (
-          <form
-            className="flex flex-col gap-4 mb-8 p-8 bg-surface border border-foreground/5 "
-            onSubmit={(e) => {
-              e.preventDefault();
-              handleAddOrUpdateBlog();
-            }}
-          >
-            <div className="flex justify-between items-center">
-              <h2>Add / Edit Blog</h2>
-              {session && (
-                <button
-                  type="button"
-                  onClick={() => signOut()}
-                  style={{
-                    padding: "8px 16px",
-                    backgroundColor: "#ff4d4f",
-                    color: "#fff",
-                    border: "none",
-                    borderRadius: 5,
-                    cursor: "pointer",
-                  }}
-                >
-                  Logout
-                </button>
-              )}
-            </div>
-            <input
-              className="bg-background h-12 p-2 border border-foreground/10"
-              type="text"
-              placeholder="Title"
-              value={title}
-              onChange={(e) => setTitle(e.target.value)}
-              required
-            />
-            <label className="relative flex justify-center items-center w-80 h-80 border-2 border-dashed rounded-xl cursor-pointer transition overflow-hidden group bg-background hover:border-secondary mb-6">
-              <input
-                ref={featuredImageInputRef}
-                type="file"
-                accept="image/*"
-                className="hidden"
-                onChange={(e) => {
-                  const file = e.target.files?.[0];
-                  if (file) handleFeaturedImage(file);
-                }}
-              />
+    <>
+      <HeroInner
+        subheading="Latest"
+        title="ARTICLES"
+        supportingText="Stay sharp with grooming tips, style advice, and updates from House of Havana. Your guide to looking and feeling your best."
+      />
 
-              {!featuredImage && (
-                <div className="flex flex-col items-center gap-2 text-muted-foreground">
-                  <svg
-                    width="36"
-                    height="36"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                  >
-                    <rect x="3" y="3" width="18" height="18" rx="2" />
-                    <circle cx="9" cy="9" r="2" />
-                    <path d="M21 15l-5-5L5 21" />
-                  </svg>
-
-                  <span className="text-sm font-medium">
-                    Add featured image
-                  </span>
-
-                  <span className="text-xs opacity-70">
-                    JPG, PNG (max 10MB)
-                  </span>
-                </div>
-              )}
-
-              {featuredImage && (
-                <>
-                  <img
-                    src={URL.createObjectURL(featuredImage)}
-                    alt="Featured Preview"
-                    className="absolute inset-0 w-full h-full object-cover"
-                  />
-
-                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
-                    <span className="text-white text-sm font-medium">
-                      Change image
-                    </span>
-                  </div>
-
+      {session?.user?.role === "superadmin" && (
+        <section className="bg-background py-20">
+          <div className="container">
+            <form
+              className="flex flex-col gap-4 mb-8 p-8 bg-surface border border-foreground/5 "
+              onSubmit={(e) => {
+                e.preventDefault();
+                handleAddOrUpdateBlog();
+              }}
+            >
+              <div className="flex justify-between items-center">
+                <h2>Add / Edit Blog</h2>
+                {session && (
                   <button
                     type="button"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      setFeaturedImage(null);
-                      if (featuredImageInputRef.current) {
-                        featuredImageInputRef.current.value = "";
-                      }
+                    onClick={() => signOut()}
+                    style={{
+                      padding: "8px 16px",
+                      backgroundColor: "#ff4d4f",
+                      color: "#fff",
+                      border: "none",
+                      borderRadius: 5,
+                      cursor: "pointer",
                     }}
-                    className="cursor-pointer absolute top-2 right-2 bg-black/60 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm hover:bg-black/80"
                   >
-                    ✕
+                    Logout
                   </button>
-                </>
-              )}
-            </label>
-
-            <LexicalComposer initialConfig={initialConfig}>
-              <Toolbar editor={editorInstance} />
-              <RichTextPlugin
-                contentEditable={<ContentEditable className="editor-input" />}
-                placeholder={
-                  <div className="editor-placeholder">Write something…</div>
-                }
-                ErrorBoundary={LexicalErrorBoundary}
+                )}
+              </div>
+              <input
+                className="bg-background h-12 p-2 border border-foreground/10"
+                type="text"
+                placeholder="Title"
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
+                required
               />
-              <HistoryPlugin />
-              <AutoFocusPlugin />
-              <LinkPlugin />
-              <EditorWrapper setEditorInstance={setEditorInstance} />
-            </LexicalComposer>
-
-            <div className="mt-6">
-              <label className="block mb-2 font-medium text-sm">
-                Optional Video
-              </label>
-
-              <label className="relative flex justify-center items-center w-full max-w-md h-56 border-2 border-dashed rounded-xl cursor-pointer transition overflow-hidden group bg-background hover:border-secondary">
+              <label className="relative flex justify-center items-center w-80 h-80 border-2 border-dashed rounded-xl cursor-pointer transition overflow-hidden group bg-background hover:border-secondary mb-6">
                 <input
-                  ref={featuredVideInputRef}
+                  ref={featuredImageInputRef}
                   type="file"
-                  accept="video/*"
+                  accept="image/*"
                   className="hidden"
                   onChange={(e) => {
                     const file = e.target.files?.[0];
-                    if (file) handleVideoUpload(file);
+                    if (file) handleFeaturedImage(file);
                   }}
                 />
 
-                {!videoFile && (
+                {!featuredImage && (
                   <div className="flex flex-col items-center gap-2 text-muted-foreground">
                     <svg
                       width="36"
@@ -484,29 +404,32 @@ export default function BlogsPage() {
                       stroke="currentColor"
                       strokeWidth="1.5"
                     >
-                      <rect x="2" y="2" width="20" height="20" rx="4" />
-                      <polygon points="10,8 16,12 10,16" />
+                      <rect x="3" y="3" width="18" height="18" rx="2" />
+                      <circle cx="9" cy="9" r="2" />
+                      <path d="M21 15l-5-5L5 21" />
                     </svg>
 
-                    <span className="text-sm font-medium">Add video</span>
+                    <span className="text-sm font-medium">
+                      Add featured image
+                    </span>
 
                     <span className="text-xs opacity-70">
-                      MP4, WebM (max 100MB)
+                      JPG, PNG (max 10MB)
                     </span>
                   </div>
                 )}
 
-                {videoFile && (
+                {featuredImage && (
                   <>
-                    <video
-                      src={URL.createObjectURL(videoFile)}
-                      controls
+                    <img
+                      src={URL.createObjectURL(featuredImage)}
+                      alt="Featured Preview"
                       className="absolute inset-0 w-full h-full object-cover"
                     />
 
                     <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
                       <span className="text-white text-sm font-medium">
-                        Change video
+                        Change image
                       </span>
                     </div>
 
@@ -514,9 +437,9 @@ export default function BlogsPage() {
                       type="button"
                       onClick={(e) => {
                         e.preventDefault();
-                        setVideoFile(null);
-                        if (featuredVideInputRef.current) {
-                          featuredVideInputRef.current.value = "";
+                        setFeaturedImage(null);
+                        if (featuredImageInputRef.current) {
+                          featuredImageInputRef.current.value = "";
                         }
                       }}
                       className="cursor-pointer absolute top-2 right-2 bg-black/60 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm hover:bg-black/80"
@@ -526,28 +449,103 @@ export default function BlogsPage() {
                   </>
                 )}
               </label>
-            </div>
 
-            <Button type="submit">Add / Update Blog</Button>
-            <Button type="button" onClick={() => resetEditor()}>
-              Reset
-            </Button>
-          </form>
-        )}
+              <LexicalComposer initialConfig={initialConfig}>
+                <Toolbar editor={editorInstance} />
+                <RichTextPlugin
+                  contentEditable={<ContentEditable className="editor-input" />}
+                  placeholder={
+                    <div className="editor-placeholder">Write something…</div>
+                  }
+                  ErrorBoundary={LexicalErrorBoundary}
+                />
+                <HistoryPlugin />
+                <AutoFocusPlugin />
+                <LinkPlugin />
+                <EditorWrapper setEditorInstance={setEditorInstance} />
+              </LexicalComposer>
 
-        {/* Header */}
-        <div className="mb-16">
-          <h2 className="heading-5-italic mb-2">Latest</h2>
-          <h1 className="heading-1">ARTICLES</h1>
-          <div className="w-20 h-px bg-foreground/20 mt-6 mb-8"></div>
-          <p className="text-foreground/50 leading-relaxed max-w-2xl">
-            Stay sharp with grooming tips, style advice, and updates from House
-            of Havana. Your guide to looking and feeling your best.
-          </p>
-        </div>
-      </div>
+              <div className="mt-6">
+                <label className="block mb-2 font-medium text-sm">
+                  Optional Video
+                </label>
 
-      <div className="bg-surface py-20">
+                <label className="relative flex justify-center items-center w-full max-w-md h-56 border-2 border-dashed rounded-xl cursor-pointer transition overflow-hidden group bg-background hover:border-secondary">
+                  <input
+                    ref={featuredVideInputRef}
+                    type="file"
+                    accept="video/*"
+                    className="hidden"
+                    onChange={(e) => {
+                      const file = e.target.files?.[0];
+                      if (file) handleVideoUpload(file);
+                    }}
+                  />
+
+                  {!videoFile && (
+                    <div className="flex flex-col items-center gap-2 text-muted-foreground">
+                      <svg
+                        width="36"
+                        height="36"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                      >
+                        <rect x="2" y="2" width="20" height="20" rx="4" />
+                        <polygon points="10,8 16,12 10,16" />
+                      </svg>
+
+                      <span className="text-sm font-medium">Add video</span>
+
+                      <span className="text-xs opacity-70">
+                        MP4, WebM (max 100MB)
+                      </span>
+                    </div>
+                  )}
+
+                  {videoFile && (
+                    <>
+                      <video
+                        src={URL.createObjectURL(videoFile)}
+                        controls
+                        className="absolute inset-0 w-full h-full object-cover"
+                      />
+
+                      <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                        <span className="text-white text-sm font-medium">
+                          Change video
+                        </span>
+                      </div>
+
+                      <button
+                        type="button"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          setVideoFile(null);
+                          if (featuredVideInputRef.current) {
+                            featuredVideInputRef.current.value = "";
+                          }
+                        }}
+                        className="cursor-pointer absolute top-2 right-2 bg-black/60 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm hover:bg-black/80"
+                      >
+                        ✕
+                      </button>
+                    </>
+                  )}
+                </label>
+              </div>
+
+              <Button type="submit">Add / Update Blog</Button>
+              <Button type="button" onClick={() => resetEditor()}>
+                Reset
+              </Button>
+            </form>
+          </div>
+        </section>
+      )}
+
+      <section className="bg-surface py-20">
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {blogs.length > 0 &&
@@ -609,7 +607,7 @@ export default function BlogsPage() {
             </div>
           )}
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }

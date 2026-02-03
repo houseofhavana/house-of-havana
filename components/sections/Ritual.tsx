@@ -1,8 +1,7 @@
-import React from "react";
-import Image from "next/image";
-import Link from "next/link";
 import Button from "@/components/ui/button";
 import { ChevronRight } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 
 const Ritual = () => {
   return (
@@ -12,17 +11,21 @@ const Ritual = () => {
           <div className="p-4 md:p-12 flex flex-col justify-between gap-16 md:gap-4">
             <div className="absolute w-[240px] h-[350px] bg-gradient-to-b from-transparent to-foreground/3 top-0 left-0"></div>
             <div>
-              <h3 className="heading-4-italic mb-2">Redefining</h3>
-              <h2 className="heading-2 mb-4">THE RITUAL</h2>
+              <h3 className="heading-4-italic mb-2">Elevating</h3>
+              <h2 className="heading-2 mb-4 text-primary">Men's Grooming</h2>
               <p className="text-foreground/50">
-                At House of Havana, grooming is more than maintenance — it's a
-                moment of pause, purpose, and precision. We blend classic
-                barbering tradition with modern design sensibility to craft an
-                experience tailored for discerning professionals and refined
-                tastes. From custom cabinetry and rich leather seating to
-                precision cuts and premium aftercare, every detail is designed
-                by excellence. This isn't just a barbershop — it's where ritual
-                becomes style.
+                At House of Havana, barbering is practiced as a disciplined craft. Every cut is structured with deliberate control — calibrated blends, engineered silhouettes, and proportion-driven detailing.
+              </p>
+              <p className="text-foreground/50 mt-2">
+                We do not guess.<br />
+                We assess, design, and execute.
+              </p>
+              <p className="text-foreground/50 mt-2">
+                From precise skin fades to sculpted beards and tailored finishing protocols, each service is built around technical accuracy and refined presentation.
+              </p>
+              <p className="text-foreground/50 mt-2">
+                Excellence is not an upgrade here.<br />
+                It is the baseline.
               </p>
             </div>
             <div className="w-full grid grid-cols-2 gap-4">

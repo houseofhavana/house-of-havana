@@ -15,23 +15,37 @@ import Script from "next/script";
 const WHY_CHOOSE_VALUES = [
   {
     number: "01",
-    title: "Barbers Who Get You",
-    description:
-      "Our barbers aren't just skilled — they're trained under a mentorship-driven program that sharpens both technique and mindset. We study more than just your hair — we read your style, your rhythm, your presence. The result? Precision cuts, tailored to you, delivered by professionals dedicated to mastering their craft.",
+    title: "Disciplined Craftsmanship",
+    description: `Our barbers are developed through structured mentorship and technical calibration. We train beyond basic cutting — focusing on proportion, symmetry, density control, and silhouette balance.
+
+Each service begins with assessment, not assumption.
+Face shape. Growth patterns. Lifestyle demands.
+
+The outcome is not just a haircut.
+It is controlled execution.`,
   },
   {
     number: "02",
-    title: "Rooted in Tradition",
-    description:
-      "We honor the legacy of classic barbering with every blade and brushstroke. From traditional straight-razor shaves to clean fades, our work is steeped in old-school techniques while staying sharp on the trends that matter today. It's heritage, with a modern edge.",
+    title: "Heritage Technique, Modern Precision",
+    description: `We operate from the foundation of traditional barbering — straight-razor discipline, structured fades, meticulous beard sculpting — while refining it through contemporary standards of presentation.
+
+Old-school methods.
+Modern refinement.
+
+Technique is respected. Detail is non-negotiable.`,
   },
   {
     number: "03",
-    title: "Premium Grooming Experience",
-    description:
-      "More than a cut — this is your time. From hot towel rituals and personal consultations to top-shelf grooming products and uninterrupted service, everything is designed for your comfort. Settle into your chair — it's yours until you say otherwise.",
+    title: "Elevated Client Experience",
+    description: `Professionalism defines the environment. Consultations are deliberate. Service is uninterrupted. Time in the chair is focused entirely on you.
+
+From hot towel protocols to premium finishing products, every touchpoint is designed to reinforce presence and confidence.
+
+This is not a transactional haircut.
+It is a premium grooming appointment executed without compromise.`,
   },
 ];
+
 
 const REVIEWS: Value[] = [
   {
@@ -77,8 +91,8 @@ export default function Home() {
           desktop: "/hero-desktop.png",
           ultrawide: "/hero-ultrawide.png",
         }}
-        subheading="The"
-        heading="House of Havana Barbershop in <br /> Saskatoon"
+        subheading="Top Rated Barbershop in Saskatoon"
+        heading="House of Havana Barbershop"
         supportingText="At House of Havana Barbershop in Saskatoon, grooming is more than maintenance — it’s a moment of focus, intention, and precision. We blend classic barbering tradition with modern design to create an experience tailored for discerning professionals. From custom cabinetry and rich leather seating to precision cuts, well-groomed beards, and premium aftercare, every detail is considered. This isn’t just another barbershop in Saskatoon — it’s where grooming becomes personal and confidence is elevated."
       />
       <Ritual /> {/* bg-surface */}
@@ -88,7 +102,7 @@ export default function Home() {
           {/* Header */}
           <div className="mb-24">
             <h2 className="heading-5-italic mb-2 text-center">Why Choose</h2>
-            <h1 className="heading-1 text-center mb-6">HOUSE OF HAVANA</h1>
+            <h2 className="heading-2 text-center mb-6 text-primary">HOUSE OF HAVANA</h2>
             <div className="w-20 h-px bg-foreground/20 mx-auto mb-12"></div>
             <p className="text-foreground/40 leading-relaxed text-center max-w-2xl mx-auto">
               We're not your average barbershop. At House of Havana, every
@@ -176,7 +190,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 mb-16">
             <div className="md:col-span-4">
               <h2 className="heading-5-italic mb-2">What Our</h2>
-              <h2 className="heading-1">CLIENTS SAY</h2>
+              <h2 className="heading-2 text-primary uppercase">Clients Say</h2>
             </div>
             <div className="md:col-span-6 md:col-start-7 flex items-end">
               <p className="text-foreground/50 leading-relaxed">

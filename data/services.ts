@@ -168,7 +168,6 @@ export const servicesList: ServiceCategory[] = [
       { name: "Beard Shape & Lineup", duration: "30 min", price: "$35–45*" },
       { name: "Hot Towel Shave", duration: "30 min", price: "$35–45*" },
       { name: "Full Beard Sculpt", duration: "30 min", price: "$35–45*" },
-      { name: "Beard Conditioning Treatment", duration: "30 min", price: "$35–45*" },
     ],
     page: {
       slug: "beard-grooming-saskatoon",
@@ -228,9 +227,7 @@ export const servicesList: ServiceCategory[] = [
       { name: "Partial Perm with Haircut", duration: "2 hours", price: "$160" },
       { name: "Full Perm with Haircut", duration: "2.5 hours", price: "$190" },
       { name: "Color Treatment", duration: "1.5 hours", price: "$120" },
-      { name: "Gray Blending", duration: "1 hour", price: "$85" },
-      { name: "Scalp Treatment", duration: "45 min", price: "$65" },
-      { name: "Hair Texture Service", duration: "2 hours", price: "$150" },
+      { name: "Gray Blending", duration: "20 min", price: "$40" },
     ],
     page: {
       slug: "premium-treatments-saskatoon",

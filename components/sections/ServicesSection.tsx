@@ -32,7 +32,7 @@ export default function ServicesSection({ services, subheading = 'Our', heading 
     <section className={`${bgSurface ? 'bg-surface' : 'bg-background'} py-20`}>
       <div className="container pt-5">
         {subheading && <h2 className="heading-4-italic">{parse(subheading)}</h2>}
-        {heading && <h2 className="heading-2 mb-4">{parse(heading)}</h2>}
+        {heading && <h2 className="heading-2 mb-4 text-primary">{parse(heading)}</h2>}
         {supportingText && <p className="max-w-2xl text-foreground/50">{supportingText}</p>}
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-16">

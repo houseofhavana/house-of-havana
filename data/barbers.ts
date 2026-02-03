@@ -62,16 +62,6 @@ export const BARBERS: Barber[] = [
   },
   {
     image: {
-      src: "/barbers/webp/kyle.webp",
-      alt: "Kyle - Barber & Former Touring Musician",
-    },
-    name: "Kyle",
-    text1: "Barber | Former Touring Musician",
-    text2: "From stage to salon since 2019",
-    bio: "Originally from Yorkton, Saskatchewan, Kyle made the bold leap from the stage to the salon, trading a decade-long career as a professional touring musician for the barber's chair in 2019. Bringing the same energy and creativity that fueled his music career, Kyle quickly established himself as a standout talent in Calgary's barbering scene. After honing his skills in Calgary, he became a go-to barber for the Calgary Flames, earning a reputation for his precision, speed, and signature style. Kyle specializes in longer, expressive cuts—from mullets and hockey flows to shaggy mod styles and blowout tapers—while also delivering crisp skin fades with expert precision. Now based in Saskatoon, Kyle continues to blend creativity with craftsmanship behind the chair, while staying active in the music scene as a writer and producer. When he's not cutting hair or making music, he enjoys life with his partner, kids, and a spirited crew of cats.",
-  },
-  {
-    image: {
       src: "/barbers/webp/emily.webp",
       alt: "Emily - Barber & Grooming Specialist in Saskatoon",
     },

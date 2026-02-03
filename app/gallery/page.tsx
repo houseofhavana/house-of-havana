@@ -1,3 +1,4 @@
+import HeroInner from "@/components/sections/HeroInner";
 import PhotoGalleryMasonry, {
   GalleryImage,
 } from "@/components/sections/PhotoGalleryMasonry";
@@ -140,12 +141,14 @@ const images: GalleryImage[] = [
 
 export default function GalleryPage() {
   return (
-    <section className="md:py-40 py-20">
-      <div className="container pb-20">
-        <h3 className="heading-5-italic">Our</h3>
-        <h1 className="heading-1">Gallery</h1>
-      </div>
+    <>
+      <HeroInner
+        subheading="Our"
+        title="GALLERY"
+        supportingText="Browse our gallery of haircuts, fades, and beard grooming at House Of Havana barbershop in Saskatoon."
+      />
+
       <PhotoGalleryMasonry images={images} />
-    </section>
+    </>
   );
 }
