@@ -67,25 +67,6 @@ export default function ServicesSection({ services, subheading = 'Our', heading 
                       </p>
                     )}
 
-                    {service.items && service.items.length > 0 && (
-                      <ul className="space-y-3 mt-6">
-                        {service.items.map((item, i) => (
-                          <li key={i} className="flex justify-between items-center text-sm border-t border-foreground/10 pt-3">
-                            {typeof item === 'string' ? (
-                              <span className="text-foreground/70">{item}</span>
-                            ) : (
-                              <>
-                                <span className="text-foreground/70">{item.name}</span>
-                                <span className="flex items-center gap-3 text-xs">
-                                  {item.duration && <span className="text-foreground/50">{item.duration}</span>}
-                                  {item.price && <span className="font-medium text-foreground">{item.price}</span>}
-                                </span>
-                              </>
-                            )}
-                          </li>
-                        ))}
-                      </ul>
-                    )}
                   </div>
                 </Link>
               </motion.div>

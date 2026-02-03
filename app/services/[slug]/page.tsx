@@ -83,6 +83,7 @@ export default async function ServicePage({ params }: Props) {
                 </div>
               ))}
             </div>
+            <p className="text-sm text-foreground/50 mt-6 text-center">*Price depends on barber</p>
           </div>
         </div>
       </section>
