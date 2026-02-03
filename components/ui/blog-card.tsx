@@ -1,61 +1,58 @@
 "use client";
 
 import ArrowRight from "@/components/icons/ArrowRight";
+import { urlFor } from "@/sanity/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 interface BlogCardProps {
-  id: string;
+  slug: string;
   title: string;
-  createdAt: string;
-  featuredMedia?: {
-    url: string;
-    publicId: string;
-    type: "image" | "video";
+  publishedAt: string;
+  mainImage?: any;
+  author?: {
+    name: string;
+    slug: {
+      current: string;
+    };
   };
   bgSurface?: boolean;
 }
 
 const BlogCard: React.FC<BlogCardProps> = ({
-  id,
+  slug,
   title,
-  createdAt,
-  featuredMedia,
+  publishedAt,
+  mainImage,
+  author,
   bgSurface = true,
 }) => {
-  const formattedDate = new Date(createdAt).toLocaleDateString(undefined, {
+  const router = useRouter();
+
+  const formattedDate = new Date(publishedAt).toLocaleDateString(undefined, {
     year: "numeric",
     month: "long",
     day: "numeric",
   });
 
   return (
-    <Link href={`/blogs/${id}`} className="block group">
+    <Link href={`/blogs/${slug}`} className="block group">
       <article className="flex flex-col h-full">
         {/* Image */}
         <div
           className={`${bgSurface ? "bg-surface" : "bg-background"} relative aspect-[4/3] overflow-hidden mb-6`}
         >
-          {featuredMedia?.type === "image" && (
+          {mainImage && (
             <Image
-              src={featuredMedia.url}
-              alt={title}
+              src={urlFor(mainImage).width(800).height(600).url()}
+              alt={mainImage.alt || title}
               fill
               className="object-cover transition-transform duration-500 group-hover:scale-105"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
           )}
-          {featuredMedia?.type === "video" && (
-            <video
-              src={featuredMedia.url}
-              className="absolute inset-0 w-full h-full object-cover"
-              muted
-              loop
-              autoPlay
-              playsInline
-            />
-          )}
-          {!featuredMedia && (
+          {!mainImage && (
             <div className="absolute inset-0 flex items-center justify-center">
               <span className="text-foreground/20 text-sm uppercase tracking-wider">
                 No Image
@@ -78,6 +75,22 @@ const BlogCard: React.FC<BlogCardProps> = ({
           <h3 className="heading-4 !capitalize text-foreground mb-4 group-hover:text-secondary transition-colors">
             {title}
           </h3>
+
+          {/* Author */}
+          {author && (
+            <p className="text-sm text-foreground/50 mb-2">
+              by{" "}
+              <span
+                className="text-foreground hover:text-secondary transition-colors cursor-pointer"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  router.push(`/blogs/authors/${author.slug.current}`);
+                }}
+              >
+                {author.name}
+              </span>
+            </p>
+          )}
 
           {/* Spacer */}
           <div className="flex-1" />

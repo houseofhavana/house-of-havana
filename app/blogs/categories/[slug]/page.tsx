@@ -2,7 +2,14 @@ import HeroInner from "@/components/sections/HeroInner";
 import BlogCard from "@/components/ui/blog-card";
 import { client } from "@/sanity/lib/client";
 
-import { mergeSEO } from "@/lib/seo";
+interface Category {
+  _id: string;
+  title: string;
+  slug: {
+    current: string;
+  };
+  description?: string;
+}
 
 interface Post {
   _id: string;
@@ -22,13 +29,32 @@ interface Post {
 
 const POSTS_PER_PAGE = 9;
 
-async function getPosts(page: number = 1): Promise<{ posts: Post[]; total: number }> {
+async function getCategory(slug: string): Promise<Category | null> {
+  const category = await client.fetch(
+    `*[_type == "category" && slug.current == $slug][0] {
+      _id,
+      title,
+      slug,
+      description
+    }`,
+    { slug },
+    {
+      next: { revalidate: 60 },
+    }
+  );
+  return category;
+}
+
+async function getCategoryPosts(
+  categoryId: string,
+  page: number = 1
+): Promise<{ posts: Post[]; total: number }> {
   const start = (page - 1) * POSTS_PER_PAGE;
   const end = start + POSTS_PER_PAGE;
 
   const [posts, total] = await Promise.all([
     client.fetch(
-      `*[_type == "post"] | order(publishedAt desc) [$start...$end] {
+      `*[_type == "post" && $categoryId in categories[]._ref] | order(publishedAt desc) [$start...$end] {
         _id,
         title,
         slug,
@@ -39,14 +65,14 @@ async function getPosts(page: number = 1): Promise<{ posts: Post[]; total: numbe
           slug
         }
       }`,
-      { start, end },
+      { categoryId, start, end },
       {
         next: { revalidate: 60 },
       }
     ),
     client.fetch(
-      `count(*[_type == "post"])`,
-      {},
+      `count(*[_type == "post" && $categoryId in categories[]._ref])`,
+      { categoryId },
       {
         next: { revalidate: 60 },
       }
@@ -56,65 +82,110 @@ async function getPosts(page: number = 1): Promise<{ posts: Post[]; total: numbe
   return { posts, total };
 }
 
+export async function generateStaticParams() {
+  const categories = await client.fetch(
+    `*[_type == "category"] {
+      "slug": slug.current
+    }`
+  );
+
+  return categories.map((category: { slug: string }) => ({
+    slug: category.slug,
+  }));
+}
+
 export async function generateMetadata({
+  params,
   searchParams,
 }: {
+  params: Promise<{ slug: string }>;
   searchParams: Promise<{ page?: string }>;
 }) {
+  const { slug } = await params;
   const { page } = await searchParams;
+  const category = await getCategory(slug);
+
+  if (!category) {
+    return {
+      title: "Category Not Found",
+    };
+  }
+
   const pageNum = page ? parseInt(page) : 1;
   const pageSuffix = pageNum > 1 ? ` - Page ${pageNum}` : "";
 
-  return mergeSEO({
-    title: `Blog${pageSuffix}`,
-    description: `Read grooming tips, style advice, and updates from House Of Havana barbershop in Saskatoon.${pageSuffix}`,
-    keywords: [
-      "barber blog saskatoon",
-      "mens grooming tips",
-      "haircut advice",
-    ],
-    canonical: pageNum > 1 ? `/blogs?page=${pageNum}` : "/blogs",
-  });
+  return {
+    title: `${category.title}${pageSuffix} - Category`,
+    description: category.description
+      ? `${category.description}${pageSuffix}`
+      : `Explore articles in ${category.title} category at House of Havana${pageSuffix}`,
+    openGraph: {
+      title: `${category.title}${pageSuffix} - Category`,
+      description: category.description
+        ? `${category.description}${pageSuffix}`
+        : `Explore articles in ${category.title} category at House of Havana${pageSuffix}`,
+    },
+  };
 }
 
-export default async function BlogsPage({
+export default async function CategoryPage({
+  params,
   searchParams,
 }: {
+  params: Promise<{ slug: string }>;
   searchParams: Promise<{ page?: string }>;
 }) {
+  const { slug } = await params;
   const { page } = await searchParams;
+  const category = await getCategory(slug);
+
+  if (!category) {
+    return (
+      <div className="min-h-screen pt-32 pb-16">
+        <div className="container">
+          <h1 className="heading-1">Category not found</h1>
+        </div>
+      </div>
+    );
+  }
+
   const currentPage = page ? parseInt(page) : 1;
-  const { posts, total } = await getPosts(currentPage);
+  const { posts, total } = await getCategoryPosts(category._id, currentPage);
   const totalPages = Math.ceil(total / POSTS_PER_PAGE);
 
   return (
     <>
       <HeroInner
-        subheading="Latest"
-        title="ARTICLES"
-        supportingText="Stay sharp with grooming tips, style advice, and updates from House of Havana. Your guide to looking and feeling your best."
+        subheading="Category"
+        title={category.title.toUpperCase()}
+        supportingText={
+          category.description ||
+          `Explore articles and insights in ${category.title}. Discover expert content on grooming, style, and barbering.`
+        }
       />
 
+      {/* Category's Posts */}
       <section className="bg-surface py-20">
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {posts.length > 0 &&
-              posts.map((post) => (
-                <BlogCard
-                  key={post._id}
-                  slug={post.slug.current}
-                  title={post.title}
-                  publishedAt={post.publishedAt}
-                  mainImage={post.mainImage}
-                  author={post.author}
-                  bgSurface={false}
-                />
-              ))}
+            {posts.map((post) => (
+              <BlogCard
+                key={post._id}
+                slug={post.slug.current}
+                title={post.title}
+                publishedAt={post.publishedAt}
+                mainImage={post.mainImage}
+                author={post.author}
+                bgSurface={false}
+              />
+            ))}
           </div>
 
           {posts.length === 0 && (
             <div className="text-center py-20">
-              <p className="text-foreground/50">No blog posts yet.</p>
+              <p className="text-foreground/50">
+                No articles published yet in {category.title}.
+              </p>
             </div>
           )}
 
@@ -123,7 +194,7 @@ export default async function BlogsPage({
             <div className="mt-12 flex items-center justify-center gap-4">
               {currentPage > 1 && (
                 <a
-                  href={`/blogs${currentPage - 1 > 1 ? `?page=${currentPage - 1}` : ""}`}
+                  href={`/blogs/categories/${slug}${currentPage - 1 > 1 ? `?page=${currentPage - 1}` : ""}`}
                   className="px-4 py-2 border border-foreground/20 hover:border-foreground/40 transition-colors text-foreground/70 hover:text-foreground"
                 >
                   Previous
@@ -141,7 +212,7 @@ export default async function BlogsPage({
                       return (
                         <a
                           key={pageNum}
-                          href={`/blogs${pageNum > 1 ? `?page=${pageNum}` : ""}`}
+                          href={`/blogs/categories/${slug}${pageNum > 1 ? `?page=${pageNum}` : ""}`}
                           className={`px-4 py-2 border transition-colors ${pageNum === currentPage
                               ? "border-foreground text-foreground bg-surface"
                               : "border-foreground/20 text-foreground/70 hover:border-foreground/40 hover:text-foreground"
@@ -170,7 +241,7 @@ export default async function BlogsPage({
 
               {currentPage < totalPages && (
                 <a
-                  href={`/blogs?page=${currentPage + 1}`}
+                  href={`/blogs/categories/${slug}?page=${currentPage + 1}`}
                   className="px-4 py-2 border border-foreground/20 hover:border-foreground/40 transition-colors text-foreground/70 hover:text-foreground"
                 >
                   Next

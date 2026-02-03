@@ -85,7 +85,6 @@ const ServicesPage = () => (
                             );
                           })}
                         </div>
-                        <p className="text-foreground/40 text-xs mt-4 ">*based on barber</p>
                       </>
                     )}
                   </div>
@@ -94,6 +93,7 @@ const ServicesPage = () => (
             );
           })}
         </div>
+        <p className="text-sm text-foreground/50 mt-6 text-center">*Price depends on barber</p>
       </div>
     </section>
 

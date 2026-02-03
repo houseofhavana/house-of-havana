@@ -1,15 +1,15 @@
 'use client'
 
-import React, { useState, useEffect } from 'react'
-import { cn } from '@/lib/utils'
-import Logo from './logo'
-import Link from 'next/link'
-import { Button } from './button'
-import { ChevronDown, ChevronLeft, ChevronRight, Menu, X } from 'lucide-react'
-import { motion, AnimatePresence, Transition, Variants } from 'framer-motion'
-import { navigationData, NavItemData, MegaMenuData, MegaMenuColumn } from '@/lib/navigation-config'
-import { usePathname } from 'next/navigation'
 import { getNavbarVariant } from '@/lib/navbar-config'
+import { MegaMenuColumn, MegaMenuData, navigationData, NavItemData } from '@/lib/navigation-config'
+import { cn } from '@/lib/utils'
+import { AnimatePresence, motion, Transition, Variants } from 'framer-motion'
+import { ChevronDown, ChevronLeft, ChevronRight, Menu, X } from 'lucide-react'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import React, { useEffect, useState } from 'react'
+import { Button } from './button'
+import Logo from './logo'
 
 // Phase 1: Unify the Animation Language
 const ANIMATION_TRANSITION: Transition = { type: "tween", duration: 0.3, ease: [0.4, 0, 0.2, 1] };
@@ -63,9 +63,14 @@ const Navbar = () => {
   const pathname = usePathname();
   const navbarVariant = getNavbarVariant(pathname);
 
+  // Hide navbar on studio page
+  if (pathname.startsWith('/studio')) {
+    return null;
+  }
+
   useEffect(() => {
     setMounted(true)
-    
+
     const handleScroll = () => {
       const scrollTop = window.scrollY
       setIsScrolled(scrollTop > 50)
@@ -122,7 +127,7 @@ const Navbar = () => {
               <NavItem key={item.label} item={item} navbarVariant={navbarVariant} isScrolled={isScrolledState} />
             ))}
           </nav>
-          
+
           <div className="hidden md:flex items-center gap-4">
             <Link href="https://getsquire.com/booking/brands/house-of-havana-barbershop" target='_blank'>
               <Button size="icon" variant={navbarVariant === 'dark' ? 'primary' : 'primary'}>
@@ -305,7 +310,7 @@ const MegaMenuContent = ({ items }: { items: any[] }) => (
 const MobileNavContent = ({ closeMenu }: { closeMenu: () => void }) => {
   const [[level, direction], setLevel] = useState([0, 0]);
   const [navPath, setNavPath] = useState<string[]>(['root']);
-  
+
   let currentContent: any[] = navigationData;
   let isMegaMenuContent = false;
 
@@ -333,12 +338,12 @@ const MobileNavContent = ({ closeMenu }: { closeMenu: () => void }) => {
     <div className="h-full flex flex-col container">
       {/* --- Mobile Nav Header --- */}
       <div className="flex items-center justify-between py-4 border-b border-foreground/10 flex-shrink-0">
-         <Link href="/" onClick={closeMenu}>
-            <Logo className={'fill-dark'}/>
-          </Link>
+        <Link href="/" onClick={closeMenu}>
+          <Logo className={'fill-dark'} />
+        </Link>
         <button onClick={closeMenu} className="p-2 -mr-2 text-foreground"><X className="h-6 w-6" /></button>
       </div>
-      
+
       {/* --- Animated View Stack --- */}
       <div className="flex-grow relative overflow-hidden">
         <AnimatePresence custom={direction}>
@@ -351,41 +356,41 @@ const MobileNavContent = ({ closeMenu }: { closeMenu: () => void }) => {
             exit="exit"
             className="absolute top-0 left-0 w-full h-full overflow-y-auto pb-24"
           >
-             {/* Header for sub-levels */}
+            {/* Header for sub-levels */}
             {navPath.length > 1 && (
-               <button onClick={goBack} className="flex items-center gap-2 p-2 -ml-3 mt-2 text-foreground mb-2">
-                  <ChevronLeft className="h-5 w-5" />
-                  <span>Back</span>
-                </button>
+              <button onClick={goBack} className="flex items-center gap-2 p-2 -ml-3 mt-2 text-foreground mb-2">
+                <ChevronLeft className="h-5 w-5" />
+                <span>Back</span>
+              </button>
             )}
 
             <nav className="flex flex-col">
               {isMegaMenuContent ? (
-                  (currentContent as MegaMenuColumn[]).map(col => (
-                    <div key={col.title} className="py-2">
-                        <h5 className="text-foreground text-md mb-2">{col.title}</h5>
-                        {col.links.map(link => (
-                         <Link key={link.label} href={link.href} onClick={closeMenu} className="block py-1 text-foreground/80">
-                           {link.label}
-                         </Link>
-                       ))}
-                    </div>
-                  ))
+                (currentContent as MegaMenuColumn[]).map(col => (
+                  <div key={col.title} className="py-2">
+                    <h5 className="text-foreground text-md mb-2">{col.title}</h5>
+                    {col.links.map(link => (
+                      <Link key={link.label} href={link.href} onClick={closeMenu} className="block py-1 text-foreground/80">
+                        {link.label}
+                      </Link>
+                    ))}
+                  </div>
+                ))
               ) : (
-                  (currentContent as NavItemData[]).map(item => (
-                    <div key={item.label} className="border-b border-foreground/15">
-                      {item.children ? (
-                        <button onClick={() => goTo(item.label)} className="w-full flex justify-between items-center py-3 text-foreground text-lg">
-                          <span>{item.label}</span>
-                          <ChevronRight className="h-5 w-5" />
-                        </button>
-                      ) : (
-                        <Link href={item.href} onClick={closeMenu} className="block py-3 text-foreground text-lg">
-                          {item.label}
-                        </Link>
-                      )}
-                    </div>
-                  ))
+                (currentContent as NavItemData[]).map(item => (
+                  <div key={item.label} className="border-b border-foreground/15">
+                    {item.children ? (
+                      <button onClick={() => goTo(item.label)} className="w-full flex justify-between items-center py-3 text-foreground text-lg">
+                        <span>{item.label}</span>
+                        <ChevronRight className="h-5 w-5" />
+                      </button>
+                    ) : (
+                      <Link href={item.href} onClick={closeMenu} className="block py-3 text-foreground text-lg">
+                        {item.label}
+                      </Link>
+                    )}
+                  </div>
+                ))
               )}
             </nav>
           </motion.div>
