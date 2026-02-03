@@ -1,4 +1,4 @@
-# House of Havana Website - Deployment Checklist
+# House Of Havana Website - Deployment Checklist
 
 ## ✅ Completed Tasks
 
@@ -20,34 +20,43 @@
 ## 📋 Before Going Live
 
 ### 1. Add Barber Photos
+
 - [ ] Add 6 barber photos to `/public/barbers/` directory
 - [ ] Files needed: cristian.png, cj.png, kurt.png, janna.png, sarah.png, kyle.png
 - [ ] See `BARBER_IMAGES_NEEDED.md` for specifications
 
 ### 2. Email Service Setup (Contact Form)
+
 The contact form at `/app/contact/page.tsx` needs email service integration:
 
 **Option A: Use Resend (Recommended)**
+
 ```bash
 npm install resend
 ```
+
 Then update `/app/api/contact/route.ts` to use Resend API.
 
 **Option B: Use SendGrid**
+
 ```bash
 npm install @sendgrid/mail
 ```
+
 Then update `/app/api/contact/route.ts` to use SendGrid API.
 
 **Option C: Use a Form Service**
-- Formspree (https://formspree.io)
-- Formspark (https://formspark.io)
-- Web3Forms (https://web3forms.com)
 
-**Current Status:** The form submits successfully but emails are only logged to console. You MUST set up one of the above options before going live so that form submissions reach **hello@jztech.co**.
+- Formspree (<https://formspree.io>)
+- Formspark (<https://formspark.io>)
+- Web3Forms (<https://web3forms.com>)
+
+**Current Status:** The form submits successfully but emails are only logged to console. You MUST set up one of the above options before going live so that form submissions reach **<hello@jztech.co>**.
 
 ### 3. Environment Variables
+
 Create a `.env.local` file with:
+
 ```
 # Email Service (choose one based on your choice above)
 RESEND_API_KEY=your_key_here
@@ -61,6 +70,7 @@ CONTACT_EMAIL=hello@jztech.co
 ```
 
 ### 4. Testing Checklist
+
 - [ ] Test all navigation links
 - [ ] Test contact form submission
 - [ ] Test booking link (opens Barber-Os correctly)
@@ -72,6 +82,7 @@ CONTACT_EMAIL=hello@jztech.co
 - [ ] Check services display pricing correctly
 
 ### 5. SEO & Analytics (Optional but Recommended)
+
 - [ ] Set up Google Analytics
 - [ ] Submit sitemap to Google Search Console
 - [ ] Set up Google Business Profile
@@ -80,16 +91,19 @@ CONTACT_EMAIL=hello@jztech.co
 ## 🚀 Deployment Steps
 
 1. **Install Dependencies**
+
    ```bash
    npm install
    ```
 
 2. **Build the Project**
+
    ```bash
    npm run build
    ```
 
 3. **Test Production Build Locally**
+
    ```bash
    npm run start
    ```
@@ -105,28 +119,30 @@ CONTACT_EMAIL=hello@jztech.co
 
 ## 📞 Contact Information Used
 
-- **Business Name:** House of Havana Men's Grooming Ltd
+- **Business Name:** House Of Havana Men's Grooming Ltd
 - **Address:** 3501 8 St, Unit #110, Saskatoon, SK S7H0W5
-- **Email (Display):** info@houseofhavana.ca
-- **Email (Form Destination):** hello@jztech.co
+- **Email (Display):** <info@houseofhavana.ca>
+- **Email (Form Destination):** <hello@jztech.co>
 - **Hours:** Mon-Fri 10am-7pm, Sat 9am-6pm, Sun: Closed
-- **Booking System:** https://getsquire.com/booking/brands/house-of-havana-barbershop
+- **Booking System:** <https://getsquire.com/booking/brands/house-of-havana-barbershop>
 
 ## 📱 Social Media
 
-- **Instagram:** https://instagram.com/houseofhavanabarbershop_yxe/
-- **Facebook:** https://facebook.com/HouseOfHavanaBarbershop/
-- **TikTok:** https://www.tiktok.com/@houseofhavana.yxe
+- **Instagram:** <https://instagram.com/houseofhavanabarbershop_yxe/>
+- **Facebook:** <https://facebook.com/HouseOfHavanaBarbershop/>
+- **TikTok:** <https://www.tiktok.com/@houseofhavana.yxe>
 
 ## ⚠️ Critical Items
 
 **MUST BE DONE BEFORE LAUNCH:**
+
 1. Add barber photos
 2. Set up email service for contact form
 3. Test contact form end-to-end
 4. Test booking link works
 
 **SHOULD BE DONE SOON AFTER LAUNCH:**
+
 1. Get real client reviews to replace placeholder text
 2. Set up analytics tracking
 3. Add Google Business Profile
@@ -136,6 +152,5 @@ CONTACT_EMAIL=hello@jztech.co
 
 - News section is hidden but files remain (can be enabled later if needed)
 - Services are simplified to 5 core offerings with pricing
-- All placeholder "Havana Heights" references updated to "House of Havana"
+- All placeholder "Havana Heights" references updated to "House Of Havana"
 - Gift cards are mentioned as available through Barber-Os booking system
-

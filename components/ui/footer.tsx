@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer className="bg-background text-foreground pt-12 pb-6">
       <div className="container grid grid-cols-1 md:grid-cols-3 gap-10 border-b border-foreground/10 pb-10">
-        {/* About House of Havana */}
+        {/* About House Of Havana */}
         <div>
           <Logo className="mb-4 fill-foreground" width={180} height={71} />
           <hr className="my-4 border-foreground/10" />
@@ -192,7 +192,7 @@ const Footer = () => {
       </div>
       {/* Bottom row */}
       <div className="container flex flex-col md:flex-row justify-between items-center mt-6 text-xs text-foreground/50 gap-2">
-        <div>Copyright &copy; {new Date().getFullYear()} | House of Havana</div>
+        <div>Copyright &copy; {new Date().getFullYear()} | House Of Havana</div>
         <div className="space-x-4">
           <Link href="/terms-of-use" className="hover:underline">
             Terms of Use

@@ -109,7 +109,7 @@ export default async function BlogsPage({
       <HeroInner
         subheading="Latest"
         title="ARTICLES"
-        supportingText="Stay sharp with grooming tips, style advice, and updates from House of Havana. Your guide to looking and feeling your best."
+        supportingText="Stay sharp with grooming tips, style advice, and updates from House Of Havana. Your guide to looking and feeling your best."
       />
 
       <section className="bg-surface py-20">

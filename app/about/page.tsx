@@ -10,7 +10,7 @@ import Link from 'next/link'
 export const metadata = mergeSEO({
   title: "About Us | Men's Grooming In Saskatoon",
   description:
-    "House of Havana provides professional men's haircuts and grooming in Saskatoon, combining expert barbering with a luxury, tailored experience.",
+    "House Of Havana provides professional men's haircuts and grooming in Saskatoon, combining expert barbering with a luxury, tailored experience.",
   keywords: [
     'about house of havana',
     'saskatoon barber shop',
@@ -33,7 +33,7 @@ const About = () => {
               <h3 className='heading-5-italic'>Our</h3>
               <h2 className='heading-3'>STORY</h2>
               <p className='text-foreground/50 mb-4'>
-                House of Havana was founded by Cristian Perdomo, a master barber originally from Havana, Cuba. What began as a childhood passion at age 13 evolved into a distinguished career across Canada — from Saskatoon to Vancouver and back again.
+                House Of Havana was founded by Cristian Perdomo, a master barber originally from Havana, Cuba. What began as a childhood passion at age 13 evolved into a distinguished career across Canada — from Saskatoon to Vancouver and back again.
               </p>
               <p className='text-foreground/50'>
                 After building a high-profile clientele in Vancouver that included entrepreneurs, artists, and entertainers, Cristian chose to return to Saskatoon with his family. His vision was clear: create a barbershop that honors traditional craftsmanship while serving the modern gentleman — a space where grooming becomes ritual, not routine.

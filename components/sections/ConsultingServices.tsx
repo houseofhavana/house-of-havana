@@ -1,9 +1,9 @@
 'use client'
 
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import ArrowRight from '../icons/ArrowRight';
+import { AnimatePresence, motion } from 'framer-motion';
 import Link from 'next/link';
+import { useState } from 'react';
+import ArrowRight from '../icons/ArrowRight';
 import Header from '../ui/header';
 
 const ACCORDION_DATA = [
@@ -53,7 +53,7 @@ export default function ConsultingServices({ bgSurface = false }: { bgSurface?: 
           <h2 className="heading-4-italic">Our </h2>
           <h2 className="heading-2 mb-4">Grooming <br />Services</h2>
           <p className="max-w-2xl text-foreground/50">
-          At House of Havana, grooming is a ritual — not a routine. We offer a carefully curated menu of services designed for modern gentlemen who value craft, comfort, and confidence. Whether you&apos;re here for a sharp fade, a sculpted beard, or a complete transformation, every detail is delivered with precision and care.
+            At House Of Havana, grooming is a ritual — not a routine. We offer a carefully curated menu of services designed for modern gentlemen who value craft, comfort, and confidence. Whether you&apos;re here for a sharp fade, a sculpted beard, or a complete transformation, every detail is delivered with precision and care.
           </p>
         </div>
         <div className="space-y-4">

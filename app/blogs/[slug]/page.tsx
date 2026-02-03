@@ -83,14 +83,14 @@ export async function generateMetadata({
   }
 
   const categoryTitles = post.categories?.map((cat) => cat.title).join(", ") || "";
-  const description = `Read ${post.title} by ${post.author?.name || "House of Havana"}${categoryTitles ? ` in ${categoryTitles}` : ""}`;
+  const description = `Read ${post.title} by ${post.author?.name || "House Of Havana"}${categoryTitles ? ` in ${categoryTitles}` : ""}`;
   const canonical = `/blogs/${slug}`;
   const mainImageUrl = post.mainImage
     ? urlFor(post.mainImage).width(1200).height(630).url()
     : undefined;
 
   return {
-    title: post.title,
+    title: `${post.title} | House Of Havana Blog`,
     description,
     keywords: categoryTitles
       ? post.categories?.map((cat) => cat.title)

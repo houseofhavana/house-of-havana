@@ -138,7 +138,7 @@ export const barbershopSchema: WithContext<LocalBusiness> = {
   name: "House Of Havana Barbershop",
   alternateName: "House Of Havana",
   description:
-    "Experience premium grooming at House of Havana, Saskatoon's top barber shop for precision cuts, fades, and luxury style crafted by expert barbers.",
+    "Experience premium grooming at House Of Havana, Saskatoon's top barber shop for precision cuts, fades, and luxury style crafted by expert barbers.",
   url: BASE_URL,
   telephone: "+1-306-952-2255",
   priceRange: "$$",

@@ -1,8 +1,9 @@
-# House of Havana – Client Content & Integration Checklist
+# House Of Havana – Client Content & Integration Checklist
 
 Use this checklist to gather everything needed to launch and optimize the site. Check off items as they're provided. Recommended specs are included where relevant.
 
 ## 1) Brand & Strategy
+
 - [ ] Brand overview: 1–2 paragraphs on positioning and voice
 - [ ] Tagline(s) and key messages
 - [ ] Logo files: SVG (preferred), PNG (light/dark variants)
@@ -11,10 +12,11 @@ Use this checklist to gather everything needed to launch and optimize the site. 
 - [ ] Typography preferences (if different from site defaults)
 
 ## 2) Business & Legal
+
 - [ ] Legal business name (for footer, policies)
 - [ ] Address(es) (street, city, postal code, country)
 - [ ] Phone number for bookings/inquiries
-- [ ] Public email (e.g., hello@houseofhavana.co)
+- [ ] Public email (e.g., <hello@houseofhavana.co>)
 - [ ] Hours of operation (weekday/weekend/holiday format)
 - [ ] Service area(s) / neighborhood(s)
 - [ ] Terms of Use (final text)
@@ -22,6 +24,7 @@ Use this checklist to gather everything needed to launch and optimize the site. 
 - [ ] Cancellation / no‑show policy (displayed at booking and on site)
 
 ## 3) Booking & Operations
+
 - [ ] Booking platform link (Booksy/Fresha/Square/Calendly/etc.)
 - [ ] Booking policies (deposit, cancellation window, lateness)
 - [ ] Service durations per service
@@ -30,12 +33,14 @@ Use this checklist to gather everything needed to launch and optimize the site. 
 - [ ] Memberships/packages (name, contents, price, renewal)
 
 ## 4) Social & Reviews
+
 - [ ] Social profiles: Instagram, Facebook, TikTok, YouTube (URLs)
 - [ ] Google Business Profile link
 - [ ] Review sources: Google, Yelp, Facebook (links)
 - [ ] Press/awards logos and links (optional)
 
 ## 5) Analytics, SEO & Compliance
+
 - [ ] Google Analytics / GA4 Measurement ID
 - [ ] Meta Pixel ID (optional)
 - [ ] Google Search Console access (optional)
@@ -44,6 +49,7 @@ Use this checklist to gather everything needed to launch and optimize the site. 
 - [ ] SEO meta title/description per page (see section 10)
 
 ## 6) Images & Media (General)
+
 **Preferred formats:** WebP (preferred), PNG (transparent), high‑quality JPG
 **Note:** Provide original, uncompressed assets when possible
 **Note:** Include descriptive alt text per image for accessibility
@@ -57,6 +63,7 @@ Use this checklist to gather everything needed to launch and optimize the site. 
 - [ ] Brand textures/patterns (optional)
 
 ## 7) Home Page Content
+
 - [ ] Headline/subheadline (hero)
 - [ ] Supporting copy (2–4 sentences)
 - [ ] Home hero images (per breakpoint, see section 6)
@@ -64,7 +71,9 @@ Use this checklist to gather everything needed to launch and optimize the site. 
 - [ ] Call‑to‑Action text (e.g., "Book Your Chair")
 
 ## 8) Barbers (Team) Page
+
 **For each barber:**
+
 - [ ] Name and role/title
 - [ ] Portrait image: 1200×1500 (portrait) or 1600×1600 (square)
 - [ ] Short bio (50–120 words)
@@ -73,6 +82,7 @@ Use this checklist to gather everything needed to launch and optimize the site. 
 - [ ] Availability notes (optional)
 
 ## 9) Services (Treatments) Page
+
 - [ ] Final service categories (e.g., Haircuts & Styling, Beard Craft)
 - [ ] Services under each category (titles)
 - [ ] Descriptions per category/service (1–2 sentences)
@@ -82,7 +92,9 @@ Use this checklist to gather everything needed to launch and optimize the site. 
 - [ ] High‑level services hero images per breakpoint (optional)
 
 ## 10) SEO Meta by Page
+
 **Provide a meta title (≤60 chars) and description (≤155 chars) for each page.**
+
 - [ ] Home
 - [ ] About
 - [ ] Barbers
@@ -94,13 +106,16 @@ Use this checklist to gather everything needed to launch and optimize the site. 
 - [ ] Terms of Use
 
 ## 11) About Page
+
 - [ ] Brand story (150–300 words)
 - [ ] Philosophy/values (3–5 bullets or short paragraphs)
 - [ ] Shop history or founding story (optional)
 - [ ] Hero/supporting imagery
 
 ## 12) News (Updates) Page
+
 **For each post:**
+
 - [ ] Title
 - [ ] Date
 - [ ] Featured image (1200×800+ recommended)
@@ -108,7 +123,9 @@ Use this checklist to gather everything needed to launch and optimize the site. 
 - [ ] Full content (optional, if separate article page)
 
 ## 13) Reviews / Testimonials
+
 **For each testimonial:**
+
 - [ ] Client name (or initials)
 - [ ] Rating (out of 5)
 - [ ] Quote (1–3 sentences)
@@ -116,6 +133,7 @@ Use this checklist to gather everything needed to launch and optimize the site. 
 - [ ] Usage permission if required
 
 ## 14) Contact Page
+
 - [ ] Contact intro copy (1–2 sentences)
 - [ ] Address, phone, email
 - [ ] Embedded map preference (Google Maps link)
@@ -124,21 +142,25 @@ Use this checklist to gather everything needed to launch and optimize the site. 
 - [ ] Spam protection preference: reCAPTCHA v2/v3 (provide keys)
 
 ## 15) Emails & Notifications
-- [ ] Sender email/domain (e.g., hello@houseofhavana.co)
+
+- [ ] Sender email/domain (e.g., <hello@houseofhavana.co>)
 - [ ] SMTP provider or transactional email service (e.g., SendGrid, Postmark)
 - [ ] Auto‑reply copy for contact/booking forms (optional)
 
 ## 16) Accessibility
+
 - [ ] Alt text for all images
 - [ ] Color contrast approvals for brand colors on dark/light backgrounds
 - [ ] Video captions/subtitles (if any video is provided)
 
 ## 17) Performance & File Delivery
+
 - [ ] Approve image compression targets (e.g., 70–80% quality)
 - [ ] Approve lazy‑loading for below‑the‑fold images
 - [ ] Provide CDN preference (optional)
 
 ## 18) Future Enhancements (Optional)
+
 - [ ] Newsletter platform (Mailchimp/Klaviyo) and embed/signup copy
 - [ ] Online store or product catalog (tools, vouchers)
 - [ ] Loyalty program or referral program details
@@ -151,6 +173,7 @@ Use this checklist to gather everything needed to launch and optimize the site. 
 Deliverables can be shared via a folder structured like this:
 
 **House-of-Havana-Assets/**
+
 - **brand/**
   - logo.svg
   - logo-light.png
@@ -180,5 +203,3 @@ Deliverables can be shared via a folder structured like this:
 ---
 
 **Note:** If anything here is unclear, we can prioritize a "minimum viable content" set to go live, then iterate.
-
-

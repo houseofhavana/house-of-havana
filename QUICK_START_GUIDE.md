@@ -1,6 +1,6 @@
-# Quick Start Guide - House of Havana Website
+# Quick Start Guide - House Of Havana Website
 
-## ✨ Your Website is Ready!
+## ✨ Your Website is Ready
 
 All major development work is complete. Here's what you need to know to get your site live today.
 
@@ -24,6 +24,7 @@ All major development work is complete. Here's what you need to know to get your
 Create a folder: `/public/barbers/`
 
 Add these 6 photos (PNG format):
+
 - `cristian.png` - Cristian Perdomo
 - `cj.png` - CJ Galaura  
 - `kurt.png` - Kurt
@@ -35,20 +36,24 @@ Add these 6 photos (PNG format):
 
 ### 2. Set Up Contact Form Email (10 minutes)
 
-The contact form needs to send emails to **hello@jztech.co**
+The contact form needs to send emails to **<hello@jztech.co>**
 
 **Easiest Option - Resend (Recommended):**
 
-1. Sign up at https://resend.com (Free tier: 100 emails/day)
+1. Sign up at <https://resend.com> (Free tier: 100 emails/day)
 2. Get your API key
 3. Install Resend:
+
    ```bash
    npm install resend
    ```
+
 4. Create `.env.local` file:
+
    ```
    RESEND_API_KEY=your_api_key_here
    ```
+
 5. In `/app/api/contact/route.ts`, uncomment the Resend code (lines 28-36)
 
 **That's it!** Your contact form will now send emails.
@@ -60,7 +65,8 @@ The contact form needs to send emails to **hello@jztech.co**
 npm run dev
 ```
 
-Visit http://localhost:3000 and test:
+Visit <http://localhost:3000> and test:
+
 - [ ] All pages load
 - [ ] Contact form submits
 - [ ] Booking button opens Barber-Os
@@ -72,7 +78,7 @@ Visit http://localhost:3000 and test:
 ### Option A: Vercel (Recommended - 2 minutes)
 
 1. Push your code to GitHub
-2. Go to https://vercel.com
+2. Go to <https://vercel.com>
 3. Click "New Project"
 4. Import your GitHub repository
 5. Add environment variable: `RESEND_API_KEY`
@@ -83,7 +89,7 @@ Visit http://localhost:3000 and test:
 ### Option B: Netlify
 
 1. Push your code to GitHub
-2. Go to https://netlify.com
+2. Go to <https://netlify.com>
 3. Click "New site from Git"
 4. Connect your repository
 5. Build command: `npm run build`
@@ -95,7 +101,7 @@ Visit http://localhost:3000 and test:
 
 After your site is live:
 
-- [ ] Test contact form sends emails to hello@jztech.co
+- [ ] Test contact form sends emails to <hello@jztech.co>
 - [ ] Test booking link opens correctly
 - [ ] Check all pages on mobile devices
 - [ ] Share social media links with team
@@ -105,17 +111,17 @@ After your site is live:
 
 ## 🔗 Important URLs
 
-- **Booking System:** https://getsquire.com/booking/brands/house-of-havana-barbershop
-- **Instagram:** https://instagram.com/houseofhavanabarbershop_yxe/
-- **Facebook:** https://facebook.com/HouseOfHavanaBarbershop/
-- **TikTok:** https://www.tiktok.com/@houseofhavana.yxe
+- **Booking System:** <https://getsquire.com/booking/brands/house-of-havana-barbershop>
+- **Instagram:** <https://instagram.com/houseofhavanabarbershop_yxe/>
+- **Facebook:** <https://facebook.com/HouseOfHavanaBarbershop/>
+- **TikTok:** <https://www.tiktok.com/@houseofhavana.yxe>
 
 ## 📞 Your Contact Information
 
-- **Business:** House of Havana Men's Grooming Ltd
+- **Business:** House Of Havana Men's Grooming Ltd
 - **Address:** 3501 8 St, Unit #110, Saskatoon, SK S7H0W5
-- **Display Email:** info@houseofhavana.ca
-- **Form Email:** hello@jztech.co
+- **Display Email:** <info@houseofhavana.ca>
+- **Form Email:** <hello@jztech.co>
 - **Hours:** Mon-Fri 10am-7pm, Sat 9am-6pm, Sun: Closed
 
 ## 💡 Pro Tips
@@ -136,21 +142,24 @@ After your site is live:
 ## ⚡ Launch Timeline
 
 **Right Now (15 minutes):**
+
 1. Add barber photos
 2. Set up Resend account
 3. Add API key to environment
 
 **Today (30 minutes):**
+
 1. Test locally
 2. Deploy to Vercel/Netlify
 3. Final testing on live site
 
 **This Week:**
+
 1. Share with team
 2. Post on social media
 3. Monitor contact form
 
-## 🎉 You're Ready!
+## 🎉 You're Ready
 
 Your website is professional, functional, and ready for customers. Follow the steps above and you'll be live within an hour.
 
@@ -159,7 +168,7 @@ Your website is professional, functional, and ready for customers. Follow the st
 ---
 
 **Need Help?**  
+
 - Check `DEPLOYMENT_CHECKLIST.md` for detailed steps
 - Review code comments in `/app/api/contact/route.ts`
 - Test locally before deploying: `npm run dev`
-

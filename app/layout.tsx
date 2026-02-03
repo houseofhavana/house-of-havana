@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     template: `%s | House Of Havana`,
   },
   description:
-    "Experience premium grooming at House of Havana, Saskatoon top barber shop for precision cuts, fades, and luxury style crafted by expert barbers.",
+    "Experience premium grooming at House Of Havana, Saskatoon top barber shop for precision cuts, fades, and luxury style crafted by expert barbers.",
   verification: {
     google: "g7w7F4l6X96jUjKFKFMjJC2NqIa3x1u8AdUAcjydNZA",
   },
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "House Of Havana | Premium Barber Shop In Saskatoon",
-    description: "Experience premium grooming at House of Havana, Saskatoon top barber shop for precision cuts, fades, and luxury style crafted by expert barbers.",
+    description: "Experience premium grooming at House Of Havana, Saskatoon top barber shop for precision cuts, fades, and luxury style crafted by expert barbers.",
     url: "https://houseofhavana.ca",
     siteName: "House Of Havana",
     locale: "en_CA",
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "House Of Havana | Premium Barber Shop In Saskatoon",
-    description: "Experience premium grooming at House of Havana, Saskatoon top barber shop for precision cuts, fades, and luxury style crafted by expert barbers.",
+    description: "Experience premium grooming at House Of Havana, Saskatoon top barber shop for precision cuts, fades, and luxury style crafted by expert barbers.",
   },
 };
 

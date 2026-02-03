@@ -24,12 +24,12 @@ export async function POST(request: NextRequest) {
 
     // TODO: Set up email service before production launch!
     // Uncomment one of the options below after installing the package
-    
+
     // OPTION 1: RESEND (Recommended - run: npm install resend)
     // import { Resend } from 'resend';
     // const resend = new Resend(process.env.RESEND_API_KEY);
     // await resend.emails.send({
-    //   from: 'House of Havana <onboarding@resend.dev>',
+    //   from: 'House Of Havana <onboarding@resend.dev>',
     //   to: 'hello@jztech.co',
     //   subject: `Contact Form: ${name}`,
     //   text: `New Contact Form Submission\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone || 'Not provided'}\n\nMessage:\n${message}\n\nSubmitted at: ${new Date().toLocaleString()}`
@@ -52,9 +52,9 @@ export async function POST(request: NextRequest) {
     });
 
     return NextResponse.json(
-      { 
-        success: true, 
-        message: 'Thank you for your message! We will get back to you soon.' 
+      {
+        success: true,
+        message: 'Thank you for your message! We will get back to you soon.'
       },
       { status: 200 }
     );

@@ -119,8 +119,8 @@ export async function generateMetadata({
   const canonical = pageNum > 1
     ? `/blogs/authors/${slug}?page=${pageNum}`
     : `/blogs/authors/${slug}`;
-  const title = `${author.name}${pageSuffix} - Author`;
-  const description = `Read articles by ${author.name} at House of Havana${pageSuffix}`;
+  const title = `${author.name}${pageSuffix} | Author | Blog`;
+  const description = `Read articles by ${author.name} at House Of Havana${pageSuffix}`;
   const authorImageUrl = author.image
     ? urlFor(author.image).width(1200).height(630).url()
     : undefined;

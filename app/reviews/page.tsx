@@ -37,7 +37,7 @@ const FEATURED_REVIEWS: Review[] = [
     name: "James T.",
     service: "Haircut",
     rating: 5,
-    quote: "I've tried several barbershops in Saskatoon and House of Havana is by far the best. The atmosphere, the skill level, the attention to detail — everything is top tier.",
+    quote: "I've tried several barbershops in Saskatoon and House Of Havana is by far the best. The atmosphere, the skill level, the attention to detail — everything is top tier.",
     date: "1 month ago"
   },
   {
@@ -99,7 +99,7 @@ const ReviewsPage = () => (
     <HeroInner
       subheading="What Our"
       title="CLIENTS SAY"
-      supportingText="Real testimonials from gentlemen who have experienced the House of Havana difference. Every review represents our commitment to excellence, craft, and authentic client relationships."
+      supportingText="Real testimonials from gentlemen who have experienced the House Of Havana difference. Every review represents our commitment to excellence, craft, and authentic client relationships."
     />
 
     {/* Rating Summary */}

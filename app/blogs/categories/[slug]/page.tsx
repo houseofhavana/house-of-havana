@@ -116,10 +116,10 @@ export async function generateMetadata({
   const canonical = pageNum > 1
     ? `/blogs/categories/${slug}?page=${pageNum}`
     : `/blogs/categories/${slug}`;
-  const title = `${category.title}${pageSuffix} - Category`;
+  const title = `${category.title}${pageSuffix} | Category | Blog`;
   const description = category.description
     ? `${category.description}${pageSuffix}`
-    : `Explore articles in ${category.title} category at House of Havana${pageSuffix}`;
+    : `Explore articles in ${category.title} category at House Of Havana${pageSuffix}`;
 
   return {
     title,

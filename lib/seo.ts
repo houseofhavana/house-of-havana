@@ -155,7 +155,7 @@ export function generateSEO(props: SEOProps): Metadata {
 }
 
 /**
- * Default SEO configuration for House of Havana
+ * Default SEO configuration for House Of Havana
  */
 export const defaultSEO: Partial<SEOProps> = {
     openGraph: {

@@ -71,7 +71,7 @@ const REVIEWS: Value[] = [
   {
     title: "Modern Gentleman's Choice",
     description:
-      "House of Havana has become my go-to spot. The combination of traditional techniques with modern style is exactly what I was looking for.",
+      "House Of Havana has become my go-to spot. The combination of traditional techniques with modern style is exactly what I was looking for.",
   },
   {
     title: "Outstanding Experience",
@@ -92,8 +92,8 @@ export default function Home() {
           ultrawide: "/hero-ultrawide.png",
         }}
         subheading="Top Rated Barbershop in Saskatoon"
-        heading="House of Havana Barbershop"
-        supportingText="At House of Havana Barbershop in Saskatoon, grooming is more than maintenance — it’s a moment of focus, intention, and precision. We blend classic barbering tradition with modern design to create an experience tailored for discerning professionals. From custom cabinetry and rich leather seating to precision cuts, well-groomed beards, and premium aftercare, every detail is considered. This isn’t just another barbershop in Saskatoon — it’s where grooming becomes personal and confidence is elevated."
+        heading="House Of Havana Barbershop"
+        supportingText="At House Of Havana Barbershop in Saskatoon, grooming is more than maintenance — it’s a moment of focus, intention, and precision. We blend classic barbering tradition with modern design to create an experience tailored for discerning professionals. From custom cabinetry and rich leather seating to precision cuts, well-groomed beards, and premium aftercare, every detail is considered. This isn’t just another barbershop in Saskatoon — it’s where grooming becomes personal and confidence is elevated."
       />
       <Ritual /> {/* bg-surface */}
       {/* Why Choose Section - Luxury Editorial Design */}
@@ -105,7 +105,7 @@ export default function Home() {
             <h2 className="heading-2 text-center mb-6 text-primary">HOUSE OF HAVANA</h2>
             <div className="w-20 h-px bg-foreground/20 mx-auto mb-12"></div>
             <p className="text-foreground/40 leading-relaxed text-center max-w-2xl mx-auto">
-              We're not your average barbershop. At House of Havana, every
+              We're not your average barbershop. At House Of Havana, every
               detail matters — from the moment you walk in to the moment you
               walk out feeling like the best version of yourself.
             </p>
@@ -161,7 +161,7 @@ export default function Home() {
         bgSurface={true}
         subheading="Our Rituals"
         heading="Grooming<br />Services"
-        supportingText="At House of Havana, grooming isn't just about looking good — it's about feeling powerful, confident, and ready for anything. We've created a refined experience where every service is performed with precision, passion, and Havana-inspired style. Whether it's a clean fade, a detailed beard sculpt, or a full transformation, our barbers take the time to craft your look with intention and care. Sit back, relax, and let us turn your visit into a ritual you'll look forward to every time."
+        supportingText="At House Of Havana, grooming isn't just about looking good — it's about feeling powerful, confident, and ready for anything. We've created a refined experience where every service is performed with precision, passion, and Havana-inspired style. Whether it's a clean fade, a detailed beard sculpt, or a full transformation, our barbers take the time to craft your look with intention and care. Sit back, relax, and let us turn your visit into a ritual you'll look forward to every time."
         showCTA={true}
       />
       <TeamShowcase
@@ -195,7 +195,7 @@ export default function Home() {
             <div className="md:col-span-6 md:col-start-7 flex items-end">
               <p className="text-foreground/50 leading-relaxed">
                 Don't just take our word for it. Here's what our valued clients
-                have to say about their House of Havana experience.
+                have to say about their House Of Havana experience.
               </p>
             </div>
           </div>

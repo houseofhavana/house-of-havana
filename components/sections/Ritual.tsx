@@ -14,7 +14,7 @@ const Ritual = () => {
               <h3 className="heading-4-italic mb-2">Elevating</h3>
               <h2 className="heading-2 mb-4 text-primary">Men's Grooming</h2>
               <p className="text-foreground/50">
-                At House of Havana, barbering is practiced as a disciplined craft. Every cut is structured with deliberate control — calibrated blends, engineered silhouettes, and proportion-driven detailing.
+                At House Of Havana, barbering is practiced as a disciplined craft. Every cut is structured with deliberate control — calibrated blends, engineered silhouettes, and proportion-driven detailing.
               </p>
               <p className="text-foreground/50 mt-2 font-heading italic">
                 We do not guess. We assess, design, and execute.
@@ -59,7 +59,7 @@ const Ritual = () => {
                 <Image
                   src="/gallery/webp/IMG_1225.webp"
                   // src="/ritual.png"
-                  alt="House of Havana Ritual"
+                  alt="House Of Havana Ritual"
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
                   className="absolute -top-28! left-0 w-full h-full object-cover"

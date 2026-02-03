@@ -10,7 +10,7 @@ const Hero: React.FC<HeroData> = ({
   backgroundImages,
   subheading = "",
   heading = "Gentleman&apos;s <br /> Club",
-  supportingText = "Crafted scissors. Steam and silence. A glass of something neat. At House of Havana, grooming is the ceremony.",
+  supportingText = "Crafted scissors. Steam and silence. A glass of something neat. At House Of Havana, grooming is the ceremony.",
   className = ''
 }) => {
   return (
@@ -32,7 +32,7 @@ const Hero: React.FC<HeroData> = ({
                 {subheading}
               </p>
               <h1
-                aria-label="House of Havana Barbershop in Saskatoon"
+                aria-label="House Of Havana Barbershop in Saskatoon"
                 className='text-primary'
               >
                 {parse(heading)}
