@@ -112,7 +112,14 @@ export const organizationSchema: WithContext<Organization> = {
     availableLanguage: ["English"],
     areaServed: "CA",
   },
-  sameAs: ["https://www.instagram.com/houseofhavanabarbershop_yxe/"],
+  sameAs: [
+    "https://www.instagram.com/houseofhavanabarbershop_yxe/",
+    "https://www.facebook.com/HouseOfHavanaBarbershop/",
+    "https://www.tiktok.com/@houseofhavana.yxe",
+    "https://www.youtube.com/@houseofhavanamensgrooming",
+    "https://www.yelp.ca/biz/house-of-havana-saskatoon",
+    "https://getsquire.com/booking/brands/house-of-havana-barbershop"
+  ],
 };
 
 // BreadcrumbList Schema
@@ -296,11 +303,15 @@ export const barbershopSchema: WithContext<LocalBusiness> = {
       value: true,
     },
   ],
-  hasMap: "https://www.google.com/maps?q=3501+8+St+E,+Bay+110,+Saskatoon,+SK+S7H+0W5",
+  hasMap: "https://maps.app.goo.gl/MUwvjnhQNHpKnq167",
   isAccessibleForFree: false,
   sameAs: [
     "https://www.instagram.com/houseofhavanabarbershop_yxe/",
-    "https://getsquire.com/booking/brands/house-of-havana-barbershop",
+    "https://www.facebook.com/HouseOfHavanaBarbershop/",
+    "https://www.tiktok.com/@houseofhavana.yxe",
+    "https://www.youtube.com/@houseofhavanamensgrooming",
+    "https://www.yelp.ca/biz/house-of-havana-saskatoon",
+    "https://getsquire.com/booking/brands/house-of-havana-barbershop"
   ],
   slogan: "Where grooming becomes personal and confidence is elevated",
   knowsAbout: [
@@ -351,6 +362,9 @@ export const professionalServiceSchema: WithContext<ProfessionalService> = {
     "https://www.instagram.com/houseofhavanabarbershop_yxe/",
     "https://www.facebook.com/HouseOfHavanaBarbershop/",
     "https://www.tiktok.com/@houseofhavana.yxe",
+    "https://www.youtube.com/@houseofhavanamensgrooming",
+    "https://www.yelp.ca/biz/house-of-havana-saskatoon",
+    "https://getsquire.com/booking/brands/house-of-havana-barbershop"
   ],
 };
 

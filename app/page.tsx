@@ -202,7 +202,7 @@ export default function Home() {
           <OurValuesSlider values={REVIEWS} bgSurface={true} />
           <div className="mt-16">
             <Link href="/reviews">
-              <Button variant="secondary">
+              <Button variant="primary">
                 Read all reviews
                 <ChevronRight
                   className="stroke-background"
