@@ -16,7 +16,21 @@ export const categoryType = defineType({
       type: 'slug',
       options: {
         source: 'title',
+        slugify: (input) =>
+          input
+            .toLowerCase()
+            .replace(/\s+/g, '-')
+            .replace(/[^a-z0-9-]/g, '')
+            .slice(0, 96),
       },
+      validation: (rule) =>
+        rule.required().custom((slug) => {
+          if (!slug?.current) return 'Required'
+          if (!/^[a-z0-9-]+$/.test(slug.current)) {
+            return 'Slug must be lowercase with hyphens only (no spaces or uppercase)'
+          }
+          return true
+        }),
     }),
     defineField({
       name: 'description',
