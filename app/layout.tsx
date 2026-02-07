@@ -40,6 +40,9 @@ export const metadata: Metadata = {
     "Experience premium grooming at House Of Havana, Saskatoon top barber shop for precision cuts, fades, and luxury style crafted by expert barbers.",
   verification: {
     google: "g7w7F4l6X96jUjKFKFMjJC2NqIa3x1u8AdUAcjydNZA",
+    other: {
+      'facebook-domain-verification': ['3dvp3t6vifs354iw5p2jyqnq5jt91a'],
+    },
   },
   alternates: {
     canonical: "/",
