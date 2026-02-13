@@ -9,7 +9,7 @@ import {
   professionalServiceSchema,
   websiteSchema,
 } from "@/lib/schema";
-import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google';
+import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import Script from "next/script";
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   verification: {
     google: "g7w7F4l6X96jUjKFKFMjJC2NqIa3x1u8AdUAcjydNZA",
     other: {
-      'facebook-domain-verification': ['3dvp3t6vifs354iw5p2jyqnq5jt91a'],
+      "facebook-domain-verification": ["3dvp3t6vifs354iw5p2jyqnq5jt91a"],
     },
   },
   alternates: {
@@ -49,7 +49,8 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "House Of Havana | Premium Barber Shop In Saskatoon",
-    description: "Experience premium grooming at House Of Havana, Saskatoon top barber shop for precision cuts, fades, and luxury style crafted by expert barbers.",
+    description:
+      "Experience premium grooming at House Of Havana, Saskatoon top barber shop for precision cuts, fades, and luxury style crafted by expert barbers.",
     url: "https://houseofhavana.ca",
     siteName: "House Of Havana",
     locale: "en_CA",
@@ -58,7 +59,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "House Of Havana | Premium Barber Shop In Saskatoon",
-    description: "Experience premium grooming at House Of Havana, Saskatoon top barber shop for precision cuts, fades, and luxury style crafted by expert barbers.",
+    description:
+      "Experience premium grooming at House Of Havana, Saskatoon top barber shop for precision cuts, fades, and luxury style crafted by expert barbers.",
   },
 };
 
@@ -106,7 +108,9 @@ export default function RootLayout({
         <Script
           id="professional-service-schema"
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: jsonLd(professionalServiceSchema) }}
+          dangerouslySetInnerHTML={{
+            __html: jsonLd(professionalServiceSchema),
+          }}
         />
 
         <Navbar />
