@@ -11,6 +11,11 @@ import { imageGallerySchema, jsonLd, servicesSchema } from "@/lib/schema";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 import Script from "next/script";
+export const metadata = {
+  title: "House of Havana Barbershop | Men’s Haircuts, Skin Fades & Beard Grooming Saskatoon",
+  description:
+    "House of Havana Barbershop is a premium barbershop in Saskatoon offering men’s haircuts, skin fades, and beard grooming. Book your appointment today.",
+};
 
 const WHY_CHOOSE_VALUES = [
   {
