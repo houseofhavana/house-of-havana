@@ -24,12 +24,15 @@ const ServicesPage = () => (
         Barber Services in Saskatoon
       </h1>
 
-     <p className="text-foreground/60 mb-4">
+    <p className="text-foreground/60 mb-4">
   House of Havana Barbershop offers premium barber services in Saskatoon, including men’s haircuts,
   <Link href="/services/fade-haircut-saskatoon" className="underline mx-1">
     skin fades
   </Link>,
-  beard grooming, and hot towel shaves. Every service is tailored to your hair type, face shape, and lifestyle.
+  <Link href="/services/beard-grooming-saskatoon" className="underline mx-1">
+    beard grooming
+  </Link>,
+  and hot towel shaves. Every service is tailored to your hair type, face shape, and lifestyle.
 </p>
 
       <p className="text-foreground/60">
