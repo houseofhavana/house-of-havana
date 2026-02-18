@@ -10,13 +10,32 @@ import Link from 'next/link';
 
 const ServicesPage = () => (
   <>
-    <HeroInner
-      subheading="Our"
-      title="SERVICES"
-      supportingText={servicesPageData.intro}
-    />
+    <>
+  <HeroInner
+    subheading="Our"
+    title="SERVICES"
+    supportingText={servicesPageData.intro}
+  />
 
-    <section className="bg-surface py-20">
+  {/* SEO Intro Section */}
+  <section className="py-12 bg-background">
+    <div className="container max-w-4xl">
+      <h1 className="text-3xl md:text-4xl font-heading text-primary mb-4">
+        Barber Services in Saskatoon
+      </h1>
+
+      <p className="text-foreground/60 mb-4">
+        House of Havana Barbershop offers premium barber services in Saskatoon, including men’s haircuts, skin fades, beard grooming, and hot towel shaves. Every service is tailored to your hair type, face shape, and lifestyle.
+      </p>
+
+      <p className="text-foreground/60">
+        Explore our full range of professional barber services below and book your next appointment with confidence.
+      </p>
+    </div>
+  </section>
+
+  <section className="bg-surface py-20">
+
       <div className="container pt-5">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {servicesList.map((service, idx) => {
