@@ -15,6 +15,9 @@ export const metadata = {
   title: "House of Havana Barbershop | Men’s Haircuts, Skin Fades & Beard Grooming Saskatoon",
   description:
     "House of Havana Barbershop is a premium barbershop in Saskatoon offering men’s haircuts, skin fades, and beard grooming. Book your appointment today.",
+  alternates: {
+    canonical: "https://houseofhavana.ca",
+  },
 };
 
 const WHY_CHOOSE_VALUES = [
