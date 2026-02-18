@@ -7,7 +7,7 @@ import Button from "@/components/ui/button";
 import TeamCard from "@/components/ui/team-card";
 import { BARBERS } from "@/data/barbers";
 import { servicesList } from "@/data/services";
-import { imageGallerySchema, jsonLd, servicesSchema } from "@/lib/schema";
+import { imageGallerySchema, jsonLd, servicesSchema, localBusinessSchema } from "@/lib/schema";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 import Script from "next/script";
@@ -257,20 +257,25 @@ export default function Home() {
           </div>
         </div>
       </section>
+{/* Services Schema */}
+<Script
+  id="services-schema"
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{ __html: jsonLd(servicesSchema) }}
+/>
 
-      {/* Services Schema */}
-      <Script
-        id="services-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: jsonLd(servicesSchema) }}
-      />
+{/* LocalBusiness Schema */}
+<Script
+  id="local-business-schema"
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{ __html: jsonLd(localBusinessSchema) }}
+/>
 
-      {/* ImageGallery Schema */}
-      <Script
-        id="image-gallery-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: jsonLd(imageGallerySchema) }}
-      />
-    </div>
-  );
-}
+{/* ImageGallery Schema */}
+<Script
+  id="image-gallery-schema"
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{ __html: jsonLd(imageGallerySchema) }}
+/>
+
+    
