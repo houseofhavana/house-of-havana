@@ -111,6 +111,23 @@ export default function Home() {
           </p>
         </div>
       </section>
+<section className="pb-10 bg-background">
+  <div className="container max-w-4xl">
+
+    <p className="text-foreground/60">
+      Popular services include our
+      <Link href="/services/fade-haircut-saskatoon" className="underline ml-1 mr-1">
+        skin fade haircuts
+      </Link>
+      and
+      <Link href="/services/beard-trim-saskatoon" className="underline ml-1">
+        professional beard grooming
+      </Link>
+      in Saskatoon.
+    </p>
+
+  </div>
+</section>
 
       <Ritual /> {/* bg-surface */}
 
