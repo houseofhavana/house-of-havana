@@ -33,7 +33,7 @@ const Hero: React.FC<HeroData> = ({
               </p>
               <h1
                 aria-label="House Of Havana Barbershop in Saskatoon"
-                className='text-primary'
+                className='text-primary text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-tight'
               >
                 {parse(heading)}
               </h1>
