@@ -128,7 +128,7 @@ export default function Home() {
         skin fade haircuts
       </Link>
       and
-      <Link href="/services/beard-trim-saskatoon" className="underline ml-1">
+      <Link href="/services/beard-grooming-saskatoon" className="underline ml-1">
         professional beard grooming
       </Link>
       in Saskatoon.
