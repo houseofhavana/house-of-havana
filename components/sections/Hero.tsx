@@ -33,8 +33,8 @@ const Hero: React.FC<HeroData> = ({
               </p>
              <h1
   aria-label="House Of Havana Barbershop in Saskatoon"
-  className="text-primary leading-[1.05] font-heading"
-  style={{ fontSize: "clamp(1.9rem, 4vw, 3.4rem)" }}
+  className="text-primary leading-[1.05] font-heading tracking-tight"
+  style={{ fontSize: "clamp(2.1rem, 4.6vw, 4.0rem)" }}
 >
   {parse(heading)}
 </h1>
