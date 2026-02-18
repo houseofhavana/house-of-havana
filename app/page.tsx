@@ -119,6 +119,8 @@ export default function Home() {
           </p>
         </div>
       </section>
+</section>
+
 <section className="pb-12 bg-background">
   <div className="container max-w-4xl">
 
@@ -141,7 +143,22 @@ export default function Home() {
   </div>
 </section>
 
-      <Ritual /> {/* bg-surface */}
+<section className="pb-12 bg-background">
+  <div className="container max-w-4xl">
+
+    <h2 className="text-2xl font-heading text-primary mb-4">
+      Located in Saskatoon, Serving Professionals Across the City
+    </h2>
+
+    <p className="text-foreground/60">
+      House of Havana Barbershop proudly serves clients from across Saskatoon, including Downtown, Stonebridge, Rosewood, Brighton, and Evergreen.
+    </p>
+
+  </div>
+</section>
+
+<Ritual /> {/* bg-surface */}
+
 
       {/* Why Choose Section - Luxury Editorial Design */}
       <section className="py-26 bg-background">
