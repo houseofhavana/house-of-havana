@@ -119,19 +119,23 @@ export default function Home() {
           </p>
         </div>
       </section>
-<section className="pb-10 bg-background">
+<section className="pb-12 bg-background">
   <div className="container max-w-4xl">
 
+    <h2 className="text-2xl font-heading text-primary mb-4">
+      Premium Barber Services in Saskatoon
+    </h2>
+
     <p className="text-foreground/60">
-      Popular services include our
-      <Link href="/services/fade-haircut-saskatoon" className="underline ml-1 mr-1">
+      Our most requested services include
+      <Link href="/services/fade-haircut-saskatoon" className="underline mx-1">
         skin fade haircuts
       </Link>
       and
-      <Link href="/services/beard-grooming-saskatoon" className="underline ml-1">
+      <Link href="/services/beard-grooming-saskatoon" className="underline mx-1">
         professional beard grooming
-      </Link>
-      in Saskatoon.
+      </Link>,
+      delivered with precision and attention to detail at our Saskatoon barbershop.
     </p>
 
   </div>
