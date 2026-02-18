@@ -94,8 +94,26 @@ export default function Home() {
         subheading="Professional Barber Services in Saskatoon, Saskatchewan"
         heading="Premium Barbershop in Saskatoon for Men’s Haircuts, Skin Fades & Beard Grooming"
         supportingText="At House Of Havana Barbershop in Saskatoon, grooming is more than maintenance — it’s a moment of focus, intention, and precision. We blend classic barbering tradition with modern design to create an experience tailored for discerning professionals. From custom cabinetry and rich leather seating to precision cuts, well-groomed beards, and premium aftercare, every detail is considered. This isn’t just another barbershop in Saskatoon — it’s where grooming becomes personal and confidence is elevated."
-      />
+            />
+      {/* SEO Section */}
+      <section className="py-16 bg-background">
+        <div className="container max-w-4xl">
+          <h2 className="text-2xl md:text-3xl font-heading text-primary mb-4">
+            Men’s Haircuts, Skin Fades & Beard Grooming in Saskatoon
+          </h2>
+
+          <p className="text-foreground/60 mb-4">
+            House of Havana Barbershop is a premium barbershop in Saskatoon specializing in men’s haircuts, skin fades, beard trims, and hot towel shaves. Every service is tailored to your hair type, face shape, and lifestyle—built for a clean, confident finish.
+          </p>
+
+          <p className="text-foreground/60">
+            Looking for a professional barber in Saskatoon? Our barbers focus on precision, detail, and premium products to deliver consistent results, every visit.
+          </p>
+        </div>
+      </section>
+
       <Ritual /> {/* bg-surface */}
+
       {/* Why Choose Section - Luxury Editorial Design */}
       <section className="py-26 bg-background">
         <div className="container">
