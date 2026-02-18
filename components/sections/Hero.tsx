@@ -31,12 +31,14 @@ const Hero: React.FC<HeroData> = ({
               <p className='heading-4-italic md:heading-3-italic mb-2'>
                 {subheading}
               </p>
-              <h1
-                aria-label="House Of Havana Barbershop in Saskatoon"
-                className='text-primary !text-4xl md:!text-5xl lg:!text-6xl xl:!text-7xl leading-tight'
-              >
-                {parse(heading)}
-              </h1>
+             <h1
+  aria-label="House Of Havana Barbershop in Saskatoon"
+  className="text-primary leading-[1.05] font-heading"
+  style={{ fontSize: "clamp(1.9rem, 4vw, 3.4rem)" }}
+>
+  {parse(heading)}
+</h1>
+
             </div>
             <p className='text-foreground/50 !text-sm'>
               {supportingText}
