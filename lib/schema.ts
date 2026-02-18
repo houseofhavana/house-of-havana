@@ -597,3 +597,16 @@ export function generateArticleSchema(article: ArticleData): WithContext<Article
     },
   };
 }
+export const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "Barbershop",
+  name: "House of Havana Barbershop",
+  url: "https://houseofhavana.ca",
+  areaServed: "Saskatoon, SK",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Saskatoon",
+    addressRegion: "SK",
+    addressCountry: "CA",
+  },
+};
