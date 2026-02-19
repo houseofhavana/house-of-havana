@@ -103,7 +103,7 @@ export default function Home() {
         heading="Premium Barbershop in Saskatoon"
         supportingText="At House Of Havana Barbershop in Saskatoon, grooming is more than maintenance — it’s a moment of focus, intention, and precision. We blend classic barbering tradition with modern design to create an experience tailored for discerning professionals. From custom cabinetry and rich leather seating to precision cuts, well-groomed beards, and premium aftercare, every detail is considered. This isn’t just another barbershop in Saskatoon — it’s where grooming becomes personal and confidence is elevated."
             />
-      {/* SEO Section */}
+         {/* SEO Section */}
       <section className="py-16 bg-background">
         <div className="container max-w-4xl">
           <h2 className="text-2xl md:text-3xl font-heading text-primary mb-4">
@@ -111,51 +111,51 @@ export default function Home() {
           </h2>
 
           <p className="text-foreground/60 mb-4">
-            House of Havana Barbershop is a premium barbershop in Saskatoon specializing in men’s haircuts, skin fades, beard trims, and hot towel shaves. Every service is tailored to your hair type, face shape, and lifestyle—built for a clean, confident finish.
+            House of Havana Barbershop is a premium barbershop in Saskatoon specializing in men’s haircuts, skin fades,
+            beard trims, and hot towel shaves. Every service is tailored to your hair type, face shape, and lifestyle —
+            built for a clean, confident finish.
           </p>
 
           <p className="text-foreground/60">
-            Looking for a professional barber in Saskatoon? Our barbers focus on precision, detail, and premium products to deliver consistent results, every visit.
+            Looking for a professional barber in Saskatoon? Our team focuses on precision, detail, and premium products
+            to deliver consistent results every visit.
           </p>
         </div>
       </section>
-</section>
 
-<section className="pb-12 bg-background">
-  <div className="container max-w-4xl">
+      <section className="pb-12 bg-background">
+        <div className="container max-w-4xl">
+          <h2 className="text-2xl font-heading text-primary mb-4">
+            Premium Barber Services in Saskatoon
+          </h2>
 
-    <h2 className="text-2xl font-heading text-primary mb-4">
-      Premium Barber Services in Saskatoon
-    </h2>
+          <p className="text-foreground/60">
+            Our most requested services include{" "}
+            <Link href="/services/fade-haircut-saskatoon" className="underline mx-1">
+              skin fade haircuts
+            </Link>
+            and{" "}
+            <Link href="/services/beard-grooming-saskatoon" className="underline mx-1">
+              professional beard grooming
+            </Link>
+            , delivered with precision and attention to detail at our Saskatoon barbershop.
+          </p>
+        </div>
+      </section>
 
-    <p className="text-foreground/60">
-      Our most requested services include
-      <Link href="/services/fade-haircut-saskatoon" className="underline mx-1">
-        skin fade haircuts
-      </Link>
-      and
-      <Link href="/services/beard-grooming-saskatoon" className="underline mx-1">
-        professional beard grooming
-      </Link>,
-      delivered with precision and attention to detail at our Saskatoon barbershop.
-    </p>
+      <section className="pb-12 bg-background">
+        <div className="container max-w-4xl">
+          <h2 className="text-2xl font-heading text-primary mb-4">
+            Located in Saskatoon, Serving Professionals Across the City
+          </h2>
 
-  </div>
-</section>
+          <p className="text-foreground/60">
+            House of Havana Barbershop proudly serves clients across Saskatoon, including Downtown, Stonebridge,
+            Rosewood, Brighton, and Evergreen.
+          </p>
+        </div>
+      </section>
 
-<section className="pb-12 bg-background">
-  <div className="container max-w-4xl">
-
-    <h2 className="text-2xl font-heading text-primary mb-4">
-      Located in Saskatoon, Serving Professionals Across the City
-    </h2>
-
-    <p className="text-foreground/60">
-      House of Havana Barbershop proudly serves clients from across Saskatoon, including Downtown, Stonebridge, Rosewood, Brighton, and Evergreen.
-    </p>
-
-  </div>
-</section>
 
 <Ritual /> {/* bg-surface */}
 
