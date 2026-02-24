@@ -97,19 +97,20 @@ const ContactPage = () => {
                   </p>
                 </div>
 
-                {/* Phone */}
-                <div>
-                  <div className="flex items-center gap-2 mb-4">
-                    <Phone className="w-5 h-5 text-foreground" />
-                    <h3 className="heading-6 uppercase tracking-wider">PHONE</h3>
-                  </div>
-                  <a
-                    href="tel:306-952-2255"
-                    className="text-foreground/60 hover:text-foreground transition-colors"
-                  >
-                    306-952-2255
-                  </a>
-                </div>
+              {/* Phone */}
+<div>
+  <div className="flex items-center gap-2 mb-4">
+    <Phone className="w-5 h-5 text-foreground" />
+    <h3 className="heading-6 uppercase tracking-wider">PHONE</h3>
+  </div>
+  <a
+    href="tel:+13069522255"
+    className="text-foreground/60 hover:text-foreground transition-colors"
+    aria-label="Call House of Havana Barbershop at 306-952-2255"
+  >
+    306-952-2255
+  </a>
+</div>
 
                 {/* Email */}
                 <div>
