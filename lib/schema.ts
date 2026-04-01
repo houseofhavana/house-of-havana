@@ -113,9 +113,9 @@ export const organizationSchema: WithContext<Organization> = {
     areaServed: "CA",
   },
   sameAs: [
-    "https://www.instagram.com/houseofhavanabarbershop_yxe/",
+    "https://www.instagram.com/houseofhavana.ca/",
     "https://www.facebook.com/HouseOfHavanaBarbershop/",
-    "https://www.tiktok.com/@houseofhavana.yxe",
+    "https://www.tiktok.com/@houseofhavana.ca",
     "https://www.youtube.com/@houseofhavanamensgrooming",
     "https://www.yelp.ca/biz/house-of-havana-saskatoon",
     "https://getsquire.com/booking/brands/house-of-havana-barbershop"
