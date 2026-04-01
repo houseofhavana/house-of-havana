@@ -131,7 +131,7 @@ const ContactPage = () => {
                   <h3 className="heading-6 uppercase tracking-wider mb-6">FOLLOW US</h3>
                   <div className="flex gap-4">
                     <a
-                      href="https://instagram.com/houseofhavanabarbershop_yxe/"
+                      href="https://instagram.com/houseofhavana.ca/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-12 h-12 border border-foreground/20 flex items-center justify-center hover:border-foreground transition-colors"
@@ -149,7 +149,7 @@ const ContactPage = () => {
                       <Facebook className="w-5 h-5" />
                     </a>
                     <a
-                      href="https://www.tiktok.com/@houseofhavana.yxe"
+                      href="https://www.tiktok.com/@houseofhavana.ca"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-12 h-12 border border-foreground/20 flex items-center justify-center hover:border-foreground transition-colors"
