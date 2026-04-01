@@ -306,9 +306,9 @@ export const barbershopSchema: WithContext<LocalBusiness> = {
   hasMap: "https://maps.app.goo.gl/MUwvjnhQNHpKnq167",
   isAccessibleForFree: false,
   sameAs: [
-    "https://www.instagram.com/houseofhavanabarbershop_yxe/",
+    "https://www.instagram.com/houseofhavana.ca/",
     "https://www.facebook.com/HouseOfHavanaBarbershop/",
-    "https://www.tiktok.com/@houseofhavana.yxe",
+    "https://www.tiktok.com/@houseofhavana.ca",
     "https://www.youtube.com/@houseofhavanamensgrooming",
     "https://www.yelp.ca/biz/house-of-havana-saskatoon",
     "https://getsquire.com/booking/brands/house-of-havana-barbershop"
@@ -359,9 +359,9 @@ export const professionalServiceSchema: WithContext<ProfessionalService> = {
   },
   knowsAbout: allServiceNames,
   sameAs: [
-    "https://www.instagram.com/houseofhavanabarbershop_yxe/",
+    "https://www.instagram.com/houseofhavana.ca/",
     "https://www.facebook.com/HouseOfHavanaBarbershop/",
-    "https://www.tiktok.com/@houseofhavana.yxe",
+    "https://www.tiktok.com/@houseofhavana.ca",
     "https://www.youtube.com/@houseofhavanamensgrooming",
     "https://www.yelp.ca/biz/house-of-havana-saskatoon",
     "https://getsquire.com/booking/brands/house-of-havana-barbershop"
