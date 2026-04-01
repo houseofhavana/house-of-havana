@@ -20,7 +20,7 @@ const Footer = () => {
           {/* Social Media Links */}
           <div className="flex gap-3 mt-4">
             <a
-              href="https://instagram.com/houseofhavana.ca/"
+              href="https://www.instagram.com/houseofhavana.ca/"
               target="_blank"
               rel="noopener noreferrer"
               className="w-9 h-9  bg-foreground/5 flex items-center justify-center hover:bg-foreground/10 transition-colors"
