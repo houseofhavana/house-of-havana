@@ -114,11 +114,7 @@ const Navbar = () => {
       >
         <div className="container relative !md:px-4 !py-4 flex items-center justify-between">
           <Link href="/" onClick={closeMenu}>
-            <Logo
-              className={cn('transition-colors duration-300', {
-                'fill-foreground': true,
-              })}
-            />
+            <Logo/>
           </Link>
 
           {/* Desktop Navigation */}
