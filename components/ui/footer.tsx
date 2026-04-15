@@ -147,7 +147,7 @@ const Footer = () => {
             <span>
               House Of Havana Barbershop
               <br />
-              3501 8 St, Unit #110
+              3501 8 St E, Bay 110
               <br />
               Saskatoon, SK S7H0W5
             </span>

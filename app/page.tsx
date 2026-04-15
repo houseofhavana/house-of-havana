@@ -119,45 +119,43 @@ export default function Home() {
           </p>
         </div>
       </section>
-</section>
 
-<section className="pb-12 bg-background">
-  <div className="container max-w-4xl">
+      <section className="pb-12 bg-background">
+        <div className="container max-w-4xl">
+          <h2 className="text-2xl font-heading text-primary mb-4">
+            Premium Barber Services in Saskatoon
+          </h2>
 
-    <h2 className="text-2xl font-heading text-primary mb-4">
-      Premium Barber Services in Saskatoon
-    </h2>
+          <p className="text-foreground/60">
+            Our most requested services include
+            <Link href="/services/fade-haircut-saskatoon" className="underline mx-1">
+              skin fade haircuts
+            </Link>
+            and
+            <Link href="/services/beard-grooming-saskatoon" className="underline mx-1">
+              professional beard grooming
+            </Link>
+            , delivered with precision and attention to detail at our Saskatoon
+            barbershop.
+          </p>
+        </div>
+      </section>
 
-    <p className="text-foreground/60">
-      Our most requested services include
-      <Link href="/services/fade-haircut-saskatoon" className="underline mx-1">
-        skin fade haircuts
-      </Link>
-      and
-      <Link href="/services/beard-grooming-saskatoon" className="underline mx-1">
-        professional beard grooming
-      </Link>,
-      delivered with precision and attention to detail at our Saskatoon barbershop.
-    </p>
+      <section className="pb-12 bg-background">
+        <div className="container max-w-4xl">
+          <h2 className="text-2xl font-heading text-primary mb-4">
+            Located in Saskatoon, Serving Professionals Across the City
+          </h2>
 
-  </div>
-</section>
+          <p className="text-foreground/60">
+            House of Havana Barbershop proudly serves clients from across
+            Saskatoon, including Downtown, Stonebridge, Rosewood, Brighton, and
+            Evergreen.
+          </p>
+        </div>
+      </section>
 
-<section className="pb-12 bg-background">
-  <div className="container max-w-4xl">
-
-    <h2 className="text-2xl font-heading text-primary mb-4">
-      Located in Saskatoon, Serving Professionals Across the City
-    </h2>
-
-    <p className="text-foreground/60">
-      House of Havana Barbershop proudly serves clients from across Saskatoon, including Downtown, Stonebridge, Rosewood, Brighton, and Evergreen.
-    </p>
-
-  </div>
-</section>
-
-<Ritual /> {/* bg-surface */}
+      <Ritual /> {/* bg-surface */}
 
 
       {/* Why Choose Section - Luxury Editorial Design */}
@@ -278,25 +276,26 @@ export default function Home() {
           </div>
         </div>
       </section>
-{/* Services Schema */}
-<Script
-  id="services-schema"
-  type="application/ld+json"
-  dangerouslySetInnerHTML={{ __html: jsonLd(servicesSchema) }}
-/>
+      {/* Services Schema */}
+      <Script
+        id="services-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: jsonLd(servicesSchema) }}
+      />
 
-{/* LocalBusiness Schema */}
-<Script
-  id="local-business-schema"
-  type="application/ld+json"
-  dangerouslySetInnerHTML={{ __html: jsonLd(localBusinessSchema) }}
-/>
+      {/* LocalBusiness Schema */}
+      <Script
+        id="local-business-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: jsonLd(localBusinessSchema) }}
+      />
 
-{/* ImageGallery Schema */}
-<Script
-  id="image-gallery-schema"
-  type="application/ld+json"
-  dangerouslySetInnerHTML={{ __html: jsonLd(imageGallerySchema) }}
-/>
-
-    
+      {/* ImageGallery Schema */}
+      <Script
+        id="image-gallery-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: jsonLd(imageGallerySchema) }}
+      />
+    </div>
+  );
+}

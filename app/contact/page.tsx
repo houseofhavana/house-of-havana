@@ -2,6 +2,7 @@
 
 import HeroInner from '@/components/sections/HeroInner'
 import Button from '@/components/ui/button'
+import { SOCIALS } from '@/data/socials'
 import { ChevronRight, Clock, Facebook, Instagram, Mail, MapPin, Phone } from 'lucide-react'
 import React, { useState } from 'react'
 
@@ -78,7 +79,7 @@ const ContactPage = () => {
                     <h3 className="heading-6 uppercase tracking-wider">LOCATION</h3>
                   </div>
                   <p className="text-foreground/60 leading-relaxed">
-                    3501 8 St, Unit #110<br />
+                    3501 8 St E, Bay 110<br />
                     Saskatoon, SK S7H0W5<br />
                     Canada
                   </p>
@@ -127,45 +128,35 @@ const ContactPage = () => {
                 </div>
 
                 {/* Follow Us */}
-                import { SOCIALS } from "@/data/socials";
+                <div>
+                  <h3 className="heading-6 uppercase tracking-wider mb-6">FOLLOW US</h3>
+                  <div className="flex gap-4">
+                    <a
+                      href={SOCIALS.instagram}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-12 h-12 border border-foreground/20 flex items-center justify-center hover:border-foreground transition-colors"
+                      aria-label="Instagram"
+                    >
+                      <Instagram className="w-5 h-5" />
+                    </a>
 
-{/* Follow Us */}
-<div>
-  <h3 className="heading-6 uppercase tracking-wider mb-6">FOLLOW US</h3>
-  <div className="flex gap-4">
-    
-    <a
-      href={SOCIALS.instagram}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="w-12 h-12 border border-foreground/20 flex items-center justify-center hover:border-foreground transition-colors"
-      aria-label="Instagram"
-    >
-      <Instagram className="w-5 h-5" />
-    </a>
+                    <a
+                      href={SOCIALS.facebook}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-12 h-12 border border-foreground/20 flex items-center justify-center hover:border-foreground transition-colors"
+                      aria-label="Facebook"
+                    >
+                      <Facebook className="w-5 h-5" />
+                    </a>
 
-    <a
-      href={SOCIALS.facebook}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="w-12 h-12 border border-foreground/20 flex items-center justify-center hover:border-foreground transition-colors"
-      aria-label="Facebook"
-    >
-      <Facebook className="w-5 h-5" />
-    </a>
-
-    <a
-      href={SOCIALS.tiktok}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="w-12 h-12 border border-foreground/20 flex items-center justify-center hover:border-foreground transition-colors"
-      aria-label="TikTok"
-    >
-      <TikTok className="w-5 h-5" />
-    </a>
-
-  </div>
-</div>
+                    <a
+                      href={SOCIALS.tiktok}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-12 h-12 border border-foreground/20 flex items-center justify-center hover:border-foreground transition-colors"
+                      aria-label="TikTok"
                     >
                       <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
                         <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
