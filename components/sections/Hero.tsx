@@ -11,7 +11,6 @@ const Hero: React.FC<HeroData> = ({
   subheading = "",
   heading = "Gentleman&apos;s <br /> Club",
   supportingText = "Crafted scissors. Steam and silence. A glass of something neat. At House Of Havana, grooming is the ceremony.",
-  className = ''
 }) => {
   return (
     <div className='bg-background text-foreground relative overflow-hidden z-10'>
@@ -21,7 +20,7 @@ const Hero: React.FC<HeroData> = ({
           alt="Background"
           fill
           className="absolute inset-0 w-full h-full object-cover -z-10"
-          priority
+          preload
           intensity={0.3}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20 lg:from-black/60 lg:via-black/20 lg:to-transparent -z-10" />
