@@ -7,7 +7,7 @@ import Button from "@/components/ui/button";
 import TeamCard from "@/components/ui/team-card";
 import { BARBERS } from "@/data/barbers";
 import { servicesList } from "@/data/services";
-import { imageGallerySchema, jsonLd, servicesSchema, localBusinessSchema } from "@/lib/schema";
+import { barbershopSchema, imageGallerySchema, jsonLd, servicesSchema } from "@/lib/schema";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 import Script from "next/script";
@@ -283,11 +283,11 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: jsonLd(servicesSchema) }}
       />
 
-      {/* LocalBusiness Schema */}
+      {/* BarberShop Schema */}
       <Script
-        id="local-business-schema"
+        id="barbershop-schema"
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: jsonLd(localBusinessSchema) }}
+        dangerouslySetInnerHTML={{ __html: jsonLd(barbershopSchema) }}
       />
 
       {/* ImageGallery Schema */}

@@ -11,6 +11,7 @@ import type {
   Organization,
   Place,
   ProfessionalService,
+  Service,
   WebSite,
   WithContext,
 } from "schema-dts";
@@ -597,16 +598,103 @@ export function generateArticleSchema(article: ArticleData): WithContext<Article
     },
   };
 }
-export const localBusinessSchema = {
+
+type ServiceSchemaInput = {
+  slug: string;
+  name: string;
+  description: string;
+  category?: string;
+  prices?: string[];
+};
+
+function extractPriceValues(price?: string): number[] {
+  if (!price) return [];
+  const matches = price.match(/\d+(\.\d+)?/g);
+  if (!matches) return [];
+  return matches.map((value) => Number(value)).filter((value) => !Number.isNaN(value));
+}
+
+export function generateServiceSchema({
+  slug,
+  name,
+  description,
+  category,
+  prices = [],
+}: ServiceSchemaInput): WithContext<Service> {
+  const numericPrices = prices.flatMap(extractPriceValues);
+  const lowPrice = numericPrices.length ? Math.min(...numericPrices).toFixed(2) : undefined;
+  const highPrice = numericPrices.length ? Math.max(...numericPrices).toFixed(2) : undefined;
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${BASE_URL}/services/${slug}/#service`,
+    name,
+    description,
+    url: `${BASE_URL}/services/${slug}`,
+    serviceType: category || name,
+    provider: {
+      "@id": `${BASE_URL}/#barbershop`,
+    },
+    areaServed: {
+      "@type": "City",
+      name: "Saskatoon",
+    },
+    ...(lowPrice && highPrice
+      ? {
+          offers: {
+            "@type": "AggregateOffer",
+            priceCurrency: "CAD",
+            lowPrice,
+            highPrice,
+            availability: "https://schema.org/InStock",
+          },
+        }
+      : {}),
+  };
+}
+
+export const contactLocalBusinessSchema: WithContext<LocalBusiness> = {
   "@context": "https://schema.org",
-  "@type": "Barbershop",
-  name: "House of Havana Barbershop",
-  url: "https://houseofhavana.ca",
-  areaServed: "Saskatoon, SK",
+  "@type": "LocalBusiness",
+  "@id": `${BASE_URL}/contact#localbusiness`,
+  name: "House Of Havana Barbershop",
+  url: `${BASE_URL}/contact`,
+  telephone: "+1-306-952-2255",
+  priceRange: "$$",
   address: {
     "@type": "PostalAddress",
+    streetAddress: "3501 8 St E, Bay 110",
     addressLocality: "Saskatoon",
     addressRegion: "SK",
+    postalCode: "S7H 0W5",
     addressCountry: "CA",
   },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 52.1099,
+    longitude: -106.5959,
+  },
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "09:00",
+      closes: "19:00",
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: "Saturday",
+      opens: "09:00",
+      closes: "17:00",
+    },
+  ],
+  sameAs: [
+    "https://www.instagram.com/houseofhavana.ca/",
+    "https://www.facebook.com/HouseOfHavanaBarbershop/",
+    "https://www.tiktok.com/@houseofhavana.ca",
+    "https://www.youtube.com/@houseofhavanamensgrooming",
+    "https://www.yelp.ca/biz/house-of-havana-saskatoon",
+    "https://getsquire.com/booking/brands/house-of-havana-barbershop",
+  ],
 };

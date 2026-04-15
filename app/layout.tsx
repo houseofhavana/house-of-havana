@@ -2,7 +2,6 @@ import ConditionalCTA from "@/components/sections/ConditionalCTA";
 import Footer from "@/components/ui/footer";
 import Navbar from "@/components/ui/navbar";
 import {
-  barbershopSchema,
   breadcrumbSchema,
   jsonLd,
   organizationSchema,
@@ -95,13 +94,6 @@ export default function RootLayout({
           id="breadcrumb-schema"
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: jsonLd(breadcrumbSchema) }}
-        />
-
-        {/* Local SEO: BarberShop schema */}
-        <Script
-          id="barbershop-schema"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: jsonLd(barbershopSchema) }}
         />
 
         {/* ProfessionalService Schema */}

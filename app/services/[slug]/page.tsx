@@ -5,7 +5,7 @@ import {
   getServiceBySlug,
   getServicesWithPages,
 } from "@/data/services";
-import { generateFAQSchema, jsonLd } from "@/lib/schema";
+import { generateFAQSchema, generateServiceSchema, jsonLd } from "@/lib/schema";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -35,6 +35,13 @@ export default async function ServicePage({ params }: Props) {
   const { page } = service;
   const relatedServices = getRelatedServices(slug);
   const faqSchema = generateFAQSchema(page.faqs, `/services/${page.slug}`);
+  const serviceSchema = generateServiceSchema({
+    slug: page.slug,
+    name: page.cardTitle,
+    description: page.meta.description,
+    category: service.title,
+    prices: service.items.map((item) => item.price).filter(Boolean) as string[],
+  });
 
   return (
     <>
@@ -43,6 +50,13 @@ export default async function ServicePage({ params }: Props) {
         id="service-faq-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: jsonLd(faqSchema) }}
+      />
+
+      {/* Service Schema */}
+      <Script
+        id="service-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: jsonLd(serviceSchema) }}
       />
 
       {/* Hero Section */}

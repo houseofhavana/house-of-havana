@@ -1,4 +1,9 @@
-import { jsonLd, placeSchema, contactPageSchema } from "@/lib/schema";
+import {
+  contactLocalBusinessSchema,
+  contactPageSchema,
+  jsonLd,
+  placeSchema,
+} from "@/lib/schema";
 import { mergeSEO } from "@/lib/seo";
 import Script from "next/script";
 
@@ -35,6 +40,13 @@ export default function ContactLayout({
         id="contact-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: jsonLd(contactPageSchema) }}
+      />
+
+      {/* LocalBusiness Schema */}
+      <Script
+        id="contact-local-business-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: jsonLd(contactLocalBusinessSchema) }}
       />
     </>
   );
