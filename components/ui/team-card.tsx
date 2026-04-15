@@ -38,7 +38,7 @@ const TeamCard: React.FC<TeamCardProps> = ({
 
   return (
     <>
-      <div className={`flex flex-col ${className}`}>
+      <div className={`flex flex-col h-full ${className}`}>
         {/* Image */}
         <div className={`${bgSurface ? 'bg-surface' : 'bg-background'} relative aspect-[3/4] overflow-hidden mb-4`}>
           <Image
@@ -50,27 +50,29 @@ const TeamCard: React.FC<TeamCardProps> = ({
           />
         </div>
 
-        {/* Name & Title */}
-        <div className="mb-3">
-          <h3 className="heading-5 mb-1 uppercase">{name}</h3>
-          <p className='text-sm text-foreground/50 uppercase tracking-wide'>
-            {text1}
-          </p>
-          {text2 && (
-            <p className='text-xs text-foreground/40 mt-1'>
-              {text2}
+        <div className="flex flex-col flex-1">
+          {/* Name & Title */}
+          <div className="mb-3">
+            <h3 className="heading-5 mb-1 uppercase">{name}</h3>
+            <p className='text-sm text-foreground/50 uppercase tracking-wide'>
+              {text1}
             </p>
-          )}
-        </div>
+            {text2 && (
+              <p className='text-xs text-foreground/40 mt-1'>
+                {text2}
+              </p>
+            )}
+          </div>
 
-        {/* View Bio Button */}
-        <button
-          onClick={handleViewBio}
-          className='flex justify-between items-center border-t border-foreground/10 pt-3 text-left w-full cursor-pointer hover:opacity-70 transition-opacity group'
-        >
-          <span className="text-sm uppercase tracking-wider">View Bio</span>
-          <ArrowRight className='w-4 h-4 stroke-foreground group-hover:translate-x-1 transition-transform' />
-        </button>
+          {/* View Bio Button */}
+          <button
+            onClick={handleViewBio}
+            className='flex justify-between items-center border-t border-foreground/10 pt-3 mt-auto text-left w-full cursor-pointer hover:opacity-70 transition-opacity group'
+          >
+            <span className="text-sm uppercase tracking-wider">View Bio</span>
+            <ArrowRight className='w-4 h-4 stroke-foreground group-hover:translate-x-1 transition-transform' />
+          </button>
+        </div>
       </div>
 
       {/* Modal with Full Bio */}

@@ -10,7 +10,6 @@ import Link from 'next/link';
 
 const ServicesPage = () => (
   <>
-    <>
   <HeroInner
     subheading="Our"
     title="SERVICES"

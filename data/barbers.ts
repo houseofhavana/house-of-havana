@@ -56,7 +56,7 @@ export const BARBERS: Barber[] = [
       alt: "Emily - Barber & Grooming Specialist in Saskatoon",
     },
     name: "Emily",
-    text1: "Barber | Grooming Specialist in Saskatoon",
+    text1: "Barber",
     text2: "Certified professional since 2023",
     bio: "Emily’s journey into barbering began with a natural curiosity for hair and self-expression. What started as cutting her own hair after high school quickly evolved into a passion and, ultimately, a career. In 2023, she formalized her craft by enrolling at MC College in Saskatoon, where she discovered her true calling in professional barbering and men’s grooming. Before graduating, Emily earned Second Place at the Saskatchewan Skills Competition for Hairstyling, a recognition that speaks to her technical ability, creativity, and attention to detail. Since completing her training, Emily has continued to refine her skills within Saskatoon’s barbering and hairstyling community, developing a strong reputation for precision and thoughtful design. She specializes in lived-in scissor and razor cuts, textured styles, and customized haircuts that complement each client’s natural growth patterns, face shape, and lifestyle. Her approach is rooted in in-depth consultations, ensuring every guest receives a haircut and grooming experience tailored specifically to them. At House Of Havana Barbershop in Saskatoon, Emily is known for her calm presence, technical craftsmanship, and commitment to quality. Her goal is simple: for every client to leave feeling confident, elevated, and like the best version of themselves. Outside the barbershop, Emily stays inspired through an active lifestyle—spending time at the local climbing gym, biking and longboarding along Saskatoon’s river trails with her dog, exploring niche fragrances, and enjoying live music around the city. Book with Emily for a premium barbering experience rooted in consultation, precision, and modern style—right here in Saskatoon.",
   },
@@ -66,8 +66,8 @@ export const BARBERS: Barber[] = [
       alt: "Jenay - Barber & Grooming Specialist in Saskatoon",
     },
     name: "Jenay Myers",
-    text1: "Barber | Grooming Specialist in Saskatoon",
-    text2: "Certified professional since 2023",
+    text1: "Barber",
+    text2: "Certified professional since 2024",
     bio: "Born and raised in Saskatoon, Jenay's interest in hair started when she was young, inspired by her great uncle who was an amazing stylist and she wanted to follow in his footstep! She graduated from MC college in 2024 and has loved expanding her skills in barbering and meeting new people. She wants every appointment to be an experience. She loves connecting with her clients whether it's light hearted laughs or deeper discussions building genuine relationships overtime. Jenay is always eager to learn and grow further in her career. Outside of work Jenay loves spending time at the lake swimming and biking. She loves playing video games and board games and most of all she loves spending time with her pets!"
   },
 ];
