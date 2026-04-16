@@ -57,15 +57,18 @@ const Ritual = () => {
             </div>
           </div>
           <div className="pt-12 flex justify-center">
-            <div className="rounded-3xl w-[382.50px] h-[680px] overflow-hidden [&_.yt-lite]:w-full [&_.yt-lite]:h-full">
-              <LiteYouTubeEmbed
-                id="pVz9lPm3qM4"
-                title="House Of Havana Ritual"
-                wrapperClass="yt-lite bg-black"
-                autoplay
-                webp
-                poster="maxresdefault"
-              />
+            <div className="relative">
+              <div className="z-0 absolute w-[337.5px] h-[600px] bg-gradient-to-b from-transparent to-foreground/3 top-2 left-2 rounded-3xl"></div>
+              <div className="relative z-10 rounded-3xl w-[337.5px] h-[600px] overflow-hidden [&_.yt-lite]:w-full [&_.yt-lite]:h-full">
+                <LiteYouTubeEmbed
+                  id="pVz9lPm3qM4"
+                  title="House Of Havana Ritual"
+                  wrapperClass="yt-lite bg-black"
+                  autoplay
+                  webp
+                  poster="maxresdefault"
+                />
+              </div>
             </div>
           </div>
         </div>
