@@ -1,7 +1,10 @@
+"use client";
+
 import Button from "@/components/ui/button";
 import { ChevronRight } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
+import LiteYouTubeEmbed from "react-lite-youtube-embed";
+import "react-lite-youtube-embed/dist/LiteYouTubeEmbed.css";
 
 const Ritual = () => {
   return (
@@ -53,19 +56,16 @@ const Ritual = () => {
               </Link>
             </div>
           </div>
-          <div className="p-5">
-            <div className="aspect-square overflow-hidden">
-              <div className="relative w-full h-[130%]">
-                <Image
-                  src="/gallery/webp/IMG_1225.webp"
-                  // src="/ritual.png"
-                  alt="House Of Havana Ritual"
-                  fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  className="absolute -top-28! left-0 w-full h-full object-cover"
-                  priority
-                />
-              </div>
+          <div className="pt-12 flex justify-center">
+            <div className="rounded-3xl w-[382.50px] h-[680px] overflow-hidden [&_.yt-lite]:w-full [&_.yt-lite]:h-full">
+              <LiteYouTubeEmbed
+                id="pVz9lPm3qM4"
+                title="House Of Havana Ritual"
+                wrapperClass="yt-lite bg-black"
+                autoplay
+                webp
+                poster="maxresdefault"
+              />
             </div>
           </div>
         </div>
