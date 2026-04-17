@@ -57,9 +57,9 @@ const Ritual = () => {
             </div>
           </div>
           <div className="flex items-center justify-center">
-            <div className="relative">
-              <div className="z-0 absolute h-[337.5px] w-[600px] bg-gradient-to-b from-transparent to-foreground/3 top-2 left-2 "></div>
-              <div className="relative z-10  h-[337.5px] w-[600px] overflow-hidden [&_.yt-lite]:w-full [&_.yt-lite]:h-full">
+            <div className="relative w-full max-w-[600px]">
+              <div className="z-0 absolute inset-0 translate-x-2 translate-y-2 bg-gradient-to-b from-transparent to-foreground/3"></div>
+              <div className="relative z-10 w-full aspect-video overflow-hidden [&_.yt-lite]:w-full [&_.yt-lite]:h-full">
                 <LiteYouTubeEmbed
                   id="fLzrkx_oxq8"
                   title="House Of Havana Ritual"
