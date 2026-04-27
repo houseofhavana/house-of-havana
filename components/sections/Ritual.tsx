@@ -14,8 +14,7 @@ const Ritual = () => {
           <div className="z-10 p-4 md:p-12 flex flex-col justify-between gap-16 md:gap-4">
             <div className="z-0 absolute w-[240px] h-[350px] bg-gradient-to-b from-transparent to-foreground/3 top-0 left-0"></div>
             <div className="z-10">
-              <h3 className="heading-4-italic mb-2">Elevating</h3>
-              <h2 className="heading-2 mb-4 text-primary">Men's Grooming</h2>
+              <h2 className="heading-2 mb-4 text-primary">Elevating Men's Grooming</h2>
               <p className="text-foreground/50">
                 At House Of Havana, barbering is practiced as a disciplined craft. Every cut is structured with deliberate control — calibrated blends, engineered silhouettes, and proportion-driven detailing.
               </p>
@@ -31,11 +30,11 @@ const Ritual = () => {
             </div>
             <div className="z-10 w-full grid grid-cols-2 gap-4">
               <div className="flex flex-col">
-                <h2>20+</h2>
+                <span className="text-2xl lg:text-3xl font-heading text-primary">20+</span>
                 <p className="heading-6-italic">Years of Experience</p>
               </div>
               <div className="flex flex-col">
-                <h2>4.9</h2>
+                <span className="text-2xl lg:text-3xl font-heading text-primary">4.9</span>
                 <p className="heading-6-italic">Customer Rating</p>
               </div>
             </div>

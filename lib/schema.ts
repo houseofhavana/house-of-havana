@@ -10,7 +10,6 @@ import type {
   LocalBusiness,
   Organization,
   Place,
-  ProfessionalService,
   Service,
   WebSite,
   WithContext,
@@ -217,36 +216,6 @@ export const barbershopSchema: WithContext<LocalBusiness> = {
     ratingCount: "150",
     reviewCount: "150",
   },
-  review: [
-    {
-      "@type": "Review",
-      reviewRating: {
-        "@type": "Rating",
-        ratingValue: "5",
-        bestRating: "5",
-      },
-      author: {
-        "@type": "Person",
-        name: "Client",
-      },
-      reviewBody:
-        "The best barbershop experience I've ever had. The attention to detail and the atmosphere is incredible. Highly recommend!",
-    },
-    {
-      "@type": "Review",
-      reviewRating: {
-        "@type": "Rating",
-        ratingValue: "5",
-        bestRating: "5",
-      },
-      author: {
-        "@type": "Person",
-        name: "Client",
-      },
-      reviewBody:
-        "These guys are true artists. My beard has never looked better, and the hot towel treatment was the perfect finishing touch.",
-    },
-  ],
   founder: {
     "@type": "Person",
     name: BARBERS[0].name,
@@ -326,47 +295,6 @@ export const barbershopSchema: WithContext<LocalBusiness> = {
   ],
   keywords:
     "barber shop saskatoon, haircut saskatoon, beard trim saskatoon, hot shave saskatoon, fade haircut, men's grooming saskatoon, best barber saskatoon",
-};
-
-// Get all service names for knowsAbout
-const allServiceNames = servicesList.flatMap((cat) => cat.items.map((item) => item.name));
-
-// ProfessionalService Schema
-export const professionalServiceSchema: WithContext<ProfessionalService> = {
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "@id": `${BASE_URL}/#professionalservice`,
-  name: "House Of Havana Barbershop",
-  description: "Professional barbering and men's grooming services in Saskatoon",
-  url: BASE_URL,
-  telephone: "+1-306-952-2255",
-  priceRange: "$$",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "3501 8 St E, Bay 110",
-    addressLocality: "Saskatoon",
-    addressRegion: "SK",
-    postalCode: "S7H 0W5",
-    addressCountry: "CA",
-  },
-  geo: {
-    "@type": "GeoCoordinates",
-    latitude: 52.1099,
-    longitude: -106.5959,
-  },
-  areaServed: {
-    "@type": "City",
-    name: "Saskatoon",
-  },
-  knowsAbout: allServiceNames,
-  sameAs: [
-    "https://www.instagram.com/houseofhavana.ca/",
-    "https://www.facebook.com/HouseOfHavanaBarbershop/",
-    "https://www.tiktok.com/@houseofhavana.ca",
-    "https://www.youtube.com/@houseofhavanamensgrooming",
-    "https://www.yelp.ca/biz/house-of-havana-saskatoon",
-    "https://getsquire.com/booking/brands/house-of-havana-barbershop"
-  ],
 };
 
 // Flatten all services for the ItemList
@@ -696,5 +624,25 @@ export const contactLocalBusinessSchema: WithContext<LocalBusiness> = {
     "https://www.youtube.com/@houseofhavanamensgrooming",
     "https://www.yelp.ca/biz/house-of-havana-saskatoon",
     "https://getsquire.com/booking/brands/house-of-havana-barbershop",
+  ],
+};
+
+// Helper to strip @context from a schema object for @graph inclusion
+// schema-dts types don't expose index signatures, so we use a flexible record type
+function stripContext(schema: Record<string, unknown>): Record<string, unknown> {
+  const { "@context": _, ...rest } = schema;
+  return rest;
+}
+
+// Consolidated homepage schema -- single @graph with consistent internal references
+export const homepageGraphSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    stripContext(websiteSchema as unknown as Record<string, unknown>),
+    stripContext(organizationSchema as unknown as Record<string, unknown>),
+    stripContext(breadcrumbSchema as unknown as Record<string, unknown>),
+    stripContext(barbershopSchema as unknown as Record<string, unknown>),
+    stripContext(servicesSchema as unknown as Record<string, unknown>),
+    stripContext(imageGallerySchema as unknown as Record<string, unknown>),
   ],
 };

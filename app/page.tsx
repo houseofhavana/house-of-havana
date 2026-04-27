@@ -7,7 +7,7 @@ import Button from "@/components/ui/button";
 import TeamCard from "@/components/ui/team-card";
 import { BARBERS } from "@/data/barbers";
 import { servicesList } from "@/data/services";
-import { barbershopSchema, imageGallerySchema, jsonLd, servicesSchema } from "@/lib/schema";
+import { homepageGraphSchema, jsonLd } from "@/lib/schema";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 import Script from "next/script";
@@ -107,7 +107,7 @@ export default function Home() {
       <section className="py-16 bg-background">
         <div className="container max-w-4xl">
           <h2 className="text-2xl md:text-3xl font-heading text-primary mb-4">
-            Men’s Haircuts, Skin Fades & Beard Grooming in Saskatoon
+            Fades & Beard Grooming in Saskatoon
           </h2>
 
           <p className="text-foreground/60 mb-4">
@@ -144,7 +144,7 @@ export default function Home() {
       <section className="pb-12 bg-background">
         <div className="container max-w-4xl">
           <h2 className="text-2xl font-heading text-primary mb-4">
-            Located in Saskatoon, Serving Professionals Across the City
+            Serving Professionals Across Saskatoon
           </h2>
 
           <p className="text-foreground/60">
@@ -163,8 +163,7 @@ export default function Home() {
         <div className="container">
           {/* Header */}
           <div className="mb-24">
-            <h2 className="heading-5-italic mb-2 text-center">Why Choose</h2>
-            <h2 className="heading-2 text-center mb-6 text-primary">HOUSE OF HAVANA</h2>
+            <h2 className="heading-2 text-center mb-6 text-primary">Why Choose House of Havana</h2>
             <div className="w-20 h-px bg-foreground/20 mx-auto mb-12"></div>
             <p className="text-foreground/40 leading-relaxed text-center max-w-2xl mx-auto">
               We're not your average barbershop. At House Of Havana, every
@@ -221,14 +220,12 @@ export default function Home() {
       <ServicesSection
         services={servicesList}
         bgSurface={true}
-        subheading="Our Rituals"
-        heading="Grooming<br />Services"
+        heading="Our Grooming Services"
         supportingText="At House Of Havana, grooming isn't just about looking good — it's about feeling powerful, confident, and ready for anything. We've created a refined experience where every service is performed with precision, passion, and Havana-inspired style. Whether it's a clean fade, a detailed beard sculpt, or a full transformation, our barbers take the time to craft your look with intention and care. Sit back, relax, and let us turn your visit into a ritual you'll look forward to every time."
         showCTA={true}
       />
       <TeamShowcase
-        title="Meet Your"
-        heading="BARBERS"
+        heading="Meet Your Barbers"
         supportingText="Our skilled barbers blend traditional techniques with contemporary style, ensuring every client receives a personalized experience that reflects their unique personality and lifestyle."
         bgSurface={false}
         showCTA={true}
@@ -251,8 +248,7 @@ export default function Home() {
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 mb-16">
             <div className="md:col-span-4">
-              <h2 className="heading-5-italic mb-2">What Our</h2>
-              <h2 className="heading-2 text-primary uppercase">Clients Say</h2>
+              <h2 className="heading-2 text-primary uppercase">What Our Clients Say</h2>
             </div>
             <div className="md:col-span-6 md:col-start-7 flex items-end">
               <p className="text-foreground/50 leading-relaxed">
@@ -276,25 +272,11 @@ export default function Home() {
           </div>
         </div>
       </section>
-      {/* Services Schema */}
+      {/* Consolidated Schema — single @graph with consistent internal references */}
       <Script
-        id="services-schema"
+        id="homepage-schema"
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: jsonLd(servicesSchema) }}
-      />
-
-      {/* BarberShop Schema */}
-      <Script
-        id="barbershop-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: jsonLd(barbershopSchema) }}
-      />
-
-      {/* ImageGallery Schema */}
-      <Script
-        id="image-gallery-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: jsonLd(imageGallerySchema) }}
+        dangerouslySetInnerHTML={{ __html: jsonLd(homepageGraphSchema) }}
       />
     </div>
   );

@@ -27,7 +27,7 @@ interface ServicesSectionProps {
   showCTA?: boolean;
 }
 
-export default function ServicesSection({ services, subheading = 'Our', heading = 'Key Components of Our Business Plans', bgSurface = false, supportingText = '', showCTA = false }: ServicesSectionProps) {
+export default function ServicesSection({ services, subheading = '', heading = 'Key Components of Our Business Plans', bgSurface = false, supportingText = '', showCTA = false }: ServicesSectionProps) {
   return (
     <section className={`${bgSurface ? 'bg-surface' : 'bg-background'} py-20`}>
       <div className="container pt-5">

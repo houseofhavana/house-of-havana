@@ -5,7 +5,6 @@ import {
   breadcrumbSchema,
   jsonLd,
   organizationSchema,
-  professionalServiceSchema,
   websiteSchema,
 } from "@/lib/schema";
 import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
@@ -94,15 +93,6 @@ export default function RootLayout({
           id="breadcrumb-schema"
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: jsonLd(breadcrumbSchema) }}
-        />
-
-        {/* ProfessionalService Schema */}
-        <Script
-          id="professional-service-schema"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: jsonLd(professionalServiceSchema),
-          }}
         />
 
         <Navbar />
