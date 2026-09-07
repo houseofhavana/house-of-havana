@@ -86,6 +86,33 @@ const whiskies = [
   },
 ];
 
+const beers = [
+  {
+    name: "Stella Artois",
+    price: "$7",
+  },
+  {
+    name: "Heineken",
+    price: "$7",
+  },
+  {
+    name: "Corona Extra",
+    price: "$7",
+  },
+  {
+    name: "Original 16",
+    price: "$7",
+  },
+  {
+    name: "Budweiser",
+    price: "$6.50",
+  },
+  {
+    name: "Coors Light",
+    price: "$6.50",
+  },
+];
+
 export default function DrinksPage() {
   return (
     <main
@@ -261,7 +288,6 @@ export default function DrinksPage() {
             margin: "0 auto",
           }}
         >
-          {/* SECTION HEADER */}
           <div
             style={{
               textAlign: "center",
@@ -303,7 +329,6 @@ export default function DrinksPage() {
             </p>
           </div>
 
-          {/* WHISKY HERO IMAGE */}
           <div
             style={{
               position: "relative",
@@ -325,7 +350,6 @@ export default function DrinksPage() {
             />
           </div>
 
-          {/* PRICE HEADERS */}
           <div
             style={{
               display: "grid",
@@ -369,7 +393,6 @@ export default function DrinksPage() {
             </span>
           </div>
 
-          {/* WHISKY LIST */}
           {whiskies.map((whisky) => (
             <div
               key={whisky.name}
@@ -409,6 +432,149 @@ export default function DrinksPage() {
                 }}
               >
                 {whisky.twoOz}
+              </span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* BEER */}
+      <section
+        style={{
+          borderTop: "1px solid #1f1f1d",
+          padding: "110px 24px 130px",
+        }}
+      >
+        <div
+          style={{
+            maxWidth: "1050px",
+            margin: "0 auto",
+          }}
+        >
+          <div
+            style={{
+              textAlign: "center",
+              marginBottom: "55px",
+            }}
+          >
+            <p
+              style={{
+                color: "#b9a16b",
+                fontSize: "10px",
+                letterSpacing: "4px",
+                textTransform: "uppercase",
+                marginBottom: "16px",
+              }}
+            >
+              Cold Selection
+            </p>
+
+            <h2
+              style={{
+                fontSize: "clamp(38px, 7vw, 68px)",
+                fontWeight: "400",
+                lineHeight: "1",
+                margin: "0",
+              }}
+            >
+              BEER
+            </h2>
+
+            <p
+              style={{
+                color: "#77736c",
+                fontSize: "13px",
+                marginTop: "20px",
+                letterSpacing: "1px",
+              }}
+            >
+              Cold. Crisp. Properly served.
+            </p>
+          </div>
+
+          <div
+            style={{
+              position: "relative",
+              width: "100%",
+              height: "clamp(360px, 48vw, 500px)",
+              overflow: "hidden",
+              marginBottom: "65px",
+            }}
+          >
+            <Image
+              src="/drinks/beer.png"
+              alt="House of Havana beer selection"
+              fill
+              sizes="(max-width: 768px) 100vw, 1050px"
+              style={{
+                objectFit: "cover",
+                objectPosition: "center center",
+              }}
+            />
+          </div>
+
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "1fr 90px",
+              gap: "20px",
+              paddingBottom: "14px",
+              borderBottom: "1px solid #3a3833",
+            }}
+          >
+            <span
+              style={{
+                color: "#77736c",
+                fontSize: "10px",
+                letterSpacing: "2px",
+                textTransform: "uppercase",
+              }}
+            >
+              Selection
+            </span>
+
+            <span
+              style={{
+                color: "#b9a16b",
+                fontSize: "10px",
+                letterSpacing: "1px",
+                textAlign: "right",
+                textTransform: "uppercase",
+              }}
+            >
+              Price
+            </span>
+          </div>
+
+          {beers.map((beer) => (
+            <div
+              key={beer.name}
+              style={{
+                display: "grid",
+                gridTemplateColumns: "1fr 90px",
+                gap: "20px",
+                alignItems: "center",
+                padding: "22px 0",
+                borderBottom: "1px solid #242320",
+              }}
+            >
+              <span
+                style={{
+                  fontSize: "clamp(15px, 2vw, 18px)",
+                  letterSpacing: "0.2px",
+                }}
+              >
+                {beer.name}
+              </span>
+
+              <span
+                style={{
+                  color: "#b9a16b",
+                  textAlign: "right",
+                  fontSize: "15px",
+                }}
+              >
+                {beer.price}
               </span>
             </div>
           ))}
