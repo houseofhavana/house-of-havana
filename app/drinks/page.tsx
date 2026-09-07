@@ -17,6 +17,14 @@ const cocktails = [
     ingredients: "1800 Coconut Tequila · Blue Curaçao · Margarita Mix",
     note: "Tropical. Bright. Smooth.",
   },
+  {
+    name: "Caribbean Sunset",
+    price: "$12",
+    image: "/drinks/caribbean-sunset.png",
+    category: "Tropical Signature",
+    ingredients: "Mango Vodka · Fresh Lime · Cranberry",
+    note: "Bright. Tropical. Refreshing.",
+  },
 ];
 
 export default function DrinksPage() {
@@ -82,7 +90,8 @@ export default function DrinksPage() {
           <article
             key={cocktail.name}
             style={{
-              marginBottom: index === cocktails.length - 1 ? "0" : "100px",
+              marginBottom:
+                index === cocktails.length - 1 ? "0" : "100px",
             }}
           >
             {/* IMAGE */}
@@ -107,7 +116,7 @@ export default function DrinksPage() {
               />
             </div>
 
-            {/* INFO */}
+            {/* COCKTAIL INFORMATION */}
             <div
               style={{
                 paddingTop: "32px",
