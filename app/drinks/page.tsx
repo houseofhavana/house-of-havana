@@ -33,6 +33,14 @@ const cocktails = [
     ingredients: "Green Apple Vodka · Fresh Lime · Ginger Beer",
     note: "Crisp. Zesty. Refreshing.",
   },
+  {
+    name: "Cuba Libre",
+    price: "$10",
+    image: "/drinks/cuba-libre.png",
+    category: "Cuban Classic",
+    ingredients: "Bacardi White · Fresh Lime · Coca-Cola",
+    note: "Classic. Crisp. Cuban.",
+  },
 ];
 
 export default function DrinksPage() {
