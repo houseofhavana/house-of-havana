@@ -1,5 +1,24 @@
 import Image from "next/image";
 
+const cocktails = [
+  {
+    name: "Old Fashioned",
+    price: "$14",
+    image: "/drinks/old-fashioned.png",
+    category: "House Classic",
+    ingredients: "Buffalo Trace · Bitters · Sugar",
+    note: "Bold. Smooth. Timeless.",
+  },
+  {
+    name: "Coconut Margarita",
+    price: "$12",
+    image: "/drinks/coconut-margarita.png",
+    category: "House Favourite",
+    ingredients: "1800 Coconut Tequila · Blue Curaçao · Margarita Mix",
+    note: "Tropical. Bright. Smooth.",
+  },
+];
+
 export default function DrinksPage() {
   return (
     <main
@@ -51,7 +70,7 @@ export default function DrinksPage() {
         </p>
       </section>
 
-      {/* OLD FASHIONED */}
+      {/* COCKTAILS */}
       <section
         style={{
           maxWidth: "1050px",
@@ -59,99 +78,108 @@ export default function DrinksPage() {
           padding: "20px 24px 100px",
         }}
       >
-        {/* DRINK IMAGE */}
-        <div
-          style={{
-            position: "relative",
-            width: "100%",
-            height: "clamp(360px, 48vw, 500px)",
-            overflow: "hidden",
-          }}
-        >
-          <Image
-            src="/drinks/old-fashioned.png"
-            alt="House of Havana Old Fashioned cocktail"
-            fill
-            priority
-            sizes="(max-width: 768px) 100vw, 1050px"
+        {cocktails.map((cocktail, index) => (
+          <article
+            key={cocktail.name}
             style={{
-              objectFit: "cover",
-              objectPosition: "center center",
-            }}
-          />
-        </div>
-
-        {/* DRINK INFORMATION */}
-        <div
-          style={{
-            paddingTop: "32px",
-            borderTop: "1px solid #2a2926",
-            marginTop: "32px",
-          }}
-        >
-          <p
-            style={{
-              color: "#b9a16b",
-              letterSpacing: "3px",
-              fontSize: "10px",
-              textTransform: "uppercase",
-              marginBottom: "14px",
+              marginBottom: index === cocktails.length - 1 ? "0" : "100px",
             }}
           >
-            House Classic
-          </p>
-
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "baseline",
-              gap: "20px",
-            }}
-          >
-            <h2
+            {/* IMAGE */}
+            <div
               style={{
-                fontSize: "clamp(32px, 6vw, 56px)",
-                fontWeight: "400",
-                margin: "0",
+                position: "relative",
+                width: "100%",
+                height: "clamp(360px, 48vw, 500px)",
+                overflow: "hidden",
               }}
             >
-              Old Fashioned
-            </h2>
+              <Image
+                src={cocktail.image}
+                alt={`House of Havana ${cocktail.name} cocktail`}
+                fill
+                priority={index === 0}
+                sizes="(max-width: 768px) 100vw, 1050px"
+                style={{
+                  objectFit: "cover",
+                  objectPosition: "center center",
+                }}
+              />
+            </div>
 
-            <span
+            {/* INFO */}
+            <div
               style={{
-                color: "#b9a16b",
-                fontSize: "22px",
-                whiteSpace: "nowrap",
+                paddingTop: "32px",
+                borderTop: "1px solid #2a2926",
+                marginTop: "32px",
               }}
             >
-              $14
-            </span>
-          </div>
+              <p
+                style={{
+                  color: "#b9a16b",
+                  letterSpacing: "3px",
+                  fontSize: "10px",
+                  textTransform: "uppercase",
+                  marginBottom: "14px",
+                }}
+              >
+                {cocktail.category}
+              </p>
 
-          <p
-            style={{
-              color: "#aaa69e",
-              marginTop: "18px",
-              fontSize: "14px",
-              lineHeight: "1.8",
-            }}
-          >
-            Buffalo Trace · Bitters · Sugar
-          </p>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "baseline",
+                  gap: "20px",
+                }}
+              >
+                <h2
+                  style={{
+                    fontSize: "clamp(32px, 6vw, 56px)",
+                    fontWeight: "400",
+                    margin: "0",
+                  }}
+                >
+                  {cocktail.name}
+                </h2>
 
-          <p
-            style={{
-              color: "#6f6c66",
-              marginTop: "8px",
-              fontSize: "13px",
-              fontStyle: "italic",
-            }}
-          >
-            Bold. Smooth. Timeless.
-          </p>
-        </div>
+                <span
+                  style={{
+                    color: "#b9a16b",
+                    fontSize: "22px",
+                    whiteSpace: "nowrap",
+                  }}
+                >
+                  {cocktail.price}
+                </span>
+              </div>
+
+              <p
+                style={{
+                  color: "#aaa69e",
+                  marginTop: "18px",
+                  fontSize: "14px",
+                  lineHeight: "1.8",
+                }}
+              >
+                {cocktail.ingredients}
+              </p>
+
+              <p
+                style={{
+                  color: "#6f6c66",
+                  marginTop: "8px",
+                  fontSize: "13px",
+                  fontStyle: "italic",
+                }}
+              >
+                {cocktail.note}
+              </p>
+            </div>
+          </article>
+        ))}
       </section>
     </main>
   );
