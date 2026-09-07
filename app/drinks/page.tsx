@@ -25,6 +25,14 @@ const cocktails = [
     ingredients: "Mango Vodka · Fresh Lime · Cranberry",
     note: "Bright. Tropical. Refreshing.",
   },
+  {
+    name: "Cuban Mule",
+    price: "$12",
+    image: "/drinks/cuban-mule.png",
+    category: "House Signature",
+    ingredients: "Green Apple Vodka · Fresh Lime · Ginger Beer",
+    note: "Crisp. Zesty. Refreshing.",
+  },
 ];
 
 export default function DrinksPage() {
