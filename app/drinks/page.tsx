@@ -43,6 +43,49 @@ const cocktails = [
   },
 ];
 
+const whiskies = [
+  {
+    name: "Macallan 12 Double Cask",
+    oneOz: "$12",
+    twoOz: "$20",
+  },
+  {
+    name: "Glenlivet 12",
+    oneOz: "$11",
+    twoOz: "$18",
+  },
+  {
+    name: "Glenfiddich 12",
+    oneOz: "$11",
+    twoOz: "$18",
+  },
+  {
+    name: "Johnnie Walker Black",
+    oneOz: "$8",
+    twoOz: "$14",
+  },
+  {
+    name: "Crown Royal Reserve",
+    oneOz: "$9",
+    twoOz: "$16",
+  },
+  {
+    name: "Jameson Irish Whiskey",
+    oneOz: "$7",
+    twoOz: "$12",
+  },
+  {
+    name: "Johnnie Walker Red",
+    oneOz: "$6.50",
+    twoOz: "$11",
+  },
+  {
+    name: "Forty Creek Barrel Select",
+    oneOz: "$6.50",
+    twoOz: "$11",
+  },
+];
+
 export default function DrinksPage() {
   return (
     <main
@@ -99,7 +142,7 @@ export default function DrinksPage() {
         style={{
           maxWidth: "1050px",
           margin: "0 auto",
-          padding: "20px 24px 100px",
+          padding: "20px 24px 120px",
         }}
       >
         {cocktails.map((cocktail, index) => (
@@ -110,7 +153,6 @@ export default function DrinksPage() {
                 index === cocktails.length - 1 ? "0" : "100px",
             }}
           >
-            {/* IMAGE */}
             <div
               style={{
                 position: "relative",
@@ -132,7 +174,6 @@ export default function DrinksPage() {
               />
             </div>
 
-            {/* COCKTAIL INFORMATION */}
             <div
               style={{
                 paddingTop: "32px",
@@ -205,6 +246,173 @@ export default function DrinksPage() {
             </div>
           </article>
         ))}
+      </section>
+
+      {/* WHISKY & SCOTCH */}
+      <section
+        style={{
+          borderTop: "1px solid #1f1f1d",
+          padding: "110px 24px 130px",
+        }}
+      >
+        <div
+          style={{
+            maxWidth: "1050px",
+            margin: "0 auto",
+          }}
+        >
+          {/* SECTION HEADER */}
+          <div
+            style={{
+              textAlign: "center",
+              marginBottom: "55px",
+            }}
+          >
+            <p
+              style={{
+                color: "#b9a16b",
+                fontSize: "10px",
+                letterSpacing: "4px",
+                textTransform: "uppercase",
+                marginBottom: "16px",
+              }}
+            >
+              The House Collection
+            </p>
+
+            <h2
+              style={{
+                fontSize: "clamp(38px, 7vw, 68px)",
+                fontWeight: "400",
+                lineHeight: "1",
+                margin: "0",
+              }}
+            >
+              WHISKY & SCOTCH
+            </h2>
+
+            <p
+              style={{
+                color: "#77736c",
+                fontSize: "13px",
+                marginTop: "20px",
+                letterSpacing: "1px",
+              }}
+            >
+              Select pours from the House collection
+            </p>
+          </div>
+
+          {/* WHISKY HERO IMAGE */}
+          <div
+            style={{
+              position: "relative",
+              width: "100%",
+              height: "clamp(360px, 48vw, 500px)",
+              overflow: "hidden",
+              marginBottom: "65px",
+            }}
+          >
+            <Image
+              src="/drinks/whisky-scotch.png"
+              alt="House of Havana Whisky and Scotch collection"
+              fill
+              sizes="(max-width: 768px) 100vw, 1050px"
+              style={{
+                objectFit: "cover",
+                objectPosition: "center center",
+              }}
+            />
+          </div>
+
+          {/* PRICE HEADERS */}
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "1fr 70px 70px",
+              gap: "20px",
+              paddingBottom: "14px",
+              borderBottom: "1px solid #3a3833",
+            }}
+          >
+            <span
+              style={{
+                color: "#77736c",
+                fontSize: "10px",
+                letterSpacing: "2px",
+                textTransform: "uppercase",
+              }}
+            >
+              Selection
+            </span>
+
+            <span
+              style={{
+                color: "#b9a16b",
+                fontSize: "10px",
+                letterSpacing: "1px",
+                textAlign: "right",
+              }}
+            >
+              1 OZ
+            </span>
+
+            <span
+              style={{
+                color: "#b9a16b",
+                fontSize: "10px",
+                letterSpacing: "1px",
+                textAlign: "right",
+              }}
+            >
+              2 OZ
+            </span>
+          </div>
+
+          {/* WHISKY LIST */}
+          {whiskies.map((whisky) => (
+            <div
+              key={whisky.name}
+              style={{
+                display: "grid",
+                gridTemplateColumns: "1fr 70px 70px",
+                gap: "20px",
+                alignItems: "center",
+                padding: "22px 0",
+                borderBottom: "1px solid #242320",
+              }}
+            >
+              <span
+                style={{
+                  fontSize: "clamp(15px, 2vw, 18px)",
+                  letterSpacing: "0.2px",
+                }}
+              >
+                {whisky.name}
+              </span>
+
+              <span
+                style={{
+                  color: "#d1cfc9",
+                  textAlign: "right",
+                  fontSize: "15px",
+                }}
+              >
+                {whisky.oneOz}
+              </span>
+
+              <span
+                style={{
+                  color: "#b9a16b",
+                  textAlign: "right",
+                  fontSize: "15px",
+                }}
+              >
+                {whisky.twoOz}
+              </span>
+            </div>
+          ))}
+        </div>
       </section>
     </main>
   );
