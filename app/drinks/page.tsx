@@ -63,8 +63,8 @@ export default function DrinksPage() {
           style={{
             position: "relative",
             width: "100%",
-            height: "min(75vh, 850px)",
-            minHeight: "520px",
+            height: "min(62vh, 680px)",
+minHeight: "440px",
             overflow: "hidden",
           }}
         >
