@@ -13,7 +13,7 @@ export default function DrinksPage() {
       <section
         style={{
           textAlign: "center",
-          padding: "110px 24px 70px",
+          padding: "90px 24px 60px",
         }}
       >
         <p
@@ -54,17 +54,17 @@ export default function DrinksPage() {
       {/* OLD FASHIONED */}
       <section
         style={{
-          maxWidth: "1200px",
+          maxWidth: "1050px",
           margin: "0 auto",
-          padding: "20px 24px 120px",
+          padding: "20px 24px 100px",
         }}
       >
+        {/* DRINK IMAGE */}
         <div
           style={{
             position: "relative",
             width: "100%",
-            height: "min(62vh, 680px)",
-minHeight: "440px",
+            height: "clamp(360px, 48vw, 500px)",
             overflow: "hidden",
           }}
         >
@@ -73,18 +73,20 @@ minHeight: "440px",
             alt="House of Havana Old Fashioned cocktail"
             fill
             priority
+            sizes="(max-width: 768px) 100vw, 1050px"
             style={{
               objectFit: "cover",
-              objectPosition: "center",
+              objectPosition: "center center",
             }}
           />
         </div>
 
+        {/* DRINK INFORMATION */}
         <div
           style={{
-            paddingTop: "36px",
+            paddingTop: "32px",
             borderTop: "1px solid #2a2926",
-            marginTop: "36px",
+            marginTop: "32px",
           }}
         >
           <p
@@ -109,7 +111,7 @@ minHeight: "440px",
           >
             <h2
               style={{
-                fontSize: "clamp(32px, 6vw, 60px)",
+                fontSize: "clamp(32px, 6vw, 56px)",
                 fontWeight: "400",
                 margin: "0",
               }}
@@ -121,6 +123,7 @@ minHeight: "440px",
               style={{
                 color: "#b9a16b",
                 fontSize: "22px",
+                whiteSpace: "nowrap",
               }}
             >
               $14
