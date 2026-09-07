@@ -75,6 +75,11 @@ const whiskies = [
     twoOz: "$20",
   },
   {
+    name: "Highland Park 12 Year",
+    oneOz: "$12",
+    twoOz: "$20",
+  },
+  {
     name: "Glenlivet 12",
     oneOz: "$12",
     twoOz: "$18",
@@ -174,7 +179,7 @@ export default function DrinksPage() {
             margin: "0",
           }}
         >
-          THE BAR
+          COCKTAIL BAR
         </h1>
 
         <p
@@ -197,12 +202,11 @@ export default function DrinksPage() {
           padding: "20px 24px 120px",
         }}
       >
-        {cocktails.map((cocktail, index) => (
+        {cocktails.map((cocktail) => (
           <article
             key={cocktail.name}
             style={{
-              marginBottom:
-                index === cocktails.length - 1 ? "0" : "100px",
+              marginBottom: "95px",
             }}
           >
             <div
@@ -217,7 +221,6 @@ export default function DrinksPage() {
                 src={cocktail.image}
                 alt={`House of Havana ${cocktail.name} cocktail`}
                 fill
-                priority={index === 0}
                 sizes="(max-width: 768px) 100vw, 1050px"
                 style={{
                   objectFit: "cover",
@@ -228,9 +231,7 @@ export default function DrinksPage() {
 
             <div
               style={{
-                paddingTop: "32px",
-                borderTop: "1px solid #2a2926",
-                marginTop: "32px",
+                paddingTop: "30px",
               }}
             >
               <p
@@ -289,21 +290,39 @@ export default function DrinksPage() {
                 style={{
                   color: "#6f6c66",
                   marginTop: "8px",
+                  marginBottom: "28px",
                   fontSize: "13px",
                   fontStyle: "italic",
                 }}
               >
                 {cocktail.note}
               </p>
+
+              {/* THIN DIVIDER AFTER COCKTAIL INFO */}
+              <div
+                style={{
+                  width: "100%",
+                  height: "1px",
+                  background: "#2a2926",
+                }}
+              />
             </div>
           </article>
         ))}
       </section>
 
-      {/* WHISKY & SCOTCH */}
+      {/* THICK SECTION DIVIDER */}
+      <div
+        style={{
+          height: "4px",
+          background: "#b9a16b",
+          opacity: 0.55,
+        }}
+      />
+
+      {/* WHISKEY & SCOTCH */}
       <section
         style={{
-          borderTop: "1px solid #1f1f1d",
           padding: "110px 24px 130px",
         }}
       >
@@ -339,7 +358,7 @@ export default function DrinksPage() {
                 margin: "0",
               }}
             >
-              WHISKY & SCOTCH
+              WHISKEY & SCOTCH
             </h2>
 
             <p
@@ -365,7 +384,7 @@ export default function DrinksPage() {
           >
             <Image
               src="/drinks/whisky-scotch.png"
-              alt="House of Havana Whisky and Scotch collection"
+              alt="House of Havana Whiskey and Scotch collection"
               fill
               sizes="(max-width: 768px) 100vw, 1050px"
               style={{
@@ -399,7 +418,6 @@ export default function DrinksPage() {
               style={{
                 color: "#b9a16b",
                 fontSize: "10px",
-                letterSpacing: "1px",
                 textAlign: "right",
               }}
             >
@@ -410,7 +428,6 @@ export default function DrinksPage() {
               style={{
                 color: "#b9a16b",
                 fontSize: "10px",
-                letterSpacing: "1px",
                 textAlign: "right",
               }}
             >
@@ -433,7 +450,6 @@ export default function DrinksPage() {
               <span
                 style={{
                   fontSize: "clamp(15px, 2vw, 18px)",
-                  letterSpacing: "0.2px",
                 }}
               >
                 {whisky.name}
@@ -463,10 +479,18 @@ export default function DrinksPage() {
         </div>
       </section>
 
+      {/* THICK SECTION DIVIDER */}
+      <div
+        style={{
+          height: "4px",
+          background: "#b9a16b",
+          opacity: 0.55,
+        }}
+      />
+
       {/* BEER */}
       <section
         style={{
-          borderTop: "1px solid #1f1f1d",
           padding: "110px 24px 130px",
         }}
       >
@@ -562,7 +586,6 @@ export default function DrinksPage() {
               style={{
                 color: "#b9a16b",
                 fontSize: "10px",
-                letterSpacing: "1px",
                 textAlign: "right",
                 textTransform: "uppercase",
               }}
@@ -586,7 +609,6 @@ export default function DrinksPage() {
               <span
                 style={{
                   fontSize: "clamp(15px, 2vw, 18px)",
-                  letterSpacing: "0.2px",
                 }}
               >
                 {beer.name}
