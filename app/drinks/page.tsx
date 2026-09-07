@@ -45,19 +45,49 @@ const cocktails = [
 
 const whiskies = [
   {
+    name: "Johnnie Walker Blue Label",
+    oneOz: "$36",
+    twoOz: "$68",
+  },
+  {
+    name: "Lagavulin 16 Year",
+    oneOz: "$22",
+    twoOz: "$38",
+  },
+  {
+    name: "Balvenie DoubleWood 12 Year",
+    oneOz: "$18",
+    twoOz: "$30",
+  },
+  {
+    name: "Dalmore 12 Year",
+    oneOz: "$16",
+    twoOz: "$26",
+  },
+  {
+    name: "Glenfiddich 14 Bourbon Barrel Reserve",
+    oneOz: "$16",
+    twoOz: "$26",
+  },
+  {
     name: "Macallan 12 Double Cask",
-    oneOz: "$12",
+    oneOz: "$14",
     twoOz: "$20",
   },
   {
     name: "Glenlivet 12",
-    oneOz: "$11",
+    oneOz: "$12",
     twoOz: "$18",
   },
   {
     name: "Glenfiddich 12",
-    oneOz: "$11",
+    oneOz: "$12",
     twoOz: "$18",
+  },
+  {
+    name: "Crown Royal Reserve",
+    oneOz: "$10",
+    twoOz: "$16",
   },
   {
     name: "Johnnie Walker Black",
@@ -65,24 +95,19 @@ const whiskies = [
     twoOz: "$14",
   },
   {
-    name: "Crown Royal Reserve",
-    oneOz: "$9",
-    twoOz: "$16",
+    name: "Jameson Irish Whiskey",
+    oneOz: "$8",
+    twoOz: "$14",
   },
   {
-    name: "Jameson Irish Whiskey",
+    name: "Johnnie Walker Red",
     oneOz: "$7",
     twoOz: "$12",
   },
   {
-    name: "Johnnie Walker Red",
-    oneOz: "$6.50",
-    twoOz: "$11",
-  },
-  {
     name: "Forty Creek Barrel Select",
-    oneOz: "$6.50",
-    twoOz: "$11",
+    oneOz: "$7",
+    twoOz: "$12",
   },
 ];
 
