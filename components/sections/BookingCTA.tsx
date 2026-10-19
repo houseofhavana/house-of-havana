@@ -21,7 +21,7 @@ const BookingCTA = ({ variant = 'default', bgSurface = true }: BookingCTAProps) 
               <p className="text-foreground/60 leading-relaxed mb-8 max-w-xl mx-auto">
                 Experience the House Of Havana difference. Reserve your appointment today.
               </p>
-              <Link href="https://getsquire.com/booking/brands/house-of-havana-barbershop" target="_blank">
+              <Link href="https://www.fresha.com/book-now/house-of-havana-barbershop-xcwtdh26/all-offer?share=true&pId=3102757" target="_blank">
                 <Button variant="primary">
                   Book Your Experience
                   <ChevronRight className="stroke-background" height={16} width={16} />
@@ -44,7 +44,7 @@ const BookingCTA = ({ variant = 'default', bgSurface = true }: BookingCTAProps) 
             <p className="text-foreground/50 leading-relaxed mb-10 max-w-lg mx-auto">
               Join the growing community of satisfied clients. Book your appointment today and discover why House Of Havana is Saskatoon's premier grooming destination.
             </p>
-            <Link href="https://getsquire.com/booking/brands/house-of-havana-barbershop" target="_blank">
+            <Link href="https://www.fresha.com/book-now/house-of-havana-barbershop-xcwtdh26/all-offer?share=true&pId=3102757" target="_blank">
               <Button variant="primary" size="default">
                 Book Your Experience
                 <ChevronRight className="stroke-background" height={16} width={16} />

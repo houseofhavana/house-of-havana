@@ -111,7 +111,7 @@ After your site is live:
 
 ## 🔗 Important URLs
 
-- **Booking System:** <https://getsquire.com/booking/brands/house-of-havana-barbershop>
+- **Booking System:** <https://www.fresha.com/book-now/house-of-havana-barbershop-xcwtdh26/all-offer?share=true&pId=3102757>
 - **Instagram:** <https://instagram.com/houseofhavanabarbershop_yxe/>
 - **Facebook:** <https://facebook.com/HouseOfHavanaBarbershop/>
 - **TikTok:** <https://www.tiktok.com/@houseofhavana.yxe>

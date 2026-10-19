@@ -44,7 +44,7 @@ const Hero: React.FC<HeroData> = ({
             </p>
           </div>
           <div className='w-full md:w-auto mb-8'>
-            <Link href="https://getsquire.com/booking/brands/house-of-havana-barbershop" target="_blank">
+            <Link href="https://www.fresha.com/book-now/house-of-havana-barbershop-xcwtdh26/all-offer?share=true&pId=3102757" target="_blank">
               <Button variant="primary" size="default" className="w-full md:w-auto">
                 Book Your Experience
                 <ChevronRight className="stroke-background" height={16} width={16} />

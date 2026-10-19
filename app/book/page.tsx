@@ -42,7 +42,7 @@ const BookPage = () => (
               clicks.
             </p>
             <Link
-              href="https://getsquire.com/booking/brands/house-of-havana-barbershop"
+              href="https://www.fresha.com/book-now/house-of-havana-barbershop-xcwtdh26/all-offer?share=true&pId=3102757"
               target="_blank"
             >
               <Button

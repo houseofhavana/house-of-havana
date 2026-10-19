@@ -103,7 +103,7 @@
 **Files:** `components/ui/navbar.tsx`, `app/page.tsx`, `app/treatments/page.tsx`, `app/book/page.tsx`, `app/contact/page.tsx`
 
 - Replaced all Calendly links with Barber-Os booking system
-- URL: <https://getsquire.com/booking/brands/house-of-havana-barbershop>
+- URL: <https://www.fresha.com/book-now/house-of-havana-barbershop-xcwtdh26/all-offer?share=true&pId=3102757>
 - Consistent across all pages and CTAs
 
 ### 9. Business Information Updated ✅

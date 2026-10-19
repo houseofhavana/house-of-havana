@@ -125,7 +125,7 @@ const Navbar = () => {
           </nav>
 
           <div className="hidden md:flex items-center gap-4">
-            <Link href="https://getsquire.com/booking/brands/house-of-havana-barbershop" target='_blank'>
+            <Link href="https://www.fresha.com/book-now/house-of-havana-barbershop-xcwtdh26/all-offer?share=true&pId=3102757" target='_blank'>
               <Button size="icon" variant={navbarVariant === 'dark' ? 'primary' : 'primary'}>
                 Book Your Experience <ChevronRight className="stroke-background" height={16} width={16} />
               </Button>
@@ -395,7 +395,7 @@ const MobileNavContent = ({ closeMenu }: { closeMenu: () => void }) => {
 
       {/* --- Mobile CTA Button --- */}
       <div className="border-t border-foreground/10 py-4 flex-shrink-0">
-        <Link href="https://getsquire.com/booking/brands/house-of-havana-barbershop" target="_blank" onClick={closeMenu}>
+        <Link href="https://www.fresha.com/book-now/house-of-havana-barbershop-xcwtdh26/all-offer?share=true&pId=3102757" target="_blank" onClick={closeMenu}>
           <Button variant="primary" size="default" className="w-full">
             Book Your Experience
             <ChevronRight className="stroke-background" height={16} width={16} />

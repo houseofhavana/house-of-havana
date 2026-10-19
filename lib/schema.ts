@@ -118,7 +118,7 @@ export const organizationSchema: WithContext<Organization> = {
     "https://www.tiktok.com/@houseofhavana.ca",
     "https://www.youtube.com/@houseofhavanamensgrooming",
     "https://www.yelp.ca/biz/house-of-havana-saskatoon",
-    "https://getsquire.com/booking/brands/house-of-havana-barbershop"
+    "https://www.fresha.com/book-now/house-of-havana-barbershop-xcwtdh26/all-offer?share=true&pId=3102757"
   ],
 };
 
@@ -228,7 +228,7 @@ export const barbershopSchema: WithContext<LocalBusiness> = {
       "@type": "ReserveAction",
       target: {
         "@type": "EntryPoint",
-        urlTemplate: "https://getsquire.com/booking/brands/house-of-havana-barbershop",
+        urlTemplate: "https://www.fresha.com/book-now/house-of-havana-barbershop-xcwtdh26/all-offer?share=true&pId=3102757",
         actionPlatform: [
           "http://schema.org/DesktopWebPlatform",
           "http://schema.org/MobileWebPlatform",
@@ -243,7 +243,7 @@ export const barbershopSchema: WithContext<LocalBusiness> = {
       "@type": "OrderAction",
       target: {
         "@type": "EntryPoint",
-        urlTemplate: "https://getsquire.com/booking/brands/house-of-havana-barbershop",
+        urlTemplate: "https://www.fresha.com/book-now/house-of-havana-barbershop-xcwtdh26/all-offer?share=true&pId=3102757",
         actionPlatform: [
           "http://schema.org/DesktopWebPlatform",
           "http://schema.org/MobileWebPlatform",
@@ -281,7 +281,7 @@ export const barbershopSchema: WithContext<LocalBusiness> = {
     "https://www.tiktok.com/@houseofhavana.ca",
     "https://www.youtube.com/@houseofhavanamensgrooming",
     "https://www.yelp.ca/biz/house-of-havana-saskatoon",
-    "https://getsquire.com/booking/brands/house-of-havana-barbershop"
+    "https://www.fresha.com/book-now/house-of-havana-barbershop-xcwtdh26/all-offer?share=true&pId=3102757"
   ],
   slogan: "Where grooming becomes personal and confidence is elevated",
   knowsAbout: [
@@ -623,7 +623,7 @@ export const contactLocalBusinessSchema: WithContext<LocalBusiness> = {
     "https://www.tiktok.com/@houseofhavana.ca",
     "https://www.youtube.com/@houseofhavanamensgrooming",
     "https://www.yelp.ca/biz/house-of-havana-saskatoon",
-    "https://getsquire.com/booking/brands/house-of-havana-barbershop",
+    "https://www.fresha.com/book-now/house-of-havana-barbershop-xcwtdh26/all-offer?share=true&pId=3102757",
   ],
 };
 

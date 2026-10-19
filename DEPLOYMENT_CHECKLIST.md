@@ -124,7 +124,7 @@ CONTACT_EMAIL=hello@jztech.co
 - **Email (Display):** <info@houseofhavana.ca>
 - **Email (Form Destination):** <hello@jztech.co>
 - **Hours:** Mon-Fri 10am-7pm, Sat 9am-6pm, Sun: Closed
-- **Booking System:** <https://getsquire.com/booking/brands/house-of-havana-barbershop>
+- **Booking System:** <https://www.fresha.com/book-now/house-of-havana-barbershop-xcwtdh26/all-offer?share=true&pId=3102757>
 
 ## 📱 Social Media
 
