@@ -99,7 +99,7 @@ const ReviewsPage = () => (
     <HeroInner
       subheading="What Our"
       title="CLIENTS SAY"
-      supportingText="Real testimonials from gentlemen who have experienced the House Of Havana difference. Every review represents our commitment to excellence, craft, and authentic client relationships."
+      supportingText="Read what clients have shared about their visits, from the haircut to the welcome they received."
     />
 
     {/* Rating Summary */}

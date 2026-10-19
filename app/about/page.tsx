@@ -25,7 +25,7 @@ export const metadata = mergeSEO({
 const About = () => {
   return (
     <>
-      <HeroInner subheading="The" title="HAVANA <br/> SPIRIT" supportingText="Rooted in tradition. Styled for today. Discover the story behind Saskatoon&apos;s premier vintage grooming destination." />
+      <HeroInner subheading="The" title="HAVANA <br/> SPIRIT" supportingText="From Havana to Saskatoon, get to know our story and the people who make this place feel like home." />
       <section className='py-26 bg-surface'>
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4 gap-y-20" >
@@ -33,10 +33,10 @@ const About = () => {
               <h3 className='heading-5-italic'>Our</h3>
               <h2 className='heading-3'>STORY</h2>
               <p className='text-foreground/50 mb-4'>
-                House Of Havana was founded by Cristian Perdomo, a master barber originally from Havana, Cuba. What began as a childhood passion at age 13 evolved into a distinguished career across Canada — from Saskatoon to Vancouver and back again.
+                Cristian Perdomo started cutting hair at 13 in Havana, Cuba. That early interest took him to barbershops in Saskatoon and Vancouver, where he developed his skills and built lasting relationships with his clients.
               </p>
               <p className='text-foreground/50'>
-                After building a high-profile clientele in Vancouver that included entrepreneurs, artists, and entertainers, Cristian chose to return to Saskatoon with his family. His vision was clear: create a barbershop that honors traditional craftsmanship while serving the modern gentleman — a space where grooming becomes ritual, not routine.
+                After working in Vancouver with clients from all walks of life, including entrepreneurs, artists, and entertainers, Cristian returned to Saskatoon with his family. He opened House of Havana to bring together the things he values most: good barbering, a welcoming space, and people who care about their community.
               </p>
             </div>
             <div className='md:col-span-3 md:col-start-2 grid grid-cols-1 md:grid-cols-2 gap-8'>
@@ -46,7 +46,7 @@ const About = () => {
                 </h3>
                 <hr className='border-foreground/10 my-4' />
                 <p className='text-foreground/50'>
-                  To deliver exceptional grooming experiences rooted in traditional barbering techniques, elevated by contemporary style. We're committed to creating a welcoming environment where every client receives personalized attention and leaves feeling confident.
+                  To give you a haircut you feel good about, in a place where you feel welcome. We listen, take our time, and help you find a style that works for you.
                 </p>
               </div>
               <div>
@@ -55,7 +55,7 @@ const About = () => {
                 </h3>
                 <hr className='border-foreground/10 my-4' />
                 <p className='text-foreground/50'>
-                  To be Saskatoon's premier destination for men's grooming — a place where vintage charm meets modern excellence, and where every visit is more than an appointment, it's an experience worth repeating.
+                  To be the barbershop you look forward to visiting. A familiar place in Saskatoon where you know your barber, feel at home, and can count on a great cut.
                 </p>
               </div>
             </div>
@@ -83,7 +83,7 @@ const About = () => {
               <h3 className='heading-5-italic mb-3'>Craft Over</h3>
               <h3 className='heading-3 mb-6'>SPEED</h3>
               <p className='text-foreground/50 leading-relaxed'>
-                We never rush. Every service receives the time and attention it deserves, because quality cannot be compromised.
+                We give each appointment the time it needs, from the first conversation to the final check in the mirror.
               </p>
             </div>
 
@@ -107,7 +107,7 @@ const About = () => {
               <h3 className='heading-5-italic mb-3'>Personal</h3>
               <h3 className='heading-3 mb-6'>GROWTH</h3>
               <p className='text-foreground/50 leading-relaxed'>
-                Our team is committed to continuous learning and excellence, both professionally and personally.
+                We keep learning, sharing techniques, and helping each other become better barbers.
               </p>
             </div>
           </div>
@@ -126,7 +126,7 @@ const About = () => {
       <TeamShowcase
         title="Meet Your"
         heading="BARBERS"
-        supportingText="Our skilled barbers blend traditional techniques with contemporary style, ensuring every client receives a personalized experience that reflects their unique personality and lifestyle."
+        supportingText="Get to know the people behind the chair. Each barber brings their own style and skills, with the same care for making you feel comfortable and look your best."
         bgSurface={true}
         showCTA={true}
       >
@@ -154,9 +154,9 @@ const About = () => {
                   "
                 </div>
                 <p className='text-foreground/50 heading-3-italic leading-relaxed text-center'>
-                  We believe grooming is more than routine—it's ritual.
-                  A sharpened blade. A clean part. A scent that lingers.
-                  These are the marks of intention, of respect, of pride.
+                  We believe a visit to the barber should be something you look forward to.
+                  A good conversation, a cut that suits you, and a place where you feel welcome.
+                  That is what we want you to find here.
                 </p>
               </div>
             </div>

@@ -51,9 +51,9 @@ export const servicesList: ServiceCategory[] = [
       h1: "Men's Haircuts in Saskatoon",
       cardTitle: "Men's Haircuts",
       cardDescription:
-        "Clean, tailored cuts built around your face shape, hair type, and lifestyle—finished with detail and designed to grow out sharp.",
+        "A haircut that suits your hair, your face, and your routine, with care taken from the first cut to the finish.",
       intro:
-        "At House Of Havana Barbershop in Saskatoon, men's haircuts are crafted with precision, intention, and attention to detail. Whether you're after a sharp professional cut or a modern textured style, our barbers tailor every haircut to suit your face shape, hair type, and lifestyle.",
+        "Looking for a tidy professional cut, a textured style, or something new? Our Saskatoon barbers will talk through what you want and help you find a haircut that works with your hair and your daily routine.",
       sectionTitle: "What's Included in Our Men's Haircuts",
       sectionItems: [
         "Personal consultation to understand your style and needs",
@@ -63,7 +63,7 @@ export const servicesList: ServiceCategory[] = [
       ],
       whyChooseTitle: "Why Choose House Of Havana for Men's Haircuts?",
       whyChooseText:
-        "We take the time others don't. From the initial consultation to the final touch, your haircut is handled by skilled barbers who care about consistency, craftsmanship, and long-lasting results. The goal isn't just a great cut today — it's a style that grows out clean and stays sharp.",
+        "We talk through your ideas before we start and check the details as we go. Your barber can also show you how to style your hair at home, so you feel comfortable with it between visits.",
       faqTitle: "Men's Haircut FAQ",
       faqs: [
         {
@@ -115,7 +115,7 @@ export const servicesList: ServiceCategory[] = [
       cardDescription:
         "Low, mid, high, skin, and taper fades with smooth transitions, crisp finishing, and a blend that holds its shape beyond day one.",
       intro:
-        "At House Of Havana Barbershop in Saskatoon, a fade haircut is more than a style — it's precision work. Our barbers specialize in clean blends, sharp transitions, and tailored fades designed to suit your head shape, hair type, and lifestyle.",
+        "Whether you like a subtle taper or a close skin fade, we will help you choose the right height and shape. Our barbers take care with the blend and finish so it works with the rest of your haircut.",
       sectionTitle: "Types of Fade Haircuts We Offer",
       sectionItems: [
         "<strong>Low Fade:</strong> Clean, subtle, and professional.",
@@ -174,9 +174,9 @@ export const servicesList: ServiceCategory[] = [
       h1: "Beard Grooming in Saskatoon",
       cardTitle: "Beard Grooming",
       cardDescription:
-        "Detailed trims, shaping, and line-ups with balanced symmetry—optionally blended into your haircut for a seamless finish.",
+        "Keep your beard tidy with a trim, shape, and clean edges. We can also blend it into your haircut.",
       intro:
-        "At House Of Havana Barbershop in Saskatoon, beard grooming is precision work — shaping, balance, and clean lines that fit your face and your style. Whether you want a subtle clean-up or a full beard reshape, our barbers focus on detail so your beard looks sharp and intentional.",
+        "Keep the length you love, tidy up the edges, or give your beard a new shape. We will talk about what you want and work with your growth pattern to find a shape that suits your face.",
       sectionTitle: "What's Included in Our Beard Grooming",
       sectionItems: [
         "Consultation on shape and length to suit your face",
@@ -187,7 +187,7 @@ export const servicesList: ServiceCategory[] = [
       ],
       whyChooseTitle: "Why Choose House Of Havana for Beard Grooming?",
       whyChooseText:
-        "Most beard trims are rushed — we don't do that. We take the time to map the shape, define the lines, and create a finish that looks clean in person and on camera. If you want your beard to elevate your whole look, this is the service.",
+        "Tell us what you like about your beard and what you want to change. We take care with the shape, cheek lines, and neckline, and can offer advice on looking after it at home.",
       faqTitle: "Beard Grooming FAQ",
       faqs: [
         {
@@ -198,7 +198,7 @@ export const servicesList: ServiceCategory[] = [
         {
           question: "Do you do beard line-ups only?",
           answer:
-            "Yes — if you just need a clean edge and neckline, we can do a quick line-up. For best results, book beard grooming so everything is balanced.",
+            "Yes. If you just need the edges and neckline tidied up, ask for a line-up. Choose beard grooming if you would also like the length and shape adjusted.",
         },
         {
           question: "Can you blend the beard into my haircut?",
@@ -222,7 +222,7 @@ export const servicesList: ServiceCategory[] = [
   },
   {
     title: "Premium Treatments",
-    description: "Transformative services for those seeking something special.",
+    description: "Perms, colour, and grey blending for a change that suits you.",
     items: [
       { name: "Partial Perm with Haircut", duration: "2 hours", price: "$160" },
       { name: "Full Perm with Haircut", duration: "2.5 hours", price: "$190" },
@@ -234,9 +234,9 @@ export const servicesList: ServiceCategory[] = [
       h1: "Premium Treatments in Saskatoon",
       cardTitle: "Premium Treatments",
       cardDescription:
-        "Transformative services for those seeking something special—including partial and full perms designed to add texture, volume, and lasting style.",
+        "Add texture or volume with a partial or full perm, or explore a change of colour with your barber.",
       intro:
-        "At House Of Havana Barbershop in Saskatoon, premium treatments go beyond the basics. Whether you're looking to add texture, volume, or a lasting transformation, our barbers are trained in advanced techniques that deliver natural-looking results tailored to your hair type and style goals.",
+        "Thinking about more texture, extra volume, or a change of colour? We will talk through your options, look at your hair, and help you choose a treatment that fits the look you want.",
       sectionTitle: "What's Included in Our Premium Treatments",
       sectionItems: [
         "In-depth consultation to assess your hair and desired outcome",
@@ -247,7 +247,7 @@ export const servicesList: ServiceCategory[] = [
       ],
       whyChooseTitle: "Why Choose House Of Havana for Premium Treatments?",
       whyChooseText:
-        "Premium treatments require skill, time, and attention to detail. Our barbers take the time to consult, customize the process, and deliver results that look natural and intentional—not overdone. Whether you're adding volume, creating texture, or making a bold change, we ensure the final look fits your lifestyle.",
+        "Before we begin, we will discuss the look you want, what works for your hair, and how to care for it afterwards. You can ask questions and get a clear idea of what to expect.",
       faqTitle: "Premium Treatments FAQ",
       faqs: [
         {
@@ -290,7 +290,7 @@ export const servicesList: ServiceCategory[] = [
 export const servicesPageData = {
   h1: "Barbershop Services in Saskatoon",
   intro:
-    "At House Of Havana Barbershop, every service is performed with intention—precision haircuts, refined fades, and well-groomed beards in a premium, Havana-inspired environment. Choose your service below and book your time with a barber who takes the details seriously.",
+    "Find your next haircut, fade, beard trim, or treatment at House of Havana in Saskatoon. Browse the services below, and get in touch if you are unsure what to book.",
   faqs: [
     {
       question: "What services does House Of Havana offer in Saskatoon?",
@@ -300,7 +300,7 @@ export const servicesPageData = {
     {
       question: "Do you recommend booking haircut + beard together?",
       answer:
-        "Yes—if you want a cohesive look, booking both allows your barber to blend your fade and beard cleanly for a seamless transition.",
+        "Yes. Booking both gives your barber time to shape your haircut and beard together and blend them where they meet.",
     },
     {
       question: "How often should I book to maintain my look?",
@@ -311,7 +311,7 @@ export const servicesPageData = {
   meta: {
     title: "Barbershop Services",
     description:
-      "Explore premium barbershop services in Saskatoon at House Of Havana: men's haircuts, fade haircuts, and beard grooming—crafted with precision and Havana-inspired style.",
+      "Explore men's haircuts, fades, and beard grooming at House of Havana in Saskatoon. Find your service and book a time with your barber.",
     keywords: [
       "barbershop services saskatoon",
       "mens haircuts saskatoon",

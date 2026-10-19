@@ -20,7 +20,7 @@ const BookPage = () => (
   <>
     <HeroInner
       title="BOOK YOUR EXPERIENCE"
-      supportingText="Ready for your next grooming experience? Book your appointment with one of our expert barbers today."
+      supportingText="Ready for a fresh cut? Choose your barber and find a time that works for you."
     />
     <div className="container py-16">
       <div className="text-center mb-8">

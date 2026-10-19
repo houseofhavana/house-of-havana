@@ -12,10 +12,8 @@ const Footer = () => {
           <Logo className="mb-4 fill-foreground" width={180} height={71} />
           <hr className="my-4 border-foreground/10" />
           <p className="mt-2 text-foreground/50 text-sm">
-            Rooted in classic barbering rituals and elevated by contemporary
-            style, we offer a premium experience for the modern gentleman. Our
-            expert barbers blend heritage techniques with personal consultation,
-            ensuring every visit is more than a cut—it's a ritual.
+            Your local barbershop in Saskatoon for fresh cuts, beard care,
+            and a warm welcome. Settle in, relax, and leave feeling good.
           </p>
           {/* Social Media Links */}
           <div className="flex gap-3 mt-4">

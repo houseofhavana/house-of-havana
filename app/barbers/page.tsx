@@ -23,7 +23,7 @@ const BarbersPage = () => (
     <HeroInner
       subheading="Meet Your"
       title="BARBERS"
-      supportingText="Our skilled barbers blend traditional techniques with contemporary style, ensuring every client receives a personalized experience that reflects their unique personality and lifestyle."
+      supportingText="Get to know the people behind the chair. Each barber brings their own style and skills, with the same care for making you feel comfortable and look your best."
     />
 
     <section className="py-26 bg-surface">

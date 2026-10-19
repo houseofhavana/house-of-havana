@@ -23,34 +23,18 @@ export const metadata = {
 const WHY_CHOOSE_VALUES = [
   {
     number: "01",
-    title: "Disciplined Craftsmanship",
-    description: `Our barbers are developed through structured mentorship and technical calibration. We train beyond basic cutting — focusing on proportion, symmetry, density control, and silhouette balance.
-
-Each service begins with assessment, not assumption.
-Face shape. Growth patterns. Lifestyle demands.
-
-The outcome is not just a haircut.
-It is controlled execution.`,
+    title: "Great Haircuts Start with Listening",
+    description: "We start by talking about your hair, how you like to wear it, and what works for your day-to-day routine. Your barber takes your face shape and hair growth into account, then helps you find a cut that feels like you.",
   },
   {
     number: "02",
-    title: "Heritage Technique, Modern Precision",
-    description: `We operate from the foundation of traditional barbering — straight-razor discipline, structured fades, meticulous beard sculpting — while refining it through contemporary standards of presentation.
-
-Old-school methods.
-Modern refinement.
-
-Technique is respected. Detail is non-negotiable.`,
+    title: "Classic Skills, Current Styles",
+    description: "From straight razor shaves to skin fades and textured cuts, we bring traditional barbering skills to the styles you want today. We pay attention to the blend, the shape, and the small details that make a haircut work.",
   },
   {
     number: "03",
-    title: "Elevated Client Experience",
-    description: `Professionalism defines the environment. Consultations are deliberate. Service is uninterrupted. Time in the chair is focused entirely on you.
-
-From hot towel protocols to premium finishing products, every touchpoint is designed to reinforce presence and confidence.
-
-This is not a transactional haircut.
-It is a premium grooming appointment executed without compromise.`,
+    title: "Time to Settle In",
+    description: "Make yourself comfortable. Your appointment is time for you, with a barber who listens and gives your cut the attention it deserves. Enjoy the hot towel, the finishing touches, and a chance to slow down for a while.",
   },
 ];
 
@@ -101,7 +85,7 @@ export default function Home() {
         }}
         subheading="Professional Barber Services in Saskatoon, Saskatchewan"
         heading="Premium Barbershop in Saskatoon"
-        supportingText="At House Of Havana Barbershop in Saskatoon, grooming is more than maintenance — it’s a moment of focus, intention, and precision. We blend classic barbering tradition with modern design to create an experience tailored for discerning professionals. From custom cabinetry and rich leather seating to precision cuts, well-groomed beards, and premium aftercare, every detail is considered. This isn’t just another barbershop in Saskatoon — it’s where grooming becomes personal and confidence is elevated."
+        supportingText="Come in for a fresh cut, a beard tidy-up, or a change of style. At House of Havana in Saskatoon, we take the time to listen, get the details right, and make you feel at home. Settle into the chair and let us take care of you."
             />
       {/* SEO Section */}
       <section className="py-16 bg-background">
@@ -111,7 +95,7 @@ export default function Home() {
           </h2>
 
           <p className="text-foreground/60 mb-4">
-            House of Havana Barbershop is a premium barbershop in Saskatoon specializing in men’s haircuts, skin fades, beard trims, and hot towel shaves. Every service is tailored to your hair type, face shape, and lifestyle—built for a clean, confident finish.
+            House of Havana Barbershop is a premium barbershop in Saskatoon specializing in men’s haircuts, skin fades, beard trims, and hot towel shaves. We work with your hair type, face shape, and daily routine to find a look that suits you.
           </p>
 
           <p className="text-foreground/60">
@@ -166,9 +150,9 @@ export default function Home() {
             <h2 className="heading-2 text-center mb-6 text-primary">Why Choose House of Havana</h2>
             <div className="w-20 h-px bg-foreground/20 mx-auto mb-12"></div>
             <p className="text-foreground/40 leading-relaxed text-center max-w-2xl mx-auto">
-              We're not your average barbershop. At House Of Havana, every
-              detail matters — from the moment you walk in to the moment you
-              walk out feeling like the best version of yourself.
+              A good haircut starts with a conversation. We listen to what
+              you want, take care with the details, and make sure you feel
+              comfortable from the moment you walk in.
             </p>
           </div>
 
@@ -221,12 +205,12 @@ export default function Home() {
         services={servicesList}
         bgSurface={true}
         heading="Our Grooming Services"
-        supportingText="At House Of Havana, grooming isn't just about looking good — it's about feeling powerful, confident, and ready for anything. We've created a refined experience where every service is performed with precision, passion, and Havana-inspired style. Whether it's a clean fade, a detailed beard sculpt, or a full transformation, our barbers take the time to craft your look with intention and care. Sit back, relax, and let us turn your visit into a ritual you'll look forward to every time."
+        supportingText="Whether you want to keep your usual look or try something new, we can help. Explore our haircuts, fades, beard grooming, and treatments to find what you need."
         showCTA={true}
       />
       <TeamShowcase
         heading="Meet Your Barbers"
-        supportingText="Our skilled barbers blend traditional techniques with contemporary style, ensuring every client receives a personalized experience that reflects their unique personality and lifestyle."
+        supportingText="Get to know the people behind the chair. Each barber brings their own style and skills, with the same care for making you feel comfortable and look your best."
         bgSurface={false}
         showCTA={true}
       >

@@ -53,7 +53,7 @@ export default function ConsultingServices({ bgSurface = false }: { bgSurface?: 
           <h2 className="heading-4-italic">Our </h2>
           <h2 className="heading-2 mb-4">Grooming <br />Services</h2>
           <p className="max-w-2xl text-foreground/50">
-            At House Of Havana, grooming is a ritual — not a routine. We offer a carefully curated menu of services designed for modern gentlemen who value craft, comfort, and confidence. Whether you&apos;re here for a sharp fade, a sculpted beard, or a complete transformation, every detail is delivered with precision and care.
+            From a fresh fade to a beard trim or a whole new look, we can help you find a style that suits you. Take a look at our services, and let us know if you need a hand choosing.
           </p>
         </div>
         <div className="space-y-4">

@@ -57,7 +57,7 @@ const ContactPage = () => {
       <HeroInner
         subheading="Get In"
         title="TOUCH"
-        supportingText="Have a question or ready to book your next grooming experience? We're here to help. Reach out and let's connect."
+        supportingText="Have a question about a service or your next visit? Get in touch. We are happy to help."
       />
 
       {/* Main Content Section */}

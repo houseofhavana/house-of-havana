@@ -14,18 +14,18 @@ const Ritual = () => {
           <div className="z-10 p-4 md:p-12 flex flex-col justify-between gap-16 md:gap-4">
             <div className="z-0 absolute w-[240px] h-[350px] bg-gradient-to-b from-transparent to-foreground/3 top-0 left-0"></div>
             <div className="z-10">
-              <h2 className="heading-2 mb-4 text-primary">Elevating Men's Grooming</h2>
+              <h2 className="heading-2 mb-4 text-primary">A Good Cut. Time Well Spent.</h2>
               <p className="text-foreground/50">
-                At House Of Havana, barbering is practiced as a disciplined craft. Every cut is structured with deliberate control — calibrated blends, engineered silhouettes, and proportion-driven detailing.
+                A great haircut should suit you and feel easy to wear. We take the time to understand your hair, your style, and how much time you want to spend getting ready.
               </p>
               <p className="text-foreground/50 mt-2 font-heading italic">
-                We do not guess. We assess, design, and execute.
+                Tell us what you have in mind. We can work out the details together.
               </p>
               <p className="text-foreground/50 mt-2">
-                From precise skin fades to sculpted beards and tailored finishing protocols, each service is built around technical accuracy and refined presentation.
+                Whether you are here for a skin fade, a beard trim, or your usual cut, you can settle in knowing your barber is paying attention to the details.
               </p>
               <p className="text-foreground/50 mt-2 font-heading italic">
-                Excellence is not an upgrade here. It is the baseline.
+                Leave with a fresh look and advice on keeping it that way.
               </p>
             </div>
             <div className="z-10 w-full grid grid-cols-2 gap-4">

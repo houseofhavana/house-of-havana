@@ -10,7 +10,7 @@ const Hero: React.FC<HeroData> = ({
   backgroundImages,
   subheading = "",
   heading = "Gentleman&apos;s <br /> Club",
-  supportingText = "Crafted scissors. Steam and silence. A glass of something neat. At House Of Havana, grooming is the ceremony.",
+  supportingText = "A fresh cut, a warm welcome, and time to relax. Make yourself at home at House of Havana.",
 }) => {
   return (
     <div className='bg-background text-foreground relative overflow-hidden z-10'>
