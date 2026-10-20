@@ -38,11 +38,13 @@ const FEATURED_REVIEWS: Review[] = [
     sourceLabel: "View Aaron’s reviews on Google"
   },
   {
-    name: "James T.",
-    service: "Haircut",
+    name: "Coady Rex Bailey",
+    service: "Haircut with James",
     rating: 5,
-    quote: "I've tried several barbershops in Saskatoon and House Of Havana is by far the best. The atmosphere, the skill level, the attention to detail — everything is top tier.",
-    date: "1 month ago"
+    quote: "Had a great experience! James gave me an awesome haircut and really took the time to make sure I was happy with it. He was friendly, asked the right questions, and genuinely cared about getting it right.\n\nThe whole staff was super welcoming as well. Everyone was friendly and even came over to check out the cut and offer their input. Definitely felt like they cared about the customer experience.\n\nI’ll definitely be back. Highly recommend James and the team!",
+    date: "",
+    sourceUrl: "https://www.google.com/maps/contrib/104548861411966020970/reviews?hl=en",
+    sourceLabel: "View Coady’s reviews on Google"
   },
   {
     name: "David K.",

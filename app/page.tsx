@@ -47,9 +47,10 @@ const REVIEWS: Value[] = [
     sourceLabel: "View Aaron’s reviews on Google",
   },
   {
-    title: "Professional & Welcoming",
-    description:
-      "From the moment I walked in, I felt like family. The quality of work is outstanding. Will definitely be back.",
+    title: "Coady Rex Bailey",
+    description: "Had a great experience! James gave me an awesome haircut and really took the time to make sure I was happy with it. He was friendly, asked the right questions, and genuinely cared about getting it right.\n\nThe whole staff was super welcoming as well. Everyone was friendly and even came over to check out the cut and offer their input. Definitely felt like they cared about the customer experience.\n\nI’ll definitely be back. Highly recommend James and the team!",
+    sourceUrl: "https://www.google.com/maps/contrib/104548861411966020970/reviews?hl=en",
+    sourceLabel: "View Coady’s reviews on Google",
   },
   {
     title: "True Craftsmanship",
