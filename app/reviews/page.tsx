@@ -95,11 +95,13 @@ const ADDITIONAL_REVIEWS: Review[] = [
     sourceLabel: "View Jerry’s reviews on Google"
   },
   {
-    name: "Ryan H.",
-    service: "Haircut",
+    name: "Raymond Robertson",
+    service: "Beard Grooming",
     rating: 5,
-    quote: "This is what a barbershop should be. No gimmicks, no rushing, just quality work from talented barbers who take pride in what they do.",
-    date: "2 weeks ago"
+    quote: "Finally got the beard shape that I was looking for. First time growing a beard and at 5 months of growth. Little apprehensive and nervous but that all went away when Christian took the time to listen to what I was looking for and totally understood what I was trying to explaine. The cut and shape is top notch and the atmosphere is new age, comfortable and inviting. Definitely will be comming back and referring people to Christian. ✌️",
+    date: "",
+    sourceUrl: "https://www.google.com/maps/contrib/108036074041358387407/reviews?hl=en",
+    sourceLabel: "View Raymond’s reviews on Google"
   },
   {
     name: "Jason B.",
