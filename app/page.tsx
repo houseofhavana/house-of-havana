@@ -53,9 +53,10 @@ const REVIEWS: Value[] = [
     sourceLabel: "View Coady’s reviews on Google",
   },
   {
-    title: "True Craftsmanship",
-    description:
-      "These guys are true artists. My beard has never looked better, and the hot towel treatment was the perfect finishing touch.",
+    title: "Mably LLorente",
+    description: "Absolutely the best barbershop experience I've had! The team at House of Havana Barbershop is incredibly professional, welcoming, and talented. From the moment you walk in, you're treated like family. The attention to detail is second to none, and they take the time to make sure your haircut is exactly what you want.\n\nThe atmosphere is fantastic—great music, great conversations, and a true community vibe. The shop is clean, stylish, and has an authentic Cuban feel that makes every visit enjoyable.\n\nIf you're looking for a barber who takes pride in their work and consistently delivers amazing fades, beard trims, and classic cuts, this is the place to go. I highly recommend House of Havana Barbershop to anyone who wants top-quality service and an outstanding experience. I'll definitely be coming back!",
+    sourceUrl: "https://www.google.com/maps/contrib/102329138213406641897/reviews?hl=en",
+    sourceLabel: "View Mably’s reviews on Google",
   },
   {
     title: "Consistent Quality",
