@@ -59,9 +59,10 @@ const REVIEWS: Value[] = [
     sourceLabel: "View Mably’s reviews on Google",
   },
   {
-    title: "Consistent Quality",
-    description:
-      "Been coming here for months and every visit is consistently excellent. The team really knows their craft and takes pride in their work.",
+    title: "john dunning",
+    description: "Have to say really enjoyed my first of many visits to HoH. It has a great atmosphere and really good chill vibes in the place, it's also decorated quite well in a manly chic kinda way. Had a great stylist called Emily. She honestly done the best trim I have had in years she was brilliant. Couldn't recommend the place any more if I could give it 6 stars I would",
+    sourceUrl: "https://www.google.com/maps/contrib/109276243950569234949/reviews?hl=en",
+    sourceLabel: "View John’s reviews on Google",
   },
   {
     title: "Modern Gentleman's Choice",

@@ -59,11 +59,13 @@ const FEATURED_REVIEWS: Review[] = [
 
 const ADDITIONAL_REVIEWS: Review[] = [
   {
-    name: "Robert M.",
-    service: "Full Perm",
+    name: "john dunning",
+    service: "Haircut with Emily",
     rating: 5,
-    quote: "Was nervous about getting a perm but my barber walked me through everything. The result is amazing and exactly what I was hoping for.",
-    date: "1 month ago"
+    quote: "Have to say really enjoyed my first of many visits to HoH. It has a great atmosphere and really good chill vibes in the place, it's also decorated quite well in a manly chic kinda way. Had a great stylist called Emily. She honestly done the best trim I have had in years she was brilliant. Couldn't recommend the place any more if I could give it 6 stars I would",
+    date: "",
+    sourceUrl: "https://www.google.com/maps/contrib/109276243950569234949/reviews?hl=en",
+    sourceLabel: "View John’s reviews on Google"
   },
   {
     name: "Alex P.",
@@ -186,7 +188,10 @@ const ReviewsPage = () => (
                   ))}
                 </div>
                 <p className="text-xs uppercase tracking-[0.2em] text-foreground mb-1">{review.name}</p>
-                <p className="text-xs text-foreground/40">{review.service} • {review.date}</p>
+                <p className="text-xs text-foreground/40">{review.service}{review.date && ` • ${review.date}`}</p>
+                {review.sourceUrl && (
+                  <a href={review.sourceUrl} target="_blank" rel="noopener noreferrer" className="inline-block mt-3 text-xs underline underline-offset-4 text-foreground/60 hover:text-foreground">{review.sourceLabel}</a>
+                )}
               </div>
               <div className="col-span-12 md:col-span-8">
                 <p className="text-foreground/60 leading-relaxed">{review.quote}</p>
