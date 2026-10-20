@@ -170,7 +170,7 @@ const Footer = () => {
               <br />
               Sat: 9am-6pm
               <br />
-              Sun: Closed
+              Sun: 10am-5pm
             </span>
           </div>
           <div className="flex items-center text-sm mb-3">

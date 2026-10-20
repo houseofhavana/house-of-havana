@@ -94,7 +94,7 @@ const ContactPage = () => {
                   <p className="text-foreground/60 leading-relaxed">
                     Monday - Friday: 10:00 AM - 7:00 PM<br />
                     Saturday: 9:00 AM - 6:00 PM<br />
-                    Sunday: Closed
+                    Sunday: 10:00 AM - 5:00 PM
                   </p>
                 </div>
 
