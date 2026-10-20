@@ -71,9 +71,10 @@ const REVIEWS: Value[] = [
     sourceLabel: "View Marc’s reviews on Google",
   },
   {
-    title: "Outstanding Experience",
-    description:
-      "It's not just a haircut, it's a complete grooming experience that leaves you feeling confident and refreshed.",
+    title: "Aaron Lysitza",
+    description: "Was my first time at this barbershop and I was very impressed! The interior has a cozy aesthetic and the staff emulate that vibe. Was greeted immediately and was offered water or coffee right when I got in. Emily did my haircut and was superb! She nailed the style I was going for, and was a huge help recommending products that would be suitable for my hairstyle/texture. I will definitely be back and would highly recommend checking it out!",
+    sourceUrl: "https://www.google.com/maps/contrib/114594539402026574316/reviews?hl=en",
+    sourceLabel: "View Aaron Lysitza’s reviews on Google",
   },
 ];
 

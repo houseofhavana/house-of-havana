@@ -77,11 +77,13 @@ const ADDITIONAL_REVIEWS: Review[] = [
     sourceLabel: "View Marc’s reviews on Google"
   },
   {
-    name: "Christopher L.",
-    service: "Haircut",
+    name: "Aaron Lysitza",
+    service: "Haircut with Emily",
     rating: 5,
-    quote: "I've been coming here for months and every single visit is consistently excellent. This is my permanent barbershop.",
-    date: "1 week ago"
+    quote: "Was my first time at this barbershop and I was very impressed! The interior has a cozy aesthetic and the staff emulate that vibe. Was greeted immediately and was offered water or coffee right when I got in. Emily did my haircut and was superb! She nailed the style I was going for, and was a huge help recommending products that would be suitable for my hairstyle/texture. I will definitely be back and would highly recommend checking it out!",
+    date: "",
+    sourceUrl: "https://www.google.com/maps/contrib/114594539402026574316/reviews?hl=en",
+    sourceLabel: "View Aaron Lysitza’s reviews on Google"
   },
   {
     name: "Michael S.",
