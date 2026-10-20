@@ -65,9 +65,10 @@ const REVIEWS: Value[] = [
     sourceLabel: "View John’s reviews on Google",
   },
   {
-    title: "Modern Gentleman's Choice",
-    description:
-      "House Of Havana has become my go-to spot. The combination of traditional techniques with modern style is exactly what I was looking for.",
+    title: "Marc Rudulier",
+    description: "Cristian and his crew are top notch! I went there for the first time looking for an experience. Something that set them apart from the other shops I've been to lately. They nailed it on the head.\n\nI was immediately greeted when I walked in with a good energy from the staff... I wish I would've gotten his name... he signed me in and asked if I wanted a water or drink of sorts. I asked for a coffee and after taking my coat, he came back with a flavourful coffee.\n\nI didnt have to wait long before Cristian came out. He greeted me with a smile, a handshake and invited me in.\n\nI'm a big guy which means not all styles I like work on me. Cristian listened to my ideas, my wants and gave advice... just a nice over all consult before diving it.\n\nAs a client, he could've given me whatever I asked for but genuinely wanted me to leave looking my best!\n\nThere was easy conversation and a relaxed atmosphere. I would definitely go back and will go back. They have a repeat customer with me.\n\nAs a side mention... their website is user friendly.\n\nI'm looking forward to my next appointment.",
+    sourceUrl: "https://www.google.com/maps/contrib/100651879651977911727/reviews?hl=en",
+    sourceLabel: "View Marc’s reviews on Google",
   },
   {
     title: "Outstanding Experience",
