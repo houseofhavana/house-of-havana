@@ -33,10 +33,16 @@ const Ritual = () => {
                 <span className="text-2xl lg:text-3xl font-heading text-primary">20+</span>
                 <p className="heading-6-italic">Years of Experience</p>
               </div>
-              <div className="flex flex-col">
-                <span className="text-2xl lg:text-3xl font-heading text-primary">4.9</span>
-                <p className="heading-6-italic">Customer Rating</p>
-              </div>
+              <a
+                href="https://share.google/sffdie67FCLj8pfgB"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Rated 5 out of 5 with over 300 Google reviews"
+                className="flex flex-col rounded-sm transition-opacity hover:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
+              >
+                <span className="text-2xl lg:text-3xl font-heading text-primary">5.0</span>
+                <p className="heading-6-italic">300+ Google Reviews</p>
+              </a>
             </div>
             {/* CTA Button */}
             <div className="md:mt-10">

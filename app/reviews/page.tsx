@@ -106,14 +106,14 @@ const ReviewsPage = () => (
     <section className="py-20 bg-surface">
       <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-20 max-w-5xl mx-auto">
-          <div className="text-center">
-            <p className="!text-7xl font-heading mb-4 leading-none">4.9</p>
-            <p className="heading-6-italic text-foreground/50">Customer Rating</p>
-          </div>
-          <div className="text-center">
-            <p className="!text-7xl font-heading mb-4 leading-none">150+</p>
-            <p className="heading-6-italic text-foreground/50">Happy Clients</p>
-          </div>
+          <a href="https://share.google/sffdie67FCLj8pfgB" target="_blank" rel="noopener noreferrer" className="text-center rounded-sm transition-opacity hover:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-8 focus-visible:outline-primary" aria-label="Rated 5 out of 5 on Google. Read our reviews">
+            <p className="!text-7xl font-heading mb-4 leading-none">5.0</p>
+            <p className="heading-6-italic text-foreground/50">Google Rating</p>
+          </a>
+          <a href="https://share.google/sffdie67FCLj8pfgB" target="_blank" rel="noopener noreferrer" className="text-center rounded-sm transition-opacity hover:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-8 focus-visible:outline-primary" aria-label="Read over 300 reviews on our Google Business profile">
+            <p className="!text-7xl font-heading mb-4 leading-none">300+</p>
+            <p className="heading-6-italic text-foreground/50">Google Reviews</p>
+          </a>
           <div className="text-center">
             <p className="!text-7xl font-heading mb-4 leading-none">100%</p>
             <p className="heading-6-italic text-foreground/50">Recommended</p>

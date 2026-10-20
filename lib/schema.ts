@@ -213,8 +213,8 @@ export const barbershopSchema: WithContext<LocalBusiness> = {
     ratingValue: "5.0",
     bestRating: "5",
     worstRating: "1",
-    ratingCount: "150",
-    reviewCount: "150",
+    ratingCount: "300",
+    reviewCount: "300",
   },
   founder: {
     "@type": "Person",
