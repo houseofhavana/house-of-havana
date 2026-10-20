@@ -86,11 +86,13 @@ const ADDITIONAL_REVIEWS: Review[] = [
     sourceLabel: "View Aaron Lysitza’s reviews on Google"
   },
   {
-    name: "Michael S.",
-    service: "Haircut & Beard",
+    name: "jerry Patel",
+    service: "Appointment with Cristian",
     rating: 5,
-    quote: "Yes, it's more expensive than a quick chain shop. But you absolutely get what you pay for. The skill, the atmosphere, the service — all premium.",
-    date: "3 weeks ago"
+    quote: "100% recommended. I’m very particular about my hair and the style I maintain, and Cristian truly understands that level of care and attention.\n\nHe takes his time, focuses on the details, and makes sure the cut is exactly right. You can tell he takes real pride in his craft. The environment is amazing as well — very clean, professional, and with a luxurious vibe that makes the whole experience feel premium.\n\nI walked out feeling sharp, confident, and completely satisfied. If you care about your appearance and the way you present yourself, you must try this place at least once. After that, you won’t want to go anywhere else.",
+    date: "",
+    sourceUrl: "https://www.google.com/maps/contrib/103917579962522200794/reviews?hl=en",
+    sourceLabel: "View Jerry’s reviews on Google"
   },
   {
     name: "Ryan H.",
