@@ -23,15 +23,19 @@ interface Review {
   rating: number
   quote: string
   date: string
+  sourceUrl?: string
+  sourceLabel?: string
 }
 
 const FEATURED_REVIEWS: Review[] = [
   {
-    name: "Marcus D.",
+    name: "Aaron Green",
     service: "Haircut & Beard",
     rating: 5,
-    quote: "The attention to detail here is unmatched. My barber took the time to understand exactly what I wanted and delivered beyond expectations. The hot towel treatment was the perfect finishing touch.",
-    date: "2 weeks ago"
+    quote: "I booked with Cristian based on a friend’s recommendation. As a former barber, I’m picky. And this kid’s technical work is the best I’ve seen. His lines are crisp, fades are seamless, and the beard trim? Absolute masterclass. One bad beard trim can wreck your whole month, but this guy is in a league of his own. Balanced, proportional, and solid. If you care about precision and don’t want to gamble, book him.",
+    date: "",
+    sourceUrl: "https://www.google.com/maps/contrib/102471689243680363205/reviews?hl=en",
+    sourceLabel: "View Aaron’s reviews on Google"
   },
   {
     name: "James T.",
@@ -144,6 +148,9 @@ const ReviewsPage = () => (
                 <div>
                   <p className="text-sm uppercase tracking-[0.2em] text-foreground mb-1">{review.name}</p>
                   <p className="text-xs text-foreground/50">{review.service}</p>
+                  {review.sourceUrl && (
+                    <a href={review.sourceUrl} target="_blank" rel="noopener noreferrer" className="inline-block mt-3 text-xs underline underline-offset-4 text-foreground/60 hover:text-foreground">{review.sourceLabel}</a>
+                  )}
                 </div>
                 <div className="flex items-center gap-2">
                   {[...Array(review.rating)].map((_, i) => (

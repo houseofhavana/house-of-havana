@@ -6,6 +6,8 @@ interface ReviewCardProps {
   rating?: number; // Optional: for stars
   source?: "google" | "other"; // Optional: for source icon
   date?: string; // Optional
+  sourceUrl?: string;
+  sourceLabel?: string;
 }
 
 const ReviewCard: React.FC<ReviewCardProps> = ({
@@ -14,6 +16,8 @@ const ReviewCard: React.FC<ReviewCardProps> = ({
   rating = 5,
   source = "google",
   date,
+  sourceUrl,
+  sourceLabel,
 }) => (
   <div className="p-6 flex flex-col min-h-[300px]">
     <div className="heading-5-italic mb-3 tracking-wide">{name}</div>
@@ -40,6 +44,11 @@ const ReviewCard: React.FC<ReviewCardProps> = ({
         </span>
       )}
     </div>
+    {sourceUrl && (
+      <a href={sourceUrl} target="_blank" rel="noopener noreferrer" className="text-xs text-foreground/60 underline underline-offset-4 hover:text-foreground mt-4">
+        {sourceLabel || "View on Google"}
+      </a>
+    )}
     {date && (
       <div className="text-xs text-foreground/50 mt-2">{date}</div>
     )}

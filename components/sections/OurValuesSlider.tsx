@@ -12,6 +12,8 @@ import ReviewCard from '../ui/review-card';
 export type Value = {
   title: string;
   description: string;
+  sourceUrl?: string;
+  sourceLabel?: string;
 };
 
 interface OurValuesSliderProps {
@@ -116,6 +118,8 @@ export default function OurValuesSlider({ values, heading = 'What Sets Us Apart?
                   review={value.description}
                   rating={5}
                   source="google"
+                  sourceUrl={value.sourceUrl}
+                  sourceLabel={value.sourceLabel}
                 />
               </SwiperSlide>
             ))}

@@ -41,9 +41,10 @@ const WHY_CHOOSE_VALUES = [
 
 const REVIEWS: Value[] = [
   {
-    title: "Exceptional Service",
-    description:
-      "The best barbershop experience I've ever had. The attention to detail and the atmosphere is incredible. Highly recommend!",
+    title: "Aaron Green",
+    description: "I booked with Cristian based on a friend’s recommendation. As a former barber, I’m picky. And this kid’s technical work is the best I’ve seen. His lines are crisp, fades are seamless, and the beard trim? Absolute masterclass. One bad beard trim can wreck your whole month, but this guy is in a league of his own. Balanced, proportional, and solid. If you care about precision and don’t want to gamble, book him.",
+    sourceUrl: "https://www.google.com/maps/contrib/102471689243680363205/reviews?hl=en",
+    sourceLabel: "View Aaron’s reviews on Google",
   },
   {
     title: "Professional & Welcoming",
