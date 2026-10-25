@@ -29,11 +29,11 @@ module.exports = {
             author: '/blogs/authors/',
             category: '/blogs/categories/',
         };
-        return documents.map((document) => ({
+        return [{ loc: "/blogs/average-haircut-cost-canada", lastmod: "2026-10-25T18:00:00.000Z", changefreq: "monthly", priority: 0.7 }, ...documents.map((document) => ({
             loc: prefixes[document._type] + encodeURIComponent(document.slug),
             lastmod: document._updatedAt,
             changefreq: 'weekly',
             priority: 0.7,
-        }));
+        }))];
     },
 }

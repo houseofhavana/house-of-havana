@@ -1,3 +1,5 @@
+import Link from "next/link";
+import haircutCostArticle from "@/data/haircut-cost-article.json";
 import HeroInner from "@/components/sections/HeroInner";
 import BlogCard from "@/components/ui/blog-card";
 import { client } from "@/sanity/lib/client";
@@ -114,6 +116,14 @@ export default async function BlogsPage({
 
       <section className="bg-surface py-20">
         <div className="container">
+          {currentPage === 1 && (
+            <Link href={`/blogs/${haircutCostArticle.slug}`} className="block mb-12 border border-foreground/20 p-6 md:p-10 hover:border-secondary transition-colors">
+              <p className="text-secondary text-sm uppercase tracking-wider mb-3">Featured guide · October 25, 2026</p>
+              <h2 className="heading-3 !capitalize mb-4">{haircutCostArticle.title}</h2>
+              <p className="text-foreground/70 mb-5">{haircutCostArticle.description}</p>
+              <span className="text-secondary">Read the guide →</span>
+            </Link>
+          )}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {posts.length > 0 &&
               posts.map((post) => (
