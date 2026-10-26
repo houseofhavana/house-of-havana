@@ -1,4 +1,5 @@
 import Link from "next/link";
+import haircutFrequencyArticle from "@/data/haircut-frequency-article.json";
 import haircutCostArticle from "@/data/haircut-cost-article.json";
 import HeroInner from "@/components/sections/HeroInner";
 import BlogCard from "@/components/ui/blog-card";
@@ -117,6 +118,14 @@ export default async function BlogsPage({
       <section className="bg-surface py-20">
         <div className="container">
           {currentPage === 1 && (
+            <Link href={`/blogs/${haircutFrequencyArticle.slug}`} className="block mb-12 border border-foreground/20 p-6 md:p-10 hover:border-secondary transition-colors">
+              <p className="text-secondary text-sm uppercase tracking-wider mb-3">Barber advice · October 26, 2026 · Cristian Perdomo</p>
+              <h2 className="heading-3 !capitalize mb-4">{haircutFrequencyArticle.title}</h2>
+              <p className="text-foreground/70 mb-5">{haircutFrequencyArticle.description}</p>
+              <span className="text-secondary">Read the guide →</span>
+            </Link>
+          )}
+          {currentPage === 1 && (
             <Link href={`/blogs/${haircutCostArticle.slug}`} className="block mb-12 border border-foreground/20 p-6 md:p-10 hover:border-secondary transition-colors">
               <p className="text-secondary text-sm uppercase tracking-wider mb-3">Featured guide · October 25, 2026</p>
               <h2 className="heading-3 !capitalize mb-4">{haircutCostArticle.title}</h2>
@@ -140,7 +149,7 @@ export default async function BlogsPage({
               ))}
           </div>
 
-          {posts.length === 0 && (
+          {posts.length === 0 && currentPage > 1 && (
             <div className="text-center py-20">
               <p className="text-foreground/50">No blog posts yet.</p>
             </div>

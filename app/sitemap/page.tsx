@@ -54,6 +54,7 @@ export default async function SitemapPage() {
       title: 'Grooming Journal',
       links: [
         { label: 'All Articles', href: '/blogs' },
+        { label: 'How Often Should I Get a Haircut?', href: '/blogs/how-often-should-i-get-a-haircut' },
         { label: 'Average Haircut Cost in Canada', href: '/blogs/average-haircut-cost-canada' },
         ...documents.filter((doc) => doc._type === 'post').map((doc) => ({
           label: doc.label,
