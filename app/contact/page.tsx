@@ -92,7 +92,7 @@ const ContactPage = () => {
                     <h3 className="heading-6 uppercase tracking-wider">HOURS</h3>
                   </div>
                   <p className="text-foreground/60 leading-relaxed">
-                    Monday - Friday: 10:00 AM - 7:00 PM<br />
+                    Monday - Friday: 9:00 AM - 7:00 PM<br />
                     Saturday: 9:00 AM - 6:00 PM<br />
                     Sunday: 10:00 AM - 5:00 PM
                   </p>
