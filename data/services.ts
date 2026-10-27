@@ -413,5 +413,15 @@ export function getServicesWithPages(): ServiceCategory[] {
 }
 
 export function getRelatedServices(currentSlug: string): ServiceCategory[] {
-  return servicesList.filter((s) => s.page && s.page.slug !== currentSlug);
+  const related: Record<string, string[]> = {
+    "mens-haircut-saskatoon": ["fade-haircut-saskatoon", "scissor-haircut-saskatoon", "curly-haircut-saskatoon", "beard-grooming-saskatoon"],
+    "fade-haircut-saskatoon": ["mens-haircut-saskatoon", "beard-grooming-saskatoon"],
+    "beard-grooming-saskatoon": ["hot-towel-shave-saskatoon", "mens-haircut-saskatoon"],
+    "hot-towel-shave-saskatoon": ["beard-grooming-saskatoon", "mens-haircut-saskatoon"],
+    "curly-haircut-saskatoon": ["scissor-haircut-saskatoon", "mens-haircut-saskatoon"],
+    "scissor-haircut-saskatoon": ["curly-haircut-saskatoon", "mens-haircut-saskatoon"],
+    "premium-treatments-saskatoon": ["mens-haircut-saskatoon", "curly-haircut-saskatoon"],
+  };
+  const slugs = related[currentSlug] ?? [];
+  return slugs.map((slug) => getServiceBySlug(slug)).filter((service): service is ServiceCategory => Boolean(service?.page));
 }
