@@ -84,7 +84,7 @@ const Components = () => {
                     <p className="text-sm text-foreground/50">Preheading</p>
                     <h1 className="heading-1-italic">*WELCOME TO*</h1>
                     <h1 className="heading-1">HAVANA HEIGHTS</h1>
-                    <p className="text-lg text-foreground/50 mt-4">Where vintage Havana charm meets today's gentleman.</p>
+                    <p className="text-lg text-foreground/50 mt-4">Where vintage Havana charm meets today&apos;s gentleman.</p>
                   </div>
                 </div>
 
@@ -92,7 +92,7 @@ const Components = () => {
                 <div className="bg-background p-6 rounded-lg border border-stroke/20">
                   <h3 className="text-lg mb-4 text-foreground/50">Quote Example</h3>
                   <blockquote className="space-y-4">
-                    <h2 className="heading-2-italic">"A good cut isn't just seen — it's felt."</h2>
+                    <h2 className="heading-2-italic">&quot;A good cut isn&apos;t just seen — it&apos;s felt.&quot;</h2>
                     <p className="text-md text-foreground/50">— Usman, Master Barber</p>
                   </blockquote>
                 </div>
