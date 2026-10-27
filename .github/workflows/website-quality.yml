@@ -23,6 +23,10 @@ jobs:
           cache: npm
       - name: Install locked dependencies
         run: npm ci
+      - name: Install ESLint 9 and Next.js lint rules
+        run: npm install --no-save --package-lock=false eslint@^9 eslint-config-next@16.1.6
+      - name: ESLint validation
+        run: npx eslint .
       - name: TypeScript validation
         run: npm run typecheck
       - name: Production build and sitemap generation
