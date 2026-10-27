@@ -379,7 +379,7 @@ export const placeSchema: WithContext<Place> = {
       "@type": "OpeningHoursSpecification",
       dayOfWeek: "Saturday",
       opens: "09:00",
-      closes: "17:00",
+      closes: "18:00",
     },
     {
       "@type": "OpeningHoursSpecification",
@@ -419,7 +419,7 @@ export const contactPageSchema: WithContext<ContactPage> = {
         "@type": "OpeningHoursSpecification",
         dayOfWeek: "Saturday",
         opens: "09:00",
-        closes: "17:00",
+        closes: "18:00",
       },
       {
         "@type": "OpeningHoursSpecification",
@@ -596,7 +596,7 @@ export const contactLocalBusinessSchema: WithContext<LocalBusiness> = {
       "@type": "OpeningHoursSpecification",
       dayOfWeek: "Saturday",
       opens: "09:00",
-      closes: "17:00",
+      closes: "18:00",
     },
     {
       "@type": "OpeningHoursSpecification",
