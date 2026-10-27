@@ -241,7 +241,7 @@ const ContactPage = () => {
 
                   {status === 'success' && (
                     <div className="p-4 bg-green-500/10 border border-green-500/30 text-green-600 text-sm">
-                      Thank you! We'll get back to you soon.
+                      Thank you! We&apos;ll get back to you soon.
                     </div>
                   )}
 
