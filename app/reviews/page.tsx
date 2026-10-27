@@ -228,7 +228,7 @@ const ReviewsPage = () => (
           <h2 className="heading-2 mb-6">EXPERIENCE</h2>
           <div className="w-20 h-px bg-foreground/20 mx-auto mb-8"></div>
           <p className="text-foreground/50 leading-relaxed mb-10 max-w-xl mx-auto">
-            Had a great experience? We'd love to hear about it. Your feedback helps us continue to deliver excellence and helps other gentlemen discover our services.
+            Had a great experience? We&apos;d love to hear about it. Your feedback helps us continue to deliver excellence and helps other gentlemen discover our services.
           </p>
           <a
             href="https://share.google/sffdie67FCLj8pfgB"
