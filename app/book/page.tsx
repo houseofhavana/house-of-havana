@@ -64,7 +64,7 @@ const BookPage = () => (
             <h4 className="font-medium mb-3">Need Help?</h4>
             <p className="text-foreground/50 text-sm mb-4">
               Have questions about our services or need assistance with booking?
-              We're here to help.
+              We&apos;re here to help.
             </p>
             <div className="space-y-2 text-sm">
               <p>
