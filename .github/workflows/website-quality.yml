@@ -28,8 +28,10 @@ jobs:
       - name: ESLint validation
         run: npx eslint .
       - name: TypeScript validation
+        if: always()
         run: npm run typecheck
       - name: Production build and sitemap generation
+        if: always()
         run: npm run build
         env:
           NEXT_PUBLIC_SANITY_PROJECT_ID: ${{ vars.NEXT_PUBLIC_SANITY_PROJECT_ID }}
