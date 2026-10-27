@@ -39,12 +39,9 @@ export const servicesList: ServiceCategory[] = [
     title: "Men's Haircuts",
     description: "Clean, tailored cuts built around your face shape, hair type, and lifestyle.",
     items: [
-      { name: "Classic Haircut", duration: "40 min", price: "$45–55*" },
-      { name: "Haircut & Beard", duration: "1 hour", price: "$65–80*" },
-      { name: "Modern Haircut", duration: "40 min", price: "$45–55*" },
-      { name: "Textured Crop", duration: "40 min", price: "$45–55*" },
-      { name: "Pompadour Cut", duration: "40 min", price: "$45–55*" },
-      { name: "Business Professional Cut", duration: "40 min", price: "$45–55*" },
+      { name: "Haircut + Wash and Style", duration: "30 min–1 hr", price: "From $38" },
+      { name: "Haircut + Beard Grooming", duration: "45 min–1 hr 30 min", price: "From $55" },
+      { name: "Long Hair - Precision Cut with Scissors + Style", duration: "40 min–1 hr", price: "From $50" },
     ],
     page: {
       slug: "mens-haircut-saskatoon",
@@ -100,13 +97,7 @@ export const servicesList: ServiceCategory[] = [
     title: "Fade Haircuts",
     description: "Low, mid, high, skin, and taper fades with smooth transitions and crisp finishing.",
     items: [
-      { name: "Low Fade", duration: "40 min", price: "$45–55*" },
-      { name: "Mid Fade", duration: "40 min", price: "$45–55*" },
-      { name: "High Fade", duration: "40 min", price: "$45–55*" },
-      { name: "Skin Fade", duration: "40 min", price: "$45–55*" },
-      { name: "Taper Fade", duration: "40 min", price: "$45–55*" },
-      { name: "Drop Fade", duration: "40 min", price: "$45–55*" },
-      { name: "Burst Fade", duration: "40 min", price: "$45–55*" },
+      { name: "Haircut + Wash and Style (ask your barber for a fade)", duration: "30 min–1 hr", price: "From $38" },
     ],
     page: {
       slug: "fade-haircut-saskatoon",
@@ -164,10 +155,9 @@ export const servicesList: ServiceCategory[] = [
     title: "Beard Grooming",
     description: "Detailed trims, shaping, and line-ups with balanced symmetry.",
     items: [
-      { name: "Beard Trim", duration: "30 min", price: "$35–45*" },
-      { name: "Beard Shape & Lineup", duration: "30 min", price: "$35–45*" },
-      { name: "Hot Towel Shave", duration: "30 min", price: "$35–45*" },
-      { name: "Full Beard Sculpt", duration: "30 min", price: "$35–45*" },
+      { name: "Beard Grooming", duration: "30–40 min", price: "From $25" },
+      { name: "Hot Towel Shave", duration: "30–40 min", price: "From $45" },
+      { name: "Haircut + Beard Grooming", duration: "45 min–1 hr 30 min", price: "From $55" },
     ],
     page: {
       slug: "beard-grooming-saskatoon",
@@ -224,10 +214,10 @@ export const servicesList: ServiceCategory[] = [
     title: "Premium Treatments",
     description: "Perms, colour, and grey blending for a change that suits you.",
     items: [
-      { name: "Partial Perm with Haircut", duration: "2 hours", price: "$160" },
-      { name: "Full Perm with Haircut", duration: "2.5 hours", price: "$190" },
-      { name: "Color Treatment", duration: "1.5 hours", price: "$120" },
-      { name: "Gray Blending", duration: "20 min", price: "$40" },
+      { name: "Partial Perms with Haircut and Style", duration: "2–2.5 hr", price: "$180" },
+      { name: "Full Perm With Haircut and Style", duration: "2.5–3 hr", price: "$220" },
+      { name: "Color Camouflage", duration: "30 min", price: "$50" },
+      { name: "Blonde Highlights", duration: "2 hr", price: "$150" },
     ],
     page: {
       slug: "premium-treatments-saskatoon",
