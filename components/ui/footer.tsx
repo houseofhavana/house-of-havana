@@ -122,7 +122,7 @@ const Footer = () => {
         </div>
         {/* Saskatoon Location */}
         <div>
-          <h6 className="heading-6-italic">Let's</h6>
+          <h6 className="heading-6-italic">Let&apos;s</h6>
           <h4 className="heading-5 mb-2 leading-[1] uppercase">
             Get in <br /> Touch
           </h4>
