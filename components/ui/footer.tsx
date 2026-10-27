@@ -166,7 +166,7 @@ const Footer = () => {
               </svg>
             </span>
             <span>
-              Mon-Fri: 10am-7pm
+              Mon-Fri: 9am-7pm
               <br />
               Sat: 9am-6pm
               <br />
