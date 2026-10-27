@@ -91,7 +91,7 @@ const About = () => {
               <h3 className='heading-5-italic mb-3'>Community</h3>
               <h3 className='heading-3 mb-6'>CONNECTION</h3>
               <p className='text-foreground/50 leading-relaxed'>
-                From Wildwood to Willowgrove, we're proud to serve Saskatoon and surrounding neighborhoods with genuine care and dedication.
+                From Wildwood to Willowgrove, we&apos;re proud to serve Saskatoon and surrounding neighborhoods with genuine care and dedication.
               </p>
             </div>
 
@@ -151,7 +151,7 @@ const About = () => {
               <h2 className='heading-1 mb-12 text-center'>MANIFESTO</h2>
               <div className='relative'>
                 <div className='heading-1-italic !text-[120px] absolute -left-8 -top-8 w-10 h-10 text-foreground/5 flex items-center justify-center -z-10'>
-                  "
+                  &quot;
                 </div>
                 <p className='text-foreground/50 heading-3-italic leading-relaxed text-center'>
                   We believe a visit to the barber should be something you look forward to.
