@@ -123,7 +123,7 @@ CONTACT_EMAIL=hello@jztech.co
 - **Address:** 3501 8 St, Unit #110, Saskatoon, SK S7H0W5
 - **Email (Display):** <info@houseofhavana.ca>
 - **Email (Form Destination):** <hello@jztech.co>
-- **Hours:** Mon-Fri 10am-7pm, Sat 9am-6pm, Sun: Closed
+- **Hours:** Mon-Fri 10am-7pm, Sat 9am-6pm, Sun: 10am-5pm
 - **Booking System:** <https://www.fresha.com/book-now/house-of-havana-barbershop-xcwtdh26/all-offer?share=true&pId=3102757>
 
 ## 📱 Social Media
