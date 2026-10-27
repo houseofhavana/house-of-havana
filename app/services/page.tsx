@@ -62,7 +62,7 @@ const ServicesPage = () => (
                         {(idx + 1).toString().padStart(2, '0')}.
                       </div>
                       <Link
-                        href={serviceSlug ? `/services/${serviceSlug}` : '#'}
+                        href={serviceSlug ? `/services/${serviceSlug}` : "/book"}
                         className="group/link"
                       >
                         <ArrowRight className="text-foreground/40 group-hover/link:text-foreground group-hover/link:translate-x-1 transition-all duration-300" size={20} />
@@ -118,7 +118,7 @@ const ServicesPage = () => (
             );
           })}
         </div>
-        <p className="text-sm text-foreground/50 mt-6 text-center">*Price depends on barber</p>
+        <p className="text-sm text-foreground/50 mt-6 text-center">Prices may vary by barber. Confirm the final price when booking on Fresha.</p>
       </div>
     </section>
 
