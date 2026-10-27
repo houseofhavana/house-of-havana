@@ -28,12 +28,6 @@ function toSlug(name: string): string {
   return name.toLowerCase().replace(/\s+/g, "-").replace(/[^a-z0-9-]/g, "");
 }
 
-// Helper to parse price string (e.g., "$46" -> "46.00")
-function parsePrice(price?: string): string {
-  if (!price) return "0.00";
-  return parseFloat(price.replace("$", "")).toFixed(2);
-}
-
 // Generate employees from BARBERS data
 const employees = BARBERS.map((barber) => ({
   "@type": "Person" as const,
@@ -58,8 +52,6 @@ const offerCatalog = {
         description: `${item.name}${item.duration ? ` (${item.duration})` : ""}`,
         provider: { "@id": `${BASE_URL}/#barbershop` },
       },
-      price: parsePrice(item.price),
-      priceCurrency: "CAD",
     })),
   })),
 };
@@ -208,14 +200,6 @@ export const barbershopSchema: WithContext<LocalBusiness> = {
     },
   ],
   hasOfferCatalog: offerCatalog,
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "5.0",
-    bestRating: "5",
-    worstRating: "1",
-    ratingCount: "300",
-    reviewCount: "300",
-  },
   founder: {
     "@type": "Person",
     name: BARBERS[0].name,
@@ -319,12 +303,6 @@ export const servicesSchema: WithContext<ItemList> = {
       provider: { "@id": `${BASE_URL}/#barbershop` },
       areaServed: { "@type": "City" as const, name: "Saskatoon" },
       serviceType: service.name,
-      offers: {
-        "@type": "Offer" as const,
-        price: parsePrice(service.price),
-        priceCurrency: "CAD",
-        availability: "https://schema.org/InStock",
-      },
     },
   })),
 };
