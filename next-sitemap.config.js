@@ -19,11 +19,16 @@ module.exports = {
             useCdn: false,
             perspective: 'published',
         });
-        const documents = await client.fetch(`
+        let documents = [];
+        try {
+          documents = await client.fetch(`
             *[_type in ["post", "author", "category"] && defined(slug.current)] {
                 _type, "slug": slug.current, _updatedAt
             }
         `);
+        } catch (error) {
+          console.warn('Sanity sitemap lookup failed; retaining static URLs:', error);
+        }
         const prefixes = {
             post: '/blogs/',
             author: '/blogs/authors/',
