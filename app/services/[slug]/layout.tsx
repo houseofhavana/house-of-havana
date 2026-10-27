@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   return mergeSEO({
-    title: `${service.page.meta.title} | Services | House Of Havana`,
+    title: service.page.meta.title,
     description: service.page.meta.description,
     keywords: service.page.meta.keywords,
     canonical: `/services/${service.page.slug}`,
