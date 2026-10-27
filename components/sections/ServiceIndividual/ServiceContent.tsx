@@ -18,7 +18,7 @@ export default function ServiceContent({
   return (
     <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
       <div className="md:col-span-6">
-        <h2 className="heading-4-italic mb-2">What's Included</h2>
+        <h2 className="heading-4-italic mb-2">What&apos;s Included</h2>
         <h2 className="heading-3 mb-8">{sectionTitle}</h2>
 
         <ul className="space-y-4">
