@@ -77,7 +77,7 @@ const BookPage = () => (
                 </a>
               </p>
               <p className="text-foreground/50">
-                Hours: Mon-Fri 10am-7pm, Sat 9am-6pm
+                Hours: Mon-Fri 9am-7pm, Sat 9am-6pm, Sun 10am-5pm
               </p>
             </div>
           </div>
