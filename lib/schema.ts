@@ -190,7 +190,7 @@ export const barbershopSchema: WithContext<LocalBusiness> = {
       "@type": "OpeningHoursSpecification",
       dayOfWeek: "Saturday",
       opens: "09:00",
-      closes: "17:00",
+      closes: "18:00",
     },
     {
       "@type": "OpeningHoursSpecification",
