@@ -40,7 +40,6 @@ export default async function ServicePage({ params }: Props) {
     name: page.cardTitle,
     description: page.meta.description,
     category: service.title,
-    prices: service.items.map((item) => item.price).filter(Boolean) as string[],
   });
 
   return (
@@ -97,7 +96,7 @@ export default async function ServicePage({ params }: Props) {
                 </div>
               ))}
             </div>
-            <p className="text-sm text-foreground/50 mt-6 text-center">*Price depends on barber</p>
+            <p className="text-sm text-foreground/50 mt-6 text-center">Prices may vary by barber. Confirm the final price when booking on Fresha.</p>
           </div>
         </div>
       </section>
