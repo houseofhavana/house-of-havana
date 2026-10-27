@@ -101,7 +101,7 @@ export const servicesList: ServiceCategory[] = [
     ],
     page: {
       slug: "fade-haircut-saskatoon",
-      h1: "Fade Haircuts in Saskatoon",
+      h1: "Skin Fades & Fade Haircuts in Saskatoon",
       cardTitle: "Fade Haircuts",
       cardDescription:
         "Low, mid, high, skin, and taper fades with smooth transitions, crisp finishing, and a blend that holds its shape beyond day one.",
@@ -138,7 +138,7 @@ export const servicesList: ServiceCategory[] = [
       ],
       ctaText: "Book a fade haircut in Saskatoon",
       meta: {
-        title: "Fade Haircuts in Saskatoon",
+        title: "Skin Fades & Fade Haircuts Saskatoon",
         description:
           "Looking for a clean fade haircut in Saskatoon? House Of Havana delivers precision fades, sharp blends, and tailored finishes for modern gentlemen.",
         keywords: [
@@ -161,7 +161,7 @@ export const servicesList: ServiceCategory[] = [
     ],
     page: {
       slug: "beard-grooming-saskatoon",
-      h1: "Beard Grooming in Saskatoon",
+      h1: "Beard Grooming & Beard Trims in Saskatoon",
       cardTitle: "Beard Grooming",
       cardDescription:
         "Keep your beard tidy with a trim, shape, and clean edges. We can also blend it into your haircut.",
@@ -198,7 +198,7 @@ export const servicesList: ServiceCategory[] = [
       ],
       ctaText: "Book beard grooming in Saskatoon",
       meta: {
-        title: "Beard Grooming in Saskatoon",
+        title: "Beard Grooming & Beard Trims Saskatoon",
         description:
           "Need professional beard grooming in Saskatoon? House Of Havana offers detailed trims, shaping, line-ups, and clean finishes tailored to your face.",
         keywords: [
@@ -221,7 +221,7 @@ export const servicesList: ServiceCategory[] = [
     ],
     page: {
       slug: "premium-treatments-saskatoon",
-      h1: "Premium Treatments in Saskatoon",
+      h1: "Men\'s Hair Treatments & Specialty Services in Saskatoon",
       cardTitle: "Premium Treatments",
       cardDescription:
         "Add texture or volume with a partial or full perm, or explore a change of colour with your barber.",
@@ -263,7 +263,7 @@ export const servicesList: ServiceCategory[] = [
       ],
       ctaText: "Book premium treatments in Saskatoon",
       meta: {
-        title: "Premium Treatments in Saskatoon",
+        title: "Men\'s Hair Treatments & Styling Saskatoon",
         description:
           "Explore premium barbershop treatments in Saskatoon at House Of Havana. From partial to full perms, we deliver transformative results with expert care.",
         keywords: [
@@ -272,6 +272,99 @@ export const servicesList: ServiceCategory[] = [
           "mens perm",
           "hair transformation",
         ],
+      },
+    },
+  },
+  {
+    title: "Hot Towel Shaves",
+    description: "A traditional hot towel shave with careful preparation, razor technique and a comfortable finish.",
+    items: [{ name: "Hot Towel Shaves", duration: "30–40 min", price: "From $45" }],
+    page: {
+      slug: "hot-towel-shave-saskatoon",
+      h1: "Hot Towel Shaves in Saskatoon",
+      cardTitle: "Hot Towel Shaves",
+      cardDescription: "A traditional hot towel shave with careful preparation, razor technique and a comfortable finish.",
+      intro: "A hot towel shave gives you time to settle in while your barber prepares the beard area, works carefully around the contours of your face and finishes with practical aftercare advice.",
+      sectionTitle: "What to Know About This Service",
+      sectionItems: [
+        "<strong>The Traditional Hot Towel Shave Experience:</strong> Warm towels help prepare the beard area before shaving. Tell your barber about sensitivity, irritation or recent skin treatments before the service begins.",
+        "<strong>What Happens During a Hot Towel Shave?:</strong> Your barber discusses your preferred finish, prepares the skin, shaves carefully and checks the result. Ask about the precise steps during your consultation.",
+        "<strong>Straight Razor Technique and Professional Care:</strong> Professional razor work requires attention to growth direction, pressure and the contours of the jaw and neck.",
+        "<strong>Hot Towel Shave vs. Regular Shaving:</strong> Unlike a quick shave at home, a booked hot towel shave allows time for preparation and a detailed finish.",
+        "<strong>Preparing for Your Appointment:</strong> Arrive with clean skin where possible, and tell your barber about any cuts, irritation or products that cause discomfort.",
+        "<strong>Aftercare and Skin Comfort:</strong> After shaving, avoid aggressive exfoliation and follow the product and skin-care guidance your barber provides.",
+      ],
+      whyChooseTitle: "A Service Built Around Your Preferences",
+      whyChooseText: "Talk with your barber about your hair, grooming routine and the finish you want. We will discuss the options before getting started and offer guidance for looking after the result.",
+      faqTitle: "Hot Towel Shaves FAQs",
+      faqs: [{"question":"Is a hot towel shave different from a beard trim?","answer":"Yes. A shave removes facial hair from the selected area, while beard grooming focuses on keeping and shaping existing growth."},{"question":"Can I book a shave with a haircut?","answer":"Check Fresha for available combinations and appointment times."}],
+      ctaText: "Book Your Experience",
+      meta: {
+        title: "Hot Towel Shaves in Saskatoon | House of Havana",
+        description: "A traditional hot towel shave with careful preparation, razor technique and a comfortable finish. Visit House of Havana in Saskatoon and book online.",
+        keywords: ["hot towel shaves saskatoon", "house of havana barbershop"],
+      },
+    },
+  },
+  {
+    title: "Curly Haircuts",
+    description: "Men's curly haircuts shaped around curl pattern, density, length and everyday styling.",
+    items: [{ name: "Curly Haircuts", duration: "30 min–1 hr", price: "From $38" }],
+    page: {
+      slug: "curly-haircut-saskatoon",
+      h1: "Curly Haircuts for Men in Saskatoon",
+      cardTitle: "Curly Haircuts",
+      cardDescription: "Men's curly haircuts shaped around curl pattern, density, length and everyday styling.",
+      intro: "Curls have their own shape and movement. A good consultation considers how your hair sits naturally, how much length you want to keep and the time you spend styling it.",
+      sectionTitle: "What to Know About This Service",
+      sectionItems: [
+        "<strong>Haircuts Designed for Curly Hair:</strong> The goal is a shape that works with your natural texture rather than fighting it.",
+        "<strong>Understanding Curl Patterns and Hair Density:</strong> Curl pattern, density and shrinkage influence how the finished length looks when your hair dries.",
+        "<strong>Curly Fades and Short Curly Styles:</strong> A fade can create a clean outline while leaving curl texture and movement on top.",
+        "<strong>Medium-Length and Longer Curly Hairstyles:</strong> Longer styles need attention to weight, balance and how the curls fall around the face.",
+        "<strong>How We Approach Curly Hair Consultations:</strong> Bring a reference photo and explain what you like and dislike about your current cut. Your barber can discuss a realistic plan.",
+        "<strong>Styling and Maintaining Curly Hair:</strong> Ask your barber about gentle drying, conditioning and products suited to your hair.",
+      ],
+      whyChooseTitle: "A Service Built Around Your Preferences",
+      whyChooseText: "Talk with your barber about your hair, grooming routine and the finish you want. We will discuss the options before getting started and offer guidance for looking after the result.",
+      faqTitle: "Curly Haircuts FAQs",
+      faqs: [{"question":"Should I arrive with my curls styled?","answer":"Come with your hair in a condition that helps your barber understand its natural shape, and mention your usual styling routine."},{"question":"Can I combine curly hair with a fade?","answer":"Yes, discuss the desired fade height and how much curly length you want to keep on top."}],
+      ctaText: "Book Your Experience",
+      meta: {
+        title: "Curly Haircuts for Men in Saskatoon | House of Havana",
+        description: "Men's curly haircuts shaped around curl pattern, density, length and everyday styling. Visit House of Havana in Saskatoon and book online.",
+        keywords: ["curly haircuts saskatoon", "house of havana barbershop"],
+      },
+    },
+  },
+  {
+    title: "Scissor Haircuts",
+    description: "Precision scissor haircuts for longer men's styles, shape, texture and natural movement.",
+    items: [{ name: "Scissor Haircuts", duration: "40 min–1 hr", price: "From $50" }],
+    page: {
+      slug: "scissor-haircut-saskatoon",
+      h1: "Scissor Haircuts for Men in Saskatoon",
+      cardTitle: "Scissor Haircuts",
+      cardDescription: "Precision scissor haircuts for longer men's styles, shape, texture and natural movement.",
+      intro: "Scissor cutting offers flexibility when you want to keep length, soften a silhouette or build a style with movement. Your barber can discuss how the cut will sit as it grows.",
+      sectionTitle: "What to Know About This Service",
+      sectionItems: [
+        "<strong>Precision Scissor Cutting:</strong> Scissors help refine length and balance through the top and sides of a haircut.",
+        "<strong>Scissor Cuts vs. Clipper Cuts:</strong> Clippers are useful for shorter uniform lengths and fades; scissors allow more control over longer sections and the way hair falls.",
+        "<strong>Longer Men's Hairstyles:</strong> Longer cuts depend on the shape around the ears, neckline and crown as well as the overall length.",
+        "<strong>Texture, Movement and Shape:</strong> Weight distribution and texture influence how hair moves, especially as it grows between visits.",
+        "<strong>Choosing a Style That Suits Your Hair:</strong> Consider your hair density, growth pattern, face shape and how much styling time you prefer.",
+        "<strong>Styling and Maintenance Advice:</strong> Ask your barber to demonstrate a simple daily styling routine and discuss when to return for a tidy-up.",
+      ],
+      whyChooseTitle: "A Service Built Around Your Preferences",
+      whyChooseText: "Talk with your barber about your hair, grooming routine and the finish you want. We will discuss the options before getting started and offer guidance for looking after the result.",
+      faqTitle: "Scissor Haircuts FAQs",
+      faqs: [{"question":"Do I need a scissor cut for longer hair?","answer":"Scissor techniques are often useful for longer styles, but your barber may combine scissors and clippers depending on the result."},{"question":"Can I bring a photo of a longer hairstyle?","answer":"Yes. A reference photo helps explain your preferred length, shape and finish."}],
+      ctaText: "Book Your Experience",
+      meta: {
+        title: "Scissor Haircuts for Men in Saskatoon | House of Havana",
+        description: "Precision scissor haircuts for longer men's styles, shape, texture and natural movement. Visit House of Havana in Saskatoon and book online.",
+        keywords: ["scissor haircuts saskatoon", "house of havana barbershop"],
       },
     },
   },
