@@ -70,7 +70,7 @@ export const postType = defineType({
     prepare(selection) {
       const { author, categories } = selection
       const categoryTitles = categories
-        ? categories.map((cat: any) => cat?.title).filter(Boolean).join(', ')
+        ? categories.map((cat: { title?: string } | null) => cat?.title).filter(Boolean).join(', ')
         : ''
       const subtitle = [
         author && `by ${author}`,
