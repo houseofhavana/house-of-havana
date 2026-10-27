@@ -58,6 +58,16 @@ export default async function ServicePage({ params }: Props) {
         dangerouslySetInnerHTML={{ __html: jsonLd(serviceSchema) }}
       />
 
+      <nav aria-label="Breadcrumb" className="bg-background">
+        <div className="container py-3 text-sm text-foreground/60">
+          <Link href="/" className="hover:underline">Home</Link>
+          <span aria-hidden="true" className="mx-2">/</span>
+          <Link href="/services" className="hover:underline">Services</Link>
+          <span aria-hidden="true" className="mx-2">/</span>
+          <span aria-current="page">{page.cardTitle}</span>
+        </div>
+      </nav>
+
       {/* Hero Section */}
       <HeroInner
         subheading="Our Services"
