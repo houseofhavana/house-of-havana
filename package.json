@@ -6,7 +6,6 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "tsc --noEmit",
     "typecheck": "tsc --noEmit",
     "postbuild": "next-sitemap"
   },
