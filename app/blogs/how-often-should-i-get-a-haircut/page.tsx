@@ -27,7 +27,7 @@ export default function HaircutFrequencyArticle() {
         <div className="max-w-4xl">
           <Link href="/blogs" className="text-secondary hover:underline">Grooming Journal</Link>
           <p className="mt-6 mb-4 text-foreground/60"><time dateTime={article.publishedAt}>October 26, 2026</time> · By Cristian Perdomo</p>
-          <h2 className="heading-1 !capitalize">{article.title}</h2>
+          <h1 className="heading-1 !capitalize">{article.title}</h1>
         </div>
       </header>
       <section className="container pb-20">

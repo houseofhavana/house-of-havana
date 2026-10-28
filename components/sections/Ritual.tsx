@@ -16,16 +16,12 @@ const Ritual = () => {
             <div className="z-10">
               <h2 className="heading-2 mb-4 text-primary">A Good Cut. Time Well Spent.</h2>
               <p className="text-foreground/50">
-                A great haircut should suit you and feel easy to wear. We take the time to understand your hair, your style, and how much time you want to spend getting ready.
+                Settle into the chair and take a moment for yourself. Watch the
+                House of Havana ritual for a closer look at the atmosphere,
+                the craft and the people behind it.
               </p>
               <p className="text-foreground/50 mt-2 font-heading italic">
-                Tell us what you have in mind. We can work out the details together.
-              </p>
-              <p className="text-foreground/50 mt-2">
-                Whether you are here for a skin fade, a beard trim, or your usual cut, you can settle in knowing your barber is paying attention to the details.
-              </p>
-              <p className="text-foreground/50 mt-2 font-heading italic">
-                Leave with a fresh look and advice on keeping it that way.
+                A fresh perspective starts here.
               </p>
             </div>
             <div className="z-10 w-full grid grid-cols-2 gap-4">

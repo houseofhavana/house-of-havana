@@ -22,18 +22,18 @@ export const metadata = {
 const WHY_CHOOSE_VALUES = [
   {
     number: "01",
-    title: "Great Haircuts Start with Listening",
-    description: "We start by talking about your hair, how you like to wear it, and what works for your day-to-day routine. Your barber takes your face shape and hair growth into account, then helps you find a cut that feels like you.",
+    title: "A Consultation with Purpose",
+    description: "Bring a reference photo or an idea. We consider your face shape, growth patterns and styling routine, then agree on the direction before we begin.",
   },
   {
     number: "02",
-    title: "Classic Skills, Current Styles",
-    description: "From straight razor shaves to skin fades and textured cuts, we bring traditional barbering skills to the styles you want today. We pay attention to the blend, the shape, and the small details that make a haircut work.",
+    title: "Precision in the Finish",
+    description: "Balanced proportions, seamless blends and a clean neckline. We refine the details that give a cut its shape and help it grow out well.",
   },
   {
     number: "03",
-    title: "Time to Settle In",
-    description: "Make yourself comfortable. Your appointment is time for you, with a barber who listens and gives your cut the attention it deserves. Enjoy the hot towel, the finishing touches, and a chance to slow down for a while.",
+    title: "Style You Can Maintain",
+    description: "Leave knowing how to wear your cut. Ask your barber about products, a practical styling routine and when to return to keep the shape you like.",
   },
 ];
 
@@ -100,58 +100,37 @@ export default function Home() {
           desktop: "/hero-desktop.png",
           ultrawide: "/hero-ultrawide.png",
         }}
-        subheading="Professional Barber Services in Saskatoon, Saskatchewan"
+        subheading="House of Havana · Men’s Grooming"
         heading="Premium Barbershop in Saskatoon"
-        supportingText="Come in for a fresh cut, a beard tidy-up, or a change of style. At House of Havana in Saskatoon, we take the time to listen, get the details right, and make you feel at home. Settle into the chair and let us take care of you."
+        supportingText="A considered cut. A confident finish. Discover personal grooming shaped around your style, with the care and craftsmanship every visit deserves."
             />
-      {/* SEO Section */}
       <section className="py-16 bg-background">
         <div className="container max-w-4xl">
           <h2 className="text-2xl md:text-3xl font-heading text-primary mb-4">
-            Fades & Beard Grooming in Saskatoon
+            Your Style, Refined.
           </h2>
-
           <p className="text-foreground/60 mb-4">
-            House of Havana Barbershop is a premium barbershop in Saskatoon specializing in men’s haircuts, skin fades, beard trims, and hot towel shaves. We work with your hair type, face shape, and daily routine to find a look that suits you.
+            At House of Havana, men’s haircuts,{' '}
+            <Link href="/services/fade-haircut-saskatoon" className="underline">
+              skin fades
+            </Link>{' '}
+            and{' '}
+            <Link href="/services/beard-grooming-saskatoon" className="underline">
+              beard grooming
+            </Link>{' '}
+            begin with an understanding of the person in the chair. Choose a
+            familiar look or a new direction; we’ll shape the details around you.
           </p>
-
           <p className="text-foreground/60">
-            Looking for a professional barber in Saskatoon? Our barbers focus on precision, detail, and premium products to deliver consistent results, every visit.
-          </p>
-        </div>
-      </section>
-
-      <section className="pb-12 bg-background">
-        <div className="container max-w-4xl">
-          <h2 className="text-2xl font-heading text-primary mb-4">
-            Premium Barber Services in Saskatoon
-          </h2>
-
-          <p className="text-foreground/60">
-            Our most requested services include
-            <Link href="/services/fade-haircut-saskatoon" className="underline mx-1">
-              skin fade haircuts
+            Find us at 3501 8 St E, Bay 110, in Saskatoon.{' '}
+            <Link href="/contact" className="underline">
+              View our location and opening hours
             </Link>
-            and
-            <Link href="/services/beard-grooming-saskatoon" className="underline mx-1">
-              professional beard grooming
+            , or{' '}
+            <Link href="/services" className="underline">
+              explore services and pricing
             </Link>
-            , delivered with precision and attention to detail at our Saskatoon
-            barbershop.
-          </p>
-        </div>
-      </section>
-
-      <section className="pb-12 bg-background">
-        <div className="container max-w-4xl">
-          <h2 className="text-2xl font-heading text-primary mb-4">
-            Serving Professionals Across Saskatoon
-          </h2>
-
-          <p className="text-foreground/60">
-            House of Havana Barbershop proudly serves clients from across
-            Saskatoon, including Downtown, Stonebridge, Rosewood, Brighton, and
-            Evergreen.
+            .
           </p>
         </div>
       </section>
@@ -167,9 +146,8 @@ export default function Home() {
             <h2 className="heading-2 text-center mb-6 text-primary">Why Choose House of Havana</h2>
             <div className="w-20 h-px bg-foreground/20 mx-auto mb-12"></div>
             <p className="text-foreground/40 leading-relaxed text-center max-w-2xl mx-auto">
-              A good haircut starts with a conversation. We listen to what
-              you want, take care with the details, and make sure you feel
-              comfortable from the moment you walk in.
+              From the first conversation to your daily routine, our approach
+              brings together personal attention, technical skill and practical advice.
             </p>
           </div>
 
@@ -222,12 +200,12 @@ export default function Home() {
         services={servicesList}
         bgSurface={true}
         heading="Our Grooming Services"
-        supportingText="Whether you want to keep your usual look or try something new, we can help. Explore our haircuts, fades, beard grooming, and treatments to find what you need."
+        supportingText="Explore the menu, compare appointment options and choose the service that fits your next visit."
         showCTA={true}
       />
       <TeamShowcase
         heading="Meet Your Barbers"
-        supportingText="Get to know the people behind the chair. Each barber brings their own style and skills, with the same care for making you feel comfortable and look your best."
+        supportingText="Find your barber. Explore the team’s experience and approach before choosing who you’d like to book."
         bgSurface={false}
         showCTA={true}
       >
@@ -253,8 +231,8 @@ export default function Home() {
             </div>
             <div className="md:col-span-6 md:col-start-7 flex items-end">
               <p className="text-foreground/50 leading-relaxed">
-                Don&apos;t just take our word for it. Here&apos;s what our valued clients
-                have to say about their House Of Havana experience.
+                In our clients’ words: the cuts, the conversations and the
+                experience that brings them back.
               </p>
             </div>
           </div>
