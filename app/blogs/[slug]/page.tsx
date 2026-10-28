@@ -79,11 +79,7 @@ export async function generateMetadata({
   const { slug } = await params;
   const post = await getPost(slug);
 
-  if (!post) {
-    return {
-      title: "Post Not Found",
-    };
-  }
+  if (!post) notFound();
 
   const categoryTitles = post.categories?.map((cat) => cat.title).join(", ") || "";
   const description = `Read ${post.title} by ${post.author?.name || "House Of Havana"}${categoryTitles ? ` in ${categoryTitles}` : ""}`;
@@ -137,7 +133,9 @@ const portableTextComponents: Partial<PortableTextComponents> = {
     link: ({ children, value }) => {
       return (
         <a
-          href={value?.href}
+          href={typeof value?.href === "string" && /^https?:\/\/(?:www\.)?getsquire\.com\/booking\/book\/house-of-havana-barbershop-saskatoon(?:[/?#]|$)/i.test(value.href)
+            ? "https://www.fresha.com/book-now/house-of-havana-barbershop-xcwtdh26/all-offer?share=true&pId=3102757"
+            : value?.href}
           target="_blank"
           rel="noopener noreferrer"
           className="text-secondary hover:underline"

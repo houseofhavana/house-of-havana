@@ -111,11 +111,7 @@ export async function generateMetadata({
   const { page } = await searchParams;
   const author = await getAuthor(slug);
 
-  if (!author) {
-    return {
-      title: "Author Not Found",
-    };
-  }
+  if (!author) notFound();
 
   const pageNum = page ? parseInt(page) : 1;
   const pageSuffix = pageNum > 1 ? ` - Page ${pageNum}` : "";

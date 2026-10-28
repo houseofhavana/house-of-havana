@@ -107,11 +107,7 @@ export async function generateMetadata({
   const { page } = await searchParams;
   const category = await getCategory(slug);
 
-  if (!category) {
-    return {
-      title: "Category Not Found",
-    };
-  }
+  if (!category) notFound();
 
   const pageNum = page ? parseInt(page) : 1;
   const pageSuffix = pageNum > 1 ? ` - Page ${pageNum}` : "";
