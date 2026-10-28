@@ -1,5 +1,6 @@
 'use client'
 
+import { generateFAQSchema, jsonLd, servicesSchema } from "@/lib/schema";
 import FAQSection from "@/components/sections/FAQSection";
 import HeroInner from "@/components/sections/HeroInner";
 import { servicesList, servicesPageData } from "@/data/services";
