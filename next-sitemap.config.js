@@ -11,7 +11,7 @@ module.exports = {
     // Author and category pages are rendered on demand, so they are not
     // necessarily present in Next.js's build manifest.
     additionalPaths: async () => {
-        const { createClient } = require('@sanity/client');
+        const { createClient } = await import('@sanity/client');
         const client = createClient({
             projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || 'n6x2l43n',
             dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || 'production',
