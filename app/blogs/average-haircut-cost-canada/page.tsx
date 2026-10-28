@@ -1,6 +1,7 @@
 import Link from "next/link";
 import parse from "html-react-parser";
 import article from "@/data/haircut-cost-article.json";
+import { getHaircutCostArticleHtml } from "@/lib/haircut-cost-article";
 import { mergeSEO } from "@/lib/seo";
 
 const url = `https://houseofhavana.ca/blogs/${article.slug}`;
@@ -32,7 +33,7 @@ export default function HaircutCostArticle() {
       </header>
       <section className="container pb-20">
         <div className="blog-content prose prose-lg prose-invert max-w-3xl mx-auto prose-headings:font-heading prose-headings:text-foreground prose-headings:font-normal prose-h2:text-3xl prose-h2:mt-10 prose-h3:text-2xl prose-p:text-foreground/70 prose-p:leading-relaxed prose-a:text-secondary prose-strong:text-foreground prose-ul:text-foreground/70 prose-th:text-foreground prose-td:text-foreground/70">
-          {parse(article.html)}
+          {parse(getHaircutCostArticleHtml())}
         </div>
         <div className="max-w-3xl mx-auto mt-12 border-t border-foreground/15 pt-8">
           <Link href="/blogs" className="text-secondary hover:underline">Explore more articles</Link>
