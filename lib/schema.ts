@@ -618,7 +618,8 @@ export const contactLocalBusinessSchema: WithContext<LocalBusiness> = {
 // Helper to strip @context from a schema object for @graph inclusion
 // schema-dts types don't expose index signatures, so we use a flexible record type
 function stripContext(schema: Record<string, unknown>): Record<string, unknown> {
-  const { "@context": _, ...rest } = schema;
+  const rest = { ...schema };
+  delete rest["@context"];
   return rest;
 }
 

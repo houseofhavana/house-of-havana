@@ -1,7 +1,7 @@
 // NOTE: Now using Swiper instead of react-slick
 'use client'
 
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import 'swiper/css';
@@ -32,13 +32,12 @@ export default function Credentials({ slides, tabs = [], disableTabs = false, bg
   const [activeTab, setActiveTab] = useState(tabs[0]?.value || '');
   const navPrev = useRef<HTMLButtonElement | null>(null);
   const navNext = useRef<HTMLButtonElement | null>(null);
-  const swiperRef = useRef<any>(null);
 
   const filteredSlides = disableTabs ? slides : slides.filter((slide) => slide.type === activeTab);
 
   // Ensure at least 4 slides for looping/navigation
   let displaySlides = filteredSlides;
-  while (displaySlides.length < 4) {
+  while (displaySlides.length > 0 && displaySlides.length < 4) {
     displaySlides = displaySlides.concat(filteredSlides);
   }
 
@@ -104,15 +103,13 @@ export default function Credentials({ slides, tabs = [], disableTabs = false, bg
           modules={[Navigation]}
           spaceBetween={30}
           slidesPerView={4}
-          navigation={{ prevEl: navPrev.current, nextEl: navNext.current }}
+          navigation={true}
           loop={true}
-          onInit={swiper => {
-            // @ts-ignore
-            swiper.params.navigation.prevEl = navPrev.current;
-            // @ts-ignore
-            swiper.params.navigation.nextEl = navNext.current;
-            swiper.navigation.init();
-            swiper.navigation.update();
+          onBeforeInit={swiper => {
+            if (typeof swiper.params.navigation === 'object') {
+              swiper.params.navigation.prevEl = navPrev.current;
+              swiper.params.navigation.nextEl = navNext.current;
+            }
           }}
           breakpoints={{
             1024: { slidesPerView: 4 },

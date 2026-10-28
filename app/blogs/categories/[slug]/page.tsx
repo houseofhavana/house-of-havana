@@ -1,3 +1,5 @@
+import { notFound } from "next/navigation";
+import type { SanityImageSource } from "@sanity/image-url/lib/types/types";
 import HeroInner from "@/components/sections/HeroInner";
 import BlogCard from "@/components/ui/blog-card";
 import { client } from "@/sanity/lib/client";
@@ -17,7 +19,7 @@ interface Post {
   slug: {
     current: string;
   };
-  mainImage?: any;
+  mainImage?: SanityImageSource;
   publishedAt: string;
   author?: {
     name: string;
@@ -151,15 +153,7 @@ export default async function CategoryPage({
   const { page } = await searchParams;
   const category = await getCategory(slug);
 
-  if (!category) {
-    return (
-      <div className="min-h-screen pt-32 pb-16">
-        <div className="container">
-          <h1 className="heading-1">Category not found</h1>
-        </div>
-      </div>
-    );
-  }
+  if (!category) notFound();
 
   const currentPage = page ? parseInt(page) : 1;
   const { posts, total } = await getCategoryPosts(category._id, currentPage);

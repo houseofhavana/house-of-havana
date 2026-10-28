@@ -39,7 +39,7 @@ const ContactPage = () => {
         setStatus('error')
         setErrorMessage(data.error || 'Something went wrong')
       }
-    } catch (error) {
+    } catch {
       setStatus('error')
       setErrorMessage('Failed to send message. Please try again.')
     }

@@ -1,7 +1,7 @@
 // NOTE: Now using Swiper instead of react-slick
 'use client'
 
-import { useState, useRef, useLayoutEffect, useEffect } from 'react';
+import { useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import 'swiper/css';
@@ -21,31 +21,17 @@ interface InsightsSliderProps {
   heading?: string;
 }
 
-export default function InsightsSlider({ insights, bgSurface = false, heading = 'Insights and Thought Leadership' }: InsightsSliderProps) {
+export default function InsightsSlider({ insights, bgSurface = false }: InsightsSliderProps) {
   const navPrev = useRef<HTMLButtonElement | null>(null);
   const navNext = useRef<HTMLButtonElement | null>(null);
-  const [swiperInstance, setSwiperInstance] = useState<any>(null);
 
   // Ensure at least 4 slides for looping/navigation
   let displayInsights = insights;
-  while (displayInsights.length < 4) {
+  while (displayInsights.length > 0 && displayInsights.length < 4) {
     displayInsights = displayInsights.concat(insights);
   }
 
-  useEffect(() => {
-    if (
-      swiperInstance &&
-      navPrev.current &&
-      navNext.current &&
-      swiperInstance.params.navigation
-    ) {
-      swiperInstance.params.navigation.prevEl = navPrev.current;
-      swiperInstance.params.navigation.nextEl = navNext.current;
-      swiperInstance.navigation.destroy();
-      swiperInstance.navigation.init();
-      swiperInstance.navigation.update();
-    }
-  }, [swiperInstance, navPrev, navNext]);
+
 
   return (
     <section className={`${bgSurface ? 'bg-[color:var(--surface)]' : ''}`}>
@@ -76,7 +62,13 @@ export default function InsightsSlider({ insights, bgSurface = false, heading = 
           spaceBetween={30}
           slidesPerView={3}
           loop={true}
-          onSwiper={setSwiperInstance}
+          navigation={true}
+            onBeforeInit={swiper => {
+              if (typeof swiper.params.navigation === 'object') {
+                swiper.params.navigation.prevEl = navPrev.current;
+                swiper.params.navigation.nextEl = navNext.current;
+              }
+            }}
           breakpoints={{
             1024: { slidesPerView: 3 },
             640: { slidesPerView: 2 },

@@ -93,7 +93,7 @@ export default function ConsultingServices({ bgSurface = false }: { bgSurface?: 
                       className={`overflow-hidden ${bgSurface ? 'bg-background' : 'bg-surface'} border-foreground/10`}
                     >
                       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 my-6">
-                        {item.cards.map((card, cidx) => (
+                        {item.cards.map((card) => (
                           <Link href={`/services/${card.title.toLowerCase().replace(/\s+/g, '-')}`}
                             key={card.title}>
                             <motion.button

@@ -1,3 +1,6 @@
+import { notFound } from "next/navigation";
+import type { PortableTextBlock } from "@portabletext/types";
+import type { SanityImageSource } from "@sanity/image-url/lib/types/types";
 import HeroInner from "@/components/sections/HeroInner";
 import BlogCard from "@/components/ui/blog-card";
 import { client } from "@/sanity/lib/client";
@@ -9,8 +12,8 @@ interface Author {
   slug: {
     current: string;
   };
-  image?: any;
-  bio?: any;
+  image?: SanityImageSource;
+  bio?: PortableTextBlock[];
 }
 
 interface Post {
@@ -19,7 +22,7 @@ interface Post {
   slug: {
     current: string;
   };
-  mainImage?: any;
+  mainImage?: SanityImageSource;
   publishedAt: string;
   author?: {
     name: string;
@@ -157,15 +160,7 @@ export default async function AuthorPage({
   const { page } = await searchParams;
   const author = await getAuthor(slug);
 
-  if (!author) {
-    return (
-      <div className="min-h-screen pt-32 pb-16">
-        <div className="container">
-          <h1 className="heading-1">Author not found</h1>
-        </div>
-      </div>
-    );
-  }
+  if (!author) notFound();
 
   const currentPage = page ? parseInt(page) : 1;
   const { posts, total } = await getAuthorPosts(author._id, currentPage);

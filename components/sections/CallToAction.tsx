@@ -2,7 +2,6 @@ import React from 'react'
 import Image from 'next/image'
 import CTAButton from '../ui/ctaButton'
 import parse from 'html-react-parser'
-import Link from 'next/link'
 
 const CallToAction = ({buttonText, secondButton, secondLink, heading = 'Let&apos;s Talk Growth', description = 'We&apos;d love to hear about your ambition. Whether you&apos;re aiming to double your revenue, enter new markets, or transform your business model, our team is here to guide you'}: {buttonText?: string, secondButton?: string, secondLink?: string, heading?: string, description?: string}) => {
   return (

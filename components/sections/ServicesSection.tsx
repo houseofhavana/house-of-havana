@@ -14,7 +14,8 @@ export interface ServiceItem {
   slug?: string;
   page?: {
     slug: string;
-    [key: string]: any;
+    h1?: string;
+    [key: string]: unknown;
   };
 }
 

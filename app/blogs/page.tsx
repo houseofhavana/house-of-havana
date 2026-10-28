@@ -1,3 +1,4 @@
+import type { SanityImageSource } from "@sanity/image-url/lib/types/types";
 import Link from "next/link";
 import haircutFrequencyArticle from "@/data/haircut-frequency-article.json";
 import haircutCostArticle from "@/data/haircut-cost-article.json";
@@ -13,7 +14,7 @@ interface Post {
   slug: {
     current: string;
   };
-  mainImage?: any;
+  mainImage?: SanityImageSource;
   publishedAt: string;
   author?: {
     name: string;

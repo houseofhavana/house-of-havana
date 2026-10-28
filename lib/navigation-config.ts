@@ -2,7 +2,7 @@ export type NavItemData = {
   label: string;
   href: string;
   children?: NavItemData[];
-  isMegaMenu?: boolean; // Flag to indicate if this item should trigger a mega menu
+  isMegaMenu?: false; // Flag to indicate if this item should trigger a mega menu
 };
 
 export type MegaMenuColumn = {
