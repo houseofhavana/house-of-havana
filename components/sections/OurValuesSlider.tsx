@@ -1,7 +1,7 @@
 // NOTE: Now using Swiper instead of react-slick
 'use client'
 
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useId } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import 'swiper/css';
@@ -24,8 +24,7 @@ interface OurValuesSliderProps {
 }
 
 export default function OurValuesSlider({ values, bgSurface = false, supportingText }: OurValuesSliderProps) {
-  const navPrev = useRef<HTMLButtonElement | null>(null);
-  const navNext = useRef<HTMLButtonElement | null>(null);
+  const navigationId = useId().replace(/[^a-zA-Z0-9_-]/g, '');
 
   // Ensure at least 4 slides for looping/navigation
   let displayValues = values;
@@ -58,7 +57,7 @@ export default function OurValuesSlider({ values, bgSurface = false, supportingT
         <div className='relative mb-8'>
           <div className="flex items-center justify-center  gap-2">
             <button
-              ref={navPrev}
+              id={`slider-${navigationId}-prev`}
               className={`w-12 h-12 flex items-center justify-center cursor-pointer hover:bg-surface transition ${bgSurface ? 'bg-background' : 'bg-[color:var(--surface)]'}`}
               aria-label="Previous"
               type="button"
@@ -66,7 +65,7 @@ export default function OurValuesSlider({ values, bgSurface = false, supportingT
               <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24" className='stroke-foreground/50'><path d="M15 18l-6-6 6-6"/></svg>
             </button>
             <button
-              ref={navNext}
+              id={`slider-${navigationId}-next`}
               className={`w-12 h-12 flex items-center justify-center cursor-pointer hover:bg-surface transition ${bgSurface ? 'bg-background' : 'bg-[color:var(--surface)]'}`}
               aria-label="Next"
               type="button"
@@ -89,12 +88,9 @@ export default function OurValuesSlider({ values, bgSurface = false, supportingT
             spaceBetween={30}
             slidesPerView={4}
             loop={true}
-            navigation={true}
-            onBeforeInit={swiper => {
-              if (typeof swiper.params.navigation === 'object') {
-                swiper.params.navigation.prevEl = navPrev.current;
-                swiper.params.navigation.nextEl = navNext.current;
-              }
+            navigation={{
+              prevEl: `#slider-${navigationId}-prev`,
+              nextEl: `#slider-${navigationId}-next`,
             }}
             breakpoints={{
               1024: { slidesPerView: 4 },
