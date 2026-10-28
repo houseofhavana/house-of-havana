@@ -9,7 +9,6 @@ import { generateFAQSchema, generateServiceSchema, jsonLd } from "@/lib/schema";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import Script from "next/script";
 import RelatedServices from "../../../components/sections/ServiceIndividual/RelatedServices";
 import ServiceContent from "../../../components/sections/ServiceIndividual/ServiceContent";
 import ServiceFAQ from "../../../components/sections/ServiceIndividual/ServiceFAQ";
@@ -45,14 +44,14 @@ export default async function ServicePage({ params }: Props) {
   return (
     <>
       {/* FAQ Schema */}
-      <Script
+      <script
         id="service-faq-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: jsonLd(faqSchema) }}
       />
 
       {/* Service Schema */}
-      <Script
+      <script
         id="service-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: jsonLd(serviceSchema) }}

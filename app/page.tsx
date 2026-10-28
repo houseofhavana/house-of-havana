@@ -10,7 +10,6 @@ import { servicesList } from "@/data/services";
 import { homepageGraphSchema, jsonLd } from "@/lib/schema";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
-import Script from "next/script";
 export const metadata = {
   title: "House of Havana Barbershop | Men’s Haircuts, Skin Fades & Beard Grooming Saskatoon",
   description:
@@ -275,7 +274,7 @@ export default function Home() {
         </div>
       </section>
       {/* Consolidated Schema — single @graph with consistent internal references */}
-      <Script
+      <script
         id="homepage-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: jsonLd(homepageGraphSchema) }}

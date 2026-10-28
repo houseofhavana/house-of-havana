@@ -10,6 +10,8 @@ import Link from 'next/link';
 
 const ServicesPage = () => (
   <>
+  <script id="services-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(servicesSchema) }} />
+  <script id="services-index-faq-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(generateFAQSchema(servicesPageData.faqs, "/services")) }} />
   <HeroInner
     subheading="Our"
     title="SERVICES"
