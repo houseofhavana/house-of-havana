@@ -24,7 +24,6 @@ const TeamCard: React.FC<TeamCardProps> = ({
   name,
   text1,
   text2,
-  bioLink,
   className = '',
   bio = '',
   bgSurface = true
@@ -110,7 +109,6 @@ const TeamCard: React.FC<TeamCardProps> = ({
               <div className="text-foreground/70 leading-[1.7] space-y-4">
                 {bio.split('. ').map((sentence, index, array) => {
                   // Add period back except for the last sentence (if it already has one)
-                  const text = index < array.length - 1 ? sentence + '.' : sentence;
                   // Group every 2-3 sentences into a paragraph for better readability
                   if (index % 3 === 0) {
                     const paragraphSentences = array.slice(index, index + 3).map((s, i) =>

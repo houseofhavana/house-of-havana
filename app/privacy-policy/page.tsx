@@ -20,7 +20,7 @@ const PrivacyPolicy = () => {
         <>
             <HeroInner title={Hero.title} />
             <div className='container flex flex-col gap-10 py-10 text-foreground/50'>
-                <p>Platform01 Consulting (“Platform01 Consulting”, “we”, “us”, or “our”) understands that your privacy is important to you. We are committed to respecting your privacy and protecting your personal data—any information capable of identifying you as an individual. This Privacy Policy outlines how we handle and protect your personal data in connection with Platform01 Consulting's business activities, including client services, events, and conferences, as well as through our websites, applications, and communications that link to this policy (collectively referred to as "the Sites"), in our capacity as a data controller. Please also refer to our Terms of Use for additional information about our online terms and policies.</p>
+                <p>Platform01 Consulting (“Platform01 Consulting”, “we”, “us”, or “our”) understands that your privacy is important to you. We are committed to respecting your privacy and protecting your personal data—any information capable of identifying you as an individual. This Privacy Policy outlines how we handle and protect your personal data in connection with Platform01 Consulting&apos;s business activities, including client services, events, and conferences, as well as through our websites, applications, and communications that link to this policy (collectively referred to as &quot;the Sites&quot;), in our capacity as a data controller. Please also refer to our Terms of Use for additional information about our online terms and policies.</p>
                 <div>
                     <h3 className="heading-4 mt-6 mb-2 text-foreground">Collected Information</h3>
                     <p>We collect personal data during our business activities, including when you engage with certain areas of our Sites. This may include when you subscribe to insights and alerts, complete assessment forms to schedule a session with our experts or submit information for job applications.</p>
@@ -51,7 +51,7 @@ const PrivacyPolicy = () => {
                 <div>
                     <h3 className="heading-4 mt-6 mb-2 text-foreground">Social Media</h3>
                     <p>Our Sites may offer the option to link your social media accounts—such as LinkedIn, Twitter, Facebook, or YouTube—with Platform01 Consulting. By doing so, you allow us to access information you have made public in your profile, which may include your name, email address, profile image, gender, or location.</p>
-                    <p>We use such data in accordance with both the applicable platform's terms and this Privacy Policy. You are encouraged to review your social media account settings to manage the data shared with us. If you wish to disconnect your social media profile from our services, please refer to your platform's account settings.</p>
+                    <p>We use such data in accordance with both the applicable platform&apos;s terms and this Privacy Policy. You are encouraged to review your social media account settings to manage the data shared with us. If you wish to disconnect your social media profile from our services, please refer to your platform&apos;s account settings.</p>
                 </div>
 
                 <div>

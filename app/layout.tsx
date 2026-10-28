@@ -11,6 +11,7 @@ import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import Script from "next/script";
+import Image from "next/image";
 import "./globals.css";
 
 const BigCaslon = localFont({
@@ -102,9 +103,9 @@ export default function RootLayout({
 
         {/* Meta Pixel noscript */}
 <noscript>
-  <img
-    height="1"
-    width="1"
+  <Image unoptimized
+    height={1}
+    width={1}
     style={{ display: "none" }}
     src="https://www.facebook.com/tr?id=1226872929396380&ev=PageView&noscript=1"
     alt="Meta Pixel"

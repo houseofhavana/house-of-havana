@@ -20,12 +20,6 @@ const dropdownVariants: Variants = {
   visible: { opacity: 1, y: 0, transition: ANIMATION_TRANSITION },
 };
 
-const linkVariants: Variants = {
-  hidden: { opacity: 0, y: 10 },
-  visible: { opacity: 1, y: 0, transition: ANIMATION_TRANSITION },
-};
-
-const mobileNavTransition: Transition = { type: "tween", duration: 0.4, ease: [0.45, 0, 0.55, 1] };
 const mobileNavAnimVariants = {
   enter: (direction: number) => ({
     x: direction > 0 ? '100%' : '-100%',
@@ -57,20 +51,12 @@ const mobilePanelVariants: Variants = {
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false)
-  const [mounted, setMounted] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const pathname = usePathname();
   const navbarVariant = getNavbarVariant(pathname);
 
-  // Hide navbar on studio page
-  if (pathname.startsWith('/studio')) {
-    return null;
-  }
-
   useEffect(() => {
-    setMounted(true)
-
     const handleScroll = () => {
       const scrollTop = window.scrollY
       setIsScrolled(scrollTop > 50)
@@ -96,7 +82,10 @@ const Navbar = () => {
     };
   }, [isMenuOpen]);
 
-  const isScrolledState = mounted && isScrolled
+  // Hooks must run on every route, including the studio.
+  if (pathname.startsWith('/studio')) return null;
+
+  const isScrolledState = isScrolled
 
   // This function will be passed to the mobile nav to handle link clicks
   const closeMenu = () => setIsMenuOpen(false)
@@ -120,7 +109,7 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-1 static">
             {navigationData.map((item) => (
-              <NavItem key={item.label} item={item} navbarVariant={navbarVariant} isScrolled={isScrolledState} />
+              <NavItem key={item.label} item={item} />
             ))}
           </nav>
 
@@ -165,7 +154,7 @@ const Navbar = () => {
 
 // #region Desktop Navigation Components
 
-const NavItem = ({ item, navbarVariant, isScrolled }: { item: NavItemData | MegaMenuData; navbarVariant: 'light' | 'dark'; isScrolled: boolean }) => {
+const NavItem = ({ item }: { item: NavItemData | MegaMenuData }) => {
   const [isHovered, setIsHovered] = useState(false)
   const hasChildren = !!item.children;
   const navItemRef = React.useRef<HTMLDivElement>(null);
@@ -239,9 +228,9 @@ const NavItem = ({ item, navbarVariant, isScrolled }: { item: NavItemData | Mega
           >
             <div className="bg-background shadow-lg overflow-hidden">
               {item.isMegaMenu ? (
-                <MegaMenuContent items={item.children as any} />
+                <MegaMenuContent items={item.children} />
               ) : (
-                <SimpleDropdownContent items={item.children as any} title={item.label} />
+                <SimpleDropdownContent items={item.children} title={item.label} />
               )}
             </div>
           </motion.div>
@@ -269,7 +258,7 @@ const SimpleDropdownContent = ({ items, title }: { items: NavItemData[], title: 
   </div>
 );
 
-const MegaMenuContent = ({ items }: { items: any[] }) => (
+const MegaMenuContent = ({ items }: { items: MegaMenuColumn[] }) => (
   <motion.div layout className="p-8">
     <div className="container grid grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-4">
       {items.map((column, i) => (
@@ -280,7 +269,7 @@ const MegaMenuContent = ({ items }: { items: any[] }) => (
             {column.title.split(' ').slice(Math.ceil(column.title.split(' ').length / 2)).join(' ')}
           </h5>
           <ul>
-            {column.links.map((link: any, j: number) => (
+            {column.links.map((link, j: number) => (
               <li key={j}>
                 <Link
                   href={link.href}
@@ -307,14 +296,14 @@ const MobileNavContent = ({ closeMenu }: { closeMenu: () => void }) => {
   const [[level, direction], setLevel] = useState([0, 0]);
   const [navPath, setNavPath] = useState<string[]>(['root']);
 
-  let currentContent: any[] = navigationData;
+  let currentContent: (NavItemData | MegaMenuData)[] | MegaMenuColumn[] = navigationData;
   let isMegaMenuContent = false;
 
   // Traverse data to find content for the current level
   for (let i = 1; i < navPath.length; i++) {
     const levelLabel = navPath[i];
-    const foundItem = currentContent.find(item => item.label === levelLabel);
-    if (foundItem && foundItem.children) {
+    const foundItem: NavItemData | MegaMenuData | MegaMenuColumn | undefined = currentContent.find((item: NavItemData | MegaMenuData | MegaMenuColumn) => 'label' in item && item.label === levelLabel);
+    if (foundItem && 'children' in foundItem && foundItem.children) {
       isMegaMenuContent = !!foundItem.isMegaMenu;
       currentContent = foundItem.children;
     }

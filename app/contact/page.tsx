@@ -39,7 +39,7 @@ const ContactPage = () => {
         setStatus('error')
         setErrorMessage(data.error || 'Something went wrong')
       }
-    } catch (error) {
+    } catch {
       setStatus('error')
       setErrorMessage('Failed to send message. Please try again.')
     }
@@ -92,7 +92,7 @@ const ContactPage = () => {
                     <h3 className="heading-6 uppercase tracking-wider">HOURS</h3>
                   </div>
                   <p className="text-foreground/60 leading-relaxed">
-                    Monday - Friday: 10:00 AM - 7:00 PM<br />
+                    Monday - Friday: 9:00 AM - 7:00 PM<br />
                     Saturday: 9:00 AM - 6:00 PM<br />
                     Sunday: 10:00 AM - 5:00 PM
                   </p>
@@ -241,7 +241,7 @@ const ContactPage = () => {
 
                   {status === 'success' && (
                     <div className="p-4 bg-green-500/10 border border-green-500/30 text-green-600 text-sm">
-                      Thank you! We'll get back to you soon.
+                      Thank you! We&apos;ll get back to you soon.
                     </div>
                   )}
 

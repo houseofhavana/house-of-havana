@@ -1,7 +1,7 @@
 // NOTE: Now using Swiper instead of react-slick
 'use client'
 
-import { useState, useRef, useEffect } from 'react';
+import { useRef, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import 'swiper/css';
@@ -23,14 +23,13 @@ interface OurValuesSliderProps {
   supportingText?: string;
 }
 
-export default function OurValuesSlider({ values, heading = 'What Sets Us Apart?', bgSurface = false, supportingText }: OurValuesSliderProps) {
+export default function OurValuesSlider({ values, bgSurface = false, supportingText }: OurValuesSliderProps) {
   const navPrev = useRef<HTMLButtonElement | null>(null);
   const navNext = useRef<HTMLButtonElement | null>(null);
-  const [swiperInstance, setSwiperInstance] = useState<any>(null);
 
   // Ensure at least 4 slides for looping/navigation
   let displayValues = values;
-  while (displayValues.length < 4) {
+  while (displayValues.length > 0 && displayValues.length < 4) {
     displayValues = displayValues.concat(values);
   }
 
@@ -51,20 +50,7 @@ export default function OurValuesSlider({ values, heading = 'What Sets Us Apart?
   }, [displayValues]);
   // --- End equal height logic ---
 
-  useEffect(() => {
-    if (
-      swiperInstance &&
-      navPrev.current &&
-      navNext.current &&
-      swiperInstance.params.navigation
-    ) {
-      swiperInstance.params.navigation.prevEl = navPrev.current;
-      swiperInstance.params.navigation.nextEl = navNext.current;
-      swiperInstance.navigation.destroy();
-      swiperInstance.navigation.init();
-      swiperInstance.navigation.update();
-    }
-  }, [swiperInstance, navPrev, navNext]);
+
 
   return (
     <div className="w-full">
@@ -103,7 +89,13 @@ export default function OurValuesSlider({ values, heading = 'What Sets Us Apart?
             spaceBetween={30}
             slidesPerView={4}
             loop={true}
-            onSwiper={setSwiperInstance}
+            navigation={true}
+            onBeforeInit={swiper => {
+              if (typeof swiper.params.navigation === 'object') {
+                swiper.params.navigation.prevEl = navPrev.current;
+                swiper.params.navigation.nextEl = navNext.current;
+              }
+            }}
             breakpoints={{
               1024: { slidesPerView: 4 },
               640: { slidesPerView: 2 },

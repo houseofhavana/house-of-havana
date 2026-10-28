@@ -49,6 +49,9 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children, title }) => {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             transition={{ duration: 0.2, ease: [0.4, 0, 0.2, 1] }}
+            role="dialog"
+            aria-modal="true"
+            aria-label={title || "Details"}
             className="fixed inset-0 z-[10001] flex items-center justify-center md:p-4"
             onClick={(e) => e.stopPropagation()}
           >

@@ -1,7 +1,10 @@
+import { notFound } from "next/navigation";
+import type { PortableTextBlock } from "@portabletext/types";
+import type { SanityImageSource } from "@sanity/image-url/lib/types/types";
 import ArrowRight from "@/components/icons/ArrowRight";
 import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/utils";
-import { PortableText } from "@portabletext/react";
+import { PortableText, type PortableTextComponents } from "@portabletext/react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -11,15 +14,15 @@ interface Post {
   slug: {
     current: string;
   };
-  mainImage?: any;
+  mainImage?: SanityImageSource & { alt?: string };
   publishedAt: string;
-  body: any;
+  body: PortableTextBlock[];
   author?: {
     name: string;
     slug: {
       current: string;
     };
-    image?: any;
+    image?: SanityImageSource;
   };
   categories?: Array<{
     title: string;
@@ -76,11 +79,7 @@ export async function generateMetadata({
   const { slug } = await params;
   const post = await getPost(slug);
 
-  if (!post) {
-    return {
-      title: "Post Not Found",
-    };
-  }
+  if (!post) notFound();
 
   const categoryTitles = post.categories?.map((cat) => cat.title).join(", ") || "";
   const description = `Read ${post.title} by ${post.author?.name || "House Of Havana"}${categoryTitles ? ` in ${categoryTitles}` : ""}`;
@@ -114,9 +113,9 @@ export async function generateMetadata({
 }
 
 // Custom components for PortableText rendering
-const portableTextComponents = {
+const portableTextComponents: Partial<PortableTextComponents> = {
   types: {
-    image: ({ value }: any) => {
+    image: ({ value }) => {
       return (
         <div className="my-8">
           <Image
@@ -131,10 +130,12 @@ const portableTextComponents = {
     },
   },
   marks: {
-    link: ({ children, value }: any) => {
+    link: ({ children, value }) => {
       return (
         <a
-          href={value.href}
+          href={typeof value?.href === "string" && /^https?:\/\/(?:www\.)?getsquire\.com\/booking\/book\/house-of-havana-barbershop-saskatoon(?:[/?#]|$)/i.test(value.href)
+            ? "https://www.fresha.com/book-now/house-of-havana-barbershop-xcwtdh26/all-offer?share=true&pId=3102757"
+            : value?.href}
           target="_blank"
           rel="noopener noreferrer"
           className="text-secondary hover:underline"
@@ -154,15 +155,7 @@ export default async function BlogPostPage({
   const { slug } = await params;
   const post = await getPost(slug);
 
-  if (!post) {
-    return (
-      <div className="min-h-screen pt-32 pb-16">
-        <div className="container">
-          <h1 className="heading-1">Post not found</h1>
-        </div>
-      </div>
-    );
-  }
+  if (!post) notFound();
 
   const formattedDate = post.publishedAt
     ? new Date(post.publishedAt).toLocaleDateString(undefined, {

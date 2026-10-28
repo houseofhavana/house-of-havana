@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 
 interface LogoProps {
   className?: string
@@ -7,11 +8,12 @@ interface LogoProps {
 }
 
 const Logo: React.FC<LogoProps> = ({ 
+  className,
   width = 136, 
   height = 50 
 }) => {
   return (
-    <img src="/logo.png" alt="Logo" width={width} height={height} />
+    <Image src="/logo.png" alt="House of Havana" className={className} width={width} height={height} />
   )
 }
 

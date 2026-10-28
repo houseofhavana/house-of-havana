@@ -19,9 +19,9 @@ const ServicesPage = () => (
   {/* SEO Intro Section */}
   <section className="py-12 bg-background">
     <div className="container max-w-4xl">
-      <h1 className="text-3xl md:text-4xl font-heading text-primary mb-4">
+      <h2 className="text-3xl md:text-4xl font-heading text-primary mb-4">
         Barber Services in Saskatoon
-      </h1>
+      </h2>
 
     <p className="text-foreground/60 mb-4">
   House of Havana Barbershop offers premium barber services in Saskatoon, including men’s haircuts,
@@ -62,7 +62,7 @@ const ServicesPage = () => (
                         {(idx + 1).toString().padStart(2, '0')}.
                       </div>
                       <Link
-                        href={serviceSlug ? `/services/${serviceSlug}` : '#'}
+                        href={serviceSlug ? `/services/${serviceSlug}` : "/book"}
                         className="group/link"
                       >
                         <ArrowRight className="text-foreground/40 group-hover/link:text-foreground group-hover/link:translate-x-1 transition-all duration-300" size={20} />
@@ -118,7 +118,7 @@ const ServicesPage = () => (
             );
           })}
         </div>
-        <p className="text-sm text-foreground/50 mt-6 text-center">*Price depends on barber</p>
+        <p className="text-sm text-foreground/50 mt-6 text-center">Prices may vary by barber. Confirm the final price when booking on Fresha.</p>
       </div>
     </section>
 

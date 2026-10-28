@@ -19,23 +19,9 @@ const ScrollTrigger: React.FC<ScrollTriggerProps> = ({
   trigger = 'once',
   offset = 0
 }) => {
-  const getDirectionClass = () => {
-    switch (direction) {
-      case 'up':
-        return 'data-scroll data-scroll-direction="vertical" data-scroll-speed="-1"'
-      case 'down':
-        return 'data-scroll data-scroll-direction="vertical" data-scroll-speed="1"'
-      case 'left':
-        return 'data-scroll data-scroll-direction="horizontal" data-scroll-speed="-1"'
-      case 'right':
-        return 'data-scroll data-scroll-direction="horizontal" data-scroll-speed="1"'
-      default:
-        return 'data-scroll'
-    }
-  }
-
   const scrollProps = {
     'data-scroll': true,
+    'data-scroll-direction': direction === 'left' || direction === 'right' ? 'horizontal' : 'vertical',
     'data-scroll-speed': speed,
     'data-scroll-trigger': trigger,
     'data-scroll-offset': offset,

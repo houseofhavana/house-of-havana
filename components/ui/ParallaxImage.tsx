@@ -24,6 +24,7 @@ const ParallaxImage: React.FC<ParallaxImageProps> = ({
   intensity = 0.3,
   className = "",
   src,
+  alt,
   responsiveImages,
   ...props
 }) => {
@@ -61,6 +62,7 @@ const ParallaxImage: React.FC<ParallaxImageProps> = ({
         {responsiveImages.mobile && (
           <Image
             {...props}
+            alt={alt}
             src={responsiveImages.mobile}
             className="object-cover object-center md:hidden"
             quality={100}
@@ -74,6 +76,7 @@ const ParallaxImage: React.FC<ParallaxImageProps> = ({
         {responsiveImages.tablet && (
           <Image
             {...props}
+            alt={alt}
             src={responsiveImages.tablet}
             className="object-cover object-center hidden md:block lg:hidden"
             quality={100}
@@ -87,6 +90,7 @@ const ParallaxImage: React.FC<ParallaxImageProps> = ({
         {responsiveImages.desktop && (
           <Image
             {...props}
+            alt={alt}
             src={responsiveImages.desktop}
             className="object-cover object-center hidden lg:block xl:hidden"
             quality={100}
@@ -100,6 +104,7 @@ const ParallaxImage: React.FC<ParallaxImageProps> = ({
         {responsiveImages.ultrawide && (
           <Image
             {...props}
+            alt={alt}
             src={responsiveImages.ultrawide}
             className="object-cover object-center hidden xl:block"
             quality={100}
@@ -113,6 +118,7 @@ const ParallaxImage: React.FC<ParallaxImageProps> = ({
         {!responsiveImages.mobile && !responsiveImages.tablet && !responsiveImages.desktop && !responsiveImages.ultrawide && (
           <Image
             {...props}
+            alt={alt}
             src={src || ""}
             className="object-cover object-center"
             quality={100}
@@ -133,6 +139,7 @@ const ParallaxImage: React.FC<ParallaxImageProps> = ({
     >
       <Image
         {...props}
+            alt={alt}
         src={src || ""}
         className={className}
         quality={100}

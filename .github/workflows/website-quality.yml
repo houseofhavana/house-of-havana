@@ -1,0 +1,37 @@
+name: Website quality checks
+
+on:
+  pull_request:
+    branches:
+      - main
+      - fix/seo-schema-pricing-audit-20261026
+  push:
+    branches:
+      - feat/saskatoon-service-seo-phase2-20261027
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Install locked dependencies
+        run: npm ci
+      - name: ESLint validation
+        run: npm run lint
+      - name: TypeScript validation
+        if: always()
+        run: npm run typecheck
+      - name: Production build and sitemap generation
+        if: always()
+        run: npm run build
+        env:
+          NEXT_PUBLIC_SANITY_PROJECT_ID: ${{ vars.NEXT_PUBLIC_SANITY_PROJECT_ID }}
+          NEXT_PUBLIC_SANITY_DATASET: ${{ vars.NEXT_PUBLIC_SANITY_DATASET }}
+          NEXT_PUBLIC_SANITY_API_VERSION: ${{ vars.NEXT_PUBLIC_SANITY_API_VERSION }}

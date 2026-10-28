@@ -1,5 +1,7 @@
 "use client";
 
+import type { SanityImageSource } from "@sanity/image-url/lib/types/types";
+
 import { urlFor } from "@/sanity/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
@@ -9,7 +11,7 @@ interface BlogCardProps {
   slug: string;
   title: string;
   publishedAt: string;
-  mainImage?: any;
+  mainImage?: SanityImageSource & { alt?: string };
   author?: {
     name: string;
     slug: {

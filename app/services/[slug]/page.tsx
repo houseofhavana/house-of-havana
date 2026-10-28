@@ -40,7 +40,6 @@ export default async function ServicePage({ params }: Props) {
     name: page.cardTitle,
     description: page.meta.description,
     category: service.title,
-    prices: service.items.map((item) => item.price).filter(Boolean) as string[],
   });
 
   return (
@@ -58,6 +57,16 @@ export default async function ServicePage({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: jsonLd(serviceSchema) }}
       />
+
+      <nav aria-label="Breadcrumb" className="bg-background">
+        <div className="container py-3 text-sm text-foreground/60">
+          <Link href="/" className="hover:underline">Home</Link>
+          <span aria-hidden="true" className="mx-2">/</span>
+          <Link href="/services" className="hover:underline">Services</Link>
+          <span aria-hidden="true" className="mx-2">/</span>
+          <span aria-current="page">{page.cardTitle}</span>
+        </div>
+      </nav>
 
       {/* Hero Section */}
       <HeroInner
@@ -97,7 +106,7 @@ export default async function ServicePage({ params }: Props) {
                 </div>
               ))}
             </div>
-            <p className="text-sm text-foreground/50 mt-6 text-center">*Price depends on barber</p>
+            <p className="text-sm text-foreground/50 mt-6 text-center">Prices may vary by barber. Confirm the final price when booking on Fresha.</p>
           </div>
         </div>
       </section>

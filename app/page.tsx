@@ -254,7 +254,7 @@ export default function Home() {
             </div>
             <div className="md:col-span-6 md:col-start-7 flex items-end">
               <p className="text-foreground/50 leading-relaxed">
-                Don't just take our word for it. Here's what our valued clients
+                Don&apos;t just take our word for it. Here&apos;s what our valued clients
                 have to say about their House Of Havana experience.
               </p>
             </div>

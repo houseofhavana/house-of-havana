@@ -20,7 +20,7 @@ const TermsOfUse = () => {
         <>
             <HeroInner title={Hero.title} />
             <div className='container flex flex-col gap-10 py-10 text-foreground/50'>
-                <p>These Terms of Use ("Terms") govern your access to and use of Platform01 Consulting's websites, applications, services, and communications (collectively, "the Services") operated by Platform01 Consulting ("Platform01 Consulting", "we", "us", or "our"). By accessing or using our Services, you agree to be bound by these Terms. If you disagree with any part of these Terms, you may not access or use our Services.</p>
+                <p>These Terms of Use (&quot;Terms&quot;) govern your access to and use of Platform01 Consulting&apos;s websites, applications, services, and communications (collectively, &quot;the Services&quot;) operated by Platform01 Consulting (&quot;Platform01 Consulting&quot;, &quot;we&quot;, &quot;us&quot;, or &quot;our&quot;). By accessing or using our Services, you agree to be bound by these Terms. If you disagree with any part of these Terms, you may not access or use our Services.</p>
 
                 <div>
                     <h3 className="heading-4 mt-6 mb-2 text-foreground">Acceptance of Terms</h3>
@@ -83,13 +83,13 @@ const TermsOfUse = () => {
 
                 <div>
                     <h3 className="heading-4 mt-6 mb-2 text-foreground">Consulting Services</h3>
-                    <p>When engaging our consulting services, additional terms and conditions may apply as specified in separate service agreements. Our consulting services are provided on an "as-is" basis, and we make no guarantees regarding specific outcomes or results.</p>
+                    <p>When engaging our consulting services, additional terms and conditions may apply as specified in separate service agreements. Our consulting services are provided on an &quot;as-is&quot; basis, and we make no guarantees regarding specific outcomes or results.</p>
                     <p>Client confidentiality is paramount. We maintain strict confidentiality regarding client information and business matters, subject to applicable legal requirements and our Privacy Policy.</p>
                 </div>
 
                 <div>
                     <h3 className="heading-4 mt-6 mb-2 text-foreground">Disclaimers and Limitations</h3>
-                    <p>Our Services are provided "as is" and "as available" without warranties of any kind, either express or implied. Platform01 Consulting disclaims all warranties, including but not limited to:</p>
+                    <p>Our Services are provided &quot;as is&quot; and &quot;as available&quot; without warranties of any kind, either express or implied. Platform01 Consulting disclaims all warranties, including but not limited to:</p>
                     <ul className="list-disc pl-6 mb-2 mt-4">
                         <li>Warranties of merchantability and fitness for a particular purpose</li>
                         <li>Warranties that the Services will be uninterrupted or error-free</li>
@@ -107,7 +107,7 @@ const TermsOfUse = () => {
 
                 <div>
                     <h3 className="heading-4 mt-6 mb-2 text-foreground">Indemnification</h3>
-                    <p>You agree to indemnify, defend, and hold harmless Platform01 Consulting and its officers, directors, employees, and agents from and against any claims, damages, losses, liabilities, costs, or expenses (including reasonable attorneys' fees) arising from:</p>
+                    <p>You agree to indemnify, defend, and hold harmless Platform01 Consulting and its officers, directors, employees, and agents from and against any claims, damages, losses, liabilities, costs, or expenses (including reasonable attorneys&apos; fees) arising from:</p>
                     <ul className="list-disc pl-6 mb-2 mt-4">
                         <li>Your use of our Services</li>
                         <li>Your violation of these Terms</li>
