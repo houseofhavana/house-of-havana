@@ -1,4 +1,5 @@
 import ConditionalCTA from "@/components/sections/ConditionalCTA";
+import ConversionTracking from "@/components/ConversionTracking";
 import Footer from "@/components/ui/footer";
 import Navbar from "@/components/ui/navbar";
 import {
@@ -100,6 +101,7 @@ export default function RootLayout({
         />
 
         <Navbar />
+        <ConversionTracking />
         {children}
         <ConditionalCTA />
         <Footer />

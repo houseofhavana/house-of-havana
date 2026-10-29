@@ -97,7 +97,8 @@ export function generateSEO(props: SEOProps): Metadata {
     } = props
 
     const metadata: Metadata = {
-        title,
+        // Preserve branding on short titles without duplicating it on full titles.
+        title: { absolute: /house of havana/i.test(title) ? title : `${title} | House of Havana` },
         description,
     }
 
@@ -117,7 +118,7 @@ export function generateSEO(props: SEOProps): Metadata {
 
     // Open Graph
     if (openGraph || canonical) {
-        const ogUrl = openGraph?.url || (canonical ? `https://houseofhavana.ca${canonical}` : undefined)
+        const ogUrl = openGraph?.url || (canonical ? new URL(canonical, 'https://houseofhavana.ca').href : undefined)
         metadata.openGraph = {
             title: openGraph?.title || title,
             description: openGraph?.description || description,

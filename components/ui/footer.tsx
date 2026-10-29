@@ -193,14 +193,8 @@ const Footer = () => {
             >
               306-952-2255
             </a> */}
-            <Link href="tel:3069522255" aria-label="Call House Of Havana">
-              <span aria-hidden="true">
-                306
-                <span style={{ display: "none" }}>-</span>
-                -952-
-                <span style={{ display: "none" }}>-</span>
-                2255
-              </span>
+            <Link href="tel:+13069522255" aria-label="Call House Of Havana at 306-952-2255">
+              306-952-2255
             </Link>
           </div>
           <div className="flex items-center text-sm">

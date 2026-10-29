@@ -2,7 +2,12 @@
 module.exports = {
     siteUrl: 'https://houseofhavana.ca',
     generateRobotsTxt: true,
-    exclude: ['/studio', '/studio/*', '/api/*'],
+    exclude: [
+        '/studio', '/studio/*', '/api/*',
+        '/privacy-policy', '/terms-of-use',
+        '/apple-icon.png', '/icon0.svg', '/icon1.png', '/favicon.ico',
+        '/manifest.json', '/opengraph-image.jpg', '/twitter-image.jpg',
+    ],
     // Only CMS documents have reliable modification dates.
     autoLastmod: false,
     robotsTxtOptions: {
@@ -34,7 +39,7 @@ module.exports = {
             author: '/blogs/authors/',
             category: '/blogs/categories/',
         };
-        return [{ loc: "/blogs/how-often-should-i-get-a-haircut", lastmod: "2026-10-26T17:32:15.000Z", changefreq: "monthly", priority: 0.7 }, { loc: "/blogs/average-haircut-cost-canada", lastmod: "2026-10-25T18:00:00.000Z", changefreq: "monthly", priority: 0.7 }, ...documents.map((document) => ({
+        return [{ loc: "/blogs", changefreq: "weekly", priority: 0.7 }, { loc: "/blogs/how-often-should-i-get-a-haircut", lastmod: "2026-10-26T17:32:15.000Z", changefreq: "monthly", priority: 0.7 }, { loc: "/blogs/average-haircut-cost-canada", lastmod: "2026-10-25T18:00:00.000Z", changefreq: "monthly", priority: 0.7 }, ...documents.map((document) => ({
             loc: prefixes[document._type] + encodeURIComponent(document.slug),
             lastmod: document._updatedAt,
             changefreq: 'weekly',

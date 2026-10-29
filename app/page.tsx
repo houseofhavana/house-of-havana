@@ -10,14 +10,13 @@ import { servicesList } from "@/data/services";
 import { homepageGraphSchema, jsonLd } from "@/lib/schema";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
-export const metadata = {
-  title: "House of Havana Barbershop | Men’s Haircuts, Skin Fades & Beard Grooming Saskatoon",
+import { mergeSEO } from "@/lib/seo";
+export const metadata = mergeSEO({
+  title: "Barbershop in Saskatoon | House of Havana",
   description:
-    "House of Havana Barbershop is a premium barbershop in Saskatoon offering men’s haircuts, skin fades, and beard grooming. Book your appointment today.",
-  alternates: {
-    canonical: "https://houseofhavana.ca",
-  },
-};
+    "Visit House of Havana, a premium barbershop in Saskatoon for men's haircuts, skin fades and beard grooming. Book your appointment online.",
+  canonical: "/",
+});
 
 const WHY_CHOOSE_VALUES = [
   {

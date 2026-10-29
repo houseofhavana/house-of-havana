@@ -20,7 +20,7 @@ const BASE_URL = "https://houseofhavana.ca";
 
 // Helper to create JSON-LD script content
 export function jsonLd(schema: object): string {
-  return JSON.stringify(schema);
+  return JSON.stringify(schema).replace(/</g, "\\u003c");
 }
 
 // Helper to create slug from name
@@ -102,6 +102,8 @@ export const organizationSchema: WithContext<Organization> = {
     "https://www.tiktok.com/@houseofhavana.ca",
     "https://www.youtube.com/@houseofhavanamensgrooming",
     "https://www.yelp.ca/biz/house-of-havana-saskatoon",
+    "https://thechamber.saskatoonchamber.com/list/member/house-of-havana-barbershop-ltd-8673.htm",
+    "https://www.bbb.org/ca/sk/saskatoon/profile/barber/house-of-havana-mens-grooming-ltd-0057-1000012510",
     "https://www.fresha.com/book-now/house-of-havana-barbershop-xcwtdh26/all-offer?share=true&pId=3102757"
   ],
 };
@@ -121,10 +123,10 @@ export const breadcrumbSchema: WithContext<BreadcrumbList> = {
   ],
 };
 
-// BarberShop/LocalBusiness Schema
+// HairSalon is the Schema.org subtype for a hair grooming business.
 export const barbershopSchema: WithContext<LocalBusiness> = {
   "@context": "https://schema.org",
-  "@type": ["BarberShop", "LocalBusiness", "HealthAndBeautyBusiness"] as unknown as "LocalBusiness",
+  "@type": "HairSalon",
   "@id": `${BASE_URL}/#barbershop`,
   name: "House Of Havana Barbershop",
   alternateName: "House Of Havana",
@@ -257,6 +259,8 @@ export const barbershopSchema: WithContext<LocalBusiness> = {
     "https://www.tiktok.com/@houseofhavana.ca",
     "https://www.youtube.com/@houseofhavanamensgrooming",
     "https://www.yelp.ca/biz/house-of-havana-saskatoon",
+    "https://thechamber.saskatoonchamber.com/list/member/house-of-havana-barbershop-ltd-8673.htm",
+    "https://www.bbb.org/ca/sk/saskatoon/profile/barber/house-of-havana-mens-grooming-ltd-0057-1000012510",
     "https://www.fresha.com/book-now/house-of-havana-barbershop-xcwtdh26/all-offer?share=true&pId=3102757"
   ],
   slogan: "Where grooming becomes personal and confidence is elevated",
@@ -611,6 +615,8 @@ export const contactLocalBusinessSchema: WithContext<LocalBusiness> = {
     "https://www.tiktok.com/@houseofhavana.ca",
     "https://www.youtube.com/@houseofhavanamensgrooming",
     "https://www.yelp.ca/biz/house-of-havana-saskatoon",
+    "https://thechamber.saskatoonchamber.com/list/member/house-of-havana-barbershop-ltd-8673.htm",
+    "https://www.bbb.org/ca/sk/saskatoon/profile/barber/house-of-havana-mens-grooming-ltd-0057-1000012510",
     "https://www.fresha.com/book-now/house-of-havana-barbershop-xcwtdh26/all-offer?share=true&pId=3102757",
   ],
 };
