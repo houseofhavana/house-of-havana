@@ -12,22 +12,21 @@ const Ritual = () => {
       <div className="container mx-auto ">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 relative">
           <div className="z-10 p-4 md:p-12 flex flex-col justify-between gap-16 md:gap-4">
-            <div className="z-0 absolute w-[240px] h-[350px] bg-gradient-to-b from-transparent to-foreground/3 top-0 left-0"></div>
             <div className="z-10">
-              <h2 className="heading-2 mb-4 text-primary">A Good Cut. Time Well Spent.</h2>
+              <h2 className="heading-2 mb-4 text-primary">Good Haircuts. Good Company.</h2>
               <p className="text-foreground/50">
-                Settle into the chair and take a moment for yourself. Watch the
-                House of Havana ritual for a closer look at the atmosphere,
-                the craft and the people behind it.
+                Come in, have a seat, and tell us what you’re after. Whether
+                you’re here for your usual cut or ready to try something new,
+                we’ll talk it through with you first.
               </p>
               <p className="text-foreground/50 mt-2 font-heading italic">
-                A fresh perspective starts here.
+                Take a look around the shop and meet the team.
               </p>
             </div>
             <div className="z-10 w-full grid grid-cols-2 gap-4">
               <div className="flex flex-col">
-                <span className="text-2xl lg:text-3xl font-heading text-primary">20+</span>
-                <p className="heading-6-italic">Years of Experience</p>
+                <span className="text-2xl lg:text-3xl font-heading text-primary">30</span>
+                <p className="heading-6-italic">Years of Combined Team Experience</p>
               </div>
               <a
                 href="https://share.google/sffdie67FCLj8pfgB"
@@ -59,7 +58,6 @@ const Ritual = () => {
           </div>
           <div className="flex items-center justify-center">
             <div className="relative w-full max-w-[600px]">
-              <div className="z-0 absolute inset-0 translate-x-2 translate-y-2 bg-gradient-to-b from-transparent to-foreground/3"></div>
               <div className="relative z-10 w-full aspect-video overflow-hidden [&_.yt-lite]:w-full [&_.yt-lite]:h-full">
                 <LiteYouTubeEmbed
                   id="fLzrkx_oxq8"
