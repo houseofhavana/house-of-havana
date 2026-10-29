@@ -28,6 +28,8 @@ jobs:
       - name: TypeScript validation
         if: always()
         run: npm run typecheck
+      - name: Service hierarchy checks
+        run: npm run check:services
       - name: Production build and sitemap generation
         if: always()
         run: npm run build

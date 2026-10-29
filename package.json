@@ -8,7 +8,8 @@
     "start": "next start",
     "typecheck": "tsc --noEmit",
     "postbuild": "next-sitemap",
-    "lint": "eslint . --max-warnings=0"
+    "lint": "eslint . --max-warnings=0",
+    "check:services": "node scripts/check-service-hierarchy.mjs"
   },
   "dependencies": {
     "@next/third-parties": "^16.1.6",
