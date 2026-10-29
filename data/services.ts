@@ -374,12 +374,12 @@ const legacyServicesList: ServiceCategory[] = [
 export const servicesPageData = {
   h1: "Barbershop Services in Saskatoon",
   intro:
-    "Find your next haircut, fade, beard trim, or treatment at House of Havana in Saskatoon. Browse the services below, and get in touch if you are unsure what to book.",
+    "Explore men's haircuts, fades, beard grooming, hot shaves, partial and full perms, color camouflage and nose wax at House of Havana in Saskatoon. Choose a service or explore the styles within each category.",
   faqs: [
     {
       question: "What services does House Of Havana offer in Saskatoon?",
       answer:
-        "We specialize in men's haircuts, fade haircuts, and beard grooming. Each service starts with a consultation and ends with detail-driven finishing for a clean, polished look.",
+        "Our eight main services are men's haircuts, fade haircuts, beard grooming, hot shaves, partial perms, full perms, color camouflage and nose wax. Explore individual haircut, fade and beard styles within the first three categories.",
     },
     {
       question: "Do you recommend booking haircut + beard together?",
@@ -395,7 +395,7 @@ export const servicesPageData = {
   meta: {
     title: "Barbershop Services",
     description:
-      "Explore men's haircuts, fades, and beard grooming at House of Havana in Saskatoon. Find your service and book a time with your barber.",
+      "Explore haircuts, fades, beard grooming, hot shaves, perms, color camouflage and nose wax in Saskatoon. Compare services and book House of Havana.",
     keywords: [
       "barbershop services saskatoon",
       "mens haircuts saskatoon",
