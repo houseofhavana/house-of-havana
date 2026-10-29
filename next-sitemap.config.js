@@ -4,6 +4,8 @@ module.exports = {
     generateRobotsTxt: true,
     exclude: [
         '/studio', '/studio/*', '/api/*',
+        // Submit canonical nested service URLs, excluding encoded route duplicates.
+        '/services/*%2F*', '/services/*%2f*',
         '/privacy-policy', '/terms-of-use',
         '/apple-icon.png', '/icon0.svg', '/icon1.png', '/favicon.ico',
         '/manifest.json', '/opengraph-image.jpg', '/twitter-image.jpg',
