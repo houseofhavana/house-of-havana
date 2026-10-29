@@ -21,7 +21,7 @@ export function getHaircutCostArticleHtml() {
   const fade = getMenuItem("fade-haircut-saskatoon", "Haircut + Wash and Style (ask your barber for a fade)");
   const haircutBeard = getMenuItem("mens-haircut-saskatoon", "Haircut + Beard Grooming");
   const beard = getMenuItem("beard-grooming-saskatoon", "Beard Grooming");
-  const shave = getMenuItem("beard-grooming-saskatoon", "Hot Towel Shave");
+  const shave = getMenuItem("hot-towel-shave-saskatoon", "Hot Towel Shaves");
   const rows = [haircut, fade, haircutBeard, beard, shave].map((item) =>
     `<tr><td>${escapeHtml(item.name)}</td><td>${escapeHtml(item.price)}</td><td>${escapeHtml(item.duration)}</td></tr>`
   ).join("");

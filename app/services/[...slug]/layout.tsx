@@ -1,0 +1,29 @@
+import { getServiceBySlug } from "@/data/services";
+import { mergeSEO } from "@/lib/seo";
+import { Metadata } from "next";
+
+type Props = {
+  params: Promise<{ slug: string[] }>;
+  children: React.ReactNode;
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug: segments } = await params;
+  const slug = segments.join("/");
+  const service = getServiceBySlug(slug);
+
+  if (!service?.page) {
+    return {};
+  }
+
+  return mergeSEO({
+    title: service.page.meta.title,
+    description: service.page.meta.description,
+    keywords: service.page.meta.keywords,
+    canonical: `/services/${service.page.slug}`,
+  });
+}
+
+export default function ServiceLayout({ children }: Props) {
+  return <>{children}</>;
+}

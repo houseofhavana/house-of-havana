@@ -3,7 +3,7 @@
 import { generateFAQSchema, jsonLd, servicesSchema } from "@/lib/schema";
 import FAQSection from "@/components/sections/FAQSection";
 import HeroInner from "@/components/sections/HeroInner";
-import { servicesList, servicesPageData } from "@/data/services";
+import { servicesList, servicesPageData, getChildServices } from "@/data/services";
 import { motion } from 'framer-motion';
 import parse from 'html-react-parser';
 import { ArrowRight } from 'lucide-react';
@@ -15,7 +15,7 @@ const ServicesPage = () => (
   <script id="services-index-faq-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(generateFAQSchema(servicesPageData.faqs, "/services")) }} />
   <HeroInner
     subheading="Our"
-    title="SERVICES"
+    title={servicesPageData.h1}
     supportingText={servicesPageData.intro}
   />
 
@@ -66,13 +66,14 @@ const ServicesPage = () => (
                       </div>
                       <Link
                         href={serviceSlug ? `/services/${serviceSlug}` : "/book"}
+                        aria-label={`Explore ${service.title}`}
                         className="group/link"
                       >
                         <ArrowRight className="text-foreground/40 group-hover/link:text-foreground group-hover/link:translate-x-1 transition-all duration-300" size={20} />
                       </Link>
                     </div>
 
-                    <h3 className="heading-4-italic mb-3">{parse(service.title)}</h3>
+                    <h3 className="heading-4-italic mb-3"><Link href={`/services/${serviceSlug}`} className="hover:underline">{parse(service.title)}</Link></h3>
 
                     {service.description && (
                       <p className="text-foreground/60 text-base mb-6">
@@ -80,6 +81,12 @@ const ServicesPage = () => (
                       </p>
                     )}
 
+                    {serviceSlug && getChildServices(serviceSlug).length > 0 && <nav aria-label={`${service.title} styles`} className="mb-6">
+                      <ul className="flex flex-wrap gap-x-4 gap-y-2 text-sm">
+                        {getChildServices(serviceSlug).map((child) => <li key={child.page!.slug}><Link className="underline text-foreground/70" href={`/services/${child.page!.slug}`}>{child.title}</Link></li>)}
+                      </ul>
+                    </nav>}
+                    {service.items.length === 0 && <p className="text-sm text-foreground/60">Confirm pricing and timing on Fresha.</p>}
                     {/* Service Items List */}
                     {service.items && service.items.length > 0 && (
                       <>
@@ -121,7 +128,7 @@ const ServicesPage = () => (
             );
           })}
         </div>
-        <p className="text-sm text-foreground/50 mt-6 text-center">Prices may vary by barber. Confirm the final price when booking on Fresha.</p>
+        <p className="text-sm text-foreground/50 mt-6 text-center">Prices are in Canadian dollars before tax. Prices and appointment lengths may vary by barber. Confirm the final price when booking on Fresha.</p>
       </div>
     </section>
 
