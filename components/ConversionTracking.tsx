@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 
 type AnalyticsWindow = Window & {
+  fbq?: (...args: unknown[]) => void;
   gtag?: (...args: unknown[]) => void;
 };
 
@@ -26,6 +27,15 @@ export default function ConversionTracking() {
         eventName = "booking_click";
       } else {
         return;
+      }
+
+      if (eventName === "booking_click") {
+        (window as AnalyticsWindow).fbq?.(
+          "trackSingleCustom",
+          "1693947079101011",
+          "FreshaBookingClick",
+          { page_path: window.location.pathname },
+        );
       }
 
       // Use the existing GA4 property, without changing navigation or Ads tags.
