@@ -267,6 +267,47 @@ const ContactPage = () => {
         </div>
       </section>
 
+      {/* Saskatoon Google Maps */}
+      <section className="pb-20 bg-surface" aria-labelledby="shop-map-heading">
+        <div className="container">
+          <div className="mb-8">
+            <h2 id="shop-map-heading" className="heading-2 mb-4">FIND US IN SASKATOON</h2>
+            <p className="text-foreground/60 leading-relaxed mb-6">
+              House of Havana Barbershop · 3501 8 St E, Bay 110, Saskatoon.
+              Plan your visit or open our Google profile for reviews and photos.
+            </p>
+            <div className="flex flex-wrap gap-6">
+              <a
+                href="https://www.google.com/maps/dir/?api=1&destination=House+of+Havana+Barbershop+3501+8+St+E+Bay+110+Saskatoon"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline underline-offset-4 hover:text-foreground/70 transition-colors"
+              >
+                Get Directions
+              </a>
+              <a
+                href="https://share.google/sffdie67FCLj8pfgB"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline underline-offset-4 hover:text-foreground/70 transition-colors"
+              >
+                View Our Google Profile
+              </a>
+            </div>
+          </div>
+          <iframe
+            title="House of Havana Barbershop location on Google Maps"
+            src="https://www.google.com/maps?q=House+of+Havana+Barbershop+3501+8+St+E+Bay+110+Saskatoon&output=embed"
+            width="100%"
+            height="450"
+            className="w-full h-[350px] md:h-[450px] border-0"
+            loading="lazy"
+            allowFullScreen
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+        </div>
+      </section>
+
     </>
   )
 }
