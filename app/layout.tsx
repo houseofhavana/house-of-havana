@@ -74,6 +74,17 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="dark">
+      {/* Block legacy GTM custom scripts, including the old Meta pixel.
+          The intended Meta pixel is installed directly below. Native Google
+          Analytics/Ads tags remain available in the container. */}
+      <Script
+        id="gtm-block-legacy-custom-scripts"
+        strategy="beforeInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `window.dataLayer = window.dataLayer || [];
+window.dataLayer.push({ 'gtm.blocklist': ['customScripts'] });`,
+        }}
+      />
       <GoogleTagManager gtmId="GTM-5KG58H86" />
       <body
         className={`${BigCaslon.variable} ${BigCaslonItalic.variable} ${Satoshi.variable} antialiased font-sans text-foreground bg-background`}
