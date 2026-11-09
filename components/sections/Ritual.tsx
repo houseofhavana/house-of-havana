@@ -38,6 +38,23 @@ const Ritual = () => {
                 <span className="text-2xl lg:text-3xl font-heading text-primary">5.0</span>
                 <p className="heading-6-italic">300+ Google Reviews</p>
               </a>
+              <div className="col-span-2 flex flex-wrap items-center gap-x-4 gap-y-2">
+                <a
+                  href="https://www.bbb.org/ca/sk/saskatoon/profile/barbers/house-of-havana-mens-grooming-ltd-0057-1000012510/#sealclick"
+                  target="_blank"
+                  rel="nofollow noopener"
+                  className="rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element -- Keep the official BBB seal served directly by BBB. */}
+                  <img
+                    src="https://seal-manitoba.bbb.org/seals/blue-seal-69-145-bbb-1000012510.png"
+                    alt="Verify House of Havana’s BBB accreditation (opens in a new tab)"
+                    className="block max-w-full border-0"
+                    loading="lazy"
+                  />
+                </a>
+                <p className="heading-6-italic">Accredited since November 1, 2026</p>
+              </div>
             </div>
             {/* CTA Button */}
             <div className="md:mt-10">
