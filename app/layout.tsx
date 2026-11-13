@@ -8,7 +8,7 @@ import {
   organizationSchema,
   websiteSchema,
 } from "@/lib/schema";
-import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import Script from "next/script";
@@ -74,11 +74,31 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="dark">
-      <GoogleTagManager gtmId="GTM-5KG58H86" />
+      <head>
+        {/* Google Tag Manager */}
+        <script id="google-tag-manager">
+          {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-P873ZHQG');`}
+        </script>
+      </head>
       <body
         className={`${BigCaslon.variable} ${BigCaslonItalic.variable} ${Satoshi.variable} antialiased font-sans text-foreground bg-background`}
         suppressContentEditableWarning
       >
+        {/* Google Tag Manager (noscript) */}
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-P873ZHQG"
+            title="Google Tag Manager"
+            height={0}
+            width={0}
+            style={{ display: "none", visibility: "hidden" }}
+          />
+        </noscript>
+
         {/* Website Schema */}
         <Script
           id="website-schema"
